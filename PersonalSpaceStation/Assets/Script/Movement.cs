@@ -6,8 +6,10 @@ public class Movement : MonoBehaviour
 {
 
     //Variables
+    //these two floats need to be public but shouldn't necessarily be visible in the inspector in unity. 
     [HideInInspector] public float horizontalAxis;
     [HideInInspector] public float verticalAxis;
+    //defined in the inspector of every character object.
     public string player;
     public float moveSpeed;
 
@@ -23,6 +25,7 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //the string player is defined in the inspector in unity, and in the input manager in unity there are one horizontal/vertical input for each player.
         horizontalAxis = Input.GetAxis("Horizontal" + player);
         verticalAxis = Input.GetAxis("Vertical" + player);
         CharacterMovement();
@@ -30,6 +33,7 @@ public class Movement : MonoBehaviour
 
     public void CharacterMovement()
     {
+        //move the character using the input from the individual axises, and transform the position accordingly. 
         movementDirection = new Vector3(horizontalAxis, 0.0f, verticalAxis);
         transform.position += movementDirection * moveSpeed * Time.deltaTime;
         Quaternion.LookRotation(movementDirection);
