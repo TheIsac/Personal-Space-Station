@@ -31,7 +31,7 @@ public class Movement : MonoBehaviour
     public void CharacterMovement()
     {
         movementDirection = new Vector3(horizontalAxis, 0.0f, verticalAxis);
-        transform.position += movementDirection * moveSpeed;
+        transform.position += movementDirection * moveSpeed * Time.deltaTime;
         Quaternion.LookRotation(movementDirection);
     }
 }
