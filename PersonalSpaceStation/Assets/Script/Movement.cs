@@ -7,8 +7,8 @@ public class Movement : MonoBehaviour
 
     //Variables
     //these two floats need to be public but shouldn't necessarily be visible in the inspector in unity. 
-    [HideInInspector] public float horizontalAxis;
-    [HideInInspector] public float verticalAxis;
+    private float horizontalAxis;
+    private float verticalAxis;
     //defined in the inspector of every character object.
     public string player;
     public float moveSpeed;
