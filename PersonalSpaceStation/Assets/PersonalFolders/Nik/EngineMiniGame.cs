@@ -19,6 +19,8 @@ public class EngineMiniGame : MonoBehaviour {
     public Interactable station;
     public bool isComplete = false;
 
+    private string stationUser = "";
+
 	void Start () {
 
         startRotation = spak.rectTransform.rotation;
@@ -26,16 +28,22 @@ public class EngineMiniGame : MonoBehaviour {
         currentMomentum = Random.Range(-baseMomentum, baseMomentum);
     }
 
-    public void ResetStation()
+    public void ResetStation(string player)
     {
+        stationUser = player;
         isComplete = false;
         completionCounter = 0f;
         transform.rotation = startRotation;
     }
 
+    public void ResetUser()
+    {
+        stationUser = "";
+    }
+
     void Update () {
 
-        if (isComplete)
+        if (isComplete || stationUser == "")
             return;
 
         CheckCompletionCriteria();
@@ -45,12 +53,22 @@ public class EngineMiniGame : MonoBehaviour {
 
     void HandlePlayerInput()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        float horizontalAxis = 0;
+        //float verticalAxis = 0;
+
+        if (Mathf.Abs(Input.GetAxis("Horizontal" + stationUser)) > .7f)
+            horizontalAxis = Input.GetAxis("Horizontal" + stationUser);
+
+        //if (Mathf.Abs(Input.GetAxis("Vertical" + stationUser)) > .7f)
+        //    verticalAxis = Input.GetAxis("Vertical" + stationUser);
+
+
+        if (horizontalAxis < -.5f)
         {
             currentMomentum = baseMomentum;
             spak.rectTransform.Rotate(0f, 0f, currentMomentum);
         }
-        if (Input.GetKeyDown(KeyCode.E))
+        if (horizontalAxis > .5f)
         {
             currentMomentum = -baseMomentum;
             spak.rectTransform.Rotate(0f, 0f, currentMomentum);
@@ -76,6 +94,7 @@ public class EngineMiniGame : MonoBehaviour {
     {
         station.AddHealthToStation(completionValue);
         isComplete = true;
+        stationUser = "";
 
         yield return new WaitForSeconds(.5f);
         station.MiniGameComplete();

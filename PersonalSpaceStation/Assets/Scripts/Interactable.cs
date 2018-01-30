@@ -22,6 +22,8 @@ public class Interactable : MonoBehaviour {
     public int minWorkingHealth = 25;
     public int maxWorkingHealth = 75;
 
+    private string stationUser = "";
+
     public Text healthtext;
 
     void Start()
@@ -108,30 +110,40 @@ public class Interactable : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
+        if (stationUser != "")
+            return;
+
+
         playerInRange = true;
+        stationUser = other.gameObject.GetComponent<MovementNik>().player;
     }
 
     private void OnTriggerExit(Collider other)
     {
         playerInRange = false;
+        stationUser = "";
     }
 
     private void HandlePlayerInput()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (stationUser == "")
+            return;
+
+
+        if(Input.GetButtonDown("A-button" +stationUser))
         {
             if (inUse)
             {
                 inUse = false;
                 miniGame.SetActive(false);
+                miniGame.GetComponent<EngineMiniGame>().ResetUser();
             }
             else
             {
                 inUse = true;
                 miniGame.SetActive(true);
-                miniGame.GetComponent<EngineMiniGame>().ResetStation();
+                miniGame.GetComponent<EngineMiniGame>().ResetStation(stationUser);
             }
-
         }
     }
 }
