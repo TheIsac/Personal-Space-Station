@@ -17,7 +17,7 @@ public class Interactable : MonoBehaviour {
     public Action OnStationFixed;
 
     private float lastTick;
-    public float tickLength = 2F;
+    public float tickLength = 2f;
 
     public int minWorkingHealth = 25;
     public int maxWorkingHealth = 75;
