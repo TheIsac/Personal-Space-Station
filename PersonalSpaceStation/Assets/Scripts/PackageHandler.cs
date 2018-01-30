@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PackageHandling : MonoBehaviour
+public class PackageHandler : MonoBehaviour
 {
 
     public Interactable[] stations;
