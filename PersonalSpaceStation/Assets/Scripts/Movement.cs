@@ -49,10 +49,9 @@ public class Movement : MonoBehaviour
 
         // Move the player to it's current position plus the movement.
         rb.MovePosition(transform.position + movementDirection);
-        
        
-    
-        Quaternion.LookRotation(movementDirection);
+       Quaternion newRotation = Quaternion.LookRotation(movementDirection);
+        rb.MoveRotation(newRotation);
     }
 }
 
