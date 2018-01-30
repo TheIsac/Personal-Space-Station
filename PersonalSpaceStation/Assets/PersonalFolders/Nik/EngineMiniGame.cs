@@ -11,31 +11,50 @@ public class EngineMiniGame : MonoBehaviour {
     private float currentMomentum;
     private float completionCounter = 0f;
     public Text completionText;
+    private float baseMomentum = .5f;
+    private float adjusterValue = .01f;
+
+    public int completionValue = 5;
+
+    public Interactable station;
+    public bool isComplete = false;
 
 	void Start () {
-        transform.rotation = Camera.main.transform.rotation;
+
         startRotation = spak.rectTransform.rotation;
 
-        currentMomentum = Random.Range(-5f, 5f);
+        currentMomentum = Random.Range(-baseMomentum, baseMomentum);
     }
-	
-	void Update () {
+
+    public void ResetStation()
+    {
+        isComplete = false;
+        completionCounter = 0f;
+        transform.rotation = startRotation;
+    }
+
+    void Update () {
+
+        if (isComplete)
+            return;
 
         CheckCompletionCriteria();
         MoveLever();
+        HandlePlayerInput();
+    }
 
-		if(Input.GetKeyDown(KeyCode.Q))
+    void HandlePlayerInput()
+    {
+        if (Input.GetKeyDown(KeyCode.Q))
         {
-            currentMomentum = 5f;
-            spak.rectTransform.Rotate(0f, 0f, currentMomentum / 10);
+            currentMomentum = baseMomentum;
+            spak.rectTransform.Rotate(0f, 0f, currentMomentum);
         }
         if (Input.GetKeyDown(KeyCode.E))
         {
-            currentMomentum = -5f;
-            spak.rectTransform.Rotate(0f, 0f, currentMomentum / 10);
+            currentMomentum = -baseMomentum;
+            spak.rectTransform.Rotate(0f, 0f, currentMomentum);
         }
-
-
     }
 
     void CheckCompletionCriteria()
@@ -43,7 +62,7 @@ public class EngineMiniGame : MonoBehaviour {
         if(completionCounter >= completionTime)
         {
             completionText.text = "Done";
-            return;
+            StartCoroutine(CompleteMiniGame());
         }
 
         if(spak.rectTransform.rotation.eulerAngles.z < 5f || spak.rectTransform.rotation.eulerAngles.z > 355f)
@@ -53,22 +72,31 @@ public class EngineMiniGame : MonoBehaviour {
         }
     }
 
+    IEnumerator CompleteMiniGame()
+    {
+        station.AddHealthToStation(completionValue);
+        isComplete = true;
+
+        yield return new WaitForSeconds(.5f);
+        station.MiniGameComplete();
+    }
+
     void MoveLever()
     {
-        if(Mathf.Abs(currentMomentum) < 0.5f)
+        if(Mathf.Abs(currentMomentum) < 0.1f)
         {
-            currentMomentum = Random.Range(-5f, 5f);
+            currentMomentum = Random.Range(-baseMomentum, baseMomentum);
         }
         else if(Mathf.Sign(currentMomentum) > 0)
         {
-            currentMomentum += .1f;
+            currentMomentum += adjusterValue;
         }
         else
         {
-            currentMomentum -= .1f;
+            currentMomentum -= adjusterValue;
         }
 
         if(spak.rectTransform.rotation.eulerAngles.z < 90f || spak.rectTransform.rotation.eulerAngles.z > 270f)
-            spak.rectTransform.Rotate(0f, 0f, currentMomentum / 10);
+            spak.rectTransform.Rotate(0f, 0f, currentMomentum);
     }
 }
