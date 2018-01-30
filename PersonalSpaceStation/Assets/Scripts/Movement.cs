@@ -9,10 +9,14 @@ public class Movement : MonoBehaviour
     private float horizontalAxis;
     private float verticalAxis;
     //defined in the inspector of every character object.
-    public string player;
     public float moveSpeed;
 
+    public string player;
+   
     private Vector3 movementDirection;
+
+    public bool inMiniGame;
+
 
 
     // Use this for initialization
@@ -24,6 +28,10 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (inMiniGame)
+        {
+            return;
+        }
         //the string player is defined in the inspector in unity, and in the input manager in unity there are one horizontal/vertical input for each player.
         horizontalAxis = Input.GetAxis("Horizontal" + player);
         verticalAxis = Input.GetAxis("Vertical" + player);
