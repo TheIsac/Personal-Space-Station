@@ -17,15 +17,14 @@ public class Interactable : MonoBehaviour {
     public Action OnStationFixed;
 
     private float lastTick;
-    public float tickLength = 2F;
+    public float tickLength = 2f;
 
     public int minWorkingHealth = 25;
     public int maxWorkingHealth = 75;
 
-    private string stationUserName = "";
     private MovementNik stationUser = null;
 
-    public Text healthtext;
+    public Text healthText;
 
     void Start()
     {
@@ -58,7 +57,7 @@ public class Interactable : MonoBehaviour {
 
     private void UpdateHealthDisplay()
     {
-        healthtext.text = stationHealth.ToString();
+        healthText.text = stationHealth.ToString();
     }
 
     void Tick()
@@ -96,7 +95,7 @@ public class Interactable : MonoBehaviour {
             OnStationFailure.Invoke();
         }
 
-        healthtext.color = Color.red;
+        healthText.color = Color.red;
     }
 
     void StationFixed()
@@ -109,47 +108,45 @@ public class Interactable : MonoBehaviour {
             OnStationFixed.Invoke();
         }
 
-        healthtext.color = Color.black;
+        healthText.color = Color.black;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (stationUserName != "")
+        if (stationUser != null)
             return;
 
 
         playerInRange = true;
         stationUser = other.gameObject.GetComponent<MovementNik>();
-        stationUserName = other.gameObject.GetComponent<MovementNik>().player;
     }
 
     private void OnTriggerExit(Collider other)
     {
         playerInRange = false;
-        stationUserName = "";
         stationUser = null;
     }
 
     private void HandlePlayerInput()
     {
-        if (stationUserName == "")
+        if (stationUser == null)
             return;
 
 
-        if(Input.GetButtonDown("A-button" + stationUserName))
+        if(Input.GetButtonDown("A-button" + stationUser.player))
         {
             if (inUse)
             {
                 inUse = false;
                 miniGame.SetActive(false);
-                miniGame.GetComponent<EngineMiniGame>().ResetUser();
+                miniGame.GetComponent<IResetUser>().ResetUser();
                 stationUser.inMiniGame = false;
             }
             else
             {
                 inUse = true;
                 miniGame.SetActive(true);
-                miniGame.GetComponent<EngineMiniGame>().ResetStation(stationUserName);
+                miniGame.GetComponent<IResetStation>().ResetStation(stationUser.player);
                 stationUser.inMiniGame = true;
             }
         }

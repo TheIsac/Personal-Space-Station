@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class EngineMiniGame : MonoBehaviour {
+public class EngineMiniGame : MonoBehaviour, IResetUser, IResetStation
+{
 
     public Image spak;
     public float completionTime = 3f;
