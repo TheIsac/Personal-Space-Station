@@ -9,6 +9,10 @@ public class AudioManager : MonoBehaviour {
 
     public Sound[] sounds;
 
+    /// <summary>
+    /// If a audiomanager already exists, it will be broken then a new one will be instantiated.
+    /// Instantiates all the sounds in a foreach loop.
+    /// </summary>
     void Awake() {
         if (instance != null)
         {
@@ -37,10 +41,9 @@ public class AudioManager : MonoBehaviour {
         }
     }
 
-    void Start() {
-        Play("The Witch");
-    }
-
+    /// <summary>
+    /// This function is called from other scripts in order to play the sound clips.
+    /// </summary>
     public void Play(string sound) {
         Sound s = Array.Find(sounds, item => item.name == sound);
         if (s == null)
