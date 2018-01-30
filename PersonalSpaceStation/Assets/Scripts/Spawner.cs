@@ -9,9 +9,10 @@ public class Spawner : MonoBehaviour
     private Vector3 currentPos;
     private Quaternion currentQuat;
 
+    [HideInInspector] public Color cubeColor;
+
     void Start()
     {
-
         currentPos = gameObject.transform.position;
         currentQuat = Quaternion.Euler(0, 0, 0);
 
@@ -21,9 +22,13 @@ public class Spawner : MonoBehaviour
         }
     }
 
-    void OnDrawGizmos()
+    public void OnDrawGizmos()
     {
-        Gizmos.color = new Color(0, 1, 0, 0.5F);
-        Gizmos.DrawCube(transform.position, new Vector3(1, 1, 1));
+        GetComponent<SpawnerEditor>
+        if(cubeColor != null)
+        {
+            Gizmos.color = cubeColor;
+            Gizmos.DrawCube(transform.position, new Vector3(1, 1, 1));
+        }
     }
 }
