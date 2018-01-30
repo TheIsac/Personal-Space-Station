@@ -13,6 +13,14 @@ public class Spawner : MonoBehaviour {
         currentPos = gameObject.transform.position;
         currentQuat = Quaternion.Euler(0, 0, 0);
 
-        Instantiate(player, currentPos, currentQuat);
+        if(player != null)
+        {
+            Instantiate(player, currentPos, currentQuat);
+        }
 	}
+
+    void OnDrawGizmos() {
+        Gizmos.color = new Color(0, 1, 0, 0.5F);
+        Gizmos.DrawCube(transform.position, new Vector3(1, 1, 1));
+    }
 }
