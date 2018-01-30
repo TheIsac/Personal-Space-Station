@@ -49,7 +49,7 @@ public class Movement : MonoBehaviour
 
         // Move the player to it's current position plus the movement.
         rb.MovePosition(transform.position + movementDirection);
-        //rb.velocity = new Vector3(horizontalAxis, 0.0f, verticalAxis) * moveSpeed;
+        
        
     
         Quaternion.LookRotation(movementDirection);
