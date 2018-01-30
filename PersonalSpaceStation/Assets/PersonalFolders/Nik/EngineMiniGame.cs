@@ -7,21 +7,36 @@ public class EngineMiniGame : MonoBehaviour {
 
     public Image spak;
     public float completionTime = 3f;
-    //private Quaternion startRotation;
+    private Quaternion startRotation;
     private float currentMomentum;
     private float completionCounter = 0f;
     public Text completionText;
     private float baseMomentum = .5f;
     private float adjusterValue = .01f;
 
+    public int completionValue = 5;
+
+    public Interactable station;
+    public bool isComplete = false;
+
 	void Start () {
-        transform.rotation = Camera.main.transform.rotation;
-        //startRotation = spak.rectTransform.rotation;
+
+        startRotation = spak.rectTransform.rotation;
 
         currentMomentum = Random.Range(-baseMomentum, baseMomentum);
     }
-	
-	void Update () {
+
+    public void ResetStation()
+    {
+        isComplete = false;
+        completionCounter = 0f;
+        transform.rotation = startRotation;
+    }
+
+    void Update () {
+
+        if (isComplete)
+            return;
 
         CheckCompletionCriteria();
         MoveLever();
@@ -47,7 +62,7 @@ public class EngineMiniGame : MonoBehaviour {
         if(completionCounter >= completionTime)
         {
             completionText.text = "Done";
-            return;
+            StartCoroutine(CompleteMiniGame());
         }
 
         if(spak.rectTransform.rotation.eulerAngles.z < 5f || spak.rectTransform.rotation.eulerAngles.z > 355f)
@@ -55,6 +70,15 @@ public class EngineMiniGame : MonoBehaviour {
             completionCounter += Time.deltaTime;
             completionText.text = completionCounter.ToString("#.0");
         }
+    }
+
+    IEnumerator CompleteMiniGame()
+    {
+        station.AddHealthToStation(completionValue);
+        isComplete = true;
+
+        yield return new WaitForSeconds(.5f);
+        station.MiniGameComplete();
     }
 
     void MoveLever()
