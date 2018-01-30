@@ -15,6 +15,7 @@ public class Spawner : MonoBehaviour
 
     private void Awake()
     {
+        print(index);
         CheckSettings(index);
     }
 

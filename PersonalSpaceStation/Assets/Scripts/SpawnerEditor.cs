@@ -13,13 +13,20 @@ public class SpawnerEditor : Editor
 
     public override void OnInspectorGUI()
     {
-
         Spawner spawnerScript = (Spawner)target;
-        index = spawnerScript.index;
-        spawnerScript.player = player;
-        index = EditorGUILayout.Popup("Player", index, options);
-        //player = EditorGUILayout.ObjectField();
 
+        //Declaration
+        index = spawnerScript.index;
+        player = spawnerScript.player;
+
+        //The visuals in the inspector.
+        player = (GameObject)EditorGUILayout.ObjectField(player, typeof(Object), true);
+        index = EditorGUILayout.Popup("Player", index, options);
+
+        if (player != spawnerScript.player)
+            spawnerScript.player = player;
+
+        //Switch telling 'Spawner' what option is selected.
         switch (index)
         {
             case 0:
