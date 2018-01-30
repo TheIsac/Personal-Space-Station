@@ -42,7 +42,7 @@ public class packageHandling : MonoBehaviour
             }
         }
         //Kolla av om stationen isWorking, om den är det så kan paketet passera vidare. Engine Room - Water Room, Water - Atmo, Atmo - Plant, Plant - Engine. 
-        //Addera hälsa till stationen som är beroende av den om båda fungerar och kopplingen dem emellan fungerar. 
+        //Addera hälsa till stationen som är beroende av den om den nuvarande fungerar och kopplingen dem emellan fungerar. 
     }
 
 }
