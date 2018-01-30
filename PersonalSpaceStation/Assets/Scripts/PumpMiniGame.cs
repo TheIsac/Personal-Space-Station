@@ -5,18 +5,19 @@ using UnityEngine.UI;
 
 public class PumpMiniGame : MonoBehaviour, IResetUser, IResetStation
 {
-
+    // UI
     public Slider gauge;
     public Text completionText;
+
+    // Completion mechanics
     public int completionCount = 100;
     private float completionCounter = 0;
     public int completionValue = 5;
-
-    public float clickvalue = 5f;   
-
-    public Interactable station;
     public bool isComplete = false;
 
+    public float clickvalue = 5f;   // How mouch does the slider move each button click
+
+    public Interactable station;
     private string stationUser = "";
 
     public void ResetStation(string player)
@@ -41,6 +42,7 @@ public class PumpMiniGame : MonoBehaviour, IResetUser, IResetStation
         HandlePlayerInput();
     }
 
+    // The gauge slowly returns to zero
     void DropDown()
     {
         if(completionCounter > 1)
