@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PackageHandler : MonoBehaviour
 {
-
+    //An array that you have to add every individual interactable object to in the inspector.
     public Interactable[] stations;
     private float lastTick;
     public float tickLength = 2f;
@@ -13,6 +13,7 @@ public class PackageHandler : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        //counts the time.
         lastTick = Time.time;
     }
 
@@ -21,7 +22,6 @@ public class PackageHandler : MonoBehaviour
     {
         Tick();
         CheckStatus();
-
     }
 
     void Tick()
@@ -34,6 +34,7 @@ public class PackageHandler : MonoBehaviour
 
     void CheckStatus()
     {
+        //go through every station, if it is active send some health to the station that comes after it. 
         for (int i = 0; i < stations.Length; i++)
         {
             if (stations[i].isWorking)
