@@ -53,15 +53,14 @@ public class EngineMiniGame : MonoBehaviour {
 
     void HandlePlayerInput()
     {
+
+        if (stationUser == "")
+            return;
+
         float horizontalAxis = 0;
-        //float verticalAxis = 0;
 
         if (Mathf.Abs(Input.GetAxis("Horizontal" + stationUser)) > .7f)
             horizontalAxis = Input.GetAxis("Horizontal" + stationUser);
-
-        //if (Mathf.Abs(Input.GetAxis("Vertical" + stationUser)) > .7f)
-        //    verticalAxis = Input.GetAxis("Vertical" + stationUser);
-
 
         if (horizontalAxis < -.5f)
         {

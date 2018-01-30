@@ -22,7 +22,8 @@ public class Interactable : MonoBehaviour {
     public int minWorkingHealth = 25;
     public int maxWorkingHealth = 75;
 
-    private string stationUser = "";
+    private string stationUserName = "";
+    private MovementNik stationUser = null;
 
     public Text healthtext;
 
@@ -44,6 +45,9 @@ public class Interactable : MonoBehaviour {
     public void MiniGameComplete()
     {
         miniGame.SetActive(false);
+
+        if (stationUser != null)
+            stationUser.inMiniGame = false;
     }
 
     public void AddHealthToStation(int healthToGive)
@@ -110,39 +114,43 @@ public class Interactable : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if (stationUser != "")
+        if (stationUserName != "")
             return;
 
 
         playerInRange = true;
-        stationUser = other.gameObject.GetComponent<MovementNik>().player;
+        stationUser = other.gameObject.GetComponent<MovementNik>();
+        stationUserName = other.gameObject.GetComponent<MovementNik>().player;
     }
 
     private void OnTriggerExit(Collider other)
     {
         playerInRange = false;
-        stationUser = "";
+        stationUserName = "";
+        stationUser = null;
     }
 
     private void HandlePlayerInput()
     {
-        if (stationUser == "")
+        if (stationUserName == "")
             return;
 
 
-        if(Input.GetButtonDown("A-button" +stationUser))
+        if(Input.GetButtonDown("A-button" + stationUserName))
         {
             if (inUse)
             {
                 inUse = false;
                 miniGame.SetActive(false);
                 miniGame.GetComponent<EngineMiniGame>().ResetUser();
+                stationUser.inMiniGame = false;
             }
             else
             {
                 inUse = true;
                 miniGame.SetActive(true);
-                miniGame.GetComponent<EngineMiniGame>().ResetStation(stationUser);
+                miniGame.GetComponent<EngineMiniGame>().ResetStation(stationUserName);
+                stationUser.inMiniGame = true;
             }
         }
     }
