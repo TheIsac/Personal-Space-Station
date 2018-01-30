@@ -5,30 +5,33 @@ using UnityEngine.UI;
 
 public class EngineMiniGame : MonoBehaviour, IResetUser, IResetStation
 {
-
+    // UI
     public Image spak;
-    public float completionTime = 3f;
-    private Quaternion startRotation;
-    private float currentMomentum;
-    private float completionCounter = 0f;
     public Text completionText;
+
+    // Completion mechanics
+    public bool isComplete = false;
+    public float completionTime = 3f;
+    public int completionValue = 5;
+    private float completionCounter = 0f;
+
+    // Lever mechanics
+    private float currentMomentum;
     private float baseMomentum = .5f;
     private float adjusterValue = .01f;
 
-    public int completionValue = 5;
-
-    public Interactable station;
-    public bool isComplete = false;
-
+    // Other
     private string stationUser = "";
+    public Interactable station;
+    private Quaternion startRotation;
 
-	void Start () {
+    void Start () {
 
         startRotation = spak.rectTransform.rotation;
-
         currentMomentum = Random.Range(-baseMomentum, baseMomentum);
     }
 
+    // Reset the mini game for new game
     public void ResetStation(string player)
     {
         stationUser = player;
@@ -54,7 +57,6 @@ public class EngineMiniGame : MonoBehaviour, IResetUser, IResetStation
 
     void HandlePlayerInput()
     {
-
         if (stationUser == "")
             return;
 
@@ -77,12 +79,14 @@ public class EngineMiniGame : MonoBehaviour, IResetUser, IResetStation
 
     void CheckCompletionCriteria()
     {
+        // Check if the mini game is complete
         if(completionCounter >= completionTime)
         {
             completionText.text = "Done";
             StartCoroutine(CompleteMiniGame());
         }
 
+        // Update progress if the lever is within green area
         if(spak.rectTransform.rotation.eulerAngles.z < 5f || spak.rectTransform.rotation.eulerAngles.z > 355f)
         {
             completionCounter += Time.deltaTime;
@@ -102,6 +106,7 @@ public class EngineMiniGame : MonoBehaviour, IResetUser, IResetStation
 
     void MoveLever()
     {
+        // if the lever is moving slowly, set a random movement
         if(Mathf.Abs(currentMomentum) < 0.1f)
         {
             currentMomentum = Random.Range(-baseMomentum, baseMomentum);
@@ -115,6 +120,7 @@ public class EngineMiniGame : MonoBehaviour, IResetUser, IResetStation
             currentMomentum -= adjusterValue;
         }
 
+        // Only move the lever if it is between 90 and -90 degrees
         if(spak.rectTransform.rotation.eulerAngles.z < 90f || spak.rectTransform.rotation.eulerAngles.z > 270f)
             spak.rectTransform.Rotate(0f, 0f, currentMomentum);
     }
