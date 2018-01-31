@@ -19,7 +19,7 @@ public class StationController : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        HeatController heat = other.GetComponent<HeatController>();
+        HeatController heat = other.GetComponentInParent<HeatController>();
 
         if (heat == null)
         {
@@ -31,7 +31,7 @@ public class StationController : MonoBehaviour {
 
     private void OnTriggerExit(Collider other)
     {
-        HeatController heat = other.GetComponent<HeatController>();
+        HeatController heat = other.GetComponentInParent<HeatController>();
 
         if (heat == null)
         {
