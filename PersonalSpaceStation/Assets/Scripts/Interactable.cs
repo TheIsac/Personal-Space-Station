@@ -22,7 +22,7 @@ public class Interactable : MonoBehaviour {
     public int minWorkingHealth = 25;
     public int maxWorkingHealth = 75;
 
-    private MovementNik stationUser = null;
+    private Movement stationUser = null;
 
     public Text healthText;
 
@@ -131,7 +131,7 @@ public class Interactable : MonoBehaviour {
 
 
         playerInRange = true;
-        stationUser = other.gameObject.GetComponent<MovementNik>();
+        stationUser = other.gameObject.GetComponentInParent<Movement>();
     }
 
     //when the player leaves the collider of the miniGame there is no longer a player in range nor is there a station user. 
