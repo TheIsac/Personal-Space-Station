@@ -134,22 +134,19 @@ public class Interactable : MonoBehaviour {
             return;
 
 
-        if(Input.GetButtonDown("A-button" + stationUser.player))
+        if(Input.GetButtonDown("A-button" + stationUser.player) && inUse == false)
         {
-            if (inUse)
-            {
-                inUse = false;
-                miniGame.SetActive(false);
-                miniGame.GetComponent<IResetUser>().ResetUser();
-                stationUser.inMiniGame = false;
-            }
-            else
-            {
-                inUse = true;
-                miniGame.SetActive(true);
-                miniGame.GetComponent<IResetStation>().ResetStation(stationUser.player);
-                stationUser.inMiniGame = true;
-            }
+            inUse = true;
+            miniGame.SetActive(true);
+            miniGame.GetComponent<IResetStation>().ResetStation(stationUser.player);
+            stationUser.inMiniGame = true;
+        }
+        if (Input.GetButtonDown("B-button" + stationUser.player) && inUse == true)
+        {
+            inUse = false;
+            miniGame.SetActive(false);
+            miniGame.GetComponent<IResetUser>().ResetUser();
+            stationUser.inMiniGame = false;
         }
     }
 }
