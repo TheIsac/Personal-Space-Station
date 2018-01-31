@@ -43,6 +43,7 @@ public class Interactable : MonoBehaviour {
 
     public void MiniGameComplete()
     {
+        inUse = false;
         miniGame.SetActive(false);
 
         if (stationUser != null)
