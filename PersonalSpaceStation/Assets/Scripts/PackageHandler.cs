@@ -41,6 +41,13 @@ public class PackageHandler : MonoBehaviour
             {
                 stations[(i + 1) % stations.Length].AddHealthToStation(addHealth);
             }
+            else if (stations[i].isWorking && stations[i].stationHealth > 75)
+            {
+                int differenceHealth = stations[i].stationHealth - 75;
+
+                stations[(i - 1) % stations.Length].RemoveHealthFromStation(differenceHealth);
+
+            }
         }
         //Kolla av om stationen isWorking, om den är det så kan paketet passera vidare. Engine Room - Water Room, Water - Atmo, Atmo - Plant, Plant - Engine. 
         //Addera hälsa till stationen som är beroende av den om den nuvarande fungerar och kopplingen dem emellan fungerar. 
