@@ -150,9 +150,6 @@ public class Interactable : MonoBehaviour {
 
         //When you press the button "A" different things happen depending on if the game is on or not. If the player is in the game, pressing "A" exits the game. If the player 
         //is not in the game, pressing "A" enters the game. 
-        if(Input.GetButtonDown("A-button" + stationUser.player))
-
-
         if(Input.GetButtonDown("A-button" + stationUser.player) && inUse == false)
         {
             inUse = true;
