@@ -17,14 +17,14 @@ public class Movement : MonoBehaviour
 
     public bool inMiniGame;
 
-    Rigidbody rb;
+    Rigidbody rigidbody;
 
 
 
     // Use this for initialization
     void Start()
     {
-        rb = GetComponentInChildren<Rigidbody>();
+        rigidbody = GetComponentInChildren<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -50,11 +50,11 @@ public class Movement : MonoBehaviour
         movementDirection = movementDirection.normalized * moveSpeed * Time.deltaTime;
 
         // Move the player to it's current position plus the movement.
-        rb.MovePosition(transform.position + movementDirection);
+        rigidbody.MovePosition(transform.position + movementDirection);
        
         //rotates the player so that it faces in the direction it is moving.
        Quaternion newRotation = Quaternion.LookRotation(movementDirection);
-        rb.MoveRotation(newRotation);
+        rigidbody.MoveRotation(newRotation);
     }
 }
 
