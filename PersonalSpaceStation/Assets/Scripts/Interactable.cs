@@ -79,6 +79,7 @@ public class Interactable : MonoBehaviour {
         }
     }
 
+    //Checks the stations health and either makes a station fail or get fixed depending on the station health and wether or not it is working
     void CheckStationHealth()
     {
         if ((stationHealth < minWorkingHealth || stationHealth > maxWorkingHealth) && isWorking)
@@ -91,7 +92,8 @@ public class Interactable : MonoBehaviour {
             StationFixed();
         }
     }
-
+    //if the stations health goes under the minimunhealth or over the maximumhealth the station breaks an down. The action OnStationFailure exists and checks
+    //if there is another script that cares if the station is working or not, if there isn't any script caring then this function is not run. 
     void StationFailure()
     {
         Debug.Log("ZOMG ENGINE BORKED!");
@@ -104,7 +106,8 @@ public class Interactable : MonoBehaviour {
 
         healthText.color = Color.red;
     }
-
+    //If the station is fixed it is set to work again, and can again interact with other stations through the PackageHandler script.  The action OnStationFixed exists 
+    //and checks if there is another script that cares if the station is working or not, if there isn't any script caring then this function is not run. 
     void StationFixed()
     {
         Debug.Log("LOL FIXERD");
@@ -118,6 +121,9 @@ public class Interactable : MonoBehaviour {
         healthText.color = Color.black;
     }
 
+    //if a player enters a collider the station is only assigned a "stationUser" if there was not already one. This is so that two players can't use the same station
+    //and so that the same game doesn´t trigger twice for the same player. If a player enters and is not already a user, and there are no users, this function fetches
+    //that players movement script so that it can use it's value for player.
     private void OnTriggerEnter(Collider other)
     {
         if (stationUser != null)
@@ -128,6 +134,7 @@ public class Interactable : MonoBehaviour {
         stationUser = other.gameObject.GetComponent<MovementNik>();
     }
 
+    //when the player leaves the collider of the miniGame there is no longer a player in range nor is there a station user. 
     private void OnTriggerExit(Collider other)
     {
         playerInRange = false;
@@ -136,26 +143,26 @@ public class Interactable : MonoBehaviour {
 
     private void HandlePlayerInput()
     {
+        //if there player has left the station area, there is no station user and this code should not run.
         if (stationUser == null)
             return;
 
 
-        if(Input.GetButtonDown("A-button" + stationUser.player))
+        //When you press the button "A" different things happen depending on if the game is on or not. If the player is in the game, pressing "A" exits the game. If the player 
+        //is not in the game, pressing "A" enters the game. 
+        if(Input.GetButtonDown("A-button" + stationUser.player) && inUse == false)
         {
-            if (inUse)
-            {
-                inUse = false;
-                miniGame.SetActive(false);
-                miniGame.GetComponent<IResetUser>().ResetUser();
-                stationUser.inMiniGame = false;
-            }
-            else
-            {
-                inUse = true;
-                miniGame.SetActive(true);
-                miniGame.GetComponent<IResetStation>().ResetStation(stationUser.player);
-                stationUser.inMiniGame = true;
-            }
+            inUse = true;
+            miniGame.SetActive(true);
+            miniGame.GetComponent<IResetStation>().ResetStation(stationUser.player);
+            stationUser.inMiniGame = true;
+        }
+        if (Input.GetButtonDown("B-button" + stationUser.player) && inUse == true)
+        {
+            inUse = false;
+            miniGame.SetActive(false);
+            miniGame.GetComponent<IResetUser>().ResetUser();
+            stationUser.inMiniGame = false;
         }
     }
 }
