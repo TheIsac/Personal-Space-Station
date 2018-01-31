@@ -7,50 +7,71 @@ public class Scoring : MonoBehaviour
 {
 
     public float scoreTimer = 0;
+    public int realScore = 0;
     public Text scoreText;
     private int scoreUpdateInterval = 6;
+    public float scoreMultiplier = 1;
 
-    List<string> stations= new List<string>();
+    public Interactable[] stations;
+
     private int runningStations;
+
+    private void Start()
+    {
+        for (int i = 0; i < stations.Length; i++)
+        {
+            stations[i].OnStationFailure += OnStationFailure;
+            stations[i].OnStationFixed += OnStationRunning;
+        }
+    }
 
     void Update ()
     {
-        scoreTimer += Time.deltaTime;
         if (Time.frameCount % scoreUpdateInterval == 0)
         {
-            CountRunningStations();
             UpdateScore();
         }
+        scoreTimer += Time.deltaTime * scoreMultiplier;
+        realScore = (int)scoreTimer;
 
-        scoreText.text = scoreTimer.ToString();
+        scoreText.text = realScore.ToString();
 	}
-    //Check how many stations are running well
-    void CountRunningStations()
-    {
-        //Add station to list, if it is running
 
-
-        runningStations = stations.Count;
-
-    }
-    //Add score based on number of running stations
+    //Add score based on number of runningStations
     void UpdateScore()
     {
         if (runningStations==1)
         {
-
+            scoreMultiplier = 1f;
         }
         else if(runningStations == 2)
         {
-
+            scoreMultiplier = 1.5f;
         }
         else if (runningStations == 3)
         {
-
+            scoreMultiplier = 2.5f;
         }
         else if (runningStations == 4)
         {
+            scoreMultiplier = 4f;
+        }
 
+    }
+    void OnStationFailure()
+    {
+        //Remove station from runningStations
+        if (runningStations != 1)
+        {
+            runningStations -= 1;
+        }
+    }
+    void OnStationRunning()
+    {
+        //Add station to runningStations
+        if (runningStations != 4)
+        {
+            runningStations += 1;
         }
     }
 }

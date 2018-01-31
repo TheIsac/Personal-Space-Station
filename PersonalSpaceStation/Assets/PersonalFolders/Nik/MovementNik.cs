@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Movement : MonoBehaviour
+public class MovementNik : MonoBehaviour
 {
 
     //Variables
@@ -30,15 +30,20 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        //only move if the character isn't in a minigame, we don't want the player to run away from the game by mistake. 
-        //the string player is defined in the inspector in unity, and in the input manager in unity there are one horizontal/vertical input for each player. 
         if (!inMiniGame)
         {
-            horizontalAxis = Input.GetAxis("Horizontal" + player);
-            verticalAxis = Input.GetAxis("Vertical" + player);
+            horizontalAxis = 0;
+            verticalAxis = 0;
+
+            if (Mathf.Abs(Input.GetAxis("Horizontal" + player)) > .7f)
+                horizontalAxis = Input.GetAxis("Horizontal" + player);
+
+            if (Mathf.Abs(Input.GetAxis("Vertical" + player)) > .7f)
+                verticalAxis = Input.GetAxis("Vertical" + player);
+
             CharacterMovement();
         }
-          
+        //the string player is defined in the inspector in unity, and in the input manager in unity there are one horizontal/vertical input for each player.   
     }
 
     public void CharacterMovement()
@@ -51,10 +56,10 @@ public class Movement : MonoBehaviour
 
         // Move the player to it's current position plus the movement.
         rb.MovePosition(transform.position + movementDirection);
+        
        
-        //rotates the player so that it faces in the direction it is moving.
-       Quaternion newRotation = Quaternion.LookRotation(movementDirection);
-        rb.MoveRotation(newRotation);
+    
+        Quaternion.LookRotation(movementDirection);
     }
 }
 
