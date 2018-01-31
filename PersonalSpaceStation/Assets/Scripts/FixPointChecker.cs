@@ -10,11 +10,17 @@ public class FixPointChecker : MonoBehaviour {
     public bool pressedFirst;
     public bool pressedSecond;
 
-	void Start () {
-		
-	}
+    public bool repaired;
 	
 	void Update () {
 		
+        if(stationedFirst   && 
+            stationedSecond && 
+            pressedFirst    && 
+            pressedSecond)
+        {
+            repaired = true;
+        }
+
 	}
 }
