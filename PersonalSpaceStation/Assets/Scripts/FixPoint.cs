@@ -4,38 +4,36 @@ using UnityEngine;
 
 public class FixPoint : MonoBehaviour {
 
-    public bool playerInRange;
-    public bool firstPoint;
-    public bool secondPoint;
+    private bool playerInRange;
 
-    private bool stationedFirst;
-    private bool stationedSecond;
-
-    private bool pressedFirst;
-    private bool pressedSecond;
+    private bool stationed;
+    private bool pressed;
 
     private Movement stationUser = null;
     private int isPressed;
 
-    private void Start()
-    {
-        WhichPoint();
-    }
-
     void WhichPoint()
     {
-        if (firstPoint)
+        if (name == "FirstPoint")
         {
-
+            GetComponentInParent<FixPointChecker>().stationedFirst = stationed;
+            GetComponentInParent<FixPointChecker>().pressedFirst = pressed;
         }
-        else if (secondPoint)
+        else if (name == "SecondPoint")
         {
-
+            GetComponentInParent<FixPointChecker>().stationedSecond = stationed;
+            GetComponentInParent<FixPointChecker>().pressedSecond = pressed;
+        }
+        else
+        {
+            Debug.LogError("DO NOT CHANGE FIXPOINT NAMES");
         }
     }
 
     private void Update()
     {
+        WhichPoint();
+
         if (stationUser != null)
             print(stationUser.player);
 
@@ -54,7 +52,11 @@ public class FixPoint : MonoBehaviour {
 
         if (Input.GetButton("A-button" + stationUser.player))
         {
-            isPressed += 1;
+            pressed = true;
+        }
+        else
+        {
+            pressed = false;
         }
     }
 
@@ -62,16 +64,14 @@ public class FixPoint : MonoBehaviour {
     {
         playerInRange = true;
         stationUser = other.GetComponentInParent<Movement>();
-        GetComponentInParent<FixPointChecker>().stationedFirst = true;
-        isPressed = 0;
+        stationed = true;
     }
 
     private void OnTriggerExit(Collider other)
     {
         playerInRange = false;
         stationUser = null;
-        //GetComponentInParent<FixPointChecker>().stationed = false;
-        isPressed = 0;
-
+        stationed = false;
+        pressed = false;
     }
 }
