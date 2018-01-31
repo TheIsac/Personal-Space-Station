@@ -1,39 +1,49 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// Drag the character prefab into the 'Character' bar.
+/// Select the player you want to spawn in the drop-down menu.
+/// </summary>
 public class Spawner : MonoBehaviour
 {
+    public enum OptionEnum { P1, P2, P3, P4 };
+    public OptionEnum player;
 
-    public GameObject player;
+    public GameObject character;
+    private GameObject spawnedCharacter;
     private Vector3 currentPos;
     private Quaternion currentQuat;
 
-    [HideInInspector] public int index;
 
-    [HideInInspector] public Color cubeColor;
+    private int index;
 
-    private void Awake()
+    void Start()
     {
-        print(index);
-        CheckSettings(index);
+        spawnedCharacter = character;
+        currentPos = gameObject.transform.position;
+        currentQuat = Quaternion.Euler(0, 0, 0);
+        spawnedCharacter = Instantiate(character, currentPos, currentQuat);
+
+        CharacterSpawn();
+
     }
 
-    void CheckSettings(int index)
+    void CharacterSpawn()
     {
-        switch (index)
+        switch (player)
         {
-            case 0:
-                player.GetComponent<Movement>().player = "_P1";
+            case OptionEnum.P1:
+                spawnedCharacter.GetComponent<Movement>().player = "_P1";
                 break;
-            case 1:
-                player.GetComponent<Movement>().player = "_P2";
+            case OptionEnum.P2:
+                spawnedCharacter.GetComponent<Movement>().player = "_P2";
                 break;
-            case 2:
-                player.GetComponent<Movement>().player = "_P3";
+            case OptionEnum.P3:
+                spawnedCharacter.GetComponent<Movement>().player = "_P3";
                 break;
-            case 3:
-                player.GetComponent<Movement>().player = "_P4";
+            case OptionEnum.P4:
+                spawnedCharacter.GetComponent<Movement>().player = "_P4";
                 break;
 
             default:
@@ -42,36 +52,30 @@ public class Spawner : MonoBehaviour
         }
     }
 
-    void Start()
-    {
-        currentPos = gameObject.transform.position;
-        currentQuat = Quaternion.Euler(0, 0, 0);
-
-        if (player != null)
-        {
-            Instantiate(player, currentPos, currentQuat);
-        }
-    }
-
+    //Draws the cube in the editor.
     public void OnDrawGizmos()
     {
-        switch (index)
+        switch (player)
         {
-            case 0:
-                Gizmos.color = new Color(1, 0, 0, 0.5f);
-                Gizmos.DrawCube(transform.position, new Vector3(1, 1, 1));
+            case OptionEnum.P1:
+                //spawnedCharacter.GetComponent<Movement>().player = "_P1";
+                Gizmos.color = Color.red;
+                Gizmos.DrawCube(transform.position, Vector3.one);
                 break;
-            case 1:
-                Gizmos.color = new Color(0, 1, 0, 0.5f);
-                Gizmos.DrawCube(transform.position, new Vector3(1, 1, 1));
+            case OptionEnum.P2:
+                //spawnedCharacter.GetComponent<Movement>().player = "_P2";
+                Gizmos.color = Color.blue;
+                Gizmos.DrawCube(transform.position, Vector3.one);
                 break;
-            case 2:
-                Gizmos.color = new Color(0, 0, 1, 0.5f);
-                Gizmos.DrawCube(transform.position, new Vector3(1, 1, 1));
+            case OptionEnum.P3:
+                //spawnedCharacter.GetComponent<Movement>().player = "_P3";
+                Gizmos.color = Color.green;
+                Gizmos.DrawCube(transform.position, Vector3.one);
                 break;
-            case 3:
-                Gizmos.color = new Color(1, 1, 0, 0.5f);
-                Gizmos.DrawCube(transform.position, new Vector3(1, 1, 1));
+            case OptionEnum.P4:
+                //spawnedCharacter.GetComponent<Movement>().player = "_P4";
+                Gizmos.color = Color.yellow;
+                Gizmos.DrawCube(transform.position, Vector3.one);
                 break;
 
             default:
