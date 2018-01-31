@@ -62,15 +62,15 @@ public class EngineMiniGame : MonoBehaviour, IResetUser, IResetStation
 
         float horizontalAxis = 0;
 
-        if (Mathf.Abs(Input.GetAxis("Horizontal" + stationUser)) > .7f)
-            horizontalAxis = Input.GetAxis("Horizontal" + stationUser);
+        //if (Mathf.Abs(Input.GetAxis("Horizontal" + stationUser)) > .7f)
+        horizontalAxis = Input.GetAxis("Horizontal" + stationUser);
 
-        if (horizontalAxis < -.5f)
+        if (horizontalAxis < -.1f)
         {
             currentMomentum = baseMomentum;
             spak.rectTransform.Rotate(0f, 0f, currentMomentum);
         }
-        if (horizontalAxis > .5f)
+        if (horizontalAxis > .1f)
         {
             currentMomentum = -baseMomentum;
             spak.rectTransform.Rotate(0f, 0f, currentMomentum);

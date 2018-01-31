@@ -20,3 +20,7 @@ Using sounds in scripts:
 
 -	To play audio use the following code:
 -	FindObjectOfType<AudioManager>().Play("name-of-sound-element");
+
+IMPORTANT:
+
+-	Do NOT re-name the audiomanager!

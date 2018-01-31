@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum Station { EngineRoom, AtmoRoom, HydroponicsRoom, WaterPumps, None}
+public enum Station { EngineRoom, AtmoRoom, PlantRoom, WaterPumps, None}
 public class HeatController : MonoBehaviour
 {
     public int currentHeatValue;
