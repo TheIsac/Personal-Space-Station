@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class CharacterSelection : MonoBehaviour {
 
@@ -48,5 +48,10 @@ public class CharacterSelection : MonoBehaviour {
         //    PlayerPrefs.SetInt("PreferedModel", selection);
         //    Application.LoadLevel("Game");
         //}
+    }
+    public void GoBack()
+    {
+        //Load next scene in the scene build order
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 }
