@@ -10,7 +10,7 @@ public class Interactable : MonoBehaviour {
     public bool inUse = false;
     private bool playerInRange = false;
     public bool isWorking;
-    private int stationHealth = 50;
+    public int stationHealth = 50;
     public string stationName = "Engine Room";
 
     public Action OnStationFailure;
@@ -43,6 +43,7 @@ public class Interactable : MonoBehaviour {
 
     public void MiniGameComplete()
     {
+        inUse = false;
         miniGame.SetActive(false);
 
         if (stationUser != null)
@@ -52,6 +53,12 @@ public class Interactable : MonoBehaviour {
     public void AddHealthToStation(int healthToGive)
     {
         stationHealth += healthToGive;
+        UpdateHealthDisplay();
+    }
+
+    public void RemoveHealthFromStation(int healthToRemove)
+    {
+        stationHealth -= healthToRemove;
         UpdateHealthDisplay();
     }
 
