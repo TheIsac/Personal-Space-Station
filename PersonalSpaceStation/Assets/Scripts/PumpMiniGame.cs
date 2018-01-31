@@ -12,6 +12,7 @@ public class PumpMiniGame : MonoBehaviour, IResetUser, IResetStation
     // Completion mechanics
     public int completionCount = 100;
     private float completionCounter = 0;
+    private bool buttonXLastPressed = false;
     public int completionValue = 5;
     public bool isComplete = false;
 
@@ -62,9 +63,17 @@ public class PumpMiniGame : MonoBehaviour, IResetUser, IResetStation
         if (stationUser == "")
             return;
 
-        if (Input.GetButtonDown("X-button" + stationUser))
+        if (Input.GetButtonDown("X-button" + stationUser) && buttonXLastPressed == false)
         {
             completionCounter += clickvalue;
+            buttonXLastPressed = true;
+            UpdateGauge();
+        }
+
+        if (Input.GetButtonDown("Y-button" + stationUser) && buttonXLastPressed == true)
+        {
+            completionCounter += clickvalue;
+            buttonXLastPressed = false;
             UpdateGauge();
         }
 
