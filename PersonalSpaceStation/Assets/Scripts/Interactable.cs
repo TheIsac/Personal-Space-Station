@@ -31,6 +31,7 @@ public class Interactable : MonoBehaviour {
         lastTick = Time.time;
     }
 
+    //only handle player input if the player is in range.
     void Update()
     {
         if (playerInRange)
@@ -41,6 +42,7 @@ public class Interactable : MonoBehaviour {
         Tick();
     }
 
+    //if the miniGame is complete the minigame exits and is completed. 
     public void MiniGameComplete()
     {
         inUse = false;
@@ -50,23 +52,27 @@ public class Interactable : MonoBehaviour {
             stationUser.inMiniGame = false;
     }
 
+    //gives health to the station if the station is repaired or the previous station works and sends health.
     public void AddHealthToStation(int healthToGive)
     {
         stationHealth += healthToGive;
         UpdateHealthDisplay();
     }
 
+    //removes health from the station if the stations following the current one is overworked.
     public void RemoveHealthFromStation(int healthToRemove)
     {
         stationHealth -= healthToRemove;
         UpdateHealthDisplay();
     }
 
+    //update the health text to reflect the stations current health.
     private void UpdateHealthDisplay()
     {
         healthText.text = stationHealth.ToString();
     }
 
+    //removes health from the stations every other second,it also checks and updates the health at that same time. 
     void Tick()
     {
         if(Time.time - lastTick > tickLength)
