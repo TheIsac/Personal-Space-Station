@@ -10,19 +10,21 @@ public class Interactable : MonoBehaviour {
     public bool inUse = false;
     private bool playerInRange = false;
     public bool isWorking;
-    private int stationHealth = 50;
+    public int stationHealth = 50;
     public string stationName = "Engine Room";
 
     public Action OnStationFailure;
     public Action OnStationFixed;
 
     private float lastTick;
-    public float tickLength = 2F;
+    public float tickLength = 2f;
 
     public int minWorkingHealth = 25;
     public int maxWorkingHealth = 75;
 
-    public Text healthtext;
+    private MovementNik stationUser = null;
+
+    public Text healthText;
 
     void Start()
     {
@@ -41,7 +43,11 @@ public class Interactable : MonoBehaviour {
 
     public void MiniGameComplete()
     {
+        inUse = false;
         miniGame.SetActive(false);
+
+        if (stationUser != null)
+            stationUser.inMiniGame = false;
     }
 
     public void AddHealthToStation(int healthToGive)
@@ -50,9 +56,15 @@ public class Interactable : MonoBehaviour {
         UpdateHealthDisplay();
     }
 
+    public void RemoveHealthFromStation(int healthToRemove)
+    {
+        stationHealth -= healthToRemove;
+        UpdateHealthDisplay();
+    }
+
     private void UpdateHealthDisplay()
     {
-        healthtext.text = stationHealth.ToString();
+        healthText.text = stationHealth.ToString();
     }
 
     void Tick()
@@ -90,7 +102,7 @@ public class Interactable : MonoBehaviour {
             OnStationFailure.Invoke();
         }
 
-        healthtext.color = Color.red;
+        healthText.color = Color.red;
     }
 
     void StationFixed()
@@ -103,35 +115,47 @@ public class Interactable : MonoBehaviour {
             OnStationFixed.Invoke();
         }
 
-        healthtext.color = Color.black;
+        healthText.color = Color.black;
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        if (stationUser != null)
+            return;
+
+
         playerInRange = true;
+        stationUser = other.gameObject.GetComponent<MovementNik>();
     }
 
     private void OnTriggerExit(Collider other)
     {
         playerInRange = false;
+        stationUser = null;
     }
 
     private void HandlePlayerInput()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (stationUser == null)
+            return;
+
+
+        if(Input.GetButtonDown("A-button" + stationUser.player))
         {
             if (inUse)
             {
                 inUse = false;
                 miniGame.SetActive(false);
+                miniGame.GetComponent<IResetUser>().ResetUser();
+                stationUser.inMiniGame = false;
             }
             else
             {
                 inUse = true;
                 miniGame.SetActive(true);
-                miniGame.GetComponent<EngineMiniGame>().ResetStation();
+                miniGame.GetComponent<IResetStation>().ResetStation(stationUser.player);
+                stationUser.inMiniGame = true;
             }
-
         }
     }
 }
