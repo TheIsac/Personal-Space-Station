@@ -31,7 +31,7 @@ public class AtmoMiniGame : MonoBehaviour, IResetUser, IResetStation
     {
         if(computer != null)
         {
-            computermaterial = computer.GetComponent<MeshRenderer>().sharedMaterial;
+            computermaterial = computer.GetComponent<MeshRenderer>().material;
         }
     }
 
@@ -44,6 +44,11 @@ public class AtmoMiniGame : MonoBehaviour, IResetUser, IResetStation
         completionText.text = completionCounter.ToString("0");
     }
 
+    public void ResetComputer()
+    {
+        computermaterial.color = Color.white;
+    }
+
     void NewColor()
     {
         completionColor = availableColors[Random.Range(0, availableColors.Length)];
@@ -53,6 +58,7 @@ public class AtmoMiniGame : MonoBehaviour, IResetUser, IResetStation
     public void ResetUser()
     {
         stationUser = "";
+        ResetComputer();
     }
 
     void Update()
@@ -90,9 +96,18 @@ public class AtmoMiniGame : MonoBehaviour, IResetUser, IResetStation
         {
             if(completionColor == computermaterial.color)
             {
-                completionCounter += 1;
-                completionText.text = completionCounter.ToString("#");
+                completionCounter ++;
+                completionText.text = completionCounter.ToString("0");
                 NewColor();
+            }
+            else
+            {
+                if(completionCounter > 0)
+                {
+                    completionCounter--;
+                    completionText.text = completionCounter.ToString("0");
+                    NewColor();
+                }
             }
         }
 
