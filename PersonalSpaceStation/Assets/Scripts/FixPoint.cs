@@ -41,8 +41,6 @@ public class FixPoint : MonoBehaviour {
         {
             CheckPlayerInput();
         }
-
-
     }
 
     void CheckPlayerInput()
@@ -73,5 +71,25 @@ public class FixPoint : MonoBehaviour {
         stationUser = null;
         stationed = false;
         pressed = false;
+    }
+
+    public void OnDrawGizmos()
+    {
+        Collider pointCollider = GetComponent<Collider>();
+        Vector3 pointCenter = pointCollider.bounds.center;
+        Vector3 pointSize = pointCollider.bounds.size;
+
+
+        if (name == "FirstPoint")
+        {
+        Gizmos.color = new Color(1, 0.5f, 0, 0.7f);
+        Gizmos.DrawCube(pointCenter, pointSize);
+        }
+        else if (name == "SecondPoint")
+        {
+            Gizmos.color = new Color(0, 1, 1, 0.7f);
+            Gizmos.DrawCube(pointCenter, pointSize);
+            GetComponent<Collider>();
+        }
     }
 }
