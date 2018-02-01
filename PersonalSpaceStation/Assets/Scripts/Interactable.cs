@@ -78,7 +78,7 @@ public class Interactable : MonoBehaviour {
         if(Time.time - lastTick > tickLength)
         {
             lastTick = Time.time;
-            stationHealth--;
+            stationHealth-= 2;
 
             UpdateHealthDisplay();
             CheckStationHealth();
