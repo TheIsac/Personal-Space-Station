@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class CharacterSelection : MonoBehaviour {
 
-
     //Default selection
     private int selection = 0;
 
@@ -48,10 +47,6 @@ public class CharacterSelection : MonoBehaviour {
         //    PlayerPrefs.SetInt("PreferedModel", selection);
         //    Application.LoadLevel("Game");
         //}
-    }
-    public void GoBack()
-    {
-        //Load next scene in the scene build order
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+
     }
 }
