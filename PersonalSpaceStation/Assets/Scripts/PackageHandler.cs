@@ -44,10 +44,8 @@ public class PackageHandler : MonoBehaviour
                 stations[(i + 1) % stations.Length].AddHealthToStation(addHealth);
             }
 
-            else if (stations[i].isWorking && stations[i].stationHealth > 75)
+            if (stations[i].isWorking && stations[i].stationHealth > 75)
             {
-                
-
                 stations[(i - 1) % stations.Length].RemoveHealthFromStation(removeHealth);
 
             }

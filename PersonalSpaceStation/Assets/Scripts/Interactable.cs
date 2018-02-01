@@ -56,7 +56,7 @@ public class Interactable : MonoBehaviour {
     public void AddHealthToStation(int healthToGive)
     {
         stationHealth += healthToGive;
-        UpdateHealthDisplay();
+       //UpdateHealthDisplay();
     }
 
     //removes health from the station if the stations following the current one is overworked.
@@ -78,7 +78,7 @@ public class Interactable : MonoBehaviour {
         if(Time.time - lastTick > tickLength)
         {
             lastTick = Time.time;
-            stationHealth-= 2;
+            stationHealth -= 2;
 
             UpdateHealthDisplay();
             CheckStationHealth();
