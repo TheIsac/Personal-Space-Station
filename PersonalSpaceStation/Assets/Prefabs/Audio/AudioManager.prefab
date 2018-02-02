@@ -33,13 +33,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1498762250162142}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0.97975147, z: -0, w: -0.20021749}
+  m_LocalPosition: {x: -0.11753273, y: 0, z: 0.2657032}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 156.901, z: 0}
 --- !u!114 &114144779937081514
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -51,5 +51,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c3087daa6e067543bed7dbe40d88f31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mixerGroup: {fileID: 24300002, guid: d0a347a050090f544a34ef37b4771ef5, type: 2}
+  mixerGroup: {fileID: 24300002, guid: 1ee4cf61fea4cd24ebc91e806c3f1b8d, type: 2}
   sounds: []
