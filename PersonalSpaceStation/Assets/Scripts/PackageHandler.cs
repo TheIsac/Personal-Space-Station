@@ -9,6 +9,7 @@ public class PackageHandler : MonoBehaviour
     private float lastTick;
     public float tickLength = 2f;
     public int addHealth = 1;
+    public int removeHealth = 1;
 
     // Use this for initialization
     void Start()
@@ -43,9 +44,7 @@ public class PackageHandler : MonoBehaviour
             }
             else if (stations[i].isWorking && stations[i].stationHealth > 75)
             {
-                int differenceHealth = stations[i].stationHealth - 75;
-
-                stations[(i - 1) % stations.Length].RemoveHealthFromStation(differenceHealth);
+                stations[(i - 1) % stations.Length].RemoveHealthFromStation(removeHealth);
 
             }
         }

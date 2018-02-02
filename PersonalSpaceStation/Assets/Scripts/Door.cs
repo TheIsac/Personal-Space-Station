@@ -15,7 +15,8 @@ public class Door : MonoBehaviour {
 
      void OnTriggerEnter(Collider col)
     {
-      if(col.gameObject.tag == "Player")
+        
+      if(col.gameObject.transform.parent.tag == "Player")
         {
             doorOpen = true;
             DoorControl("Open");

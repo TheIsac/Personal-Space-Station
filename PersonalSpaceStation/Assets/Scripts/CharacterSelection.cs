@@ -7,7 +7,9 @@ public class CharacterSelection : MonoBehaviour {
 
     //Default selection
     private int selection = 0;
+    private int scoreUpdateInterval = 20;
 
+    public string player;
     public List<GameObject> models = new List<GameObject>();
 
     private void Start()
@@ -20,9 +22,18 @@ public class CharacterSelection : MonoBehaviour {
         models[selection].SetActive(true);
     }
 
-    private void Update()
+    
+    void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Time.frameCount % scoreUpdateInterval == 0)
+        {
+            SelectCharacter();
+        }
+    }
+
+    public void SelectCharacter()
+    {
+        if (Input.GetAxis("Horizontal" + player) > 0)
         {
             models[selection].SetActive(false);
             selection++;
@@ -32,21 +43,16 @@ public class CharacterSelection : MonoBehaviour {
             }
             models[selection].SetActive(true);
         }
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetAxis("Horizontal" + player) < 0)
         {
             models[selection].SetActive(false);
             selection--;
             if (selection < 0)
             {
-                selection = models.Count-1;
+                selection = models.Count - 1;
             }
             models[selection].SetActive(true);
         }
-        //if (Input.GetKeyDown(KeyCode.Return))
-        //{
-        //    PlayerPrefs.SetInt("PreferedModel", selection);
-        //    Application.LoadLevel("Game");
-        //}
-
     }
+
 }

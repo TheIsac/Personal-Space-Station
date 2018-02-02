@@ -38,6 +38,10 @@ public class Movement : MonoBehaviour
             verticalAxis = Input.GetAxis("Vertical" + player);
             CharacterMovement();
         }
+        else 
+        {
+            rigidbody.velocity = Vector3.zero;
+        }
           
     }
 
