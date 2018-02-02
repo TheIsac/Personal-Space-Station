@@ -50,10 +50,10 @@ public class Movement : MonoBehaviour
         movementDirection = movementDirection.normalized * moveSpeed * Time.deltaTime;
 
         // Move the player to it's current position plus the movement.
-        rigidbody.MovePosition(transform.position + movementDirection);
-       
+        rigidbody.velocity = (movementDirection * moveSpeed);
+
         //rotates the player so that it faces in the direction it is moving.
-       Quaternion newRotation = Quaternion.LookRotation(movementDirection);
+        Quaternion newRotation = Quaternion.LookRotation(movementDirection);
         rigidbody.MoveRotation(newRotation);
     }
 }

@@ -1,0 +1,189 @@
+fileFormatVersion: 2
+guid: dd7bc0c0d1a7c2240a263c1c2385ea50
+timeCreated: 1517558858
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: char_bulldog
+    100004: pss_bulldog_Head
+    100006: pss_bulldog_Hips
+    100008: pss_bulldog_LeftArm
+    100010: pss_bulldog_LeftFoot
+    100012: pss_bulldog_LeftForeArm
+    100014: pss_bulldog_LeftHand
+    100016: pss_bulldog_LeftHandIndex1
+    100018: pss_bulldog_LeftHandIndex2
+    100020: pss_bulldog_LeftHandIndex3
+    100022: pss_bulldog_LeftHandMiddle1
+    100024: pss_bulldog_LeftHandMiddle2
+    100026: pss_bulldog_LeftHandMiddle3
+    100028: pss_bulldog_LeftHandRing1
+    100030: pss_bulldog_LeftHandRing2
+    100032: pss_bulldog_LeftHandRing3
+    100034: pss_bulldog_LeftHandThumb1
+    100036: pss_bulldog_LeftHandThumb2
+    100038: pss_bulldog_LeftHandThumb3
+    100040: pss_bulldog_LeftLeg
+    100042: pss_bulldog_LeftShoulder
+    100044: pss_bulldog_LeftToeBase
+    100046: pss_bulldog_LeftUpLeg
+    100048: pss_bulldog_Neck
+    100050: pss_bulldog_Reference
+    100052: pss_bulldog_RightArm
+    100054: pss_bulldog_RightFoot
+    100056: pss_bulldog_RightForeArm
+    100058: pss_bulldog_RightHand
+    100060: pss_bulldog_RightHandIndex1
+    100062: pss_bulldog_RightHandIndex2
+    100064: pss_bulldog_RightHandIndex3
+    100066: pss_bulldog_RightHandMiddle1
+    100068: pss_bulldog_RightHandMiddle2
+    100070: pss_bulldog_RightHandMiddle3
+    100072: pss_bulldog_RightHandRing1
+    100074: pss_bulldog_RightHandRing2
+    100076: pss_bulldog_RightHandRing3
+    100078: pss_bulldog_RightHandThumb1
+    100080: pss_bulldog_RightHandThumb2
+    100082: pss_bulldog_RightHandThumb3
+    100084: pss_bulldog_RightLeg
+    100086: pss_bulldog_RightShoulder
+    100088: pss_bulldog_RightToeBase
+    100090: pss_bulldog_RightUpLeg
+    100092: pss_bulldog_Spine
+    100094: pss_bulldog_Spine1
+    400000: //RootNode
+    400002: char_bulldog
+    400004: pss_bulldog_Head
+    400006: pss_bulldog_Hips
+    400008: pss_bulldog_LeftArm
+    400010: pss_bulldog_LeftFoot
+    400012: pss_bulldog_LeftForeArm
+    400014: pss_bulldog_LeftHand
+    400016: pss_bulldog_LeftHandIndex1
+    400018: pss_bulldog_LeftHandIndex2
+    400020: pss_bulldog_LeftHandIndex3
+    400022: pss_bulldog_LeftHandMiddle1
+    400024: pss_bulldog_LeftHandMiddle2
+    400026: pss_bulldog_LeftHandMiddle3
+    400028: pss_bulldog_LeftHandRing1
+    400030: pss_bulldog_LeftHandRing2
+    400032: pss_bulldog_LeftHandRing3
+    400034: pss_bulldog_LeftHandThumb1
+    400036: pss_bulldog_LeftHandThumb2
+    400038: pss_bulldog_LeftHandThumb3
+    400040: pss_bulldog_LeftLeg
+    400042: pss_bulldog_LeftShoulder
+    400044: pss_bulldog_LeftToeBase
+    400046: pss_bulldog_LeftUpLeg
+    400048: pss_bulldog_Neck
+    400050: pss_bulldog_Reference
+    400052: pss_bulldog_RightArm
+    400054: pss_bulldog_RightFoot
+    400056: pss_bulldog_RightForeArm
+    400058: pss_bulldog_RightHand
+    400060: pss_bulldog_RightHandIndex1
+    400062: pss_bulldog_RightHandIndex2
+    400064: pss_bulldog_RightHandIndex3
+    400066: pss_bulldog_RightHandMiddle1
+    400068: pss_bulldog_RightHandMiddle2
+    400070: pss_bulldog_RightHandMiddle3
+    400072: pss_bulldog_RightHandRing1
+    400074: pss_bulldog_RightHandRing2
+    400076: pss_bulldog_RightHandRing3
+    400078: pss_bulldog_RightHandThumb1
+    400080: pss_bulldog_RightHandThumb2
+    400082: pss_bulldog_RightHandThumb3
+    400084: pss_bulldog_RightLeg
+    400086: pss_bulldog_RightShoulder
+    400088: pss_bulldog_RightToeBase
+    400090: pss_bulldog_RightUpLeg
+    400092: pss_bulldog_Spine
+    400094: pss_bulldog_Spine1
+    2100000: aiStandard2
+    2100002: aiStandard1
+    4300000: char_bulldog
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: char_bulldog
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
