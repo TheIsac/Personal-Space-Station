@@ -1517,6 +1517,12 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 156.901
       objectReference: {fileID: 0}
+    - target: {fileID: 114144779937081514, guid: d1f01a01607b42f48abe67a1a1156c86,
+        type: 2}
+      propertyPath: mixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: 1ee4cf61fea4cd24ebc91e806c3f1b8d,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d1f01a01607b42f48abe67a1a1156c86, type: 2}
   m_IsPrefabParent: 0
