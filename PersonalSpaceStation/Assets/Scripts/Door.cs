@@ -15,6 +15,7 @@ public class Door : MonoBehaviour {
 
      void OnTriggerEnter(Collider col)
     {
+        
       if(col.gameObject.tag == "Player")
         {
             doorOpen = true;
