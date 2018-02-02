@@ -40,6 +40,7 @@ GameObject:
   - component: {fileID: 33885124168767496}
   - component: {fileID: 114455319252330222}
   - component: {fileID: 54391275805394510}
+  - component: {fileID: 114911021401678168}
   m_Layer: 0
   m_Name: PlayerOne New
   m_TagString: Untagged
@@ -198,6 +199,20 @@ MonoBehaviour:
   moveSpeed: 5
   player: _P1
   inMiniGame: 0
+--- !u!114 &114911021401678168
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1705989451432332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d537b4558f0bc604ebca1ec2b35f773f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHeatValue: 0
+  currentStation: 0
+  tickLength: 1
 --- !u!136 &136277876434533692
 CapsuleCollider:
   m_ObjectHideFlags: 1
