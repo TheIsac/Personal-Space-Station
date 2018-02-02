@@ -224,7 +224,7 @@ Prefab:
     - target: {fileID: 114829523702454902, guid: 438c28ac9dc45f14cbef881dc719d208,
         type: 2}
       propertyPath: player
-      value: _P1
+      value: _P2
       objectReference: {fileID: 0}
     - target: {fileID: 4768688956758516, guid: 438c28ac9dc45f14cbef881dc719d208, type: 2}
       propertyPath: m_LocalScale.x
@@ -240,7 +240,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1738565870678794, guid: 438c28ac9dc45f14cbef881dc719d208, type: 2}
       propertyPath: m_Name
-      value: Select Character (1)
+      value: Select Character Two
       objectReference: {fileID: 0}
     - target: {fileID: 1738565870678794, guid: 438c28ac9dc45f14cbef881dc719d208, type: 2}
       propertyPath: m_IsActive
@@ -356,7 +356,7 @@ Prefab:
     - target: {fileID: 114829523702454902, guid: 438c28ac9dc45f14cbef881dc719d208,
         type: 2}
       propertyPath: player
-      value: _P1
+      value: _P3
       objectReference: {fileID: 0}
     - target: {fileID: 4768688956758516, guid: 438c28ac9dc45f14cbef881dc719d208, type: 2}
       propertyPath: m_LocalScale.x
@@ -372,7 +372,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1738565870678794, guid: 438c28ac9dc45f14cbef881dc719d208, type: 2}
       propertyPath: m_Name
-      value: Select Character (2)
+      value: Select Character Three
       objectReference: {fileID: 0}
     - target: {fileID: 1738565870678794, guid: 438c28ac9dc45f14cbef881dc719d208, type: 2}
       propertyPath: m_IsActive
@@ -620,6 +620,10 @@ Prefab:
     - target: {fileID: 1738565870678794, guid: 438c28ac9dc45f14cbef881dc719d208, type: 2}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1738565870678794, guid: 438c28ac9dc45f14cbef881dc719d208, type: 2}
+      propertyPath: m_Name
+      value: Select Character One
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 438c28ac9dc45f14cbef881dc719d208, type: 2}
@@ -5601,7 +5605,7 @@ Prefab:
     - target: {fileID: 114829523702454902, guid: 438c28ac9dc45f14cbef881dc719d208,
         type: 2}
       propertyPath: player
-      value: _P1
+      value: _P4
       objectReference: {fileID: 0}
     - target: {fileID: 4768688956758516, guid: 438c28ac9dc45f14cbef881dc719d208, type: 2}
       propertyPath: m_LocalScale.x
@@ -5617,7 +5621,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1738565870678794, guid: 438c28ac9dc45f14cbef881dc719d208, type: 2}
       propertyPath: m_Name
-      value: Select Character (3)
+      value: Select Character Four
       objectReference: {fileID: 0}
     - target: {fileID: 1738565870678794, guid: 438c28ac9dc45f14cbef881dc719d208, type: 2}
       propertyPath: m_IsActive
