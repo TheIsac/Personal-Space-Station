@@ -41,9 +41,10 @@ GameObject:
   - component: {fileID: 114455319252330222}
   - component: {fileID: 54391275805394510}
   - component: {fileID: 114911021401678168}
+  - component: {fileID: 114563972908038948}
   m_Layer: 0
   m_Name: PlayerOne New
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -167,7 +168,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!95 &95435634264970870
 Animator:
   serializedVersion: 3
@@ -199,6 +200,17 @@ MonoBehaviour:
   moveSpeed: 5
   player: _P1
   inMiniGame: 0
+--- !u!114 &114563972908038948
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1705989451432332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8d0d34431cd7ee4caafcc641416caee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114911021401678168
 MonoBehaviour:
   m_ObjectHideFlags: 1
