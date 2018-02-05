@@ -19,11 +19,12 @@ public class Movement : MonoBehaviour
 
     Rigidbody rigidbody;
 
-
+    private float maxHeight;
 
     // Use this for initialization
     void Start()
     {
+        maxHeight = transform.position.y;
         rigidbody = GetComponentInChildren<Rigidbody>();
     }
 
@@ -42,7 +43,8 @@ public class Movement : MonoBehaviour
         {
             rigidbody.velocity = Vector3.zero;
         }
-          
+
+        RestrictHeight();
     }
 
     public void CharacterMovement()
@@ -59,6 +61,15 @@ public class Movement : MonoBehaviour
         //rotates the player so that it faces in the direction it is moving.
         Quaternion newRotation = Quaternion.LookRotation(movementDirection);
         rigidbody.MoveRotation(newRotation);
+    }
+
+    private void RestrictHeight()
+    {
+        if (transform.position.y < maxHeight)
+        {
+            maxHeight = transform.position.y;
+        }
+        Debug.Log(maxHeight);
     }
 }
 

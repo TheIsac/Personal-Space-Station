@@ -4,16 +4,9 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-
-    // Use this for initialization
-    void Start()
+    void Awake()
     {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        //QualitySettings.vSyncCount = 4;
+        //Application.targetFrameRate = 20;
     }
 }
