@@ -29,13 +29,11 @@ public class PlantMiniGame : MonoBehaviour, IResetUser, IResetStation
     public Interactable station;
     private string stationUser = "";
 
-    private void Awake()
-    {
-        CreatePuzzles(5);
-    }
-
     public void ResetStation(string player)
     {
+        if(puzzles.Count < 1)
+            CreatePuzzles(5);
+
         stationUser = player;
         isComplete = false;
         completionCounter = 0;
@@ -120,7 +118,7 @@ public class PlantMiniGame : MonoBehaviour, IResetUser, IResetStation
             }
             else
             {
-                RestartLevel();
+                StartCoroutine(RestartLevel());
             }
         }
         if (Input.GetButtonDown("A-button" + stationUser))
@@ -133,7 +131,7 @@ public class PlantMiniGame : MonoBehaviour, IResetUser, IResetStation
             }
             else
             {
-                RestartLevel();
+                StartCoroutine(RestartLevel());
             }
         }
 

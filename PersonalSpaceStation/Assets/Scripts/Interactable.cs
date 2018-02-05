@@ -52,13 +52,19 @@ public class Interactable : MonoBehaviour {
         miniGame.SetActive(false);
 
         if (stationUser != null)
+        {
             stationUser.inMiniGame = false;
+<<<<<<< HEAD
 
         // Doc gen
         if(docG != null)
         {
             docG.DocumentGenerator();
         }
+=======
+            stationUser.GetComponent<Rigidbody>().isKinematic = false;
+        }    
+>>>>>>> 39d15c192f5143d658c7cc05ac6c0d3debe6d752
     }
 
     //gives health to the station if the station is repaired or the previous station works and sends health.
@@ -168,8 +174,9 @@ public class Interactable : MonoBehaviour {
         if(Input.GetButtonDown("A-button" + stationUser.player) && inUse == false)
         {
             inUse = true;
-            miniGame.SetActive(true);
             miniGame.GetComponent<IResetStation>().ResetStation(stationUser.player);
+            stationUser.GetComponent<Rigidbody>().isKinematic = true;
+            miniGame.SetActive(true);
             stationUser.inMiniGame = true;
         }
         if (Input.GetButtonDown("B-button" + stationUser.player) && inUse == true)
@@ -177,6 +184,7 @@ public class Interactable : MonoBehaviour {
             inUse = false;
             miniGame.SetActive(false);
             miniGame.GetComponent<IResetUser>().ResetUser();
+            stationUser.GetComponent<Rigidbody>().isKinematic = false;
             stationUser.inMiniGame = false;
         }
     }

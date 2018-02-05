@@ -19,25 +19,25 @@ public class StationController : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        HeatController heat = other.GetComponentInParent<HeatController>();
+        Flurp flurp = other.GetComponentInParent<Flurp>();
 
-        if (heat == null)
+        if (flurp == null)
         {
             return;
         }
 
-        heat.SetCurrentStation(station);
+        flurp.SetCurrentStation(station);
     }
 
     private void OnTriggerExit(Collider other)
     {
-        HeatController heat = other.GetComponentInParent<HeatController>();
+        Flurp flurp = other.GetComponentInParent<Flurp>();
 
-        if (heat == null)
+        if (flurp == null)
         {
             return;
         }
 
-        heat.SetCurrentStation(Station.None);
+        flurp.SetCurrentStation(Station.None);
     }
 }

@@ -37,7 +37,8 @@ public class EngineMiniGame : MonoBehaviour, IResetUser, IResetStation
         stationUser = player;
         isComplete = false;
         completionCounter = 0f;
-        transform.rotation = startRotation;
+        spak.rectTransform.rotation = startRotation;
+        completionText.text = completionCounter.ToString("#.0");
     }
 
     public void ResetUser()
@@ -65,12 +66,12 @@ public class EngineMiniGame : MonoBehaviour, IResetUser, IResetStation
         //if (Mathf.Abs(Input.GetAxis("Horizontal" + stationUser)) > .7f)
         horizontalAxis = Input.GetAxis("Horizontal" + stationUser);
 
-        if (horizontalAxis < -.1f)
+        if (horizontalAxis < -.1f && (spak.rectTransform.rotation.eulerAngles.z < 90f || spak.rectTransform.rotation.eulerAngles.z > 200f))
         {
             currentMomentum = baseMomentum;
             spak.rectTransform.Rotate(0f, 0f, currentMomentum);
         }
-        if (horizontalAxis > .1f)
+        if (horizontalAxis > .1f && (spak.rectTransform.rotation.eulerAngles.z < 120f || spak.rectTransform.rotation.eulerAngles.z > 270f))
         {
             currentMomentum = -baseMomentum;
             spak.rectTransform.Rotate(0f, 0f, currentMomentum);
