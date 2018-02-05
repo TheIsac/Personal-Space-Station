@@ -13,6 +13,8 @@ public class Interactable : MonoBehaviour {
     public int stationHealth = 50;
     public string stationName = "Engine Room";
 
+    private DocGenerator docG;
+
     public Action OnStationFailure;
     public Action OnStationFixed;
 
@@ -29,6 +31,7 @@ public class Interactable : MonoBehaviour {
     void Start()
     {
         lastTick = Time.time;
+        docG = GetComponent<DocGenerator>();
     }
 
     //only handle player input if the player is in range.
@@ -51,8 +54,17 @@ public class Interactable : MonoBehaviour {
         if (stationUser != null)
         {
             stationUser.inMiniGame = false;
+<<<<<<< HEAD
+
+        // Doc gen
+        if(docG != null)
+        {
+            docG.DocumentGenerator();
+        }
+=======
             stationUser.GetComponent<Rigidbody>().isKinematic = false;
         }    
+>>>>>>> 39d15c192f5143d658c7cc05ac6c0d3debe6d752
     }
 
     //gives health to the station if the station is repaired or the previous station works and sends health.
