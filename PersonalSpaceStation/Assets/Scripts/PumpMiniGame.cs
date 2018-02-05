@@ -63,14 +63,14 @@ public class PumpMiniGame : MonoBehaviour, IResetUser, IResetStation
         if (stationUser == "")
             return;
 
-        if (Input.GetButtonDown("X-button" + stationUser) && buttonXLastPressed == false)
+        if (Input.GetButtonDown("X-button" + stationUser) && buttonXLastPressed == false && !Input.GetButton("Y-button" + stationUser))
         {
             completionCounter += clickvalue;
             buttonXLastPressed = true;
             UpdateGauge();
         }
 
-        if (Input.GetButtonDown("Y-button" + stationUser) && buttonXLastPressed == true)
+        if (Input.GetButtonDown("Y-button" + stationUser) && buttonXLastPressed == true && !Input.GetButton("X-button" + stationUser))
         {
             completionCounter += clickvalue;
             buttonXLastPressed = false;
