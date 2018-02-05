@@ -159,8 +159,9 @@ public class Interactable : MonoBehaviour {
         if(Input.GetButtonDown("A-button" + stationUser.player) && inUse == false)
         {
             inUse = true;
-            miniGame.SetActive(true);
             miniGame.GetComponent<IResetStation>().ResetStation(stationUser.player);
+            stationUser.GetComponent<Rigidbody>().isKinematic = true;
+            miniGame.SetActive(true);
             stationUser.inMiniGame = true;
         }
         if (Input.GetButtonDown("B-button" + stationUser.player) && inUse == true)
@@ -168,6 +169,7 @@ public class Interactable : MonoBehaviour {
             inUse = false;
             miniGame.SetActive(false);
             miniGame.GetComponent<IResetUser>().ResetUser();
+            stationUser.GetComponent<Rigidbody>().isKinematic = false;
             stationUser.inMiniGame = false;
         }
     }

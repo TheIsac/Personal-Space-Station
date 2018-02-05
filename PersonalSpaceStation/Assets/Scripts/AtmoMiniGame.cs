@@ -11,6 +11,7 @@ public class AtmoMiniGame : MonoBehaviour, IResetUser, IResetStation
     public Image completionImage;
     Color[] availableColors = { Color.red, Color.blue, Color.green, Color.yellow };
     Color completionColor;
+    int colorIndex = 0;
 
     // Computer
     public GameObject computer;
@@ -52,6 +53,13 @@ public class AtmoMiniGame : MonoBehaviour, IResetUser, IResetStation
     void NewColor()
     {
         completionColor = availableColors[Random.Range(0, availableColors.Length)];
+
+        if(availableColors[colorIndex] == completionColor)
+        {
+            completionColor = availableColors[(colorIndex + 3) % availableColors.Length];
+
+        }
+
         completionImage.color = completionColor;
     }
 
@@ -83,7 +91,8 @@ public class AtmoMiniGame : MonoBehaviour, IResetUser, IResetStation
 
     void UpdateComputerScreen()
     {
-        computermaterial.color = availableColors[Random.Range(0, availableColors.Length)];
+        colorIndex = (colorIndex + 1) % availableColors.Length;
+        computermaterial.color = availableColors[colorIndex];
     }
 
     void HandlePlayerInput()
