@@ -13,6 +13,8 @@ public class Interactable : MonoBehaviour {
     public int stationHealth = 50;
     public string stationName = "Engine Room";
 
+    private DocGenerator docG;
+
     public Action OnStationFailure;
     public Action OnStationFixed;
 
@@ -29,6 +31,7 @@ public class Interactable : MonoBehaviour {
     void Start()
     {
         lastTick = Time.time;
+        docG = GetComponent<DocGenerator>();
     }
 
     //only handle player input if the player is in range.
@@ -49,7 +52,19 @@ public class Interactable : MonoBehaviour {
         miniGame.SetActive(false);
 
         if (stationUser != null)
+        {
             stationUser.inMiniGame = false;
+
+
+        // Doc gen
+        if(docG != null)
+        {
+            docG.DocumentGenerator();
+        }
+
+            stationUser.GetComponent<Rigidbody>().isKinematic = false;
+        }    
+
     }
 
     //gives health to the station if the station is repaired or the previous station works and sends health.
@@ -102,7 +117,6 @@ public class Interactable : MonoBehaviour {
     //if there is another script that cares if the station is working or not, if there isn't any script caring then this function is not run. 
     void StationFailure()
     {
-        Debug.Log("ZOMG ENGINE BORKED!");
         isWorking = false;
 
         if (OnStationFailure != null)
@@ -116,7 +130,6 @@ public class Interactable : MonoBehaviour {
     //and checks if there is another script that cares if the station is working or not, if there isn't any script caring then this function is not run. 
     void StationFixed()
     {
-        Debug.Log("LOL FIXERD");
         isWorking = true;
 
         if (OnStationFixed != null)
@@ -159,8 +172,9 @@ public class Interactable : MonoBehaviour {
         if(Input.GetButtonDown("A-button" + stationUser.player) && inUse == false)
         {
             inUse = true;
-            miniGame.SetActive(true);
             miniGame.GetComponent<IResetStation>().ResetStation(stationUser.player);
+            stationUser.GetComponent<Rigidbody>().isKinematic = true;
+            miniGame.SetActive(true);
             stationUser.inMiniGame = true;
         }
         if (Input.GetButtonDown("B-button" + stationUser.player) && inUse == true)
@@ -168,6 +182,7 @@ public class Interactable : MonoBehaviour {
             inUse = false;
             miniGame.SetActive(false);
             miniGame.GetComponent<IResetUser>().ResetUser();
+            stationUser.GetComponent<Rigidbody>().isKinematic = false;
             stationUser.inMiniGame = false;
         }
     }
