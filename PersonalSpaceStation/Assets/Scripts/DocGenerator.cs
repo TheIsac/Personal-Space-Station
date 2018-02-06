@@ -7,8 +7,6 @@ public class DocGenerator : MonoBehaviour {
     public Station currentStation;
     public Station targetStation;
 
-    public bool courier = false;
-
     public int successCounter = 0;
 
     public GameObject documents;
@@ -56,12 +54,10 @@ public class DocGenerator : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if (/*player with RIGHT document collide with trigger zone*/)
+        if (other.GetComponent<Document>().targetStation == currentStation)
         {
-            if (/*document dropped*/)
-            {
-                GetComponent<Document>().DeliverDocument();
-            }
+            other.GetComponent<Document>().DeliverDocument();
+            UnLockStation();
         }
     }
 
