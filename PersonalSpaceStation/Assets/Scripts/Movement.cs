@@ -14,10 +14,11 @@ public class Movement : MonoBehaviour
     public string player;
    
     private Vector3 movementDirection;
+    private Vector3 lastMovement;
 
     public bool inMiniGame;
 
-    Rigidbody rigidbody;
+    Rigidbody playerRigidBody;
 
     private float maxHeight;
 
@@ -25,7 +26,7 @@ public class Movement : MonoBehaviour
     void Start()
     {
         maxHeight = transform.position.y;
-        rigidbody = GetComponentInChildren<Rigidbody>();
+        playerRigidBody = GetComponentInChildren<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -37,11 +38,13 @@ public class Movement : MonoBehaviour
         {
             horizontalAxis = Input.GetAxis("Horizontal" + player);
             verticalAxis = Input.GetAxis("Vertical" + player);
+
+
             CharacterMovement();
         }
         else 
         {
-            rigidbody.velocity = Vector3.zero;
+            playerRigidBody.velocity = Vector3.zero;
         }
 
         RestrictHeight();
@@ -56,11 +59,14 @@ public class Movement : MonoBehaviour
         movementDirection = movementDirection.normalized * moveSpeed * Time.deltaTime;
 
         // Move the player to it's current position plus the movement.
-        rigidbody.velocity = (movementDirection * moveSpeed);
+        playerRigidBody.velocity = (movementDirection * moveSpeed);
 
         //rotates the player so that it faces in the direction it is moving.
-        Quaternion newRotation = Quaternion.LookRotation(movementDirection);
-        rigidbody.MoveRotation(newRotation);
+        Quaternion newRotation = Quaternion.LookRotation(lastMovement);
+        playerRigidBody.MoveRotation(newRotation);
+
+        if(playerRigidBody.velocity != Vector3.zero)
+            lastMovement = playerRigidBody.velocity;
     }
 
     private void RestrictHeight()
@@ -69,7 +75,7 @@ public class Movement : MonoBehaviour
         {
             maxHeight = transform.position.y;
         }
-        Debug.Log(maxHeight);
+        //Debug.Log(maxHeight);
     }
 }
 
