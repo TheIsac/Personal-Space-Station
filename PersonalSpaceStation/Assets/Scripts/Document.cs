@@ -19,6 +19,6 @@ public class Document : MonoBehaviour {
     public void DeliverDocument()
     {
         HandIn.Invoke();
-        Destroy(gameObject);
+        //Destroy(gameObject);
     }
 }
