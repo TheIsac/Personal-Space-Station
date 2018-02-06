@@ -9,10 +9,14 @@ public class CarryItem : MonoBehaviour {
     private Rigidbody myRigidBody;
 
     private Transform originalParent;
+    FlurpMovement flurpMovement;
 
-	void Start () {
+
+    void Start () {
         originalParent = transform.parent;
         myRigidBody = GetComponent<Rigidbody>();
+
+        flurpMovement = GetComponent<FlurpMovement>();
     }
 	
 	void Update () {
@@ -33,6 +37,11 @@ public class CarryItem : MonoBehaviour {
 
         if(physicsCollider != null)
             physicsCollider.enabled = false;
+
+        if(flurpMovement != null)
+        {
+            flurpMovement.shouldMove = false;
+        }
     }
 
     public void Drop()
@@ -47,5 +56,10 @@ public class CarryItem : MonoBehaviour {
 
         if (physicsCollider != null)
             physicsCollider.enabled = true;
+
+        if (flurpMovement != null)
+        {
+            flurpMovement.SetMoveArea();
+        }
     }
 }
