@@ -11,3 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/Sebastian.unity
     guid: 192472a5b6f08f84faabd7c133a39bce
+  - enabled: 1
+    path: Assets/_Scenes/MainGame.unity
+    guid: c80ab2e4aecc31c4f8d9fe9878480ec9
+  - enabled: 1
+    path: Assets/_Scenes/CharacterSelect.unity
+    guid: 810cec407e671cf4ab48fe1c953cf989
