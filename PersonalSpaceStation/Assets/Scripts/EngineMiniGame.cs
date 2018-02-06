@@ -37,6 +37,7 @@ public class EngineMiniGame : MonoBehaviour, IResetUser, IResetStation
         stationUser = player;
         isComplete = false;
         completionCounter = 0f;
+        currentMomentum = 0f;
         spak.rectTransform.rotation = startRotation;
         completionText.text = completionCounter.ToString("#.0");
     }
