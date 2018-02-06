@@ -8,12 +8,13 @@ public class Interactable : MonoBehaviour {
 
     public GameObject miniGame;
     public bool inUse = false;
+    public bool locked = false;
     private bool playerInRange = false;
     public bool isWorking;
     public int stationHealth = 50;
     public string stationName = "Engine Room";
 
-    private DocGenerator docG;
+    public DocGenerator documentGenerator;
 
     public Action OnStationFailure;
     public Action OnStationFixed;
@@ -31,7 +32,6 @@ public class Interactable : MonoBehaviour {
     void Start()
     {
         lastTick = Time.time;
-        docG = GetComponent<DocGenerator>();
     }
 
     //only handle player input if the player is in range.
@@ -41,7 +41,6 @@ public class Interactable : MonoBehaviour {
         {
             HandlePlayerInput();
         }
-
         Tick();
     }
 
@@ -50,19 +49,18 @@ public class Interactable : MonoBehaviour {
     {
         inUse = false;
         miniGame.SetActive(false);
+        
 
         if (stationUser != null)
         {
             stationUser.inMiniGame = false;
-
-
-        // Doc gen
-        if(docG != null)
-        {
-            docG.DocumentGenerator();
-        }
-
             stationUser.GetComponent<Rigidbody>().isKinematic = false;
+
+            // Doc gen
+            if (documentGenerator != null)
+            {
+                documentGenerator.DocumentGenerator();
+            }
         }    
 
     }
@@ -157,7 +155,9 @@ public class Interactable : MonoBehaviour {
     private void OnTriggerExit(Collider other)
     {
         playerInRange = false;
-        stationUser = null;
+
+        if(!inUse)
+            stationUser = null;
     }
 
     private void HandlePlayerInput()
@@ -168,7 +168,7 @@ public class Interactable : MonoBehaviour {
 
 
         //When you press the button "A" different things happen depending on if the game is on or not. If the player is in the game, pressing "A" exits the game. If the player 
-        //is not in the game, pressing "A" enters the game. 
+        //is not in the game, pressing "A" enters the game.
         if(Input.GetButtonDown("A-button" + stationUser.player) && inUse == false)
         {
             inUse = true;
