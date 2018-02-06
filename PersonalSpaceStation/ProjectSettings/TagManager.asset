@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Flurp
+  - PickUp
   layers:
   - Default
   - TransparentFX

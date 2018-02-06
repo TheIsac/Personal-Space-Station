@@ -10,7 +10,7 @@ public class AudioManager : MonoBehaviour {
     public Sound[] sounds;
 
     /// <summary>
-    /// If a audiomanager already exists, it will be broken then a new one will be instantiated.
+    /// If a audiomanager already exists in the scene, this one will be destroyed.
     /// Instantiates all the sounds in a foreach loop.
     /// </summary>
     void Awake() {
@@ -26,9 +26,21 @@ public class AudioManager : MonoBehaviour {
 
         foreach (Sound s in sounds)
         {
-            s.source = gameObject.AddComponent<AudioSource>();
+            //If there is a target to put the sound effect on, use that target. Else use the audiomanager as target.
+            if(s.target.gameObject != null)
+            {
+                s.source = s.target.gameObject.AddComponent<AudioSource>();
+            }
+            else
+            {
+                s.source = gameObject.AddComponent<AudioSource>();
+            }
             s.source.clip = s.clip;
             s.source.loop = s.loop;
+
+            //How far the sound will reach.
+            s.source.minDistance = s.minDistance;
+            s.source.maxDistance = s.maxDistance;
 
             var newMixerGroup = s.mixerGroup;
 
@@ -54,6 +66,7 @@ public class AudioManager : MonoBehaviour {
 
         s.source.volume = s.volume * (1f + UnityEngine.Random.Range(-s.volumeVariance / 2f, s.volumeVariance / 2f));
         s.source.pitch = s.pitch * (1f + UnityEngine.Random.Range(-s.pitchVariance / 2f, s.pitchVariance / 2f));
+        s.source.spatialBlend = s.spatialBlend;
 
         s.source.Play();
     }
