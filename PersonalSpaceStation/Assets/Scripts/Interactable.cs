@@ -37,11 +37,18 @@ public class Interactable : MonoBehaviour {
     //only handle player input if the player is in range.
     void Update()
     {
+        Tick();
+
+        if (locked)
+        {
+            return;
+        }
+
         if (playerInRange)
         {
             HandlePlayerInput();
         }
-        Tick();
+
     }
 
     //if the miniGame is complete the minigame exits and is completed. 
@@ -144,7 +151,9 @@ public class Interactable : MonoBehaviour {
     private void OnTriggerEnter(Collider other)
     {
         if (stationUser != null)
+        {
             return;
+        }
 
 
         playerInRange = true;
@@ -156,16 +165,19 @@ public class Interactable : MonoBehaviour {
     {
         playerInRange = false;
 
-        if(!inUse)
+        if (!inUse)
+        {
             stationUser = null;
+        }
     }
 
     private void HandlePlayerInput()
     {
         //if there player has left the station area, there is no station user and this code should not run.
         if (stationUser == null)
+        {
             return;
-
+        }
 
         //When you press the button "A" different things happen depending on if the game is on or not. If the player is in the game, pressing "A" exits the game. If the player 
         //is not in the game, pressing "A" enters the game.
