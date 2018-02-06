@@ -7,9 +7,11 @@ public class RoomAlarm : MonoBehaviour {
 
     [SerializeField]
     private GameObject station;
+    private AudioManager audioManager;
 
     private void Start()
     {
+        audioManager = FindObjectOfType<AudioManager>();
         station.GetComponent<Interactable>().OnStationFailure += OnEngineFailure;
         station.GetComponent<Interactable>().OnStationFixed += OnEngineFixed;
     }
@@ -26,6 +28,7 @@ public class RoomAlarm : MonoBehaviour {
 
     private void ActivateAlarm()
     {
+        audioManager.Play("Alarm");
         foreach (Transform child in transform)
         {
             child.gameObject.SetActive(true);
