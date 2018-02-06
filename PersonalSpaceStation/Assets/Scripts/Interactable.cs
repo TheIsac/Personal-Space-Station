@@ -117,7 +117,6 @@ public class Interactable : MonoBehaviour {
     //if there is another script that cares if the station is working or not, if there isn't any script caring then this function is not run. 
     void StationFailure()
     {
-        Debug.Log("ZOMG ENGINE BORKED!");
         isWorking = false;
 
         if (OnStationFailure != null)
@@ -131,7 +130,6 @@ public class Interactable : MonoBehaviour {
     //and checks if there is another script that cares if the station is working or not, if there isn't any script caring then this function is not run. 
     void StationFixed()
     {
-        Debug.Log("LOL FIXERD");
         isWorking = true;
 
         if (OnStationFixed != null)
