@@ -5,6 +5,7 @@ using UnityEngine;
 public class DocGenerator : MonoBehaviour {
 
     public Station currentStation;
+    public Station targetStation;
 
     public bool courier = false;
 
@@ -43,8 +44,14 @@ public class DocGenerator : MonoBehaviour {
     }
     public void SpawnPaperWork()
     {
+        do
+        {
+            targetStation = (Station)Random.Range(0, System.Enum.GetValues(typeof(Station)).Length - 1);
+        }
+        while (currentStation == targetStation);
+
         GameObject NewDocument = Instantiate(documents, docSpawnPoint);
-        NewDocument.GetComponent<Document>().SetDestinationStation(Station.EngineRoom);
+        NewDocument.GetComponent<Document>().SetDestinationStation(targetStation);
     }
 
     private void OnTriggerEnter(Collider other)
