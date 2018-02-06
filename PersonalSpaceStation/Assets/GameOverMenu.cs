@@ -3,37 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameOverMenu : MonoBehaviour {
-    public GameObject Engine;
-    public GameObject Atmos;
-    public GameObject Plant;
-    public GameObject Water;
-
-    float engineHealth;
-    float atmosHealth;
-    float plantHealth;
-    float waterHealth;
-   
+public class GameOverMenu : MonoBehaviour
+{
+    public Interactable[] stationRooms;
 
     bool gameHasEnded = false;
 
     public float restartDelay = 1f;
-	// Use this for initialization
 
-
-	void Start () {
-        
-
-    }
-
-    // Update is called once per frame
+    // Update is called once per frame;
     void Update()
     {
-        engineHealth = Engine.GetComponent<Interactable>().stationHealth;
-        atmosHealth = Atmos.GetComponent<Interactable>().stationHealth;
-        plantHealth = Plant.GetComponent<Interactable>().stationHealth;
-        waterHealth = Water.GetComponent<Interactable>().stationHealth;
-        if ()
+        int numberOfAliveRooms = 0;
+
+        foreach (var room in stationRooms)
+        {
+            //If the rooms have more than 0 health they are alive;
+            if (room.stationHealth > 0)
+            {
+                numberOfAliveRooms++;
+            }
+        }
+        //if you have 1 room left alive then you lose and the game is over;
+        if (!(numberOfAliveRooms > 1))
         {
             EndGame();
         }
