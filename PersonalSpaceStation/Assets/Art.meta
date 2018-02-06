@@ -1,7 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:PersonalSpaceStation/Assets/Art.meta
 guid: 9682532982f81504a912ec29a71e2175
 folderAsset: yes
 timeCreated: 1517922412
+=======
+guid: bc4ff798aa719c546ae87236703d0f98
+folderAsset: yes
+timeCreated: 1517224983
+>>>>>>> be624c8e48dc1abfadd2b70ed63dbe0d8bdf714c:PersonalSpaceStation/Assets/Art.meta
 licenseType: Pro
 DefaultImporter:
   externalObjects: {}
