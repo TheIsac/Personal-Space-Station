@@ -44,12 +44,11 @@ public class Flurp : MonoBehaviour {
 
     void NewRandomRoom()
     {
-        targetStation = currentStation;
-
-        while (currentStation == targetStation)
+        do
         {
             targetStation = (Station)Random.Range(0, System.Enum.GetValues(typeof(Station)).Length - 1);
         }
+        while (currentStation == targetStation);
 
         currentHappinessValue = timerToReachNextStation;
         targetHappinessValue = timerToReachNextStation;
