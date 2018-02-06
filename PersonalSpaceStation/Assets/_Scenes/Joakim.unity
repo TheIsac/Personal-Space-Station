@@ -384,9 +384,29 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 114522103193689570, guid: 26898019599b5874095c7ab5ea965d42,
+        type: 2}
+      propertyPath: boxCollider
+      value: 
+      objectReference: {fileID: 925910231}
+    - target: {fileID: 114604033414899954, guid: 26898019599b5874095c7ab5ea965d42,
+        type: 2}
+      propertyPath: boxCollider
+      value: 
+      objectReference: {fileID: 925910230}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 26898019599b5874095c7ab5ea965d42, type: 2}
   m_IsPrefabParent: 0
+--- !u!65 &925910230 stripped
+BoxCollider:
+  m_PrefabParentObject: {fileID: 65530209536277254, guid: 26898019599b5874095c7ab5ea965d42,
+    type: 2}
+  m_PrefabInternal: {fileID: 925910229}
+--- !u!65 &925910231 stripped
+BoxCollider:
+  m_PrefabParentObject: {fileID: 65693855022822084, guid: 26898019599b5874095c7ab5ea965d42,
+    type: 2}
+  m_PrefabInternal: {fileID: 925910229}
 --- !u!1001 &1339969392
 Prefab:
   m_ObjectHideFlags: 0
