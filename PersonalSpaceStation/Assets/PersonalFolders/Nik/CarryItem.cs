@@ -5,13 +5,14 @@ using UnityEngine;
 public class CarryItem : MonoBehaviour {
 
     public bool isBeingCarried = false;
-    public BoxCollider boxCollider;
+    public Collider physicsCollider;
+    private Rigidbody myRigidBody;
 
     private Transform originalParent;
 
 	void Start () {
         originalParent = transform.parent;
-
+        myRigidBody = GetComponent<Rigidbody>();
     }
 	
 	void Update () {
@@ -25,8 +26,13 @@ public class CarryItem : MonoBehaviour {
         transform.SetParent(carryPoint);
         isBeingCarried = true;
 
-        if(boxCollider != null)
-            boxCollider.enabled = false;
+        if(myRigidBody != null)
+        {
+            myRigidBody.isKinematic = true;
+        }
+
+        if(physicsCollider != null)
+            physicsCollider.enabled = false;
     }
 
     public void Drop()
@@ -34,7 +40,12 @@ public class CarryItem : MonoBehaviour {
         transform.SetParent(originalParent);
         isBeingCarried = false;
 
-        if (boxCollider != null)
-            boxCollider.enabled = true;
+        if (myRigidBody != null)
+        {
+            myRigidBody.isKinematic = false;
+        }
+
+        if (physicsCollider != null)
+            physicsCollider.enabled = true;
     }
 }
