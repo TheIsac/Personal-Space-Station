@@ -54,17 +54,17 @@ public class Interactable : MonoBehaviour {
         if (stationUser != null)
         {
             stationUser.inMiniGame = false;
-<<<<<<< HEAD
+
 
         // Doc gen
         if(docG != null)
         {
             docG.DocumentGenerator();
         }
-=======
+
             stationUser.GetComponent<Rigidbody>().isKinematic = false;
         }    
->>>>>>> 39d15c192f5143d658c7cc05ac6c0d3debe6d752
+
     }
 
     //gives health to the station if the station is repaired or the previous station works and sends health.
