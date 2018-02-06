@@ -306,7 +306,8 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114563972908038948, guid: 180baa7fbdb237046a654f1d5e488469, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 180baa7fbdb237046a654f1d5e488469, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &708813576
@@ -789,6 +790,7 @@ Prefab:
       propertyPath: player
       value: _P2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114563972908038948, guid: 180baa7fbdb237046a654f1d5e488469, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 180baa7fbdb237046a654f1d5e488469, type: 2}
   m_IsPrefabParent: 0

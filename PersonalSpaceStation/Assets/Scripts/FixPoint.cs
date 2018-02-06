@@ -12,17 +12,24 @@ public class FixPoint : MonoBehaviour {
     private Movement stationUser = null;
     private int isPressed;
 
+    private FixPointChecker fixPointChecker;
+
+    private void Awake()
+    {
+        fixPointChecker = GetComponentInParent<FixPointChecker>();
+    }
+
     void WhichPoint()
     {
         if (name == "FirstPoint")
         {
-            GetComponentInParent<FixPointChecker>().stationedFirst = stationed;
-            GetComponentInParent<FixPointChecker>().pressedFirst = pressed;
+            fixPointChecker.stationedFirst = stationed;
+            fixPointChecker.pressedFirst = pressed;
         }
         else if (name == "SecondPoint")
         {
-            GetComponentInParent<FixPointChecker>().stationedSecond = stationed;
-            GetComponentInParent<FixPointChecker>().pressedSecond = pressed;
+            fixPointChecker.stationedSecond = stationed;
+            fixPointChecker.pressedSecond = pressed;
         }
         else
         {
