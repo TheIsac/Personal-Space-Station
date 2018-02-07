@@ -386,7 +386,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4259093388966132}
-  - component: {fileID: 95668978938587866}
+  - component: {fileID: 95950500475947590}
   m_Layer: 0
   m_Name: char01
   m_TagString: Untagged
@@ -1490,7 +1490,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 1
---- !u!95 &95668978938587866
+--- !u!95 &95950500475947590
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
@@ -1498,9 +1498,9 @@ Animator:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1470560775847666}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: bc37f7337a259934db19233e5b9bde13, type: 3}
+  m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 6be5ebeb29e2c504085441b15de7f064, type: 2}
-  m_CullingMode: 1
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
