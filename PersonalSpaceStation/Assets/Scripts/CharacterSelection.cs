@@ -11,6 +11,7 @@ public class CharacterSelection : MonoBehaviour {
 
     public string player;
     public List<GameObject> models = new List<GameObject>();
+    public CharacterSelectionHandler doneSelecting;
 
     private void Start()
     {
@@ -33,6 +34,23 @@ public class CharacterSelection : MonoBehaviour {
 
     public void SelectCharacter()
     {
+        if (doneSelecting.player1Ready == true)
+        {
+            return;
+        }
+        if (doneSelecting.player2Ready == true)
+        {
+            return;
+        }
+        if (doneSelecting.player3Ready == true)
+        {
+            return;
+        }
+        if (doneSelecting.player4Ready == true)
+        {
+            return;
+        }
+
         if (Input.GetAxis("Horizontal" + player) > 0)
         {
             models[selection].SetActive(false);
