@@ -8,12 +8,14 @@ public class ItemHandler : MonoBehaviour {
     private Movement movement;
     CarryItem carriedItem = null;
     CarryItem itemInRange = null;
+    private Animator characterAnimator;
 
     public Transform carryPoint;
 
     private void Awake()
     {
         movement = GetComponent<Movement>();
+        characterAnimator = GetComponentInChildren<Animator>();
     }
 
     private void Update()
@@ -36,6 +38,7 @@ public class ItemHandler : MonoBehaviour {
             {
                 carriedItem = itemInRange;
 
+                characterAnimator.SetBool("CarryingItem", true);
                 if (carryPoint != null)
                     carriedItem.PickUp(carryPoint);
                 else
@@ -46,6 +49,7 @@ public class ItemHandler : MonoBehaviour {
         {
             if (Input.GetButtonDown("A-button" + movement.player))
             {
+                characterAnimator.SetBool("CarryingItem", false);
                 carriedItem.Drop();
                 itemInRange = carriedItem;
                 carriedItem = null;
