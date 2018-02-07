@@ -24,21 +24,15 @@ public class DocGenerator : MonoBehaviour {
     //recieve signal from Interactable, that a station was fixed and count the success
     public void DocumentGenerator()
     {
-        Debug.Log(successCounter);
-        
-        if (successCounter < 3)
-        {
-            successCounter += 1;
-        }
-        //if successCounter reaches 3, spawnPaperWork and lock this station
-        else if (successCounter == 3)
-        {
-            successCounter = 0;
 
+        successCounter++;
+
+        if(successCounter >= 3)
+        {
             SpawnPaperWork();
             LockStation();
 
-            successCounter += 1;
+            successCounter = 0;
         }
     }
     public void SpawnPaperWork()
@@ -60,10 +54,16 @@ public class DocGenerator : MonoBehaviour {
     public void OnTriggerEnter(Collider other)
     {
         Debug.Log("niklas was here");
-        if (other.GetComponent<Document>().targetStation == currentStation)
+        Document carriedDoc = other.GetComponent<Document>();
+
+
+        if (carriedDoc == null)
+            return;
+
+        if (carriedDoc.targetStation == currentStation)
         {
             Debug.Log("delivered!");
-            other.GetComponent<Document>().DeliverDocument();
+            carriedDoc.DeliverDocument();
             UnLockStation();
             //Destroy(gameObject);
         }
