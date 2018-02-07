@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 114204064148534156}
   - component: {fileID: 114088263390629798}
   m_Layer: 0
-  m_Name: "Flurp R\xE4tt"
+  m_Name: Flurp (1)
   m_TagString: Flurp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

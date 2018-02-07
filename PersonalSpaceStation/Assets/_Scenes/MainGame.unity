@@ -8139,6 +8139,16 @@ Prefab:
       propertyPath: m_Name
       value: "Flurp R\xE4tt (1)"
       objectReference: {fileID: 0}
+    - target: {fileID: 23631062566604386, guid: 6c1041aa54d31684691d27106c0aad06,
+        type: 2}
+      propertyPath: m_DynamicOccludee
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 23631062566604386, guid: 6c1041aa54d31684691d27106c0aad06,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 126ceae28069858438915b7f62ba89db, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6c1041aa54d31684691d27106c0aad06, type: 2}
   m_IsPrefabParent: 0
