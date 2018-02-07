@@ -29,7 +29,7 @@ public class CharacterSelectionHandler : MonoBehaviour {
 
     //public Text start;
     public Image playerSelectBackground;
-    public Button selectCharacters;
+    public Button startGame;
 
     public GameObject[] player;
     //public Button[] playerButton;
@@ -42,12 +42,14 @@ public class CharacterSelectionHandler : MonoBehaviour {
 	void Start ()
     {
         numberOfPlayers = 0;
-	}
+        startGame.gameObject.SetActive(false);
+    }
 
     // Update is called once per frame
     void Update()
     {
         PlayerInput();
+        StartGame();
     }
 
     public void PlayerInput()
@@ -81,7 +83,8 @@ public class CharacterSelectionHandler : MonoBehaviour {
                 {
                     playerReady1.gameObject.SetActive(false);
                     player1Ready = false;
-                }
+                    startGame.gameObject.SetActive(false);
+            }
                 
 
             //Player Two
@@ -100,7 +103,8 @@ public class CharacterSelectionHandler : MonoBehaviour {
                 {
                     playerReady2.gameObject.SetActive(false);
                     player2Ready = false;
-                }
+                    startGame.gameObject.SetActive(false);
+            }
                 
             //Player Three
                 if (Input.GetButtonDown("A-button_P3") && playerJoined3 == false)
@@ -118,7 +122,8 @@ public class CharacterSelectionHandler : MonoBehaviour {
                 {
                     playerReady3.gameObject.SetActive(false);
                     player3Ready = false;
-                }
+                    startGame.gameObject.SetActive(false);
+            }
             //Player Four
                 if (Input.GetButtonDown("A-button_P4") && playerJoined4 == false)
                 {
@@ -135,8 +140,35 @@ public class CharacterSelectionHandler : MonoBehaviour {
                 {
                     playerReady4.gameObject.SetActive(false);
                     player4Ready = false;
-                }
+                    startGame.gameObject.SetActive(false);
+            }
         }
+    }
+
+    public void StartGame()
+    {
+        if (numberOfPlayers > 0)
+        {
+            if (numberOfPlayers == 1 && player1Ready)
+            {
+                startGame.gameObject.SetActive(true);
+            }
+
+            if (numberOfPlayers == 2 && player1Ready && player2Ready)
+            {
+                startGame.gameObject.SetActive(true);
+            }
+
+            if (numberOfPlayers == 3 && player1Ready && player2Ready && player3Ready)
+            {
+                startGame.gameObject.SetActive(true);
+            }
+
+
+        }
+
+
+
     }
 
     public void PlayerJoin(int index)
