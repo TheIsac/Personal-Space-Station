@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(Flurp))]
 public class FlurpMovement : MonoBehaviour {
 
     Vector3 moveCircleOrigin;
@@ -42,12 +43,8 @@ public class FlurpMovement : MonoBehaviour {
 
             flurpRigidBody.velocity = directionToTarget * moveSpeed;
 
-            //transform.position += directionToTarget * moveSpeed * Time.deltaTime;
-
-            //if (lastPosition == transform.position)
-            //{
-            //    SetNewDestination();
-            //}
+            Quaternion newRotation = Quaternion.LookRotation(directionToTarget);
+            flurpRigidBody.MoveRotation(newRotation);
 
         }
         else

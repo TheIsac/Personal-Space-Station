@@ -11,6 +11,7 @@ public class CharacterSelection : MonoBehaviour {
 
     public string player;
     public List<GameObject> models = new List<GameObject>();
+    public CharacterSelectionHandler doneSelecting;
 
     private void Start()
     {
@@ -33,8 +34,26 @@ public class CharacterSelection : MonoBehaviour {
 
     public void SelectCharacter()
     {
+        
         if (Input.GetAxis("Horizontal" + player) > 0)
         {
+            if(player == "_P1" && doneSelecting.player1Ready)
+            {
+                return;
+            }
+            if (player == "_P2" && doneSelecting.player2Ready)
+            {
+                return;
+            }
+            if (player == "_P3" && doneSelecting.player3Ready)
+            {
+                return;
+            }
+            if (player == "_P4" && doneSelecting.player4Ready)
+            {
+                return;
+            }
+
             models[selection].SetActive(false);
             selection++;
             if (selection >= models.Count)
@@ -45,6 +64,22 @@ public class CharacterSelection : MonoBehaviour {
         }
         if (Input.GetAxis("Horizontal" + player) < 0)
         {
+            if (player == "_P1" && doneSelecting.player1Ready)
+            {
+                return;
+            }
+            if (player == "_P2" && doneSelecting.player2Ready)
+            {
+                return;
+            }
+            if (player == "_P3" && doneSelecting.player3Ready)
+            {
+                return;
+            }
+            if (player == "_P4" && doneSelecting.player4Ready)
+            {
+                return;
+            }
             models[selection].SetActive(false);
             selection--;
             if (selection < 0)
