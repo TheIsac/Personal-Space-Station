@@ -14,6 +14,8 @@ public class EngineMiniGame : MonoBehaviour, IResetUser, IResetStation
     public float completionTime = 3f;
     public int completionValue = 5;
     private float completionCounter = 0f;
+    private float minCompletionAngle = 5f;
+    private float maxCompletionAngle = 355f;
 
     // Lever mechanics
     private float currentMomentum;
@@ -89,7 +91,7 @@ public class EngineMiniGame : MonoBehaviour, IResetUser, IResetStation
         }
 
         // Update progress if the lever is within green area
-        if(spak.rectTransform.rotation.eulerAngles.z < 5f || spak.rectTransform.rotation.eulerAngles.z > 355f)
+        if(spak.rectTransform.rotation.eulerAngles.z < minCompletionAngle || spak.rectTransform.rotation.eulerAngles.z > maxCompletionAngle)
         {
             completionCounter += Time.deltaTime;
             completionText.text = completionCounter.ToString("#.0");

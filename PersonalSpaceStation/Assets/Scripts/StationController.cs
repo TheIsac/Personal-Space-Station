@@ -11,11 +11,11 @@ public class StationController : MonoBehaviour {
         bounds = GetComponent<BoxCollider>().bounds;
     }
 
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(transform.position, bounds.size);
-    }
+    //private void OnDrawGizmos()
+    //{
+    //    Gizmos.color = Color.red;
+    //    Gizmos.DrawWireCube(transform.position, bounds.size);
+    //}
 
     private void OnTriggerEnter(Collider other)
     {

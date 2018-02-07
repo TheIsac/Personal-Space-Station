@@ -43,7 +43,7 @@ RenderSettings:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -89,7 +89,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
-  m_LightingDataAsset: {fileID: 112000002, guid: 7e8ab95d63ca80b4fb4ddde3dc058585,
+  m_LightingDataAsset: {fileID: 112000002, guid: d84009f1572cfb34495eda8c453abbe2,
     type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -153,7 +153,7 @@ MonoBehaviour:
   stationHealth: 50
   stationName: Engine Room
   documentGenerator: {fileID: 431048978}
-  tickLength: 4
+  tickLength: 3
   minWorkingHealth: 25
   maxWorkingHealth: 100
   healthText: {fileID: 863889228}
@@ -5003,6 +5003,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!1 &272337423 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1426977643586722, guid: f67cbf04939e9e6409c39b770ea10aea,
+    type: 2}
+  m_PrefabInternal: {fileID: 1132618680}
+--- !u!114 &272337424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 272337423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13a25294306599d458789a04cc254eba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stationRooms:
+  - {fileID: 6436288}
+  - {fileID: 475006511}
+  - {fileID: 372024868}
+  - {fileID: 1939651557}
+  restartDelay: 1
 --- !u!1001 &274029830
 Prefab:
   m_ObjectHideFlags: 0
@@ -5669,7 +5691,7 @@ MonoBehaviour:
   stationHealth: 50
   stationName: Plant Room
   documentGenerator: {fileID: 589549146}
-  tickLength: 4
+  tickLength: 3
   minWorkingHealth: 25
   maxWorkingHealth: 100
   healthText: {fileID: 75095053}
@@ -6368,7 +6390,7 @@ MonoBehaviour:
   stationHealth: 50
   stationName: Pump Station
   documentGenerator: {fileID: 366541931}
-  tickLength: 4
+  tickLength: 3
   minWorkingHealth: 25
   maxWorkingHealth: 100
   healthText: {fileID: 1917947863}
@@ -8058,7 +8080,7 @@ MonoBehaviour:
   - {fileID: 475006511}
   - {fileID: 1939651557}
   - {fileID: 372024868}
-  tickLength: 4
+  tickLength: 3
   addHealth: 1
   removeHealth: 1
 --- !u!4 &790970570
@@ -14250,7 +14272,7 @@ MonoBehaviour:
   stationHealth: 50
   stationName: Atmo Station
   documentGenerator: {fileID: 1969330193}
-  tickLength: 4
+  tickLength: 3
   minWorkingHealth: 25
   maxWorkingHealth: 100
   healthText: {fileID: 1079196340}
