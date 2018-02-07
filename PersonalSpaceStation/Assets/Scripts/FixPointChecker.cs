@@ -17,8 +17,11 @@ public class FixPointChecker : MonoBehaviour {
 
     public float counter;
 
+    private float target;
+
     private void Start()
     {
+        target = 100;
         repaired = true;
         counter = UnityEngine.Random.Range(0, 50);
         light = GetComponent<Light>();
@@ -50,13 +53,11 @@ public class FixPointChecker : MonoBehaviour {
     {
         counter += Time.deltaTime;
 
-        if(counter > 100)
+        if(counter > target && repaired)
         {
+            //counter = UnityEngine.Random.Range(0, 50);
+            target += 100;
             repaired = false;
-        }
-        if(counter > 100 && repaired)
-        {
-            counter = UnityEngine.Random.Range(0, 50);
         }
     }
 }
