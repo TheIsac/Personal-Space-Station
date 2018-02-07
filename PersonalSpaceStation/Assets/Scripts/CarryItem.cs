@@ -14,8 +14,8 @@ public class CarryItem : MonoBehaviour {
 
     void Start () {
         originalParent = transform.parent;
-        myRigidBody = GetComponent<Rigidbody>();
 
+        myRigidBody = GetComponent<Rigidbody>();
         flurpMovement = GetComponent<FlurpMovement>();
     }
 	
