@@ -22,7 +22,6 @@ public class PackageHandler : MonoBehaviour
     void Update()
     {
         Tick();
-        CheckStatus();
     }
 
     void Tick()
@@ -30,6 +29,7 @@ public class PackageHandler : MonoBehaviour
         if (Time.time - lastTick > tickLength)
         {
             lastTick = Time.time;
+            CheckStatus();
         }
     }
 

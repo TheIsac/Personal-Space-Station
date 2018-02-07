@@ -12,32 +12,29 @@ public class DocGenerator : MonoBehaviour {
     public GameObject documents;
     public Transform docSpawnPoint;
 
+    Material documentMaterial;
+
     //public Document document;
 
     public Interactable myStation;
 
 	// Use this for initialization
 	void Start () {
-   
+
     }
 
     //recieve signal from Interactable, that a station was fixed and count the success
     public void DocumentGenerator()
     {
-        Debug.Log(successCounter);
-        if (successCounter < 3)
-        {
-            successCounter += 1;
-        }
-        //if successCounter reaches 3, spawnPaperWork and lock this station
-        else if (successCounter == 3)
-        {
-            successCounter = 0;
 
+        successCounter++;
+
+        if(successCounter >= 3)
+        {
             SpawnPaperWork();
             LockStation();
 
-            successCounter += 1;
+            successCounter = 0;
         }
     }
     public void SpawnPaperWork()
@@ -52,16 +49,45 @@ public class DocGenerator : MonoBehaviour {
         GameObject NewDocument = Instantiate(documents, docSpawnPoint);
         NewDocument.GetComponent<Document>().SetDestinationStation(targetStation);
 
+        documentMaterial = GetComponent<Renderer>().material;
+
+        switch (targetStation)
+        {
+            case Station.EngineRoom:
+                    documentMaterial.color = Color.red;
+                    break;
+            case Station.AtmoRoom:
+                    documentMaterial.color = Color.yellow;
+                    break;
+            case Station.PlantRoom:
+                    documentMaterial.color = Color.green;
+                    break;
+            case Station.WaterPumps:
+                    documentMaterial.color = Color.blue;
+                    break;
+            default:
+                    documentMaterial.color = Color.black;
+                break;
+        }
         //listen to HandIn
         NewDocument.GetComponent<Document>().HandIn += UnLockStation;
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<Document>().targetStation == currentStation)
+        Debug.Log("niklas was here");
+        Document carriedDoc = other.GetComponent<Document>();
+
+
+        if (carriedDoc == null)
+            return;
+
+        if (carriedDoc.targetStation == currentStation)
         {
-            other.GetComponent<Document>().DeliverDocument();
+            Debug.Log("delivered!");
+            carriedDoc.DeliverDocument();
             UnLockStation();
+            //Destroy(gameObject);
         }
     }
 

@@ -225,6 +225,34 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 252ea432ed711c34698673c7a87ac8eb, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &353665616
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 353665617}
+  m_Layer: 0
+  m_Name: CarryPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &353665617
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 353665616}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.6, z: 1.61}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1467116566}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &504849006 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1705989451432332, guid: 180baa7fbdb237046a654f1d5e488469,
@@ -241,7 +269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b39ac7685e7b2c469426299d1df0286, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemInRange: 0
+  carryPoint: {fileID: 0}
 --- !u!1001 &592592297
 Prefab:
   m_ObjectHideFlags: 0
@@ -281,8 +309,7 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 33376975060515250, guid: 37a8f4e2a8ca58f43a6ca6d7cb018806, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 37a8f4e2a8ca58f43a6ca6d7cb018806, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &677352516
@@ -546,6 +573,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06cca9d62770c6f42b32da7ab2b88cc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isBeingCarried: 0
+  physicsCollider: {fileID: 0}
 --- !u!23 &851420404
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -628,7 +657,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b39ac7685e7b2c469426299d1df0286, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemInRange: 0
+  carryPoint: {fileID: 353665617}
 --- !u!1 &1218367411
 GameObject:
   m_ObjectHideFlags: 0

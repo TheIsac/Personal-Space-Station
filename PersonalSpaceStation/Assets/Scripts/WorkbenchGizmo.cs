@@ -9,7 +9,7 @@ public class WorkbenchGizmo : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        boxCollider = GetComponent<BoxCollider>();
+        boxCollider = GetComponentInParent<BoxCollider>();
     }
 
     public void OnDrawGizmos()
