@@ -12,6 +12,8 @@ public class DocGenerator : MonoBehaviour {
     public GameObject documents;
     public Transform docSpawnPoint;
 
+    Material documentMaterial;
+
     //public Document document;
 
     public Interactable myStation;
@@ -47,6 +49,26 @@ public class DocGenerator : MonoBehaviour {
         GameObject NewDocument = Instantiate(documents, docSpawnPoint);
         NewDocument.GetComponent<Document>().SetDestinationStation(targetStation);
 
+        documentMaterial = GetComponent<Renderer>().material;
+
+        switch (targetStation)
+        {
+            case Station.EngineRoom:
+                    documentMaterial.color = Color.red;
+                    break;
+            case Station.AtmoRoom:
+                    documentMaterial.color = Color.yellow;
+                    break;
+            case Station.PlantRoom:
+                    documentMaterial.color = Color.green;
+                    break;
+            case Station.WaterPumps:
+                    documentMaterial.color = Color.blue;
+                    break;
+            default:
+                    documentMaterial.color = Color.black;
+                break;
+        }
         //listen to HandIn
         NewDocument.GetComponent<Document>().HandIn += UnLockStation;
     }
