@@ -41,7 +41,10 @@ public class Document : MonoBehaviour {
 
     public void DeliverDocument()
     {
+        if (HandIn != null)
+        {
         HandIn.Invoke();
         Destroy(gameObject);
+        }
     }
 }
