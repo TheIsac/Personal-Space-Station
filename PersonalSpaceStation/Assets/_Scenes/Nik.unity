@@ -113,48 +113,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &24150404 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1894340073534972, guid: 37a8f4e2a8ca58f43a6ca6d7cb018806,
-    type: 2}
-  m_PrefabInternal: {fileID: 592592297}
---- !u!65 &24150407
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 24150404}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2, y: 2, z: 2}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &24150408
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 24150404}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06cca9d62770c6f42b32da7ab2b88cc8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isBeingCarried: 0
-  physicsCollider: {fileID: 0}
---- !u!114 &24150409
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 24150404}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b7bb2e7c9aa32349b4cd284d4616718, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shouldMove: 1
 --- !u!1 &103580173
 GameObject:
   m_ObjectHideFlags: 0
@@ -351,8 +309,7 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 33376975060515250, guid: 37a8f4e2a8ca58f43a6ca6d7cb018806, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 37a8f4e2a8ca58f43a6ca6d7cb018806, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &677352516
