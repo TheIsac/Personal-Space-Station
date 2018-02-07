@@ -2,25 +2,36 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class FlurpMovement : MonoBehaviour {
 
     Vector3 moveCircleOrigin;
-    float moveRadius = 3f;
     Vector3 targetPosition;
+
+    Rigidbody flurpRigidBody;
+
     float moveSpeed = 1f;
+    float moveRadius = 3f;
 
     public bool shouldMove = true;
 
-	void Start () {
+    private void Awake()
+    {
+        flurpRigidBody = GetComponent<Rigidbody>();
+    }
+
+    void Start () {
         moveCircleOrigin = transform.position;
         targetPosition = moveCircleOrigin;
     }
 	
-	void Update () {
+	void FixedUpdate () {
+
 		if(shouldMove == true)
         {
             Vector3 directionToTarget = targetPosition - transform.position;
-            if(directionToTarget.sqrMagnitude < .1f)
+
+            if (directionToTarget.sqrMagnitude < .1f || flurpRigidBody.velocity.sqrMagnitude < .01f)
             {
                 SetNewDestination();
                 directionToTarget = targetPosition - transform.position;
@@ -29,7 +40,19 @@ public class FlurpMovement : MonoBehaviour {
 
             directionToTarget.Normalize();
 
-            transform.position += directionToTarget * moveSpeed * Time.deltaTime;
+            flurpRigidBody.velocity = directionToTarget * moveSpeed;
+
+            //transform.position += directionToTarget * moveSpeed * Time.deltaTime;
+
+            //if (lastPosition == transform.position)
+            //{
+            //    SetNewDestination();
+            //}
+
+        }
+        else
+        {
+            flurpRigidBody.velocity = Vector3.zero;
         }
 	}
 
