@@ -148,9 +148,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   miniGame: {fileID: 833128113}
   inUse: 0
+  locked: 0
   isWorking: 0
   stationHealth: 50
   stationName: Engine Room
+  documentGenerator: {fileID: 0}
   tickLength: 2
   minWorkingHealth: 25
   maxWorkingHealth: 75
@@ -933,7 +935,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1001 &107644933
 Prefab:
@@ -1509,7 +1511,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4970287920356698, guid: d1f01a01607b42f48abe67a1a1156c86, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114144779937081514, guid: d1f01a01607b42f48abe67a1a1156c86,
         type: 2}
@@ -5098,7 +5100,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1001 &274029830
 Prefab:
@@ -5755,9 +5757,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   miniGame: {fileID: 1808252545}
   inUse: 0
+  locked: 0
   isWorking: 0
   stationHealth: 50
   stationName: Plant Room
+  documentGenerator: {fileID: 0}
   tickLength: 2
   minWorkingHealth: 25
   maxWorkingHealth: 75
@@ -6385,9 +6389,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   miniGame: {fileID: 857683984}
   inUse: 0
+  locked: 0
   isWorking: 0
   stationHealth: 50
   stationName: Pump Station
+  documentGenerator: {fileID: 0}
   tickLength: 2
   minWorkingHealth: 25
   maxWorkingHealth: 75
@@ -6619,7 +6625,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4504537013436248, guid: 1c7d56d40160b064b87d70523489c2b8, type: 2}
       propertyPath: m_RootOrder
-      value: 18
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 114905161130909914, guid: 1c7d56d40160b064b87d70523489c2b8,
         type: 2}
@@ -6869,7 +6875,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &578934037
 GameObject:
@@ -9679,19 +9685,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e86c515ed7b01c409dedb067ee77266, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.6123727
+      value: -0.61237264
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e86c515ed7b01c409dedb067ee77266, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.35355312
+      value: 0.3535531
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e86c515ed7b01c409dedb067ee77266, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.35355312
+      value: 0.3535531
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e86c515ed7b01c409dedb067ee77266, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.61237264
+      value: 0.6123726
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e86c515ed7b01c409dedb067ee77266, type: 3}
       propertyPath: m_RootOrder
@@ -9753,7 +9759,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4891971967079174, guid: f67cbf04939e9e6409c39b770ea10aea, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4891971967079174, guid: f67cbf04939e9e6409c39b770ea10aea, type: 2}
       propertyPath: m_LocalScale.x
@@ -14003,9 +14009,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   miniGame: {fileID: 1338588010}
   inUse: 0
+  locked: 0
   isWorking: 0
   stationHealth: 50
   stationName: Atmo Station
+  documentGenerator: {fileID: 0}
   tickLength: 2
   minWorkingHealth: 25
   maxWorkingHealth: 75

@@ -595,7 +595,7 @@ GameObject:
   - component: {fileID: 114455319252330222}
   - component: {fileID: 54391275805394510}
   - component: {fileID: 114911021401678168}
-  - component: {fileID: 114563972908038948}
+  - component: {fileID: 114794924232750940}
   m_Layer: 0
   m_Name: PlayerOne New
   m_TagString: Player
@@ -688,6 +688,21 @@ GameObject:
   - component: {fileID: 4632374583556094}
   m_Layer: 0
   m_Name: pss_bulldog_RightUpLeg
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1939680636901768
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4913571262840374}
+  m_Layer: 0
+  m_Name: CarryPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1427,6 +1442,19 @@ Transform:
   m_Father: {fileID: 4464238370230922}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4913571262840374
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1939680636901768}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.755, z: 0.82}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4979851666146666}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4968538124408566
 Transform:
   m_ObjectHideFlags: 1
@@ -1461,11 +1489,12 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1705989451432332}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -4.447783, y: 0.00000011920929, z: 5.067065}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4857226622011188}
   - {fileID: 4513873856213146}
+  - {fileID: 4913571262840374}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1522,7 +1551,7 @@ MonoBehaviour:
   moveSpeed: 15
   player: _P1
   inMiniGame: 0
---- !u!114 &114563972908038948
+--- !u!114 &114794924232750940
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -1530,9 +1559,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1705989451432332}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8d0d34431cd7ee4caafcc641416caee, type: 3}
+  m_Script: {fileID: 11500000, guid: 7b39ac7685e7b2c469426299d1df0286, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  carryPoint: {fileID: 4913571262840374}
 --- !u!114 &114911021401678168
 MonoBehaviour:
   m_ObjectHideFlags: 1
