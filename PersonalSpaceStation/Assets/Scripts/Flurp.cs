@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(FlurpMovement))]
 public class Flurp : MonoBehaviour {
 
     public Station currentStation;
@@ -25,7 +26,7 @@ public class Flurp : MonoBehaviour {
 
     public TextMesh health;
 
-    public bool canBeMoved = false;
+    public bool canBeMoved;
 
     void Start()
     {
@@ -55,6 +56,8 @@ public class Flurp : MonoBehaviour {
 
         health.text = currentHappinessValue.ToString();
         DisplayNewObjective();
+
+        canBeMoved = true;
     }
 
     void DisplayNewObjective()
