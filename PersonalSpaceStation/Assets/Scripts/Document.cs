@@ -14,11 +14,12 @@ public class Document : MonoBehaviour {
     public void SetDestinationStation(Station targetStation)
     {
         this.targetStation = targetStation;
+        Debug.Log(targetStation);
     }
 
     public void DeliverDocument()
     {
         HandIn.Invoke();
-        //Destroy(gameObject);
+        Destroy(gameObject);
     }
 }

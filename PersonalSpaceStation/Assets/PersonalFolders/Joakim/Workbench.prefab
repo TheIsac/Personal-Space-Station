@@ -72,10 +72,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4378634056689182}
-  - component: {fileID: 65693855022822084}
   - component: {fileID: 114522103193689570}
   m_Layer: 0
-  m_Name: WorkbenchInteraction
+  m_Name: DropOffZoneGizmo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -90,6 +89,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4044253337561128}
   - component: {fileID: 114960103201209878}
+  - component: {fileID: 65711421173207944}
   m_Layer: 0
   m_Name: Workbench
   m_TagString: Untagged
@@ -104,11 +104,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1813731425986750}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.5, y: 0.5, z: 0.5}
+  m_LocalPosition: {x: 4.5, y: 0.5, z: 4.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4378634056689182}
   - {fileID: 4882478892782502}
+  - {fileID: 4378634056689182}
   - {fileID: 4175772626964588}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -133,11 +133,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1754394839856988}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4044253337561128}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4615677659023276
 Transform:
@@ -164,7 +164,7 @@ Transform:
   m_Children:
   - {fileID: 4615677659023276}
   m_Father: {fileID: 4044253337561128}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &23586435265612100
 MeshRenderer:
@@ -272,18 +272,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &65693855022822084
+--- !u!65 &65711421173207944
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1754394839856988}
+  m_GameObject: {fileID: 1813731425986750}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0, z: -1}
 --- !u!65 &65920653701677838
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -308,7 +308,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gizmoColor: {r: 0, g: 1, b: 1, a: 0.3}
-  boxCollider: {fileID: 65693855022822084}
+  boxCollider: {fileID: 65711421173207944}
 --- !u!114 &114604033414899954
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -333,6 +333,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80222d21f1cc9454aadab3efd7a4a29f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  courier: 0
-  documents: {fileID: 1314906595860792, guid: 781f96a09e4f6904fbd139d064b5fafa, type: 2}
+  currentStation: 0
+  targetStation: 0
+  successCounter: 0
+  documents: {fileID: 1237926951315860, guid: 7f45f589dde5423449162c1d6ba93501, type: 2}
   docSpawnPoint: {fileID: 4175772626964588}
+  myStation: {fileID: 0}

@@ -18,13 +18,14 @@ public class DocGenerator : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-   
+
     }
 
     //recieve signal from Interactable, that a station was fixed and count the success
     public void DocumentGenerator()
     {
         Debug.Log(successCounter);
+        
         if (successCounter < 3)
         {
             successCounter += 1;
@@ -56,12 +57,15 @@ public class DocGenerator : MonoBehaviour {
         NewDocument.GetComponent<Document>().HandIn += UnLockStation;
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
+        Debug.Log("niklas was here");
         if (other.GetComponent<Document>().targetStation == currentStation)
         {
+            Debug.Log("delivered!");
             other.GetComponent<Document>().DeliverDocument();
             UnLockStation();
+            //Destroy(gameObject);
         }
     }
 
