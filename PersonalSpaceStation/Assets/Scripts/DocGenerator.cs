@@ -12,6 +12,8 @@ public class DocGenerator : MonoBehaviour {
     public GameObject documents;
     public Transform docSpawnPoint;
 
+    Material documentMaterial;
+
     //public Document document;
 
     public Interactable myStation;
@@ -24,21 +26,15 @@ public class DocGenerator : MonoBehaviour {
     //recieve signal from Interactable, that a station was fixed and count the success
     public void DocumentGenerator()
     {
-        Debug.Log(successCounter);
-        
-        if (successCounter < 3)
-        {
-            successCounter += 1;
-        }
-        //if successCounter reaches 3, spawnPaperWork and lock this station
-        else if (successCounter == 3)
-        {
-            successCounter = 0;
 
+        successCounter++;
+
+        if(successCounter >= 3)
+        {
             SpawnPaperWork();
             LockStation();
 
-            successCounter += 1;
+            successCounter = 0;
         }
     }
     public void SpawnPaperWork()
@@ -53,6 +49,26 @@ public class DocGenerator : MonoBehaviour {
         GameObject NewDocument = Instantiate(documents, docSpawnPoint);
         NewDocument.GetComponent<Document>().SetDestinationStation(targetStation);
 
+        documentMaterial = GetComponent<Renderer>().material;
+
+        switch (targetStation)
+        {
+            case Station.EngineRoom:
+                    documentMaterial.color = Color.red;
+                    break;
+            case Station.AtmoRoom:
+                    documentMaterial.color = Color.yellow;
+                    break;
+            case Station.PlantRoom:
+                    documentMaterial.color = Color.green;
+                    break;
+            case Station.WaterPumps:
+                    documentMaterial.color = Color.blue;
+                    break;
+            default:
+                    documentMaterial.color = Color.black;
+                break;
+        }
         //listen to HandIn
         NewDocument.GetComponent<Document>().HandIn += UnLockStation;
     }
@@ -60,10 +76,16 @@ public class DocGenerator : MonoBehaviour {
     public void OnTriggerEnter(Collider other)
     {
         Debug.Log("niklas was here");
-        if (other.GetComponent<Document>().targetStation == currentStation)
+        Document carriedDoc = other.GetComponent<Document>();
+
+
+        if (carriedDoc == null)
+            return;
+
+        if (carriedDoc.targetStation == currentStation)
         {
             Debug.Log("delivered!");
-            other.GetComponent<Document>().DeliverDocument();
+            carriedDoc.DeliverDocument();
             UnLockStation();
             //Destroy(gameObject);
         }

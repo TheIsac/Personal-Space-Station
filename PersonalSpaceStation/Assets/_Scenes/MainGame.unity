@@ -43,7 +43,7 @@ RenderSettings:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -89,7 +89,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
-  m_LightingDataAsset: {fileID: 112000002, guid: 7e8ab95d63ca80b4fb4ddde3dc058585,
+  m_LightingDataAsset: {fileID: 112000002, guid: d84009f1572cfb34495eda8c453abbe2,
     type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -153,9 +153,9 @@ MonoBehaviour:
   stationHealth: 50
   stationName: Engine Room
   documentGenerator: {fileID: 431048978}
-  tickLength: 2
+  tickLength: 3
   minWorkingHealth: 25
-  maxWorkingHealth: 75
+  maxWorkingHealth: 100
   healthText: {fileID: 863889228}
 --- !u!23 &6436289
 MeshRenderer:
@@ -1689,7 +1689,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1374609474
+  randomSeed: -324303791
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -5003,6 +5003,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!1 &272337423 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1426977643586722, guid: f67cbf04939e9e6409c39b770ea10aea,
+    type: 2}
+  m_PrefabInternal: {fileID: 1132618680}
+--- !u!114 &272337424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 272337423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13a25294306599d458789a04cc254eba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stationRooms:
+  - {fileID: 6436288}
+  - {fileID: 475006511}
+  - {fileID: 372024868}
+  - {fileID: 1939651557}
+  restartDelay: 1
 --- !u!1001 &274029830
 Prefab:
   m_ObjectHideFlags: 0
@@ -5669,9 +5691,9 @@ MonoBehaviour:
   stationHealth: 50
   stationName: Plant Room
   documentGenerator: {fileID: 589549146}
-  tickLength: 2
+  tickLength: 3
   minWorkingHealth: 25
-  maxWorkingHealth: 75
+  maxWorkingHealth: 100
   healthText: {fileID: 75095053}
 --- !u!23 &372024869
 MeshRenderer:
@@ -6368,9 +6390,9 @@ MonoBehaviour:
   stationHealth: 50
   stationName: Pump Station
   documentGenerator: {fileID: 366541931}
-  tickLength: 2
+  tickLength: 3
   minWorkingHealth: 25
-  maxWorkingHealth: 75
+  maxWorkingHealth: 100
   healthText: {fileID: 1917947863}
 --- !u!23 &475006512
 MeshRenderer:
@@ -6661,6 +6683,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efcf4d8e772955e429f6ab61e290fde2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  continousUpdate: 0
 --- !u!114 &542811411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8052,8 +8075,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0205ac2d9e109fe41a1b61c8c2659637, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stations: []
-  tickLength: 2
+  stations:
+  - {fileID: 6436288}
+  - {fileID: 475006511}
+  - {fileID: 1939651557}
+  - {fileID: 372024868}
+  tickLength: 3
   addHealth: 1
   removeHealth: 1
 --- !u!4 &790970570
@@ -8276,7 +8303,7 @@ MonoBehaviour:
   spak: {fileID: 278990535}
   completionText: {fileID: 33496202}
   isComplete: 0
-  completionTime: 3
+  completionTime: 2
   completionValue: 10
   station: {fileID: 6436288}
 --- !u!114 &833128116
@@ -8446,7 +8473,7 @@ MonoBehaviour:
   gauge: {fileID: 739836100}
   completionText: {fileID: 646615329}
   completionCount: 100
-  completionValue: 5
+  completionValue: 10
   isComplete: 0
   clickvalue: 5
   station: {fileID: 475006511}
@@ -9752,19 +9779,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e86c515ed7b01c409dedb067ee77266, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.61237264
+      value: -0.6123727
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e86c515ed7b01c409dedb067ee77266, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.3535531
+      value: 0.35355312
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e86c515ed7b01c409dedb067ee77266, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.3535531
+      value: 0.35355312
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e86c515ed7b01c409dedb067ee77266, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.6123726
+      value: 0.61237264
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e86c515ed7b01c409dedb067ee77266, type: 3}
       propertyPath: m_RootOrder
@@ -10846,6 +10873,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efcf4d8e772955e429f6ab61e290fde2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  continousUpdate: 0
 --- !u!114 &1287320616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11397,7 +11425,7 @@ MonoBehaviour:
   completionImage: {fileID: 1867533222}
   computer: {fileID: 581518428}
   completionCount: 3
-  completionValue: 5
+  completionValue: 10
   isComplete: 0
   station: {fileID: 1939651557}
   tickLength: 1
@@ -12080,6 +12108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efcf4d8e772955e429f6ab61e290fde2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  continousUpdate: 0
 --- !u!114 &1510677444
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12165,7 +12194,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4367874460526596, guid: 7bfdad6600ec4164f9b25e0cb2fcfa8e, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0.7071055
+      value: 0.99144447
       objectReference: {fileID: 0}
     - target: {fileID: 4367874460526596, guid: 7bfdad6600ec4164f9b25e0cb2fcfa8e, type: 2}
       propertyPath: m_LocalRotation.z
@@ -12173,7 +12202,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4367874460526596, guid: 7bfdad6600ec4164f9b25e0cb2fcfa8e, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.7071081
+      value: 0.13052927
       objectReference: {fileID: 0}
     - target: {fileID: 4367874460526596, guid: 7bfdad6600ec4164f9b25e0cb2fcfa8e, type: 2}
       propertyPath: m_RootOrder
@@ -12185,12 +12214,28 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4367874460526596, guid: 7bfdad6600ec4164f9b25e0cb2fcfa8e, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 90.00001
+      value: 165.00002
       objectReference: {fileID: 0}
     - target: {fileID: 114355856651109252, guid: 7bfdad6600ec4164f9b25e0cb2fcfa8e,
         type: 2}
       propertyPath: repaired
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4404167538717046, guid: 7bfdad6600ec4164f9b25e0cb2fcfa8e, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.67
+      objectReference: {fileID: 0}
+    - target: {fileID: 4404167538717046, guid: 7bfdad6600ec4164f9b25e0cb2fcfa8e, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -0.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 4113786572811612, guid: 7bfdad6600ec4164f9b25e0cb2fcfa8e, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -0.93
+      objectReference: {fileID: 0}
+    - target: {fileID: 4113786572811612, guid: 7bfdad6600ec4164f9b25e0cb2fcfa8e, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0.01
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7bfdad6600ec4164f9b25e0cb2fcfa8e, type: 2}
@@ -13758,7 +13803,7 @@ MonoBehaviour:
   - {fileID: 1023671102}
   - {fileID: 354619560}
   completionCount: 5
-  completionValue: 5
+  completionValue: 10
   isComplete: 0
   station: {fileID: 372024868}
 --- !u!114 &1808252548
@@ -14227,9 +14272,9 @@ MonoBehaviour:
   stationHealth: 50
   stationName: Atmo Station
   documentGenerator: {fileID: 1969330193}
-  tickLength: 2
+  tickLength: 3
   minWorkingHealth: 25
-  maxWorkingHealth: 75
+  maxWorkingHealth: 100
   healthText: {fileID: 1079196340}
 --- !u!23 &1939651558
 MeshRenderer:
@@ -14474,6 +14519,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efcf4d8e772955e429f6ab61e290fde2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  continousUpdate: 0
 --- !u!114 &1950273975
 MonoBehaviour:
   m_ObjectHideFlags: 0
