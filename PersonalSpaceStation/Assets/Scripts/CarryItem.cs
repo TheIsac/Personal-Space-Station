@@ -25,6 +25,16 @@ public class CarryItem : MonoBehaviour {
 
     public void PickUp(Transform carryPoint)
     {
+        if (flurpMovement != null)
+        {
+            Debug.Log(flurpMovement.GetComponent<Flurp>().canBeMoved);
+
+            if (flurpMovement.GetComponent<Flurp>().canBeMoved == false)
+                return;
+
+            flurpMovement.shouldMove = false;
+        }
+
         transform.position = carryPoint.position;
         transform.rotation = carryPoint.rotation;
         transform.SetParent(carryPoint);
@@ -38,10 +48,7 @@ public class CarryItem : MonoBehaviour {
         if(physicsCollider != null)
             physicsCollider.enabled = false;
 
-        if(flurpMovement != null)
-        {
-            flurpMovement.shouldMove = false;
-        }
+
     }
 
     public void Drop()

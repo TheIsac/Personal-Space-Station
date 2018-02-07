@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(Flurp))]
 public class FlurpMovement : MonoBehaviour {
 
     Vector3 moveCircleOrigin;
