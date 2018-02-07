@@ -83,7 +83,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4109900965825948}
-  - component: {fileID: 136795337570670834}
+  - component: {fileID: 65437351348976934}
   m_Layer: 0
   m_Name: CapsuleCollider
   m_TagString: Untagged
@@ -335,7 +335,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 1eb11e3b4a8de48449921f4646b10462, type: 3}
+  - {fileID: 2100000, guid: 126ceae28069858438915b7f62ba89db, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -471,6 +471,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2, y: 2, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65437351348976934
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1374434649477338}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.37, y: 0.49, z: 0.54}
+  m_Center: {x: 0, y: 0.25, z: 0}
 --- !u!102 &102648098312435258
 TextMesh:
   serializedVersion: 3
@@ -516,7 +528,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isBeingCarried: 0
-  physicsCollider: {fileID: 136795337570670834}
+  physicsCollider: {fileID: 65437351348976934}
 --- !u!114 &114318206098960930
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -550,19 +562,6 @@ MonoBehaviour:
   tickLength: 1
   health: {fileID: 102648098312435258}
   canBeMoved: 0
---- !u!136 &136795337570670834
-CapsuleCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1374434649477338}
-  m_Material: {fileID: 13400000, guid: 7a10b9b085cee5a4584fb144be9306ce, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.42
-  m_Height: 0.5
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.2, z: 0}
 --- !u!212 &212780357119033516
 SpriteRenderer:
   m_ObjectHideFlags: 1
