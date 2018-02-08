@@ -5,11 +5,13 @@ using UnityEngine;
 public class PackageHandler : MonoBehaviour
 {
     //An array that you have to add every individual interactable object to in the inspector.
-    public Interactable[] stations;
     private float lastTick;
     public float tickLength = 2f;
     public int addHealth = 1;
     public int removeHealth = 1;
+
+    public Interactable[] stations;
+    public FixPointChecker[] fixPoint;
 
     // Use this for initialization
     void Start()
@@ -40,6 +42,12 @@ public class PackageHandler : MonoBehaviour
         {
             if (stations[i].isWorking)
             {
+                addHealth = 1;
+
+                if (!fixPoint[i].repaired)
+                {
+                    addHealth = 0;
+                }
                 stations[(i + 1) % stations.Length].AddHealthToStation(addHealth);
             }
             else if (stations[i].isWorking && stations[i].stationHealth > 75)

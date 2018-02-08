@@ -8075,14 +8075,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0205ac2d9e109fe41a1b61c8c2659637, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tickLength: 3
+  addHealth: 1
+  removeHealth: 1
   stations:
   - {fileID: 6436288}
   - {fileID: 475006511}
   - {fileID: 1939651557}
   - {fileID: 372024868}
-  tickLength: 3
-  addHealth: 1
-  removeHealth: 1
+  fixPoint:
+  - {fileID: 1602882364}
+  - {fileID: 1513036466}
+  - {fileID: 1725918296}
+  - {fileID: 1979612496}
 --- !u!4 &790970570
 Transform:
   m_ObjectHideFlags: 0
@@ -12042,8 +12047,8 @@ Transform:
   m_LocalPosition: {x: -0.11753273, y: 0, z: 0.2657032}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1725918293}
   - {fileID: 1979612493}
+  - {fileID: 1725918293}
   - {fileID: 1513036463}
   - {fileID: 1756033343}
   m_Father: {fileID: 0}
@@ -12204,7 +12209,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1415965066210148, guid: 7bfdad6600ec4164f9b25e0cb2fcfa8e, type: 2}
       propertyPath: m_Name
-      value: TwoPointInteract (3)
+      value: TwoPointInteract PumpAtmo
       objectReference: {fileID: 0}
     - target: {fileID: 4367874460526596, guid: 7bfdad6600ec4164f9b25e0cb2fcfa8e, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -12230,6 +12235,16 @@ Prefab:
     - target: {fileID: 4113786572811612, guid: 7bfdad6600ec4164f9b25e0cb2fcfa8e, type: 2}
       propertyPath: m_LocalPosition.z
       value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 114355856651109252, guid: 7bfdad6600ec4164f9b25e0cb2fcfa8e,
+        type: 2}
+      propertyPath: recievingStation
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114355856651109252, guid: 7bfdad6600ec4164f9b25e0cb2fcfa8e,
+        type: 2}
+      propertyPath: sendingStation
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7bfdad6600ec4164f9b25e0cb2fcfa8e, type: 2}
@@ -12280,6 +12295,12 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1513036466 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114355856651109252, guid: 7bfdad6600ec4164f9b25e0cb2fcfa8e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1513036462}
+  m_Script: {fileID: 11500000, guid: 8921ccc698749b74dbf6ec51aea6d6fb, type: 3}
 --- !u!1 &1527168324
 GameObject:
   m_ObjectHideFlags: 0
@@ -12680,6 +12701,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7b98b786e55271c4d92f6051439b2867, type: 3}
   m_IsPrefabParent: 0
+--- !u!114 &1602882364 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114355856651109252, guid: 7bfdad6600ec4164f9b25e0cb2fcfa8e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1756033342}
+  m_Script: {fileID: 11500000, guid: 8921ccc698749b74dbf6ec51aea6d6fb, type: 3}
 --- !u!1 &1612160767
 GameObject:
   m_ObjectHideFlags: 0
@@ -13220,7 +13247,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4367874460526596, guid: 7bfdad6600ec4164f9b25e0cb2fcfa8e, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4113786572811612, guid: 7bfdad6600ec4164f9b25e0cb2fcfa8e, type: 2}
       propertyPath: m_LocalPosition.x
@@ -13240,7 +13267,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1415965066210148, guid: 7bfdad6600ec4164f9b25e0cb2fcfa8e, type: 2}
       propertyPath: m_Name
-      value: TwoPointInteract (1)
+      value: TwoPointInteract AtmoPlant
       objectReference: {fileID: 0}
     - target: {fileID: 4367874460526596, guid: 7bfdad6600ec4164f9b25e0cb2fcfa8e, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -13281,6 +13308,16 @@ Prefab:
     - target: {fileID: 114355856651109252, guid: 7bfdad6600ec4164f9b25e0cb2fcfa8e,
         type: 2}
       propertyPath: repaired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114355856651109252, guid: 7bfdad6600ec4164f9b25e0cb2fcfa8e,
+        type: 2}
+      propertyPath: recievingStation
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114355856651109252, guid: 7bfdad6600ec4164f9b25e0cb2fcfa8e,
+        type: 2}
+      propertyPath: sendingStation
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -13332,6 +13369,12 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1725918296 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114355856651109252, guid: 7bfdad6600ec4164f9b25e0cb2fcfa8e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1725918292}
+  m_Script: {fileID: 11500000, guid: 8921ccc698749b74dbf6ec51aea6d6fb, type: 3}
 --- !u!1001 &1756033342
 Prefab:
   m_ObjectHideFlags: 0
@@ -13369,6 +13412,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4367874460526596, guid: 7bfdad6600ec4164f9b25e0cb2fcfa8e, type: 2}
       propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1415965066210148, guid: 7bfdad6600ec4164f9b25e0cb2fcfa8e, type: 2}
+      propertyPath: m_Name
+      value: TwoPointInteract EnginePump
+      objectReference: {fileID: 0}
+    - target: {fileID: 114355856651109252, guid: 7bfdad6600ec4164f9b25e0cb2fcfa8e,
+        type: 2}
+      propertyPath: recievingStation
       value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -14703,7 +14755,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4367874460526596, guid: 7bfdad6600ec4164f9b25e0cb2fcfa8e, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4113786572811612, guid: 7bfdad6600ec4164f9b25e0cb2fcfa8e, type: 2}
       propertyPath: m_LocalPosition.x
@@ -14723,7 +14775,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1415965066210148, guid: 7bfdad6600ec4164f9b25e0cb2fcfa8e, type: 2}
       propertyPath: m_Name
-      value: TwoPointInteract (2)
+      value: TwoPointInteract PlantEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4367874460526596, guid: 7bfdad6600ec4164f9b25e0cb2fcfa8e, type: 2}
       propertyPath: m_LocalScale.x
@@ -14737,6 +14789,16 @@ Prefab:
         type: 2}
       propertyPath: repaired
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114355856651109252, guid: 7bfdad6600ec4164f9b25e0cb2fcfa8e,
+        type: 2}
+      propertyPath: recievingStation
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114355856651109252, guid: 7bfdad6600ec4164f9b25e0cb2fcfa8e,
+        type: 2}
+      propertyPath: sendingStation
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7bfdad6600ec4164f9b25e0cb2fcfa8e, type: 2}
@@ -14787,6 +14849,12 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1979612496 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114355856651109252, guid: 7bfdad6600ec4164f9b25e0cb2fcfa8e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1979612492}
+  m_Script: {fileID: 11500000, guid: 8921ccc698749b74dbf6ec51aea6d6fb, type: 3}
 --- !u!4 &1980940387 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4928650207861580, guid: 7d1a228974e653045921d5f9649f0b52,
