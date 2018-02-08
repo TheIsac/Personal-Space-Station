@@ -1,20 +1,10 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-guid: fad46e9544accfb46a9deb324ef72ef7
-timeCreated: 1517922413
-=======
-<<<<<<< HEAD
-guid: 329b84dbbb94fd546864ca7592d4b788
-timeCreated: 1517920920
-=======
-guid: 5d04e49b079738646a44e8a44d8b98fa
-timeCreated: 1517920882
->>>>>>> 14f5ff969bd309dade6ea9dbb29d7676c4b3b3b4
->>>>>>> be624c8e48dc1abfadd2b70ed63dbe0d8bdf714c
+guid: abbf692151a615f4db4537f342ad680d
+timeCreated: 1518082364
 licenseType: Pro
 NativeFormatImporter:
   externalObjects: {}
-  mainObjectFileID: 0
+  mainObjectFileID: 7400000
   userData: 
   assetBundleName: 
   assetBundleVariant: 
