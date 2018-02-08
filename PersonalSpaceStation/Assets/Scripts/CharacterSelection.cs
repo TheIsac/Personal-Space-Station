@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class CharacterSelection : MonoBehaviour {
 
     //Default selection
-    private int selection = 0;
+    public int selection = 0;
     private int scoreUpdateInterval = 20;
 
     public string player;
