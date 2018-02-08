@@ -7,6 +7,8 @@ public class WorkbenchGizmo : MonoBehaviour {
     public Color gizmoColor;
     public BoxCollider boxCollider;
 
+    public GameObject dropOfZone;
+
 	// Use this for initialization
 	void Start () {
         boxCollider = GetComponentInParent<BoxCollider>();
