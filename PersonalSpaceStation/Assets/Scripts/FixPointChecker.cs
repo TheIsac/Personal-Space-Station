@@ -11,6 +11,9 @@ public class FixPointChecker : MonoBehaviour {
     public bool pressedFirst;
     public bool pressedSecond;
 
+    public Station sendingStation;
+    public Station recievingStation;
+
     public bool repaired;
 
     private Light light;
