@@ -164,6 +164,12 @@ public class CharacterSelectionHandler : MonoBehaviour {
                 startGame.gameObject.SetActive(true);
             }
 
+            if (numberOfPlayers == 4 && player1Ready && player2Ready && player3Ready && player4Ready)
+            {
+                startGame.gameObject.SetActive(true);
+            }
+
+
 
         }
 
