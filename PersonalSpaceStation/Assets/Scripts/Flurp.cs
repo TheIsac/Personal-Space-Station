@@ -101,6 +101,10 @@ public class Flurp : MonoBehaviour {
             //canBeMoved = false;
             spriteRenderer.gameObject.SetActive(false);
         }
+        else
+        {
+            DisplayNewObjective();
+        }
     }
 
     void Tick()
@@ -121,6 +125,7 @@ public class Flurp : MonoBehaviour {
         else
         {
             currentHappinessValue--;
+            DisplayNewObjective();
         }
 
         if(currentHappinessValue >= targetHappinessValue)
