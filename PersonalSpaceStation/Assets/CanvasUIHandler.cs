@@ -10,14 +10,7 @@ public class CanvasUIHandler : MonoBehaviour {
     public Image aEngine, aPump, aAtmo, aPlant;
     public Image eEngine, ePump, eAtmo, ePlant;
     public Image docEngine, docPump, docAtmo, docPlant;
-
-	// Use this for initialization
-	void Awake () {
-		
-
-	}
 	
-	// Update is called once per frame
 	void Update () {
         if (engine.locked)
         {
