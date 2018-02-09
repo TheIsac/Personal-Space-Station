@@ -1533,6 +1533,7 @@ MonoBehaviour:
   moveSpeed: 15
   player: _P1
   inMiniGame: 0
+  anim: {fileID: 95950500475947590}
 --- !u!114 &114194712114534778
 MonoBehaviour:
   m_ObjectHideFlags: 1
