@@ -98,7 +98,7 @@ public class Flurp : MonoBehaviour {
             currentHappinessValue = 0f;
             targetHappinessValue = Mathf.RoundToInt(Random.Range(baseTimeToReachHappiness * .75f, baseTimeToReachHappiness * 1.25f));
 
-            canBeMoved = false;
+            //canBeMoved = false;
             spriteRenderer.gameObject.SetActive(false);
         }
     }

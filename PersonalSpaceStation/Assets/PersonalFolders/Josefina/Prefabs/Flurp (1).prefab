@@ -84,8 +84,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4109900965825948}
   - component: {fileID: 65437351348976934}
+  - component: {fileID: 65280235179344154}
   m_Layer: 0
-  m_Name: CapsuleCollider
+  m_Name: BodyCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -138,7 +139,7 @@ GameObject:
   - component: {fileID: 65192586498615918}
   - component: {fileID: 114204064148534156}
   - component: {fileID: 114088263390629798}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Flurp (1)
   m_TagString: Flurp
   m_Icon: {fileID: 0}
@@ -471,6 +472,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2, y: 2, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65280235179344154
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1374434649477338}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.37, y: 0.49, z: 0.54}
+  m_Center: {x: 0, y: 0.25, z: 0}
 --- !u!65 &65437351348976934
 BoxCollider:
   m_ObjectHideFlags: 1
