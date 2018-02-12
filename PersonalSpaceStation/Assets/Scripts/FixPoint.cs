@@ -55,7 +55,7 @@ public class FixPoint : MonoBehaviour {
         if (stationUser == null)
             return;
 
-        if (Input.GetButton("A-button" + stationUser.player))
+        if (Input.GetButton("X-button" + stationUser.player))
         {
             pressed = true;
         }
