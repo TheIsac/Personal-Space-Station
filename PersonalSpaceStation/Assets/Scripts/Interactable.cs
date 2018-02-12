@@ -50,10 +50,17 @@ public class Interactable : MonoBehaviour {
     {
         inUse = false;
         miniGame.SetActive(false);
-        
 
-        if (stationUser != null)
+
+        if (stationUser!= null)
         {
+            Animator anim = stationUser.GetComponentInChildren<Animator>();
+
+            if(anim != null)
+            {
+                anim.SetBool("isInteracting", false);
+            }
+
             stationUser.inMiniGame = false;
             stationUser.GetComponent<Rigidbody>().isKinematic = false;
 
@@ -63,7 +70,24 @@ public class Interactable : MonoBehaviour {
                 documentGenerator.DocumentGenerator();
             }
         }    
+    }
 
+    public void StartMiniGame(Movement playerMovement)
+    {
+        inUse = true;
+        miniGame.GetComponent<IResetStation>().ResetStation(playerMovement.player);
+        miniGame.SetActive(true);
+
+        stationUser = playerMovement;
+    }
+
+    public void EndMiniGame()
+    {
+        inUse = false;
+        miniGame.SetActive(false);
+        miniGame.GetComponent<IResetUser>().ResetUser();
+
+        stationUser = null;
     }
 
     //gives health to the station if the station is repaired or the previous station works and sends health.
@@ -157,23 +181,5 @@ public class Interactable : MonoBehaviour {
         {
             other.gameObject.GetComponentInParent<InteractableHandler>().SetStation(null);
         }
-    }
-
-    public void StartMiniGame(Movement playerMovement)
-    {
-        inUse = true;
-        miniGame.GetComponent<IResetStation>().ResetStation(playerMovement.player);
-        miniGame.SetActive(true);
-
-        stationUser = playerMovement;
-    }
-
-    public void EndMiniGame()
-    {
-        inUse = false;
-        miniGame.SetActive(false);
-        miniGame.GetComponent<IResetUser>().ResetUser();
-
-        stationUser = null;
     }
 }

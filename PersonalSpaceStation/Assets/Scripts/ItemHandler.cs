@@ -60,9 +60,15 @@ public class ItemHandler : MonoBehaviour {
                 characterAnimator.SetBool("CarryingItem", false);
                 carriedItem.Drop();
                 itemInRange = carriedItem;
-                carriedItem = null;
+                StartCoroutine(Drop());
             }
         }
+    }
+
+    IEnumerator Drop()
+    {
+        yield return new WaitForEndOfFrame();
+        carriedItem = null;
     }
 
     private void OnTriggerEnter(Collider other)
