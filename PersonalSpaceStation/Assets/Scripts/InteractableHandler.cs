@@ -63,8 +63,12 @@ public class InteractableHandler : MonoBehaviour {
             playerRigidbody.isKinematic = true;
             movement.inMiniGame = true;
 
+
             anim.SetBool("isInteracting", true);
             currentStation.StartMiniGame(movement.player);
+
+            currentStation.StartMiniGame(movement);
+
         }
 
 
