@@ -46,7 +46,7 @@ public class InteractableHandler : MonoBehaviour {
 
         // Input
 
-        if (Input.GetButtonDown("B-button" + movement.player) && currentStation.inUse == true && currentStation.currentStationUser == movement.player)
+        if (Input.GetButtonDown("B-button" + movement.player) && currentStation.inUse == true && currentStation.stationUser == movement)
         {
             playerRigidbody.isKinematic = false;
             movement.inMiniGame = false;
