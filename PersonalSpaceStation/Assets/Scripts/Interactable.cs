@@ -25,8 +25,8 @@ public class Interactable : MonoBehaviour {
     public int minWorkingHealth = 25;
     public int maxWorkingHealth = 75;
 
-    private Movement stationUser = null;
-    public string currentStationUser = "";
+    public Movement stationUser = null;
+    //public string currentStationUser = "";
 
     public Text healthText;
 
@@ -200,7 +200,7 @@ public class Interactable : MonoBehaviour {
         miniGame.SetActive(false);
         miniGame.GetComponent<IResetUser>().ResetUser();
 
-        currentStationUser = null;
+        stationUser = null;
     }
 
     //private void HandlePlayerInput()
