@@ -7,7 +7,7 @@ public class Scoring : MonoBehaviour
 {
 
     public float scoreTimer = 0;
-    public int realScore = 0;
+    public int totalScore = 0;
     public Text scoreText;
     private int scoreUpdateInterval = 6;
     public float scoreMultiplier = 1;
@@ -32,9 +32,9 @@ public class Scoring : MonoBehaviour
             UpdateScore();
         }
         scoreTimer += Time.deltaTime * scoreMultiplier;
-        realScore = (int)scoreTimer;
+        totalScore = (int)scoreTimer;
 
-        scoreText.text = realScore.ToString();
+        scoreText.text = totalScore.ToString();
 	}
 
     //Add score based on number of runningStations
