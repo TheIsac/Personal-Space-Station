@@ -413,7 +413,7 @@ GameObject:
   - component: {fileID: 95336041683583370}
   m_Layer: 0
   m_Name: char_01_anim_test_baked
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -703,7 +703,7 @@ GameObject:
   - component: {fileID: 4913571262840374}
   m_Layer: 0
   m_Name: CarryPoint
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -779,7 +779,7 @@ GameObject:
   - component: {fileID: 136277876434533692}
   m_Layer: 0
   m_Name: CapsuleCollider
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1551,6 +1551,7 @@ MonoBehaviour:
   moveSpeed: 15
   player: _P1
   inMiniGame: 0
+  anim: {fileID: 0}
 --- !u!114 &114794924232750940
 MonoBehaviour:
   m_ObjectHideFlags: 1

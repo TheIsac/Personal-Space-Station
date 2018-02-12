@@ -155,20 +155,27 @@ public class Interactable : MonoBehaviour {
             return;
         }
 
+        if(other.tag == "Player")
+        {
+            playerInRange = true;
+            stationUser = other.gameObject.GetComponentInParent<Movement>();
+        }
 
-        playerInRange = true;
-        stationUser = other.gameObject.GetComponentInParent<Movement>();
     }
 
     //when the player leaves the collider of the miniGame there is no longer a player in range nor is there a station user. 
     private void OnTriggerExit(Collider other)
     {
-        playerInRange = false;
-
-        if (!inUse)
+        if (other.tag == "Player")
         {
-            stationUser = null;
+
+            if (!inUse)
+            {
+                playerInRange = false;
+                stationUser = null;
+            }
         }
+
     }
 
     private void HandlePlayerInput()
