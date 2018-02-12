@@ -9,6 +9,8 @@ public class InteractableHandler : MonoBehaviour {
     Movement movement;
     Rigidbody playerRigidbody;
 
+    public Animator anim;
+
     void Awake () {
         itemHandler = GetComponent<ItemHandler>();
         movement = GetComponent<Movement>();
@@ -49,6 +51,7 @@ public class InteractableHandler : MonoBehaviour {
             playerRigidbody.isKinematic = false;
             movement.inMiniGame = false;
 
+            anim.SetBool("isInteracting", false);
             currentStation.EndMiniGame();
         }
 
@@ -59,7 +62,10 @@ public class InteractableHandler : MonoBehaviour {
         {
             playerRigidbody.isKinematic = true;
             movement.inMiniGame = true;
+
+            anim.SetBool("isInteracting", true);
             currentStation.StartMiniGame(movement);
+
         }
     }
 }
