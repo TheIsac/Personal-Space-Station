@@ -37,6 +37,9 @@ public class ItemHandler : MonoBehaviour {
 
     void PlayerInput()
     {
+        if (movement.inMiniGame)
+            return;
+
         if(carriedItem == null)
         {
             if (Input.GetButtonDown("A-button" + movement.player))
@@ -60,12 +63,6 @@ public class ItemHandler : MonoBehaviour {
                 carriedItem = null;
             }
         }
-
-
-
-
-
-
     }
 
     private void OnTriggerEnter(Collider other)

@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 54948944517208620}
   - component: {fileID: 114194712114534778}
   - component: {fileID: 114120350058242884}
+  - component: {fileID: 114904560321205194}
   m_Layer: 0
   m_Name: PlayerOne Prefab
   m_TagString: Player
@@ -116,7 +117,7 @@ GameObject:
   - component: {fileID: 4401463288824858}
   m_Layer: 0
   m_Name: CarryPoint
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -282,7 +283,7 @@ GameObject:
   - component: {fileID: 136650150503710640}
   m_Layer: 0
   m_Name: CapsuleCollider
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -389,7 +390,7 @@ GameObject:
   - component: {fileID: 95950500475947590}
   m_Layer: 0
   m_Name: char01
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1548,6 +1549,18 @@ MonoBehaviour:
   currentHeatValue: 0
   currentStation: 0
   tickLength: 1
+--- !u!114 &114904560321205194
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1006028755482594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0049114846044147a800ee163286a8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 95950500475947590}
 --- !u!136 &136650150503710640
 CapsuleCollider:
   m_ObjectHideFlags: 1

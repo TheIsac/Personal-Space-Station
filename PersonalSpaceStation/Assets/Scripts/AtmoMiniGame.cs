@@ -105,6 +105,7 @@ public class AtmoMiniGame : MonoBehaviour, IResetUser, IResetStation
         {
             if(completionColor == computermaterial.color)
             {
+                //setbool för interacting här?
                 completionCounter ++;
                 completionText.text = completionCounter.ToString("0");
                 NewColor();
@@ -113,6 +114,7 @@ public class AtmoMiniGame : MonoBehaviour, IResetUser, IResetStation
             {
                 if(completionCounter > 0)
                 {
+                    //setboolfalse här?
                     completionCounter--;
                     completionText.text = completionCounter.ToString("0");
                     NewColor();
