@@ -8805,6 +8805,11 @@ Prefab:
       propertyPath: m_Name
       value: "Flurp R\xE4tt (1)"
       objectReference: {fileID: 0}
+    - target: {fileID: 114490223341228754, guid: 6c1041aa54d31684691d27106c0aad06,
+        type: 2}
+      propertyPath: currentStation
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6c1041aa54d31684691d27106c0aad06, type: 2}
   m_IsPrefabParent: 0

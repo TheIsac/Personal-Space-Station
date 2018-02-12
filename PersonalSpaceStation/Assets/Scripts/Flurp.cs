@@ -7,36 +7,35 @@ public enum FlurpState { Dead, Recharging, Unhappy}
 [RequireComponent(typeof(FlurpMovement))]
 public class Flurp : MonoBehaviour {
 
+    [Header("Station Control")]
     public Station currentStation;
     public Station targetStation;
+    //public bool canBeMoved;
 
+    [Header("Graphics")]
     public Sprite engineRoomIcon;
     public Sprite atmoRoomIcon;
     public Sprite plantRoomIcon;
     public Sprite pumpRoomIcon;
 
     public SpriteRenderer spriteRenderer;
+    public TextMesh health;
+
+    [Header("Settings")]
+    public float timerToReachNextStation = 20f;
+    public float baseTimeToReachHappiness = 20f;
+    public float tickLength = 1f;
 
     private FlurpState flurpState = FlurpState.Unhappy;
-
     private float lastTick;
-    public float tickLength = 1f;
 
     float currentHappinessValue;
     float targetHappinessValue;
-    float timerToReachNextStation = 20f;
 
-    float baseTimeToReachHappiness = 20f;
-
-    public TextMesh health;
-
-    public bool canBeMoved;
 
     void Start()
     {
         lastTick = Time.time;
-        currentStation = Station.WaterPumps;
-
         spriteRenderer.gameObject.SetActive(false);
 
         NewRandomRoom();
@@ -63,7 +62,7 @@ public class Flurp : MonoBehaviour {
         health.text = currentHappinessValue.ToString();
         DisplayNewObjective();
 
-        canBeMoved = true;
+        //canBeMoved = true;
     }
 
     void DisplayNewObjective()
@@ -145,7 +144,7 @@ public class Flurp : MonoBehaviour {
 
         if(currentHappinessValue >= targetHappinessValue)
         {
-            canBeMoved = true;
+            //canBeMoved = true;
             NewRandomRoom();
         }
 
