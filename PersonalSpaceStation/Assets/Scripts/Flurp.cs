@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum FlurpState { Dead, Recharging, Unhappy}
+
 [RequireComponent(typeof(FlurpMovement))]
 public class Flurp : MonoBehaviour {
 
@@ -14,6 +16,8 @@ public class Flurp : MonoBehaviour {
     public Sprite pumpRoomIcon;
 
     public SpriteRenderer spriteRenderer;
+
+    private FlurpState flurpState = FlurpState.Unhappy;
 
     private float lastTick;
     public float tickLength = 1f;
@@ -31,7 +35,7 @@ public class Flurp : MonoBehaviour {
     void Start()
     {
         lastTick = Time.time;
-        currentStation = Station.None;
+        currentStation = Station.WaterPumps;
 
         spriteRenderer.gameObject.SetActive(false);
 
@@ -50,6 +54,8 @@ public class Flurp : MonoBehaviour {
             targetStation = (Station)Random.Range(0, System.Enum.GetValues(typeof(Station)).Length - 1);
         }
         while (currentStation == targetStation);
+
+        flurpState = FlurpState.Unhappy;
 
         currentHappinessValue = timerToReachNextStation;
         targetHappinessValue = timerToReachNextStation;
@@ -91,10 +97,14 @@ public class Flurp : MonoBehaviour {
 
     public void SetCurrentStation(Station station)
     {
+        if (flurpState == FlurpState.Dead)
+            return;
+
         currentStation = station;
 
-        if(currentStation == targetStation)
+        if(currentStation == targetStation && flurpState == FlurpState.Unhappy)
         {
+            flurpState = FlurpState.Recharging;
             currentHappinessValue = 0f;
             targetHappinessValue = Mathf.RoundToInt(Random.Range(baseTimeToReachHappiness * .75f, baseTimeToReachHappiness * 1.25f));
 
@@ -114,6 +124,11 @@ public class Flurp : MonoBehaviour {
             lastTick = Time.time;
             WellBeeingControl(); 
         }
+    }
+
+    void EndGame()
+    {
+        flurpState = FlurpState.Dead;
     }
 
     void WellBeeingControl()
@@ -136,7 +151,7 @@ public class Flurp : MonoBehaviour {
 
         if(currentHappinessValue <= 0)
         {
-            Debug.Log("GAME OVER");
+            EndGame();
         }
 
         health.text = currentHappinessValue.ToString();
