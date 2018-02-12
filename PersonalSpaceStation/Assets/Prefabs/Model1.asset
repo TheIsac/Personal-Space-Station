@@ -11,4 +11,5 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: Model1
   m_EditorClassIdentifier: Assembly-CSharp::Character
-  characterModels: []
+  characterModels:
+  - {fileID: 1006028755482594, guid: 12988900437daf64782f3444cee53dc2, type: 2}
