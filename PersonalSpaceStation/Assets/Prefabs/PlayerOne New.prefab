@@ -596,6 +596,7 @@ GameObject:
   - component: {fileID: 54391275805394510}
   - component: {fileID: 114911021401678168}
   - component: {fileID: 114794924232750940}
+  - component: {fileID: 114985652734048468}
   m_Layer: 0
   m_Name: PlayerOne New
   m_TagString: Player
@@ -1578,6 +1579,17 @@ MonoBehaviour:
   currentHeatValue: 0
   currentStation: 0
   tickLength: 1
+--- !u!114 &114985652734048468
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1705989451432332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0049114846044147a800ee163286a8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!136 &136277876434533692
 CapsuleCollider:
   m_ObjectHideFlags: 1

@@ -26,6 +26,7 @@ public class Interactable : MonoBehaviour {
     public int maxWorkingHealth = 75;
 
     private Movement stationUser = null;
+    public string currentStationUser = "";
 
     public Text healthText;
 
@@ -44,10 +45,10 @@ public class Interactable : MonoBehaviour {
             return;
         }
 
-        if (playerInRange)
-        {
-            HandlePlayerInput();
-        }
+        //if (playerInRange)
+        //{
+        //    HandlePlayerInput();
+        //}
 
     }
 
@@ -150,16 +151,21 @@ public class Interactable : MonoBehaviour {
     //that players movement script so that it can use it's value for player.
     private void OnTriggerEnter(Collider other)
     {
-        if (stationUser != null)
+        if (other.tag == "Player")
         {
-            return;
+            other.gameObject.GetComponentInParent<InteractableHandler>().SetStation(this);
         }
 
-        if(other.tag == "Player")
-        {
-            playerInRange = true;
-            stationUser = other.gameObject.GetComponentInParent<Movement>();
-        }
+        //if (stationUser != null)
+        //{
+        //    return;
+        //}
+
+        //if(other.tag == "Player")
+        //{
+        //    playerInRange = true;
+        //    stationUser = other.gameObject.GetComponentInParent<Movement>();
+        //}
 
     }
 
@@ -168,48 +174,67 @@ public class Interactable : MonoBehaviour {
     {
         if (other.tag == "Player")
         {
+            other.gameObject.GetComponentInParent<InteractableHandler>().SetStation(null);
 
-            if (!inUse)
-            {
-                playerInRange = false;
-                stationUser = null;
-            }
+            //if (!inUse)
+            //{
+            //    playerInRange = false;
+            //    stationUser = null;
+            //}
         }
     }
 
-    private void HandlePlayerInput()
+    public void StartMiniGame(string player)
     {
-        //if there player has left the station area, there is no station user and this code should not run.
-        if (stationUser == null)
-        {
-            return;
-        }
+        inUse = true;
+        miniGame.GetComponent<IResetStation>().ResetStation(player);
+        miniGame.SetActive(true);
 
-        //When you press the button "A" different things happen depending on if the game is on or not. If the player is in the game, pressing "A" exits the game. If the player 
-        //is not in the game, pressing "A" enters the game.
-        bool isCarryingItem = false;
-
-        ItemHandler item = stationUser.GetComponent<ItemHandler>();
-        if(item != null)
-        {
-            isCarryingItem = item.IsCarryingItem();
-        }
-
-        if (Input.GetButtonDown("A-button" + stationUser.player) && inUse == false && isCarryingItem == false)
-        {
-            inUse = true;
-            miniGame.GetComponent<IResetStation>().ResetStation(stationUser.player);
-            stationUser.GetComponent<Rigidbody>().isKinematic = true;
-            miniGame.SetActive(true);
-            stationUser.inMiniGame = true;
-        }
-        if (Input.GetButtonDown("B-button" + stationUser.player) && inUse == true)
-        {
-            inUse = false;
-            miniGame.SetActive(false);
-            miniGame.GetComponent<IResetUser>().ResetUser();
-            stationUser.GetComponent<Rigidbody>().isKinematic = false;
-            stationUser.inMiniGame = false;
-        }
+        currentStationUser = player;
     }
+
+    public void EndMiniGame()
+    {
+        inUse = false;
+        miniGame.SetActive(false);
+        miniGame.GetComponent<IResetUser>().ResetUser();
+
+        currentStationUser = "";
+    }
+
+    //private void HandlePlayerInput()
+    //{
+    //    //if there player has left the station area, there is no station user and this code should not run.
+    //    if (stationUser == null)
+    //    {
+    //        return;
+    //    }
+
+    //    //When you press the button "A" different things happen depending on if the game is on or not. If the player is in the game, pressing "A" exits the game. If the player 
+    //    //is not in the game, pressing "A" enters the game.
+    //    bool isCarryingItem = false;
+
+    //    ItemHandler item = stationUser.GetComponent<ItemHandler>();
+    //    if(item != null)
+    //    {
+    //        isCarryingItem = item.IsCarryingItem();
+    //    }
+
+    //    if (Input.GetButtonDown("A-button" + stationUser.player) && inUse == false && isCarryingItem == false)
+    //    {
+    //        inUse = true;
+    //        miniGame.GetComponent<IResetStation>().ResetStation(stationUser.player);
+    //        stationUser.GetComponent<Rigidbody>().isKinematic = true;
+    //        miniGame.SetActive(true);
+    //        stationUser.inMiniGame = true;
+    //    }
+    //    if (Input.GetButtonDown("B-button" + stationUser.player) && inUse == true)
+    //    {
+    //        inUse = false;
+    //        miniGame.SetActive(false);
+    //        miniGame.GetComponent<IResetUser>().ResetUser();
+    //        stationUser.GetComponent<Rigidbody>().isKinematic = false;
+    //        stationUser.inMiniGame = false;
+    //    }
+    //}
 }
