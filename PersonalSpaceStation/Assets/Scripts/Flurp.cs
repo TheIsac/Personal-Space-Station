@@ -110,6 +110,10 @@ public class Flurp : MonoBehaviour {
             //canBeMoved = false;
             spriteRenderer.gameObject.SetActive(false);
         }
+        else if(currentStation == targetStation && flurpState == FlurpState.Recharging)
+        {
+            spriteRenderer.gameObject.SetActive(false);
+        }
         else
         {
             DisplayNewObjective();
