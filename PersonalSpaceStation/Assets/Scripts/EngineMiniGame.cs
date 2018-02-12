@@ -27,12 +27,20 @@ public class EngineMiniGame : MonoBehaviour, IResetUser, IResetStation
     public Interactable station;
     private Quaternion startRotation;
 
-    void Start () {
+/// <summary>
+/// 
+/// </summary>
+    void Start ()
+    {
 
         startRotation = spak.rectTransform.rotation;
         currentMomentum = Random.Range(-baseMomentum, baseMomentum);
     }
 
+/// <summary>
+/// 
+/// </summary>
+/// <param name="player"></param>
     // Reset the mini game for new game
     public void ResetStation(string player)
     {
@@ -44,11 +52,17 @@ public class EngineMiniGame : MonoBehaviour, IResetUser, IResetStation
         completionText.text = completionCounter.ToString("#.0");
     }
 
+/// <summary>
+/// 
+/// </summary>
     public void ResetUser()
     {
         stationUser = "";
     }
 
+/// <summary>
+/// 
+/// </summary>
     void Update () {
 
         if (isComplete || stationUser == "")
@@ -59,13 +73,16 @@ public class EngineMiniGame : MonoBehaviour, IResetUser, IResetStation
         HandlePlayerInput();
     }
 
+/// <summary>
+/// 
+/// </summary>
     void HandlePlayerInput()
     {
         if (stationUser == "")
             return;
-
+        
         float horizontalAxis = 0;
-
+        
         //if (Mathf.Abs(Input.GetAxis("Horizontal" + stationUser)) > .7f)
         horizontalAxis = Input.GetAxis("Horizontal" + stationUser);
 
@@ -81,6 +98,9 @@ public class EngineMiniGame : MonoBehaviour, IResetUser, IResetStation
         }
     }
 
+/// <summary>
+/// 
+/// </summary>
     void CheckCompletionCriteria()
     {
         // Check if the mini game is complete
@@ -98,6 +118,10 @@ public class EngineMiniGame : MonoBehaviour, IResetUser, IResetStation
         }
     }
 
+/// <summary>
+/// 
+/// </summary>
+/// <returns></returns>
     IEnumerator CompleteMiniGame()
     {
         station.AddHealthToStation(completionValue);
@@ -108,6 +132,9 @@ public class EngineMiniGame : MonoBehaviour, IResetUser, IResetStation
         station.MiniGameComplete();
     }
 
+/// <summary>
+/// 
+/// </summary>
     void MoveLever()
     {
         // if the lever is moving slowly, set a random movement
