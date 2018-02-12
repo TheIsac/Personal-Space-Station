@@ -27,10 +27,10 @@ public class CarryItem : MonoBehaviour {
     {
         if (flurpMovement != null)
         {
-            Debug.Log(flurpMovement.GetComponent<Flurp>().canBeMoved);
+            //Debug.Log(flurpMovement.GetComponent<Flurp>().canBeMoved);
 
-            if (flurpMovement.GetComponent<Flurp>().canBeMoved == false)
-                return;
+            //if (flurpMovement.GetComponent<Flurp>().canBeMoved == false)
+            //    return;
 
             flurpMovement.shouldMove = false;
         }

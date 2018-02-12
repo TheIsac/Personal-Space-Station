@@ -2,12 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum FlurpState { Dead, Recharging, Unhappy}
+
 [RequireComponent(typeof(FlurpMovement))]
 public class Flurp : MonoBehaviour {
 
+    [Header("Station Control")]
     public Station currentStation;
     public Station targetStation;
+    //public bool canBeMoved;
 
+    [Header("Graphics")]
     public Sprite engineRoomIcon;
     public Sprite atmoRoomIcon;
     public Sprite plantRoomIcon;
@@ -15,24 +20,22 @@ public class Flurp : MonoBehaviour {
 
     public SpriteRenderer spriteRenderer;
 
-    private float lastTick;
+    [Header("Settings")]
+    public float timerToReachNextStation = 20f;
+    public float baseTimeToReachHappiness = 20f;
     public float tickLength = 1f;
+    public TextMesh health;
+
+    private FlurpState flurpState = FlurpState.Unhappy;
+    private float lastTick;
 
     float currentHappinessValue;
     float targetHappinessValue;
-    float timerToReachNextStation = 20f;
 
-    float baseTimeToReachHappiness = 20f;
-
-    public TextMesh health;
-
-    public bool canBeMoved;
 
     void Start()
     {
         lastTick = Time.time;
-        currentStation = Station.None;
-
         spriteRenderer.gameObject.SetActive(false);
 
         NewRandomRoom();
@@ -51,13 +54,15 @@ public class Flurp : MonoBehaviour {
         }
         while (currentStation == targetStation);
 
+        flurpState = FlurpState.Unhappy;
+
         currentHappinessValue = timerToReachNextStation;
         targetHappinessValue = timerToReachNextStation;
 
         health.text = currentHappinessValue.ToString();
         DisplayNewObjective();
 
-        canBeMoved = true;
+        //canBeMoved = true;
     }
 
     void DisplayNewObjective()
@@ -91,15 +96,27 @@ public class Flurp : MonoBehaviour {
 
     public void SetCurrentStation(Station station)
     {
+        if (flurpState == FlurpState.Dead)
+            return;
+
         currentStation = station;
 
-        if(currentStation == targetStation)
+        if(currentStation == targetStation && flurpState == FlurpState.Unhappy)
         {
+            flurpState = FlurpState.Recharging;
             currentHappinessValue = 0f;
             targetHappinessValue = Mathf.RoundToInt(Random.Range(baseTimeToReachHappiness * .75f, baseTimeToReachHappiness * 1.25f));
 
-            canBeMoved = false;
+            //canBeMoved = false;
             spriteRenderer.gameObject.SetActive(false);
+        }
+        else if(currentStation == targetStation && flurpState == FlurpState.Recharging)
+        {
+            spriteRenderer.gameObject.SetActive(false);
+        }
+        else
+        {
+            DisplayNewObjective();
         }
     }
 
@@ -112,6 +129,13 @@ public class Flurp : MonoBehaviour {
         }
     }
 
+    void EndGame()
+    {
+        flurpState = FlurpState.Dead;
+
+        GameManager.instance.GameOver();
+    }
+
     void WellBeeingControl()
     {
         if(currentStation == targetStation)
@@ -121,17 +145,18 @@ public class Flurp : MonoBehaviour {
         else
         {
             currentHappinessValue--;
+            DisplayNewObjective();
         }
 
         if(currentHappinessValue >= targetHappinessValue)
         {
-            canBeMoved = true;
+            //canBeMoved = true;
             NewRandomRoom();
         }
 
         if(currentHappinessValue <= 0)
         {
-            Debug.Log("GAME OVER");
+            EndGame();
         }
 
         health.text = currentHappinessValue.ToString();

@@ -53,7 +53,7 @@ public class DocGenerator : MonoBehaviour {
 
     public void OnTriggerEnter(Collider other)
     {
-        Debug.Log("niklas was here");
+        //Debug.Log("niklas was here");
         Document carriedDoc = other.GetComponent<Document>();
 
 
@@ -62,7 +62,7 @@ public class DocGenerator : MonoBehaviour {
 
         if (carriedDoc.targetStation == currentStation)
         {
-            Debug.Log("delivered!");
+            //Debug.Log("delivered!");
             carriedDoc.DeliverDocument();
             UnLockStation();
             //Destroy(gameObject);

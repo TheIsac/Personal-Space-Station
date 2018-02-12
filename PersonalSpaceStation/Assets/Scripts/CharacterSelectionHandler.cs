@@ -67,6 +67,7 @@ public class CharacterSelectionHandler : MonoBehaviour {
 
             if (playerSelect == true)
             {
+
             //Player One
                 if (Input.GetButtonDown("A-button_P1") && playerJoined1 == false)
                 {
@@ -84,8 +85,7 @@ public class CharacterSelectionHandler : MonoBehaviour {
                     playerReady1.gameObject.SetActive(false);
                     player1Ready = false;
                     startGame.gameObject.SetActive(false);
-            }
-                
+            }               
 
             //Player Two
                 if (Input.GetButtonDown("A-button_P2") && playerJoined2 == false)
@@ -164,11 +164,11 @@ public class CharacterSelectionHandler : MonoBehaviour {
                 startGame.gameObject.SetActive(true);
             }
 
-
+            if (numberOfPlayers == 4 && player1Ready && player2Ready && player3Ready && player4Ready)
+            {
+                startGame.gameObject.SetActive(true);
+            }
         }
-
-
-
     }
 
     public void PlayerJoin(int index)

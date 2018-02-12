@@ -181,7 +181,15 @@ public class Interactable : MonoBehaviour {
 
         //When you press the button "A" different things happen depending on if the game is on or not. If the player is in the game, pressing "A" exits the game. If the player 
         //is not in the game, pressing "A" enters the game.
-        if(Input.GetButtonDown("A-button" + stationUser.player) && inUse == false)
+        bool isCarryingItem = false;
+
+        ItemHandler item = stationUser.GetComponent<ItemHandler>();
+        if(item != null)
+        {
+            isCarryingItem = item.IsCarryingItem();
+        }
+
+        if (Input.GetButtonDown("A-button" + stationUser.player) && inUse == false && isCarryingItem == false)
         {
             inUse = true;
             miniGame.GetComponent<IResetStation>().ResetStation(stationUser.player);

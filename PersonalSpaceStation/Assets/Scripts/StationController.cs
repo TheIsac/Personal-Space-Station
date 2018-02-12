@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class StationController : MonoBehaviour {
     public Station station;
-    Bounds bounds;
+    //Bounds bounds;
 
     private void Start()
     {
-        bounds = GetComponent<BoxCollider>().bounds;
+        //bounds = GetComponent<BoxCollider>().bounds;
     }
 
     //private void OnDrawGizmos()
@@ -21,6 +21,8 @@ public class StationController : MonoBehaviour {
     {
         Flurp flurp = other.GetComponentInParent<Flurp>();
 
+        Debug.Log(flurp);
+
         if (flurp == null)
         {
             return;
@@ -29,15 +31,15 @@ public class StationController : MonoBehaviour {
         flurp.SetCurrentStation(station);
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        Flurp flurp = other.GetComponentInParent<Flurp>();
+    //private void OnTriggerExit(Collider other)
+    //{
+    //    Flurp flurp = other.GetComponentInParent<Flurp>();
 
-        if (flurp == null)
-        {
-            return;
-        }
+    //    if (flurp == null)
+    //    {
+    //        return;
+    //    }
 
-        flurp.SetCurrentStation(Station.None);
-    }
+    //    flurp.SetCurrentStation(Station.None);
+    //}
 }

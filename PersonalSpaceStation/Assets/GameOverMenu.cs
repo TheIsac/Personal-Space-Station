@@ -36,9 +36,9 @@ public class GameOverMenu : MonoBehaviour
         if (gameHasEnded == false)
         {
             gameHasEnded = true;
-            Debug.Log("GAME OVER");
+            //Debug.Log("GAME OVER");
             Invoke("Restart", restartDelay);
-            Restart();
+            //Restart();
         }
     }
 

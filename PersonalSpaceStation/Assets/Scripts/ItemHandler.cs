@@ -18,6 +18,11 @@ public class ItemHandler : MonoBehaviour {
         characterAnimator = GetComponentInChildren<Animator>();
     }
 
+    public bool IsCarryingItem()
+    {
+        return carriedItem != null;
+    }
+
     private void Update()
     {
         if (movement == null)

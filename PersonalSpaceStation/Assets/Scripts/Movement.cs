@@ -20,6 +20,8 @@ public class Movement : MonoBehaviour
 
     Rigidbody playerRigidBody;
 
+    public Animator anim;
+
     private float maxHeight;
 
     // Use this for initialization
@@ -66,7 +68,14 @@ public class Movement : MonoBehaviour
         playerRigidBody.MoveRotation(newRotation);
 
         if(playerRigidBody.velocity != Vector3.zero)
+        {
             lastMovement = playerRigidBody.velocity;
+            anim.SetBool("isRunning", true);
+        }
+        else
+        {
+            anim.SetBool("isRunning", false);
+        }
     }
 
     private void RestrictHeight()
