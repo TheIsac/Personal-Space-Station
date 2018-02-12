@@ -4,7 +4,6 @@ using System.Collections;
 [CreateAssetMenu(menuName = "Character")]
 public class Character : ScriptableObject
 {
-
-    public SkinnedMeshRenderer[] characterModels;
-
+    public CharacterSelection player;
+    public GameObject[] characterModels;
 }
