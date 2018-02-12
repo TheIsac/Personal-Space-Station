@@ -19,12 +19,12 @@ public class Flurp : MonoBehaviour {
     public Sprite pumpRoomIcon;
 
     public SpriteRenderer spriteRenderer;
-    public TextMesh health;
 
     [Header("Settings")]
     public float timerToReachNextStation = 20f;
     public float baseTimeToReachHappiness = 20f;
     public float tickLength = 1f;
+    public TextMesh health;
 
     private FlurpState flurpState = FlurpState.Unhappy;
     private float lastTick;
@@ -128,6 +128,8 @@ public class Flurp : MonoBehaviour {
     void EndGame()
     {
         flurpState = FlurpState.Dead;
+
+        GameManager.instance.GameOver();
     }
 
     void WellBeeingControl()
