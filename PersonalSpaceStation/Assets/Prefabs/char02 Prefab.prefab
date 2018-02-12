@@ -125,6 +125,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4964656412555558}
   - component: {fileID: 137949994830623040}
+  - component: {fileID: 95389001921631224}
   m_Layer: 0
   m_Name: char_body
   m_TagString: Untagged
@@ -471,7 +472,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4438416078381646}
-  - component: {fileID: 95854031017652796}
   m_Layer: 0
   m_Name: char02 Prefab
   m_TagString: Untagged
@@ -1405,13 +1405,13 @@ Transform:
   m_Father: {fileID: 4351841253929924}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &95854031017652796
+--- !u!95 &95389001921631224
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1537918424181038}
+  m_GameObject: {fileID: 1162201745599348}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: f44d4b8436b637d44aabae289429e4d0, type: 3}
   m_Controller: {fileID: 9100000, guid: 6be5ebeb29e2c504085441b15de7f064, type: 2}
