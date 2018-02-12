@@ -175,7 +175,6 @@ public class Interactable : MonoBehaviour {
                 stationUser = null;
             }
         }
-
     }
 
     private void HandlePlayerInput()
