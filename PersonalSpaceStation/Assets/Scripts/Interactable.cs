@@ -184,13 +184,14 @@ public class Interactable : MonoBehaviour {
         }
     }
 
-    public void StartMiniGame(string player)
+    public void StartMiniGame(Movement playerMovement)
     {
         inUse = true;
-        miniGame.GetComponent<IResetStation>().ResetStation(player);
+        miniGame.GetComponent<IResetStation>().ResetStation(playerMovement.player);
         miniGame.SetActive(true);
 
-        currentStationUser = player;
+        //currentStationUser = playerMovement;
+        stationUser = playerMovement;
     }
 
     public void EndMiniGame()
@@ -199,7 +200,7 @@ public class Interactable : MonoBehaviour {
         miniGame.SetActive(false);
         miniGame.GetComponent<IResetUser>().ResetUser();
 
-        currentStationUser = "";
+        currentStationUser = null;
     }
 
     //private void HandlePlayerInput()

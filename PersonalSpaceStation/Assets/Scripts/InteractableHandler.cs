@@ -60,7 +60,7 @@ public class InteractableHandler : MonoBehaviour {
             playerRigidbody.isKinematic = true;
             movement.inMiniGame = true;
 
-            currentStation.StartMiniGame(movement.player);
+            currentStation.StartMiniGame(movement);
         }
 
 
