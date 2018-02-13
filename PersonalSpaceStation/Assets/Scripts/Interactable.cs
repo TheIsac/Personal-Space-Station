@@ -26,7 +26,6 @@ public class Interactable : MonoBehaviour {
     public int maxWorkingHealth = 75;
 
     public Movement stationUser = null;
-    //public string currentStationUser = "";
 
     public Text healthText;
 
@@ -44,12 +43,6 @@ public class Interactable : MonoBehaviour {
         {
             return;
         }
-
-        //if (playerInRange)
-        //{
-        //    HandlePlayerInput();
-        //}
-
     }
 
     //if the miniGame is complete the minigame exits and is completed. 
@@ -57,10 +50,17 @@ public class Interactable : MonoBehaviour {
     {
         inUse = false;
         miniGame.SetActive(false);
-        
 
-        if (stationUser != null)
+
+        if (stationUser!= null)
         {
+            Animator anim = stationUser.GetComponentInChildren<Animator>();
+
+            if (anim != null)
+            {
+                anim.SetBool("isInteracting", false);
+            }
+
             stationUser.inMiniGame = false;
             stationUser.GetComponent<Rigidbody>().isKinematic = false;
 
@@ -70,7 +70,24 @@ public class Interactable : MonoBehaviour {
                 documentGenerator.DocumentGenerator();
             }
         }    
+    }
 
+    public void StartMiniGame(Movement playerMovement)
+    {
+        inUse = true;
+        miniGame.GetComponent<IResetStation>().ResetStation(playerMovement.player);
+        miniGame.SetActive(true);
+
+        stationUser = playerMovement;
+    }
+
+    public void EndMiniGame()
+    {
+        inUse = false;
+        miniGame.SetActive(false);
+        miniGame.GetComponent<IResetUser>().ResetUser();
+
+        stationUser = null;
     }
 
     //gives health to the station if the station is repaired or the previous station works and sends health.
@@ -146,27 +163,13 @@ public class Interactable : MonoBehaviour {
         healthText.color = Color.black;
     }
 
-    //if a player enters a collider the station is only assigned a "stationUser" if there was not already one. This is so that two players can't use the same station
-    //and so that the same game doesn´t trigger twice for the same player. If a player enters and is not already a user, and there are no users, this function fetches
-    //that players movement script so that it can use it's value for player.
+    // Tell the player which station it is in range of
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
             other.gameObject.GetComponentInParent<InteractableHandler>().SetStation(this);
         }
-
-        //if (stationUser != null)
-        //{
-        //    return;
-        //}
-
-        //if(other.tag == "Player")
-        //{
-        //    playerInRange = true;
-        //    stationUser = other.gameObject.GetComponentInParent<Movement>();
-        //}
-
     }
 
     //when the player leaves the collider of the miniGame there is no longer a player in range nor is there a station user. 
@@ -175,67 +178,6 @@ public class Interactable : MonoBehaviour {
         if (other.tag == "Player")
         {
             other.gameObject.GetComponentInParent<InteractableHandler>().SetStation(null);
-
-            //if (!inUse)
-            //{
-            //    playerInRange = false;
-            //    stationUser = null;
-            //}
         }
     }
-
-    public void StartMiniGame(Movement playerMovement)
-    {
-        inUse = true;
-        miniGame.GetComponent<IResetStation>().ResetStation(playerMovement.player);
-        miniGame.SetActive(true);
-
-        //currentStationUser = playerMovement;
-        stationUser = playerMovement;
-    }
-
-    public void EndMiniGame()
-    {
-        inUse = false;
-        miniGame.SetActive(false);
-        miniGame.GetComponent<IResetUser>().ResetUser();
-
-        stationUser = null;
-    }
-
-    //private void HandlePlayerInput()
-    //{
-    //    //if there player has left the station area, there is no station user and this code should not run.
-    //    if (stationUser == null)
-    //    {
-    //        return;
-    //    }
-
-    //    //When you press the button "A" different things happen depending on if the game is on or not. If the player is in the game, pressing "A" exits the game. If the player 
-    //    //is not in the game, pressing "A" enters the game.
-    //    bool isCarryingItem = false;
-
-    //    ItemHandler item = stationUser.GetComponent<ItemHandler>();
-    //    if(item != null)
-    //    {
-    //        isCarryingItem = item.IsCarryingItem();
-    //    }
-
-    //    if (Input.GetButtonDown("A-button" + stationUser.player) && inUse == false && isCarryingItem == false)
-    //    {
-    //        inUse = true;
-    //        miniGame.GetComponent<IResetStation>().ResetStation(stationUser.player);
-    //        stationUser.GetComponent<Rigidbody>().isKinematic = true;
-    //        miniGame.SetActive(true);
-    //        stationUser.inMiniGame = true;
-    //    }
-    //    if (Input.GetButtonDown("B-button" + stationUser.player) && inUse == true)
-    //    {
-    //        inUse = false;
-    //        miniGame.SetActive(false);
-    //        miniGame.GetComponent<IResetUser>().ResetUser();
-    //        stationUser.GetComponent<Rigidbody>().isKinematic = false;
-    //        stationUser.inMiniGame = false;
-    //    }
-    //}
 }

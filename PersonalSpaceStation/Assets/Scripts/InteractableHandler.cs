@@ -19,7 +19,6 @@ public class InteractableHandler : MonoBehaviour {
 	
 	void Update () {
         HandleInteractionInput();
-
     }
 
     public void SetStation(Interactable station)
@@ -45,7 +44,7 @@ public class InteractableHandler : MonoBehaviour {
         }
 
         // Input
-
+        // Exit the minigame when B is clicked
         if (Input.GetButtonDown("B-button" + movement.player) && currentStation.inUse == true && currentStation.stationUser == movement)
         {
             playerRigidbody.isKinematic = false;
@@ -55,9 +54,11 @@ public class InteractableHandler : MonoBehaviour {
             currentStation.EndMiniGame();
         }
 
+        // Cant use mini game if the station is locked
         if (currentStation.locked)
             return;
 
+        // Start mini game when A is clicked
         if (Input.GetButtonDown("A-button" + movement.player) && currentStation.inUse == false)
         {
             playerRigidbody.isKinematic = true;

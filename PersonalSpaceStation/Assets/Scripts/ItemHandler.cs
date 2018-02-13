@@ -40,13 +40,15 @@ public class ItemHandler : MonoBehaviour {
         if (movement.inMiniGame)
             return;
 
+        // Only allow for item pickup if you aren't already carrying an item
         if(carriedItem == null)
         {
             if (Input.GetButtonDown("A-button" + movement.player))
             {
                 carriedItem = itemInRange;
-
                 characterAnimator.SetBool("CarryingItem", true);
+
+                // If the object picking up an item has a defined carry transform, use it, otherwise spawn the item at its location
                 if (carryPoint != null)
                     carriedItem.PickUp(carryPoint);
                 else
@@ -60,9 +62,16 @@ public class ItemHandler : MonoBehaviour {
                 characterAnimator.SetBool("CarryingItem", false);
                 carriedItem.Drop();
                 itemInRange = carriedItem;
-                carriedItem = null;
+                StartCoroutine(Drop());
             }
         }
+    }
+
+    // Wait until the end of fram to update that the player no longer carries an item so it wont trigger a station if you drop the item close to it
+    IEnumerator Drop()
+    {
+        yield return new WaitForEndOfFrame();
+        carriedItem = null;
     }
 
     private void OnTriggerEnter(Collider other)
