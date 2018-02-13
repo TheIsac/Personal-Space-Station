@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: b53072123e8091e4b86f8adc7c0856da
-timeCreated: 1518530729
+guid: dd7529fb689295d44801aa61ecc2c28b
+timeCreated: 1518532810
 licenseType: Pro
 ModelImporter:
   serializedVersion: 22
@@ -108,7 +108,7 @@ ModelImporter:
     3300002: char_03_R_eye
     4300000: char_03_L_eye
     4300002: char_03_R_eye
-    7400000: Idle
+    7400000: Take 001
     9500000: //RootNode
   externalObjects: {}
   materials:
@@ -136,35 +136,7 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations:
-    - serializedVersion: 16
-      name: Idle
-      takeName: Take 001
-      firstFrame: 10
-      lastFrame: 100
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+    clipAnimations: []
     isReadable: 1
   meshes:
     lODScreenPercentages: []
