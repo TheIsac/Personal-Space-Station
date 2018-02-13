@@ -10,6 +10,7 @@ public class CharacterSelectionHandler : MonoBehaviour {
 
     //public IAmPlayer[] iamplayer;
     private bool playerSelect = false;
+    public CharacterSelection[] playerchoice;
 
     //sets as true when the individual players press A
     private bool playerJoined1 = false;
@@ -87,6 +88,9 @@ public class CharacterSelectionHandler : MonoBehaviour {
                     //If player 1 presses X it is readied and the button for ready appears
                     playerReady1.gameObject.SetActive(true);
                     player1Ready = true;
+                    PlayerPrefs.SetInt("player1", playerchoice[0].selection);
+                    Debug.Log(playerchoice[0].selection);
+                    
                 }
                 if (Input.GetButtonDown("B-button_P1") && player1Ready == true)
                 {
@@ -109,6 +113,7 @@ public class CharacterSelectionHandler : MonoBehaviour {
                     //If player 2 presses X it is readied and the button for ready appears
                     playerReady2.gameObject.SetActive(true);
                     player2Ready = true;
+                    PlayerPrefs.SetInt("player2", playerchoice[1].selection);
                 }
                 if (Input.GetButtonDown("B-button_P2") && player2Ready == true)
                 {
@@ -130,7 +135,8 @@ public class CharacterSelectionHandler : MonoBehaviour {
                 {
                     //If player 3 presses X it is readied and the button for ready appears
                     playerReady3.gameObject.SetActive(true);
-                    player3Ready = true;   
+                    player3Ready = true;
+                    PlayerPrefs.SetInt("player3", playerchoice[2].selection);
                 }
                 if (Input.GetButtonDown("B-button_P3") && player3Ready == true)
                 {
@@ -152,6 +158,7 @@ public class CharacterSelectionHandler : MonoBehaviour {
                     //If player 4 presses X it is readied and the button for ready appears
                     playerReady4.gameObject.SetActive(true);
                     player4Ready = true;
+                    PlayerPrefs.SetInt("player4", playerchoice[3].selection);
                 }
                 if (Input.GetButtonDown("B-button_P4") && player4Ready == true)
                 {
