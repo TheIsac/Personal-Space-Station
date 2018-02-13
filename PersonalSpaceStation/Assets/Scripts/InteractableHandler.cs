@@ -19,7 +19,6 @@ public class InteractableHandler : MonoBehaviour {
 	
 	void Update () {
         HandleInteractionInput();
-
     }
 
     public void SetStation(Interactable station)
