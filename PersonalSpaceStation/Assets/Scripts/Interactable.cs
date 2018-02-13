@@ -20,7 +20,7 @@ public class Interactable : MonoBehaviour {
     public Action OnStationFixed;
 
     private float lastTick;
-    public float tickLength = 2f;
+    //public float tickLength = 2f;
 
     public int minWorkingHealth = 25;
     public int maxWorkingHealth = 75;
@@ -113,7 +113,7 @@ public class Interactable : MonoBehaviour {
     //removes health from the stations every other second,it also checks and updates the health at that same time. 
     void Tick()
     {
-        if(Time.time - lastTick > tickLength)
+        if(Time.time - lastTick > GameManager.instance.stationTickLength)
         {
             lastTick = Time.time;
             stationHealth-=2;
