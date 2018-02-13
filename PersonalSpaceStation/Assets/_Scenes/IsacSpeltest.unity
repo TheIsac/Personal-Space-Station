@@ -5406,39 +5406,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
---- !u!1 &272337423 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1426977643586722, guid: f67cbf04939e9e6409c39b770ea10aea,
-    type: 2}
-  m_PrefabInternal: {fileID: 1132618680}
---- !u!114 &272337424
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 272337423}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13a25294306599d458789a04cc254eba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stationRooms:
-  - {fileID: 6436288}
-  - {fileID: 475006511}
-  - {fileID: 372024868}
-  - {fileID: 1939651557}
-  restartDelay: 3
---- !u!114 &272337425
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 272337423}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29eed6f8f8c273c449d2ac8d79ad03da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &274029830
 Prefab:
   m_ObjectHideFlags: 0
@@ -10779,23 +10746,31 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 4891971967079174, guid: f67cbf04939e9e6409c39b770ea10aea, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4891971967079174, guid: f67cbf04939e9e6409c39b770ea10aea, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4891971967079174, guid: f67cbf04939e9e6409c39b770ea10aea, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 156.901
-      objectReference: {fileID: 0}
     - target: {fileID: 114889359888163160, guid: f67cbf04939e9e6409c39b770ea10aea,
         type: 2}
       propertyPath: gameOverText
       value: 
       objectReference: {fileID: 111376766}
+    - target: {fileID: 114597518367167990, guid: f67cbf04939e9e6409c39b770ea10aea,
+        type: 2}
+      propertyPath: stationRooms.Array.data[0]
+      value: 
+      objectReference: {fileID: 6436288}
+    - target: {fileID: 114597518367167990, guid: f67cbf04939e9e6409c39b770ea10aea,
+        type: 2}
+      propertyPath: stationRooms.Array.data[1]
+      value: 
+      objectReference: {fileID: 475006511}
+    - target: {fileID: 114597518367167990, guid: f67cbf04939e9e6409c39b770ea10aea,
+        type: 2}
+      propertyPath: stationRooms.Array.data[2]
+      value: 
+      objectReference: {fileID: 372024868}
+    - target: {fileID: 114597518367167990, guid: f67cbf04939e9e6409c39b770ea10aea,
+        type: 2}
+      propertyPath: stationRooms.Array.data[3]
+      value: 
+      objectReference: {fileID: 1939651557}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f67cbf04939e9e6409c39b770ea10aea, type: 2}
   m_IsPrefabParent: 0
