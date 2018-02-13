@@ -48,6 +48,7 @@ public class Flurp : MonoBehaviour {
 
     void NewRandomRoom()
     {
+        // Pick a new room randomly amongst the rooms flurp isn't currently in
         do
         {
             targetStation = (Station)Random.Range(0, System.Enum.GetValues(typeof(Station)).Length - 1);
@@ -120,6 +121,7 @@ public class Flurp : MonoBehaviour {
         }
     }
 
+    // Only do the operations at set intervals
     void Tick()
     {
         if (Time.time - lastTick > tickLength)
@@ -136,6 +138,7 @@ public class Flurp : MonoBehaviour {
         GameManager.instance.GameOver();
     }
 
+    // Update Flurps current happiness and take appropriate action
     void WellBeeingControl()
     {
         if(currentStation == targetStation)

@@ -48,7 +48,7 @@ public class CarryItem : MonoBehaviour {
         if(physicsCollider != null)
             physicsCollider.enabled = false;
 
-
+        AudioManager.instance.Play("Pickup");
     }
 
     public void Drop()
@@ -68,5 +68,6 @@ public class CarryItem : MonoBehaviour {
         {
             flurpMovement.SetMoveArea();
         }
+        AudioManager.instance.Play("Drop");
     }
 }

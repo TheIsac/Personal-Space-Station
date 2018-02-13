@@ -50,10 +50,17 @@ public class Interactable : MonoBehaviour {
     {
         inUse = false;
         miniGame.SetActive(false);
-        
 
-        if (stationUser != null)
+
+        if (stationUser!= null)
         {
+            Animator anim = stationUser.GetComponentInChildren<Animator>();
+
+            if (anim != null)
+            {
+                anim.SetBool("isInteracting", false);
+            }
+
             stationUser.inMiniGame = false;
             stationUser.GetComponent<Rigidbody>().isKinematic = false;
 
@@ -63,7 +70,24 @@ public class Interactable : MonoBehaviour {
                 documentGenerator.DocumentGenerator();
             }
         }    
+    }
 
+    public void StartMiniGame(Movement playerMovement)
+    {
+        inUse = true;
+        miniGame.GetComponent<IResetStation>().ResetStation(playerMovement.player);
+        miniGame.SetActive(true);
+
+        stationUser = playerMovement;
+    }
+
+    public void EndMiniGame()
+    {
+        inUse = false;
+        miniGame.SetActive(false);
+        miniGame.GetComponent<IResetUser>().ResetUser();
+
+        stationUser = null;
     }
 
     //gives health to the station if the station is repaired or the previous station works and sends health.
@@ -139,9 +163,7 @@ public class Interactable : MonoBehaviour {
         healthText.color = Color.black;
     }
 
-    //if a player enters a collider the station is only assigned a "stationUser" if there was not already one. This is so that two players can't use the same station
-    //and so that the same game doesn´t trigger twice for the same player. If a player enters and is not already a user, and there are no users, this function fetches
-    //that players movement script so that it can use it's value for player.
+    // Tell the player which station it is in range of
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
@@ -157,23 +179,5 @@ public class Interactable : MonoBehaviour {
         {
             other.gameObject.GetComponentInParent<InteractableHandler>().SetStation(null);
         }
-    }
-
-    public void StartMiniGame(Movement playerMovement)
-    {
-        inUse = true;
-        miniGame.GetComponent<IResetStation>().ResetStation(playerMovement.player);
-        miniGame.SetActive(true);
-
-        stationUser = playerMovement;
-    }
-
-    public void EndMiniGame()
-    {
-        inUse = false;
-        miniGame.SetActive(false);
-        miniGame.GetComponent<IResetUser>().ResetUser();
-
-        stationUser = null;
     }
 }
