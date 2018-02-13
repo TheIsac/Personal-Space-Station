@@ -35,6 +35,12 @@ public class ItemHandler : MonoBehaviour {
         }
     }
 
+    public void onHandIn()
+    {
+        carriedItem = null;
+        characterAnimator.SetBool("CarryingItem", false);
+    }
+
     void PlayerInput()
     {
         if (movement.inMiniGame)
@@ -47,6 +53,13 @@ public class ItemHandler : MonoBehaviour {
             {
                 carriedItem = itemInRange;
                 characterAnimator.SetBool("CarryingItem", true);
+
+                Document doc = carriedItem.GetComponent<Document>();
+
+                if(doc != null)
+                {
+                    doc.HandIn += onHandIn;
+                }
 
                 // If the object picking up an item has a defined carry transform, use it, otherwise spawn the item at its location
                 if (carryPoint != null)

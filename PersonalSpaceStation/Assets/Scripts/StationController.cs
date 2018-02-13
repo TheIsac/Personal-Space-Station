@@ -21,7 +21,7 @@ public class StationController : MonoBehaviour {
     {
         Flurp flurp = other.GetComponentInParent<Flurp>();
 
-        Debug.Log(flurp);
+        //Debug.Log(flurp);
 
         if (flurp == null)
         {
