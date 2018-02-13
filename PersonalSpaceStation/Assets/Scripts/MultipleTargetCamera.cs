@@ -24,7 +24,7 @@ public class MultipleTargetCamera : MonoBehaviour
 
         transform.position = Vector3.SmoothDamp(transform.position, newPosition, ref velocity, smoothTime);
     }
-
+    //gets the position of the players and finds the middle point of them to keep the camera in the center of them and keep every character in the range of the camera
     Vector3 GetCenterPoint()
     {
         if (targets.Count == 1)
