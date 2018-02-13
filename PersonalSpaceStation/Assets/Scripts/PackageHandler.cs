@@ -28,7 +28,7 @@ public class PackageHandler : MonoBehaviour
 
     void Tick()
     {
-        if (Time.time - lastTick > tickLength)
+        if (Time.time - lastTick > GameManager.instance.stationTickLength)
         {
             lastTick = Time.time;
             CheckStatus();

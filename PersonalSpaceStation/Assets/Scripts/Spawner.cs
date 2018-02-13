@@ -10,7 +10,7 @@ public class Spawner : MonoBehaviour
     public enum OptionEnum { P1, P2, P3, P4 };
     public OptionEnum player;
 
-    public GameObject character;
+    public GameObject[] character;
     private GameObject spawnedCharacter;
     private Vector3 currentPos;
     private Quaternion currentQuat;
@@ -20,11 +20,30 @@ public class Spawner : MonoBehaviour
 
     void Start()
     {
-        spawnedCharacter = character;
+        string playerString="";
+
+        if(player == OptionEnum.P1)
+        {
+            playerString = "player1";
+        }
+        if (player == OptionEnum.P2)
+        {
+            playerString = "player2";
+        }
+        if (player == OptionEnum.P3)
+        {
+            playerString = "player3";
+        }
+        if (player == OptionEnum.P4)
+        {
+            playerString = "player4";          
+        }
+
+        //spawnedCharacter = character[PlayerPrefs.GetInt(pleyerP)];
         currentPos = gameObject.transform.position;
         currentQuat = Quaternion.Euler(0, 0, 0);
-        spawnedCharacter = Instantiate(character, currentPos, currentQuat);
-
+        spawnedCharacter = Instantiate(character[PlayerPrefs.GetInt(playerString)], currentPos, currentQuat);
+        Debug.Log(PlayerPrefs.GetInt(playerString));
         CharacterSpawn();
 
     }
