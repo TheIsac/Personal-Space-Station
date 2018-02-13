@@ -56,7 +56,7 @@ public class Interactable : MonoBehaviour {
         {
             Animator anim = stationUser.GetComponentInChildren<Animator>();
 
-            if(anim != null)
+            if (anim != null)
             {
                 anim.SetBool("isInteracting", false);
             }
@@ -163,9 +163,7 @@ public class Interactable : MonoBehaviour {
         healthText.color = Color.black;
     }
 
-    //if a player enters a collider the station is only assigned a "stationUser" if there was not already one. This is so that two players can't use the same station
-    //and so that the same game doesn´t trigger twice for the same player. If a player enters and is not already a user, and there are no users, this function fetches
-    //that players movement script so that it can use it's value for player.
+    // Tell the player which station it is in range of
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
