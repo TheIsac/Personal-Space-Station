@@ -56,7 +56,7 @@ public class Interactable : MonoBehaviour {
         {
             Animator anim = stationUser.GetComponentInChildren<Animator>();
 
-            if(anim != null)
+            if (anim != null)
             {
                 anim.SetBool("isInteracting", false);
             }
