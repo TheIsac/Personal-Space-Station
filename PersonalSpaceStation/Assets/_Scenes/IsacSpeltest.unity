@@ -6019,7 +6019,7 @@ Prefab:
         type: 2}
       propertyPath: character.Array.data[2]
       value: 
-      objectReference: {fileID: 1628817358346734, guid: ddb521bf84ec011439ce3b7870793257,
+      objectReference: {fileID: 1470440198250362, guid: ddc0f265474edb848951d5231eb9d8d3,
         type: 2}
     - target: {fileID: 114591711128288286, guid: 7d1a228974e653045921d5f9649f0b52,
         type: 2}
@@ -13817,7 +13817,7 @@ Prefab:
         type: 2}
       propertyPath: character.Array.data[2]
       value: 
-      objectReference: {fileID: 1628817358346734, guid: ddb521bf84ec011439ce3b7870793257,
+      objectReference: {fileID: 1470440198250362, guid: ddc0f265474edb848951d5231eb9d8d3,
         type: 2}
     - target: {fileID: 114591711128288286, guid: 7d1a228974e653045921d5f9649f0b52,
         type: 2}
@@ -14534,15 +14534,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4928650207861580, guid: 7d1a228974e653045921d5f9649f0b52, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -3.39
+      value: -3.38
       objectReference: {fileID: 0}
     - target: {fileID: 4928650207861580, guid: 7d1a228974e653045921d5f9649f0b52, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: 4928650207861580, guid: 7d1a228974e653045921d5f9649f0b52, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 5.83
+      value: 5.82
       objectReference: {fileID: 0}
     - target: {fileID: 4928650207861580, guid: 7d1a228974e653045921d5f9649f0b52, type: 2}
       propertyPath: m_LocalRotation.x
@@ -14585,7 +14585,7 @@ Prefab:
         type: 2}
       propertyPath: character.Array.data[2]
       value: 
-      objectReference: {fileID: 1628817358346734, guid: ddb521bf84ec011439ce3b7870793257,
+      objectReference: {fileID: 1470440198250362, guid: ddc0f265474edb848951d5231eb9d8d3,
         type: 2}
     - target: {fileID: 114591711128288286, guid: 7d1a228974e653045921d5f9649f0b52,
         type: 2}
@@ -16996,7 +16996,7 @@ Prefab:
         type: 2}
       propertyPath: character.Array.data[2]
       value: 
-      objectReference: {fileID: 1628817358346734, guid: ddb521bf84ec011439ce3b7870793257,
+      objectReference: {fileID: 1470440198250362, guid: ddc0f265474edb848951d5231eb9d8d3,
         type: 2}
     - target: {fileID: 114591711128288286, guid: 7d1a228974e653045921d5f9649f0b52,
         type: 2}
