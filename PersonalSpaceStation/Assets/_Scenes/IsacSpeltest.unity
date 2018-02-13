@@ -8897,7 +8897,7 @@ Prefab:
     - target: {fileID: 114490223341228754, guid: 6c1041aa54d31684691d27106c0aad06,
         type: 2}
       propertyPath: timerToReachNextStation
-      value: 40
+      value: 100000
       objectReference: {fileID: 0}
     - target: {fileID: 65192586498615918, guid: 6c1041aa54d31684691d27106c0aad06,
         type: 2}
