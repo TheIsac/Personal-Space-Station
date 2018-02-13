@@ -62,9 +62,8 @@ public class DocGenerator : MonoBehaviour {
 
         if (carriedDoc.targetStation == currentStation)
         {
-            //Debug.Log("delivered!");
+            Debug.Log("delivered!");
             carriedDoc.DeliverDocument();
-            UnLockStation();
             //Destroy(gameObject);
         }
     }

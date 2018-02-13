@@ -17,3 +17,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/CharacterSelect.unity
     guid: 810cec407e671cf4ab48fe1c953cf989
+  - enabled: 1
+    path: Assets/_Scenes/IsacSpeltest.unity
+    guid: 7f63f54aeea709144949915602d26106
