@@ -8,6 +8,11 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public Text gameOverText;
 
+    public float difficultyInterval = 30f;
+    public float stationDifficultyAdjustment = .1f;
+    public float stationTickLength = 3f;
+    private float lastTick;
+
     void Awake()
     {
         if (instance == null)
@@ -16,6 +21,26 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         //QualitySettings.vSyncCount = 4;
         //Application.targetFrameRate = 20;
+    }
+
+    private void Update()
+    {
+        Tick();
+    }
+
+    void Tick()
+    {
+        if (Time.time - lastTick > difficultyInterval)
+        {
+            lastTick = Time.time;
+
+            UpdateDifficulty();
+        }
+    }
+
+    private void UpdateDifficulty()
+    {
+        stationTickLength -= stationDifficultyAdjustment;
     }
 
     public void GameOver()
