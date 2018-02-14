@@ -9,7 +9,7 @@ public class Interactable : MonoBehaviour {
     public GameObject miniGame;
     public bool inUse = false;
     public bool locked = false;
-    private bool playerInRange = false;
+    //private bool playerInRange = false;
     public bool isWorking;
     public int stationHealth = 50;
     public string stationName = "Engine Room";
@@ -34,7 +34,6 @@ public class Interactable : MonoBehaviour {
         lastTick = Time.time;
     }
 
-    //only handle player input if the player is in range.
     void Update()
     {
         Tick();
