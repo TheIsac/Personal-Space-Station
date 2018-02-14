@@ -25,20 +25,26 @@ public class Scoring : MonoBehaviour
         }
     }
 
-    void Update ()
+    void Update()
     {
         if (Time.frameCount % scoreUpdateInterval == 0)
         {
-            UpdateScore();
+            UpdateMultiplyer();
         }
         scoreTimer += Time.deltaTime * scoreMultiplier;
         totalScore = (int)scoreTimer;
 
+        // Save the high score data if the score is indeed higher than the previous one
+        if (totalScore > PlayerPrefs.GetInt("HighScore", 0))
+        {
+            PlayerPrefs.SetInt("HighScore", totalScore);
+        }
+
         scoreText.text = totalScore.ToString();
-	}
+    }
 
     //Add score based on number of runningStations
-    void UpdateScore()
+    void UpdateMultiplyer()
     {
         if (runningStations==1)
         {
