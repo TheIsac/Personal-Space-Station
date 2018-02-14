@@ -9,6 +9,7 @@ public class PackageHandler : MonoBehaviour
     public float tickLength = 2f;
     public int addHealth = 1;
     public int removeHealth = 1;
+    private int overChargeValue = 60;
 
     public Interactable[] stations;
     public FixPointChecker[] fixPoint;
@@ -50,9 +51,10 @@ public class PackageHandler : MonoBehaviour
                 }
                 stations[(i + 1) % stations.Length].AddHealthToStation(addHealth);
             }
-            else if (stations[i].isWorking && stations[i].stationHealth > 75)
+            if (stations[i].isWorking && stations[i].stationHealth > overChargeValue)
             {
-                stations[(i - 1) % stations.Length].RemoveHealthFromStation(removeHealth);
+                Debug.Log("OVERCHARGE in "+ stations[i]);
+                stations[((i - 1 + stations.Length) % stations.Length)].RemoveHealthFromStation(removeHealth);
 
             }
         }

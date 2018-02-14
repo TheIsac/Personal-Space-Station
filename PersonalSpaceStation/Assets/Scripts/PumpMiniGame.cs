@@ -75,6 +75,7 @@ public class PumpMiniGame : MonoBehaviour, IResetUser, IResetStation
             completionCounter += clickvalue;
             buttonXLastPressed = true;
             UpdateGauge();
+            AudioManager.instance.Play("Type");
         }
 
         if (Input.GetButtonDown("Y-button" + stationUser) && buttonXLastPressed == true)
@@ -82,6 +83,7 @@ public class PumpMiniGame : MonoBehaviour, IResetUser, IResetStation
             completionCounter += clickvalue;
             buttonXLastPressed = false;
             UpdateGauge();
+            AudioManager.instance.Play("Type");
         }
 
     }

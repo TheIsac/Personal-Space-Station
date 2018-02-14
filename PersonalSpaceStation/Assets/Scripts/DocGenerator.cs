@@ -24,7 +24,6 @@ public class DocGenerator : MonoBehaviour {
     //recieve signal from Interactable, that a station was fixed and count the success
     public void DocumentGenerator()
     {
-
         successCounter++;
 
         if(successCounter >= 3)
@@ -62,9 +61,8 @@ public class DocGenerator : MonoBehaviour {
 
         if (carriedDoc.targetStation == currentStation)
         {
-            Debug.Log("delivered!");
+            Debug.Log("Document delivered!");
             carriedDoc.DeliverDocument();
-            //Destroy(gameObject);
         }
     }
 

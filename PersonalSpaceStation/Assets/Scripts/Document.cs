@@ -15,7 +15,7 @@ public class Document : MonoBehaviour {
     public void SetDestinationStation(Station destinationStation)
     {
         this.targetStation = destinationStation;
-        Debug.Log(targetStation);
+        Debug.Log("Deliver this to "+ targetStation);
 
         documentMaterial = GetComponent<Renderer>().material;
 
