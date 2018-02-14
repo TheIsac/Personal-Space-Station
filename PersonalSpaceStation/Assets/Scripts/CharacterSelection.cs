@@ -48,15 +48,7 @@ public class CharacterSelection : MonoBehaviour {
 
             models[selection].SetActive(false);
 
-            if (input > 0)
-                selection = (selection + 1) % models.Count;
-            else
-                selection --;
-
-            if (selection < 0)
-            {
-                selection = models.Count - 1;
-            }
+            selection = ((selection + models.Count + (int)Mathf.Sign(input)) % models.Count);
 
             models[selection].SetActive(true);
             nextUpdate = AutoUpdateInterval;
