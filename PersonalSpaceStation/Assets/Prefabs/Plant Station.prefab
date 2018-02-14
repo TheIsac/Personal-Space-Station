@@ -1073,9 +1073,9 @@ MonoBehaviour:
   stationHealth: 50
   stationName: Plant Room
   documentGenerator: {fileID: 0}
-  tickLength: 3
   minWorkingHealth: 25
-  maxWorkingHealth: 100
+  maxWorkingHealth: 10000
+  stationUser: {fileID: 0}
   healthText: {fileID: 114544816972231996}
 --- !u!114 &114437531414263990
 MonoBehaviour:

@@ -729,9 +729,9 @@ MonoBehaviour:
   stationHealth: 50
   stationName: Pump Station
   documentGenerator: {fileID: 0}
-  tickLength: 3
   minWorkingHealth: 25
-  maxWorkingHealth: 100
+  maxWorkingHealth: 10000
+  stationUser: {fileID: 0}
   healthText: {fileID: 114975756284724308}
 --- !u!222 &222350533920703728
 CanvasRenderer:
