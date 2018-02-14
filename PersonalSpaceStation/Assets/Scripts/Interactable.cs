@@ -23,7 +23,7 @@ public class Interactable : MonoBehaviour {
     //public float tickLength = 2f;
 
     public int minWorkingHealth = 25;
-    public int maxWorkingHealth = 75;
+    public int maxWorkingHealth = 10000;
 
     public Movement stationUser = null;
 
