@@ -7,7 +7,6 @@ public class CharacterSelection : MonoBehaviour {
 
     //Default selection
     public int selection = 0;
-    private int scoreUpdateInterval = 20;
 
     private float nextUpdate = 0f;
     private float AutoUpdateInterval = .5f;
@@ -48,6 +47,7 @@ public class CharacterSelection : MonoBehaviour {
 
             models[selection].SetActive(false);
 
+            // Select the next or previous model in the array depending on input
             selection = ((selection + models.Count + (int)Mathf.Sign(input)) % models.Count);
 
             models[selection].SetActive(true);
@@ -55,6 +55,7 @@ public class CharacterSelection : MonoBehaviour {
         }
         else
         {
+            // Reset the update timer if the player no longer gives any input on the controller.
             nextUpdate = 0f;
         }
     }
