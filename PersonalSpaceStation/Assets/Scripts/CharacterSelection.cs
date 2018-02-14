@@ -9,6 +9,9 @@ public class CharacterSelection : MonoBehaviour {
     public int selection = 0;
     private int scoreUpdateInterval = 20;
 
+    private float nextUpdate = 0f;
+    private float AutoUpdateInterval = .5f;
+
     public string player;
     public List<GameObject> models = new List<GameObject>();
     public CharacterSelectionHandler doneSelecting;
@@ -26,68 +29,41 @@ public class CharacterSelection : MonoBehaviour {
     
     void Update()
     {
-        if (Time.frameCount % scoreUpdateInterval == 0)
-        {
-            SelectCharacter();
-        }
+        SelectCharacter();
     }
 
     public void SelectCharacter()
     {
-        
-        if (Input.GetAxis("Horizontal" + player) > 0)
+        nextUpdate -= Time.deltaTime;
+
+        float input = Input.GetAxis("Horizontal" + player);
+
+        if (Mathf.Abs(input) > .1f)
         {
-            if(player == "_P1" && doneSelecting.player1Ready)
-            {
+            if (doneSelecting.IsDoneSelecting(player))
                 return;
-            }
-            if (player == "_P2" && doneSelecting.player2Ready)
-            {
+
+            if (nextUpdate > 0)
                 return;
-            }
-            if (player == "_P3" && doneSelecting.player3Ready)
-            {
-                return;
-            }
-            if (player == "_P4" && doneSelecting.player4Ready)
-            {
-                return;
-            }
 
             models[selection].SetActive(false);
-            selection++;
-            if (selection >= models.Count)
-            {
-                selection = 0;
-            }
-            models[selection].SetActive(true);
-        }
-        if (Input.GetAxis("Horizontal" + player) < 0)
-        {
-            if (player == "_P1" && doneSelecting.player1Ready)
-            {
-                return;
-            }
-            if (player == "_P2" && doneSelecting.player2Ready)
-            {
-                return;
-            }
-            if (player == "_P3" && doneSelecting.player3Ready)
-            {
-                return;
-            }
-            if (player == "_P4" && doneSelecting.player4Ready)
-            {
-                return;
-            }
-            models[selection].SetActive(false);
-            selection--;
+
+            if (input > 0)
+                selection = (selection + 1) % models.Count;
+            else
+                selection --;
+
             if (selection < 0)
             {
                 selection = models.Count - 1;
             }
+
             models[selection].SetActive(true);
+            nextUpdate = AutoUpdateInterval;
+        }
+        else
+        {
+            nextUpdate = 0f;
         }
     }
-
 }
