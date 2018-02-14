@@ -60,6 +60,8 @@ public class InteractableHandler : MonoBehaviour {
 
             anim.SetBool("isInteracting", false);
             currentStation.EndMiniGame();
+
+            AudioManager.instance.Play("Drop");
         }
 
         // Cant use mini game if the station is locked
@@ -75,6 +77,7 @@ public class InteractableHandler : MonoBehaviour {
             anim.SetBool("isInteracting", true);
             currentStation.StartMiniGame(movement);
 
+            AudioManager.instance.Play("Pickup");
         }
     }
 }
