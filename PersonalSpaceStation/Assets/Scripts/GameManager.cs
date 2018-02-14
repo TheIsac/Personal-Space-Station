@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public Text gameOverText;
 
+    public bool gameIsPaused = false;
+
     [Header("Difficulty Settings")]
     public float difficultyInterval = 30f;
     public float stationDifficultyAdjustment = .1f;

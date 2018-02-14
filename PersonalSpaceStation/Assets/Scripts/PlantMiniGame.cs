@@ -82,11 +82,18 @@ public class PlantMiniGame : MonoBehaviour, IResetUser, IResetStation
 
     void Update()
     {
-        if (isComplete || stationUser == "")
+        if (GameManager.instance.gameIsPaused == true)
+        {
             return;
+        }
+        else
+        {
+            if (isComplete || stationUser == "")
+                return;
 
-        CheckCompletionCriteria();
-        HandlePlayerInput();
+            CheckCompletionCriteria();
+            HandlePlayerInput();
+        }
     }
 
     void HandlePlayerInput()
