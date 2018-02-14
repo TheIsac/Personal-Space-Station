@@ -10,6 +10,7 @@ public class Movement : MonoBehaviour
     private float verticalAxis;
     //defined in the inspector of every character object.
     public float moveSpeed;
+    private float stepCooldown;
 
     public string player;
    
@@ -17,6 +18,7 @@ public class Movement : MonoBehaviour
     private Vector3 lastMovement;
 
     public bool inMiniGame;
+    private bool moving;
 
     Rigidbody playerRigidBody;
 
@@ -71,10 +73,22 @@ public class Movement : MonoBehaviour
         {
             lastMovement = playerRigidBody.velocity;
             anim.SetBool("isRunning", true);
+            StepSound();
         }
         else
         {
             anim.SetBool("isRunning", false);
+        }
+    }
+
+    private void StepSound()
+    {
+        stepCooldown += Time.deltaTime;
+
+        if(stepCooldown > .41f)
+        {
+            AudioManager.instance.Play("FootStep");
+            stepCooldown = 0;
         }
     }
 

@@ -64,13 +64,19 @@ public class EngineMiniGame : MonoBehaviour, IResetUser, IResetStation
 /// 
 /// </summary>
     void Update () {
-
-        if (isComplete || stationUser == "")
+        if (GameManager.instance.gameIsPaused == true)
+        {
             return;
+        }
+        else
+        {
+            if (isComplete || stationUser == "")
+                return;
 
-        CheckCompletionCriteria();
-        MoveLever();
-        HandlePlayerInput();
+            CheckCompletionCriteria();
+            MoveLever();
+            HandlePlayerInput();
+        }
     }
 
 /// <summary>

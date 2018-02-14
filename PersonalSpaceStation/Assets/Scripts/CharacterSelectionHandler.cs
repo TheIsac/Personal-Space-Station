@@ -59,6 +59,23 @@ public class CharacterSelectionHandler : MonoBehaviour {
         StartGame();
     }
 
+    public bool IsDoneSelecting(string playerString)
+    {
+        switch (playerString)
+        {
+            case "_P1":
+                return player1Ready;
+            case "_P2":
+                return player2Ready;
+            case "_P3":
+                return player3Ready;
+            case "_P4":
+                return player4Ready;
+            default:
+                return false;
+        }
+    }
+
     public void PlayerInput()
     {
             if (Input.GetButtonDown("A-button_P1") && playerSelect == false)

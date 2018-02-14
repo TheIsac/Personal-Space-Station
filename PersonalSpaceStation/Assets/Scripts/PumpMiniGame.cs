@@ -35,12 +35,19 @@ public class PumpMiniGame : MonoBehaviour, IResetUser, IResetStation
 
     void Update()
     {
-        if (isComplete || stationUser == "")
+        if (GameManager.instance.gameIsPaused == true)
+        {
             return;
+        }
+        else
+        {
+            if (isComplete || stationUser == "")
+                return;
 
-        DropDown();
-        CheckCompletionCriteria();
-        HandlePlayerInput();
+            DropDown();
+            CheckCompletionCriteria();
+            HandlePlayerInput();
+        }
     }
 
     // The gauge slowly returns to zero

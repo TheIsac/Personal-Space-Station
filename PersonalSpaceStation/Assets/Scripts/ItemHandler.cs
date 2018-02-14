@@ -25,13 +25,20 @@ public class ItemHandler : MonoBehaviour {
 
     private void Update()
     {
-        if (movement == null)
-            return;
-
-
-        if(itemInRange || carriedItem)
+        if (GameManager.instance.gameIsPaused == true)
         {
-            PlayerInput();
+            return;
+        }
+        else
+        {
+            if (movement == null)
+                return;
+
+
+            if(itemInRange || carriedItem)
+            {
+                PlayerInput();
+            }
         }
     }
 

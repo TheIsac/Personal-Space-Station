@@ -5,6 +5,7 @@ using UnityEngine;
 public class InteractableHandler : MonoBehaviour {
 
     private Interactable currentStation;
+
     ItemHandler itemHandler;
     Movement movement;
     Rigidbody playerRigidbody;
@@ -18,7 +19,14 @@ public class InteractableHandler : MonoBehaviour {
     }
 	
 	void Update () {
-        HandleInteractionInput();
+        if (GameManager.instance.gameIsPaused == true)
+        {
+            return;
+        }
+        else
+        {
+            HandleInteractionInput();
+        }
     }
 
     public void SetStation(Interactable station)
