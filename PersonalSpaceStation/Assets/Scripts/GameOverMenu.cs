@@ -30,7 +30,7 @@ public class GameOverMenu : MonoBehaviour
             EndGame();
         }
     }
-
+    //Ends the game and restarts the game.
     public void EndGame()
     {
         if (gameHasEnded == false)

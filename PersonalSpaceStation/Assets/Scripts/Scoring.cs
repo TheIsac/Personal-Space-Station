@@ -15,6 +15,8 @@ public class Scoring : MonoBehaviour
     public Interactable[] stations;
 
     private int runningStations;
+    private int oldHighScore;
+
 
     private void Start()
     {
@@ -23,22 +25,30 @@ public class Scoring : MonoBehaviour
             stations[i].OnStationFailure += OnStationFailure;
             stations[i].OnStationFixed += OnStationRunning;
         }
+        oldHighScore = PlayerPrefs.GetInt("HighScore", 0);
     }
 
-    void Update ()
+    void Update()
     {
         if (Time.frameCount % scoreUpdateInterval == 0)
         {
-            UpdateScore();
+            UpdateMultiplyer();
         }
         scoreTimer += Time.deltaTime * scoreMultiplier;
         totalScore = (int)scoreTimer;
 
+        // Save the high score data if the score is indeed higher than the previous one
+        if (totalScore > oldHighScore)
+        {
+            PlayerPrefs.SetInt("HighScore", totalScore);
+            oldHighScore = totalScore;
+        }
+
         scoreText.text = totalScore.ToString();
-	}
+    }
 
     //Add score based on number of runningStations
-    void UpdateScore()
+    void UpdateMultiplyer()
     {
         if (runningStations==1)
         {
