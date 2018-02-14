@@ -21,16 +21,23 @@ public class PauseMenu : MonoBehaviour {
                 Pause();
             }
         }
-	}
+    }
 
     public void Resume()
     {
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
+
+        StartCoroutine("ResumeCo");
+    }
+
+    IEnumerator ResumeCo()
+    {
+        yield return new WaitForEndOfFrame();
         GameManager.instance.gameIsPaused = false;
     }
 
-    void Pause()
+     void Pause()
     {
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;

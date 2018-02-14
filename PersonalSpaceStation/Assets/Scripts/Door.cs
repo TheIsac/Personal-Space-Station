@@ -8,13 +8,13 @@ public class Door : MonoBehaviour
     Animator animator;
     bool doorOpen;
     bool doorOpenIdle;
-
+    //door is closed at the start of the game.
     void Start()
     {
         doorOpen = false;
         animator = GetComponent<Animator>();
     }
-
+    //if the object with the tag "Player" enters the trigger then it will play the animation "doorOpen".
     void OnTriggerEnter(Collider col)
     {
 
@@ -24,6 +24,7 @@ public class Door : MonoBehaviour
             //DoorControl("Open");
         }
     }
+    //if you stay inside the trigger zone it will play the "openIdle" animation and lets the door stay open.
     void OnTriggerStay(Collider col)
     {
         if (col.gameObject.transform.parent.tag == "Player")
@@ -37,6 +38,7 @@ public class Door : MonoBehaviour
             animator.SetBool("IsOpen", false);
         }
     }
+    //if the player exits the trigger zone it will close the door.
     void OnTriggerExit(Collider col)
     {
         if (doorOpen)
