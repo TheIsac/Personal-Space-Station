@@ -61,6 +61,10 @@ public class FlurpMovement : MonoBehaviour {
 
     public void SetMoveArea()
     {
+        Vector3 dropPosition = transform.position;
+        dropPosition.y = 0;
+        transform.position = dropPosition;
+
         moveCircleOrigin = transform.position;
         targetPosition = transform.position;
         shouldMove = true;
