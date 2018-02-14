@@ -71,13 +71,20 @@ public class AtmoMiniGame : MonoBehaviour, IResetUser, IResetStation
 
     void Update()
     {
-        if (isComplete || stationUser == "")
+        if (GameManager.instance.gameIsPaused == true)
+        {
             return;
+        }
+        else
+        {
+            if (isComplete || stationUser == "")
+                return;
 
-        Tick();
+            Tick();
 
-        CheckCompletionCriteria();
-        HandlePlayerInput();
+            CheckCompletionCriteria();
+            HandlePlayerInput();
+        }
     }
 
     void Tick()
