@@ -56,7 +56,7 @@ MonoBehaviour:
   - target: {fileID: 0}
     name: Alarm
     clip: {fileID: 8300000, guid: ddb38b378c09d5d4d9203bb5f8650d7e, type: 3}
-    volume: 1
+    volume: 0.8
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
@@ -64,7 +64,8 @@ MonoBehaviour:
     minDistance: 1
     maxDistance: 500
     loop: 0
-    mixerGroup: {fileID: 0}
+    mixerGroup: {fileID: 243587151942466014, guid: 1ee4cf61fea4cd24ebc91e806c3f1b8d,
+      type: 2}
     source: {fileID: 0}
   - target: {fileID: 0}
     name: Pickup
@@ -77,7 +78,8 @@ MonoBehaviour:
     minDistance: 1
     maxDistance: 500
     loop: 0
-    mixerGroup: {fileID: 0}
+    mixerGroup: {fileID: 243587151942466014, guid: 1ee4cf61fea4cd24ebc91e806c3f1b8d,
+      type: 2}
     source: {fileID: 0}
   - target: {fileID: 0}
     name: Drop
@@ -90,7 +92,8 @@ MonoBehaviour:
     minDistance: 1
     maxDistance: 500
     loop: 0
-    mixerGroup: {fileID: 0}
+    mixerGroup: {fileID: 243587151942466014, guid: 1ee4cf61fea4cd24ebc91e806c3f1b8d,
+      type: 2}
     source: {fileID: 0}
   - target: {fileID: 0}
     name: GameMusic
@@ -103,5 +106,20 @@ MonoBehaviour:
     minDistance: 1
     maxDistance: 500
     loop: 1
-    mixerGroup: {fileID: 0}
+    mixerGroup: {fileID: 243344602814171428, guid: 1ee4cf61fea4cd24ebc91e806c3f1b8d,
+      type: 2}
+    source: {fileID: 0}
+  - target: {fileID: 0}
+    name: FootStep
+    clip: {fileID: 8300000, guid: cc3e1f46ab41d3645a5b611c940825b4, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 1
+    spatialBlend: 0
+    minDistance: 1
+    maxDistance: 500
+    loop: 0
+    mixerGroup: {fileID: 243344602814171428, guid: 1ee4cf61fea4cd24ebc91e806c3f1b8d,
+      type: 2}
     source: {fileID: 0}
