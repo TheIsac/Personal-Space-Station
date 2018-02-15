@@ -8,14 +8,22 @@ public class MultipleTargetCamera : MonoBehaviour
     public float smoothTime = .5f;
 
     private Vector3 velocity;
-
+    private Vector3 cameraTarget;
     public Vector3 offset;
+
+    private Transform target;
+
+    void Start()
+    {
+        targets = GameObject.FindGameObjectWithTag("Player").transform;
+        cameraTarget = new Vector3(targets.position.x, transform.position.y, target.position.z);
+    }
 
     void LateUpdate()
     {
         if (targets.Count == 0)
         {
-            GameObject.FindGameObjectsWithTag("Player");
+            return;
         }
 
         Vector3 centerpoint = GetCenterPoint();
