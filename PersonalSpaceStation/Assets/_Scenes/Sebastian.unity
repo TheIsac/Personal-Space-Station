@@ -1046,7 +1046,10 @@ MonoBehaviour:
   - {fileID: 1101722531}
   - {fileID: 736029795}
   smoothTime: 0.5
+  velocity: {x: 0, y: 0, z: 0}
+  cameraTarget: {x: 0, y: 0, z: 0}
   offset: {x: 0, y: 17, z: 0}
+  target: {fileID: 0}
 --- !u!1 &143203330
 GameObject:
   m_ObjectHideFlags: 0
@@ -5364,6 +5367,7 @@ MonoBehaviour:
   moveSpeed: 15
   player: _P2
   inMiniGame: 0
+  anim: {fileID: 0}
 --- !u!33 &736029794
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -9295,6 +9299,7 @@ MonoBehaviour:
   moveSpeed: 15
   player: _P1
   inMiniGame: 0
+  anim: {fileID: 0}
 --- !u!33 &1101722530
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -10196,6 +10201,34 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1212133025}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1217526601
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1217526602}
+  m_Layer: 0
+  m_Name: Test1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1217526602
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1217526601}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.1289845, y: -3.3979359, z: -0.07453537}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1248230695
 GameObject:
   m_ObjectHideFlags: 0
@@ -17569,7 +17602,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: 0
-  character: {fileID: 0}
+  character:
+  - {fileID: 0}
 --- !u!1 &1978402500
 GameObject:
   m_ObjectHideFlags: 0
