@@ -53,10 +53,10 @@ public class DocGenerator : MonoBehaviour {
     public void OnTriggerEnter(Collider other)
     {
         //Debug.Log("niklas was here");
-        Document carriedDoc = other.GetComponent<Document>();
+        Document carriedDoc = other.GetComponentInParent<Document>();
 
 
-        if (carriedDoc == null)
+        if (carriedDoc == null || other.tag != "DocumentHandIn")
             return;
 
         if (carriedDoc.targetStation == currentStation)
