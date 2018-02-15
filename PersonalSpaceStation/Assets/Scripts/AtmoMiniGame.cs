@@ -7,6 +7,10 @@ public class AtmoMiniGame : MonoBehaviour, IResetUser, IResetStation
 {
 
     // UI
+    /// <summary>
+    /// All of these are the variables that are required to set up the minigames UI. The availableColors array is required to cycle between the different colors in 
+    /// the game. 
+    /// </summary>
     public Text completionText;
     public Image completionImage;
     Color[] availableColors = { Color.red, Color.blue, Color.green, Color.yellow };
@@ -14,6 +18,9 @@ public class AtmoMiniGame : MonoBehaviour, IResetUser, IResetStation
     int colorIndex = 0;
 
     // Computer
+    /// <summary>
+    /// Computer is the object that cycle through the different colors, using the available materials. 
+    /// </summary>
     public GameObject computer;
     private Material computermaterial;
 
