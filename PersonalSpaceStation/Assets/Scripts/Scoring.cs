@@ -29,7 +29,9 @@ public class Scoring : MonoBehaviour
             stations[i].OnStationFailure += OnStationFailure;
             stations[i].OnStationFixed += OnStationRunning;
         }
-        //oldHighScore = PlayerPrefs.GetInt("HighScore", 0);
+
+        oldHighScore = PlayerPrefs.GetInt("HighScore", 0);
+
     }
 
     void Update()
@@ -80,7 +82,6 @@ public class Scoring : MonoBehaviour
         }
     }
 
-    //Add score based on number of runningStations
     void UpdateMultiplyer()
     {
         if (runningStations==1)
