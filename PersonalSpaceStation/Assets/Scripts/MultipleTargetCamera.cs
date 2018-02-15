@@ -2,35 +2,62 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Camera))]
 public class MultipleTargetCamera : MonoBehaviour
 {
     public List<Transform> targets;
+
+    public Vector3 offset;
     public float smoothTime = .5f;
 
-    private Vector3 velocity;
-    private Vector3 cameraTarget;
-    public Vector3 offset;
+    public float minZoom = 40f;
+    public float maxZoom = 10f;
+    public float zoomLimiter = 50f;
 
-    private Transform target;
+    private Vector3 velocity;
+    private Camera cam;
+
 
     void Start()
     {
-        //targets = GameObject.FindGameObjectWithTag("Player").transform;
-        //cameraTarget = new Vector3(targets.position.x, transform.position.y, target.position.z);
+        cam = GetComponent<Camera>();
     }
 
     void LateUpdate()
     {
         if (targets.Count == 0)
-        {
+        
             return;
-        }
+        Move();
+        Zoom();
 
+
+    }
+    void Zoom()
+    {
+        float newZoom = Mathf.Lerp(maxZoom, minZoom, GetGreatestDistance() / 50f);
+        cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, newZoom, Time.deltaTime);
+    }
+
+
+    void Move()
+    {
         Vector3 centerpoint = GetCenterPoint();
 
         Vector3 newPosition = centerpoint + offset;
 
         transform.position = Vector3.SmoothDamp(transform.position, newPosition, ref velocity, smoothTime);
+    }
+
+    float GetGreatestDistance()
+    {
+        var bounds = new Bounds(targets[0].position, Vector3.zero);
+        for (int i = 0; i < targets.Count; i++)
+        {
+            bounds.Encapsulate(targets[i].position);
+        }
+
+        return bounds.size.x;
     }
     //gets the position of the players and finds the middle point of them to keep the camera in the center of them and keep every character in the range of the camera
     Vector3 GetCenterPoint()
