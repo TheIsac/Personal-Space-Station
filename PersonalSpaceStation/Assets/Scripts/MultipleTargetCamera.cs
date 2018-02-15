@@ -15,8 +15,8 @@ public class MultipleTargetCamera : MonoBehaviour
 
     void Start()
     {
-        targets = GameObject.FindGameObjectWithTag("Player").transform;
-        cameraTarget = new Vector3(targets.position.x, transform.position.y, target.position.z);
+        //targets = GameObject.FindGameObjectWithTag("Player").transform;
+        //cameraTarget = new Vector3(targets.position.x, transform.position.y, target.position.z);
     }
 
     void LateUpdate()
