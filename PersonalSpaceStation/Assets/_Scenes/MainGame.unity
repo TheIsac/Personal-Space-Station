@@ -153,7 +153,6 @@ MonoBehaviour:
   stationHealth: 50
   stationName: Engine Room
   documentGenerator: {fileID: 431048978}
-  tickLength: 3
   minWorkingHealth: 25
   maxWorkingHealth: 100
   stationUser: {fileID: 0}
@@ -5892,7 +5891,6 @@ MonoBehaviour:
   stationHealth: 50
   stationName: Plant Room
   documentGenerator: {fileID: 589549146}
-  tickLength: 3
   minWorkingHealth: 25
   maxWorkingHealth: 100
   stationUser: {fileID: 0}
@@ -6424,7 +6422,6 @@ MonoBehaviour:
   stationHealth: 50
   stationName: Pump Station
   documentGenerator: {fileID: 366541931}
-  tickLength: 3
   minWorkingHealth: 25
   maxWorkingHealth: 100
   stationUser: {fileID: 0}
@@ -7892,6 +7889,7 @@ GameObject:
   - component: {fileID: 777060356}
   - component: {fileID: 777060355}
   - component: {fileID: 777060354}
+  - component: {fileID: 777060358}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -7962,6 +7960,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 65.561005, y: 360, z: 0}
+--- !u!114 &777060358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 777060353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abd9a474d3755ee48b50c8ee58e9761a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targets: []
+  smoothTime: 0.5
+  offset: {x: 0, y: 0, z: 0}
 --- !u!1 &783128115
 GameObject:
   m_ObjectHideFlags: 0
@@ -14434,7 +14446,6 @@ MonoBehaviour:
   stationHealth: 50
   stationName: Atmo Station
   documentGenerator: {fileID: 1969330193}
-  tickLength: 3
   minWorkingHealth: 25
   maxWorkingHealth: 100
   stationUser: {fileID: 0}

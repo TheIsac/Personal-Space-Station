@@ -15,7 +15,7 @@ public class MultipleTargetCamera : MonoBehaviour
     {
         if (targets.Count == 0)
         {
-            return;
+            GameObject.FindGameObjectsWithTag("Player");
         }
 
         Vector3 centerpoint = GetCenterPoint();
