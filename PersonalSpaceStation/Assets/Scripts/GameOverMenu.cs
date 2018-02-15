@@ -35,6 +35,7 @@ public class GameOverMenu : MonoBehaviour
     {
         if (gameHasEnded == false)
         {
+            FindObjectOfType<Scoring>().SortHighscores();
             gameHasEnded = true;
             //Debug.Log("GAME OVER");
             Invoke("Restart", restartDelay);

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Flurp
   - PickUp
+  - DocumentHandIn
   layers:
   - Default
   - TransparentFX

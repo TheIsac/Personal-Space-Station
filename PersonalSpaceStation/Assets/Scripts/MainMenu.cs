@@ -11,7 +11,7 @@ public class MainMenu : MonoBehaviour {
 	public void PlayGame()
     {
         //Load next scene in the scene build order
-        SceneManager.LoadScene("MainGame");
+        SceneManager.LoadScene("CharacterSelect");
     }
 
     public void QuitGame()
@@ -20,6 +20,6 @@ public class MainMenu : MonoBehaviour {
     }
     public void ShowHighScore()
     {
-        points.text = PlayerPrefs.GetInt("HighScore", 0).ToString();
+        //points.text = PlayerPrefs.GetInt("HighScore", 0).ToString();
     }
 }
