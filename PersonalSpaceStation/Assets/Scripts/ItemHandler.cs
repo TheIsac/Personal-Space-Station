@@ -25,6 +25,9 @@ public class ItemHandler : MonoBehaviour {
 
     private void Update()
     {
+        if (GameManager.instance == null)
+            return;
+
         if (GameManager.instance.gameIsPaused == true)
         {
             return;
