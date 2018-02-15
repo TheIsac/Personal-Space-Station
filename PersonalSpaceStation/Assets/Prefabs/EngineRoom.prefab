@@ -380,9 +380,9 @@ MonoBehaviour:
   stationHealth: 50
   stationName: Engine Room
   documentGenerator: {fileID: 0}
-  tickLength: 3
   minWorkingHealth: 25
-  maxWorkingHealth: 100
+  maxWorkingHealth: 10000
+  stationUser: {fileID: 0}
   healthText: {fileID: 114120893529426924}
 --- !u!114 &114387664664101840
 MonoBehaviour:

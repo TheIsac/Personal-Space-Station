@@ -757,9 +757,9 @@ MonoBehaviour:
   stationHealth: 50
   stationName: Atmo Station
   documentGenerator: {fileID: 0}
-  tickLength: 3
   minWorkingHealth: 25
-  maxWorkingHealth: 100
+  maxWorkingHealth: 10000
+  stationUser: {fileID: 0}
   healthText: {fileID: 114042198704109858}
 --- !u!222 &222064546386982166
 CanvasRenderer:
