@@ -92,23 +92,24 @@ public class CharacterSelectionHandler : MonoBehaviour {
             if (playerSelect == true)
             {
 
-            //Player One, Handles input for A, X and B button. 
-                if (Input.GetButtonDown("A-button_P1") && playerJoined1 == false)
+            //Player One, Handles input for A, X and B button.
+                if (Input.GetButtonDown("A-button_P1") && playerJoined1 == true)
+                {
+                    //If player 1 presses A it is readied and the button for ready appears
+                    playerReady1.gameObject.SetActive(true);
+                    player1Ready = true;
+                    PlayerPrefs.SetInt("player1", playerchoice[0].selection);
+                    Debug.Log(playerchoice[0].selection);
+
+                }
+            if (Input.GetButtonDown("A-button_P1") && playerJoined1 == false)
                 {
                     //If player 1 presses A, the player one is added to the joined players and the player can choose model.
                     PlayerJoin(0);
                     playerJoined1 = true;
                     player[0].gameObject.SetActive(true);
                 }
-                if (Input.GetButtonDown("X-button_P1") && playerJoined1 == true)
-                {
-                    //If player 1 presses X it is readied and the button for ready appears
-                    playerReady1.gameObject.SetActive(true);
-                    player1Ready = true;
-                    PlayerPrefs.SetInt("player1", playerchoice[0].selection);
-                    Debug.Log(playerchoice[0].selection);
-                    
-                }
+               
                 if (Input.GetButtonDown("B-button_P1") && player1Ready == true)
                 {
                     //If player 1 is ready, and presses B then the player is no longer ready and can change model again.
@@ -118,19 +119,19 @@ public class CharacterSelectionHandler : MonoBehaviour {
             }               
 
             //Player Two, Handles input for A, X and B button.
+                if (Input.GetButtonDown("A-button_P2") && playerJoined2 == true)
+                {
+                    //If player 2 presses A it is readied and the button for ready appears
+                    playerReady2.gameObject.SetActive(true);
+                    player2Ready = true;
+                    PlayerPrefs.SetInt("player2", playerchoice[1].selection);
+                }
                 if (Input.GetButtonDown("A-button_P2") && playerJoined2 == false)
                 {
                     //If player 2 presses A, the player one is added to the joined players and the player can choose model.
                     PlayerJoin(1);
                     playerJoined2 = true;
                     player[1].gameObject.SetActive(true);
-                }
-                if (Input.GetButtonDown("X-button_P2") && playerJoined2 == true)
-                {
-                    //If player 2 presses X it is readied and the button for ready appears
-                    playerReady2.gameObject.SetActive(true);
-                    player2Ready = true;
-                    PlayerPrefs.SetInt("player2", playerchoice[1].selection);
                 }
                 if (Input.GetButtonDown("B-button_P2") && player2Ready == true)
                 {
@@ -141,19 +142,19 @@ public class CharacterSelectionHandler : MonoBehaviour {
             }
                 
             //Player Three, Handles input for A, X and B button.
+                if (Input.GetButtonDown("A-button_P3") && playerJoined3 == true)
+                {
+                    //If player 3 presses A it is readied and the button for ready appears
+                    playerReady3.gameObject.SetActive(true);
+                    player3Ready = true;
+                    PlayerPrefs.SetInt("player3", playerchoice[2].selection);
+                }
                 if (Input.GetButtonDown("A-button_P3") && playerJoined3 == false)
                 {
                     //If player 3 presses A, the player three is added to the joined players and the player can choose model.
                     PlayerJoin(2);
                     playerJoined3 = true;
                     player[2].gameObject.SetActive(true);
-                }
-                if (Input.GetButtonDown("X-button_P3") && playerJoined3 == true)
-                {
-                    //If player 3 presses X it is readied and the button for ready appears
-                    playerReady3.gameObject.SetActive(true);
-                    player3Ready = true;
-                    PlayerPrefs.SetInt("player3", playerchoice[2].selection);
                 }
                 if (Input.GetButtonDown("B-button_P3") && player3Ready == true)
                 {
@@ -163,19 +164,19 @@ public class CharacterSelectionHandler : MonoBehaviour {
                     startGame.gameObject.SetActive(false);
             }
             //Player Four, Handles input for A, X and B button.
+                if (Input.GetButtonDown("A-button_P4") && playerJoined4 == true)
+                {
+                    //If player 4 presses A it is readied and the button for ready appears
+                    playerReady4.gameObject.SetActive(true);
+                    player4Ready = true;
+                    PlayerPrefs.SetInt("player4", playerchoice[3].selection);
+                }
                 if (Input.GetButtonDown("A-button_P4") && playerJoined4 == false)
                 {
                     //If player 4 presses A, the player four is added to the joined players and the player can choose model.
                     PlayerJoin(3);
                     playerJoined4 = true;
                     player[3].gameObject.SetActive(true);
-                }
-                if (Input.GetButtonDown("X-button_P4") && playerJoined4 == true)
-                {
-                    //If player 4 presses X it is readied and the button for ready appears
-                    playerReady4.gameObject.SetActive(true);
-                    player4Ready = true;
-                    PlayerPrefs.SetInt("player4", playerchoice[3].selection);
                 }
                 if (Input.GetButtonDown("B-button_P4") && player4Ready == true)
                 {
