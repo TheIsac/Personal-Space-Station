@@ -19,6 +19,9 @@ public class InteractableHandler : MonoBehaviour {
     }
 	
 	void Update () {
+        if (GameManager.instance == null)
+            return;
+
         if (GameManager.instance.gameIsPaused == true)
         {
             return;

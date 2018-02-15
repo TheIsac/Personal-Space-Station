@@ -20,6 +20,6 @@ public class MainMenu : MonoBehaviour {
     }
     public void ShowHighScore()
     {
-        points.text = PlayerPrefs.GetInt("HighScore", 0).ToString();
+        //points.text = PlayerPrefs.GetInt("HighScore", 0).ToString();
     }
 }
