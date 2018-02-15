@@ -78,7 +78,7 @@ public class CharacterSelectionHandler : MonoBehaviour {
 
     public void PlayerInput()
     {
-            if (Input.GetButtonDown("A-button_P1") && playerSelect == false)
+            if (playerSelect == false)
             {
                 playerSelect = true;
                 //start.gameObject.SetActive(false);
