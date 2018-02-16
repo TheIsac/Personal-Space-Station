@@ -5,22 +5,24 @@ using UnityEngine.UI;
 
 public class PumpMiniGame : MonoBehaviour, IResetUser, IResetStation
 {
-    // UI
+    // UI, the variables required for the UI.
     public Slider gauge;
     public Text completionText;
 
-    // Completion mechanics
+    // Completion mechanics, the variables required to keep track of completion for the minigame.
     public int completionCount = 100;
     private float completionCounter = 0;
     private bool buttonXLastPressed = false;
     public int completionValue = 5;
     public bool isComplete = false;
 
-    public float clickvalue = 5f;   // How mouch does the slider move each button click
+    public float clickvalue = 5f;   // How much does the slider move each button click
 
-    public Interactable station;
+    //variables and gameobjects for the station.
+    public Interactable station; 
     private string stationUser = "";
 
+    //resets the station before play. 
     public void ResetStation(string player)
     {
         stationUser = player;
@@ -28,11 +30,16 @@ public class PumpMiniGame : MonoBehaviour, IResetUser, IResetStation
         completionCounter = 0;
     }
 
+    //resets the user.
     public void ResetUser()
     {
         stationUser = "";
     }
 
+    /// <summary>
+    /// if the game is paused the minigame is disabled, and the check completion and handle Input is only run if the game isn't already
+    /// completed. 
+    /// </summary>
     void Update()
     {
         if (GameManager.instance.gameIsPaused == true)
@@ -58,12 +65,16 @@ public class PumpMiniGame : MonoBehaviour, IResetUser, IResetStation
         UpdateGauge();
     }
 
+    //updates the gauge.
     void UpdateGauge()
     {
         gauge.value = completionCounter;
         completionText.text = completionCounter.ToString("#");
     }
 
+    /// <summary>
+    /// handles player input and makes sure you can't hold in the x-button to complete the game. Updates the gauge every time the correct button is pressed. 
+    /// </summary>
     void HandlePlayerInput()
     {
 
@@ -88,6 +99,9 @@ public class PumpMiniGame : MonoBehaviour, IResetUser, IResetStation
 
     }
 
+    /// <summary>
+    /// checks for the completion criteria and runs the CompleteMiniGame Coroutine if the criteria is met.
+    /// </summary>
     void CheckCompletionCriteria()
     {
         if (completionCounter >= completionCount)
@@ -97,6 +111,10 @@ public class PumpMiniGame : MonoBehaviour, IResetUser, IResetStation
         }
     }
 
+    /// <summary>
+    /// adds health to the station and resets the user. 
+    /// </summary>
+    /// <returns></returns>
     IEnumerator CompleteMiniGame()
     {
         station.AddHealthToStation(completionValue);
