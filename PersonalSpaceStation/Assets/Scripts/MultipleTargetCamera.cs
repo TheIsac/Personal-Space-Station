@@ -5,8 +5,6 @@ using UnityEngine;
 [RequireComponent(typeof(Camera))]
 public class MultipleTargetCamera : MonoBehaviour
 {
-    public List<Transform> targets;
-
     public Vector3 offset;
     public float smoothTime = .5f;
 
@@ -17,15 +15,19 @@ public class MultipleTargetCamera : MonoBehaviour
     private Vector3 velocity;
     private Camera cam;
 
+    private GameObject[] targetPlayers;
 
     void Start()
     {
         cam = GetComponent<Camera>();
+
+        targetPlayers = GameObject.FindGameObjectsWithTag("CameraTarget");
+        Debug.Log("targetPlayers for camera: "+ targetPlayers.Length);
     }
 
     void LateUpdate()
     {
-        if (targets.Count == 0)
+        if (targetPlayers.Length == 0)
         
             return;
         Move();
@@ -51,10 +53,10 @@ public class MultipleTargetCamera : MonoBehaviour
 
     float GetGreatestDistance()
     {
-        var bounds = new Bounds(targets[0].position, Vector3.zero);
-        for (int i = 0; i < targets.Count; i++)
+        var bounds = new Bounds(targetPlayers[0].transform.position, Vector3.zero);
+        for (int i = 0; i < targetPlayers.Length; i++)
         {
-            bounds.Encapsulate(targets[i].position);
+            bounds.Encapsulate(targetPlayers[i].transform.position);
         }
 
         return bounds.size.x;
@@ -62,14 +64,14 @@ public class MultipleTargetCamera : MonoBehaviour
     //gets the position of the players and finds the middle point of them to keep the camera in the center of them and keep every character in the range of the camera
     Vector3 GetCenterPoint()
     {
-        if (targets.Count == 1)
+        if (targetPlayers.Length == 1)
         {
-            return targets[0].position;
+            return targetPlayers[0].transform.position;
         }
-        var bounds = new Bounds(targets[0].position, Vector3.zero);
-        for (int i = 0; i < targets.Count; i++)
+        var bounds = new Bounds(targetPlayers[0].transform.position, Vector3.zero);
+        for (int i = 0; i < targetPlayers.Length; i++)
         {
-            bounds.Encapsulate(targets[i].position);
+            bounds.Encapsulate(targetPlayers[i].transform.position);
         }
         return bounds.center;
     }
