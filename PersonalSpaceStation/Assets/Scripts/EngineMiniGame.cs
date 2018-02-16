@@ -5,11 +5,11 @@ using UnityEngine.UI;
 
 public class EngineMiniGame : MonoBehaviour, IResetUser, IResetStation
 {
-    // UI
+    // UI, the variables required for the UI.
     public Image spak;
     public Text completionText;
 
-    // Completion mechanics
+    // Completion mechanics, the variables required for the minigame involving completion.
     public bool isComplete = false;
     public float completionTime = 3f;
     public int completionValue = 5;
@@ -17,31 +17,29 @@ public class EngineMiniGame : MonoBehaviour, IResetUser, IResetStation
     private float minCompletionAngle = 5f;
     private float maxCompletionAngle = 355f;
 
-    // Lever mechanics
+    // Lever mechanics, the variables controlling the lever.
     private float currentMomentum;
     private float baseMomentum = .5f;
     private float adjusterValue = .01f;
 
-    // Other
+    // Other, the variables for the station and the users, also for the startRotation of the spak.
     private string stationUser = "";
     public Interactable station;
     private Quaternion startRotation;
 
 /// <summary>
-/// 
+/// sets the startRotation to the transform of the spak at the beginning and randoms the currentMomentum. 
 /// </summary>
     void Start ()
     {
-
         startRotation = spak.rectTransform.rotation;
         currentMomentum = Random.Range(-baseMomentum, baseMomentum);
     }
 
 /// <summary>
-/// 
+/// Resets the minigame before a new game, sets the completion and current momentum to 0f and the start rotation to the correct value. 
 /// </summary>
 /// <param name="player"></param>
-    // Reset the mini game for new game
     public void ResetStation(string player)
     {
         stationUser = player;
@@ -53,7 +51,7 @@ public class EngineMiniGame : MonoBehaviour, IResetUser, IResetStation
     }
 
 /// <summary>
-/// 
+/// Resets the station user. 
 /// </summary>
     public void ResetUser()
     {
@@ -61,7 +59,7 @@ public class EngineMiniGame : MonoBehaviour, IResetUser, IResetStation
     }
 
 /// <summary>
-/// 
+/// If the game is paused the minigame is disabled sort of.
 /// </summary>
     void Update () {
         if (GameManager.instance.gameIsPaused == true)
@@ -80,7 +78,7 @@ public class EngineMiniGame : MonoBehaviour, IResetUser, IResetStation
     }
 
 /// <summary>
-/// 
+/// Check the player input and change the spak's location depending on the players input, but only if the station is used.
 /// </summary>
     void HandlePlayerInput()
     {
@@ -105,7 +103,7 @@ public class EngineMiniGame : MonoBehaviour, IResetUser, IResetStation
     }
 
 /// <summary>
-/// 
+/// Check if the player has reached the criteria for the completion of the game. And starts the Coroutine CompleteMiniGame if the player has. 
 /// </summary>
     void CheckCompletionCriteria()
     {
@@ -125,7 +123,7 @@ public class EngineMiniGame : MonoBehaviour, IResetUser, IResetStation
     }
 
 /// <summary>
-/// 
+/// When the game is completed adds health to the station and resets. 
 /// </summary>
 /// <returns></returns>
     IEnumerator CompleteMiniGame()
@@ -139,7 +137,7 @@ public class EngineMiniGame : MonoBehaviour, IResetUser, IResetStation
     }
 
 /// <summary>
-/// 
+/// The method for moving the lever. 
 /// </summary>
     void MoveLever()
     {
