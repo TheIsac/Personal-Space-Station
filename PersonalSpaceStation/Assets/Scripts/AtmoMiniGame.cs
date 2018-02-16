@@ -25,16 +25,25 @@ public class AtmoMiniGame : MonoBehaviour, IResetUser, IResetStation
     private Material computermaterial;
 
     // Completion mechanics
+    /// <summary>
+    /// The variables for keeping track of how close to completion the minigame is.
+    /// </summary>
     public int completionCount = 3;
     private float completionCounter = 0;
     public int completionValue = 5;
     public bool isComplete = false;
 
+    /// <summary>
+    /// The variables for keeping track of the user, the station and tick for cycling through the different colors.
+    /// </summary>
     public Interactable station;
     private string stationUser = "";
     private float lastTick;
     public float tickLength = 1f;
 
+    /// <summary>
+    /// get the mesh render for the the blocks that will change color. 
+    /// </summary>
     private void Start()
     {
         if(computer != null)
@@ -43,6 +52,10 @@ public class AtmoMiniGame : MonoBehaviour, IResetUser, IResetStation
         }
     }
 
+    /// <summary>
+    /// the function for reseting the station before us, called in the Interactable script. Starts the NewColor method, to begin cycling through colors. 
+    /// </summary>
+    /// <param name="player"></param>
     public void ResetStation(string player)
     {
         stationUser = player;
@@ -52,11 +65,18 @@ public class AtmoMiniGame : MonoBehaviour, IResetUser, IResetStation
         completionText.text = completionCounter.ToString("0");
     }
 
+    /// <summary>
+    /// reset the color of the "computer" block to white.
+    /// </summary>
     public void ResetComputer()
     {
         computermaterial.color = Color.white;
     }
 
+    /// <summary>
+    /// Randomise the color required to select. Calls once when the player first activates the minigame and then every time the player presses X until
+    /// the player has chosen correctly three times or exits the minigame.
+    /// </summary>
     void NewColor()
     {
         completionColor = availableColors[Random.Range(0, availableColors.Length)];
@@ -70,12 +90,18 @@ public class AtmoMiniGame : MonoBehaviour, IResetUser, IResetStation
         completionImage.color = completionColor;
     }
 
+    /// <summary>
+    /// resets the computer and removes the active player from the stationUser string. 
+    /// </summary>
     public void ResetUser()
     {
         stationUser = "";
         ResetComputer();
     }
 
+    /// <summary>
+    /// if the game is paused, the minigame does not continue cycling through colors. 
+    /// </summary>
     void Update()
     {
         if (GameManager.instance.gameIsPaused == true)
@@ -94,6 +120,9 @@ public class AtmoMiniGame : MonoBehaviour, IResetUser, IResetStation
         }
     }
 
+    /// <summary>
+    /// the method for advancing time and updating the computer screen.
+    /// </summary>
     void Tick()
     {
         if (Time.time - lastTick > tickLength)
@@ -103,12 +132,18 @@ public class AtmoMiniGame : MonoBehaviour, IResetUser, IResetStation
         }
     }
 
+    /// <summary>
+    /// updates the computer screen with at random color each tick.
+    /// </summary>
     void UpdateComputerScreen()
     {
         colorIndex = (colorIndex + 1) % availableColors.Length;
         computermaterial.color = availableColors[colorIndex];
     }
 
+    /// <summary>
+    /// set bool is not set here. If the player selects the correct color; the number of correct choices increase. 
+    /// </summary>
     void HandlePlayerInput()
     {
 
@@ -138,6 +173,9 @@ public class AtmoMiniGame : MonoBehaviour, IResetUser, IResetStation
 
     }
 
+    /// <summary>
+    /// checks to see if the player has guessed correctly three times and if the player has the Coroutine CompleteMiniGame is run.
+    /// </summary>
     void CheckCompletionCriteria()
     {
         if (completionCounter >= completionCount)
@@ -147,6 +185,10 @@ public class AtmoMiniGame : MonoBehaviour, IResetUser, IResetStation
         }
     }
 
+    /// <summary>
+    /// resets the computer color to  white and adds health to the station. 
+    /// </summary>
+    /// <returns></returns>
     IEnumerator CompleteMiniGame()
     {
         computermaterial.color = Color.white;
