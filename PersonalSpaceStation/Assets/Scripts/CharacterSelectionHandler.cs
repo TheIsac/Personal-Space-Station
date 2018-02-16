@@ -8,7 +8,7 @@ using UnityEngine.EventSystems;
 
 public class CharacterSelectionHandler : MonoBehaviour {
 
-    //public IAmPlayer[] iamplayer;
+    //the different variables for playerSelect and character selection. 
     private bool playerSelect = false;
     public CharacterSelection[] playerchoice;
 
@@ -21,7 +21,7 @@ public class CharacterSelectionHandler : MonoBehaviour {
     //keeps track of how many players have joined
     private int numberOfPlayers;
 
-    //shows the button checked if the player has pressed X, removes it if they press B
+    //shows the button checked if the player has pressed A, removes it if they press B
     public Button playerReady1;
     public Button playerReady2;
     public Button playerReady3;
@@ -59,6 +59,7 @@ public class CharacterSelectionHandler : MonoBehaviour {
         StartGame();
     }
 
+    //switch function that enables the different ready states when a player is done selecting.
     public bool IsDoneSelecting(string playerString)
     {
         switch (playerString)
@@ -81,18 +82,17 @@ public class CharacterSelectionHandler : MonoBehaviour {
             if (playerSelect == false)
             {
                 playerSelect = true;
-                //start.gameObject.SetActive(false);
             }
 
-            if (Input.GetButtonDown("B-button_P1") && numberOfPlayers == 0)
-            {
-                //leave the character selection screen.
-            }
+            //if (Input.GetButtonDown("B-button_P1") && numberOfPlayers == 0)
+            //{
+            //    //leave the character selection screen.
+            //}
 
             if (playerSelect == true)
             {
 
-            //Player One, Handles input for A, X and B button.
+            //Player One, Handles input for A and B button.
                 if (Input.GetButtonDown("A-button_P1") && playerJoined1 == true)
                 {
                     //If player 1 presses A it is readied and the button for ready appears
@@ -118,7 +118,7 @@ public class CharacterSelectionHandler : MonoBehaviour {
                     startGame.gameObject.SetActive(false);
             }               
 
-            //Player Two, Handles input for A, X and B button.
+            //Player Two, Handles input for A and B button.
                 if (Input.GetButtonDown("A-button_P2") && playerJoined2 == true)
                 {
                     //If player 2 presses A it is readied and the button for ready appears
@@ -141,7 +141,7 @@ public class CharacterSelectionHandler : MonoBehaviour {
                     startGame.gameObject.SetActive(false);
             }
                 
-            //Player Three, Handles input for A, X and B button.
+            //Player Three, Handles input for A and B button.
                 if (Input.GetButtonDown("A-button_P3") && playerJoined3 == true)
                 {
                     //If player 3 presses A it is readied and the button for ready appears
@@ -163,7 +163,7 @@ public class CharacterSelectionHandler : MonoBehaviour {
                     player3Ready = false;
                     startGame.gameObject.SetActive(false);
             }
-            //Player Four, Handles input for A, X and B button.
+            //Player Four, Handles input for A and B button.
                 if (Input.GetButtonDown("A-button_P4") && playerJoined4 == true)
                 {
                     //If player 4 presses A it is readied and the button for ready appears
@@ -180,7 +180,7 @@ public class CharacterSelectionHandler : MonoBehaviour {
                 }
                 if (Input.GetButtonDown("B-button_P4") && player4Ready == true)
                 {
-                    //If player 4 presses X it is readied and the button for ready appears
+                //If player 4 is ready, and presses B then the player is no longer ready and can change model again
                     playerReady4.gameObject.SetActive(false);
                     player4Ready = false;
                     startGame.gameObject.SetActive(false);
