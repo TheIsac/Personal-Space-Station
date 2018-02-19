@@ -12,17 +12,20 @@ public class AtmoMiniGame : MonoBehaviour, IResetUser, IResetStation
     /// the game. 
     /// </summary>
     public Text completionText;
-    public Image completionImage;
-    Color[] availableColors = { Color.red, Color.blue, Color.green, Color.yellow };
-    Color completionColor;
+    public Text completionImage;
+    //Color[] availableColors = { Color.red, Color.blue, Color.green, Color.yellow };
+    //Color completionColor;
+    Text[] availableGases;
+    public Text completionGas;
+
     int colorIndex = 0;
 
     // Computer
     /// <summary>
     /// Computer is the object that cycle through the different colors, using the available materials. 
     /// </summary>
-    public GameObject computer;
-    private Material computermaterial;
+    //public GameObject computer;
+    //private Material computermaterial;
 
     // Completion mechanics
     /// <summary>
@@ -32,6 +35,7 @@ public class AtmoMiniGame : MonoBehaviour, IResetUser, IResetStation
     private float completionCounter = 0;
     public int completionValue = 5;
     public bool isComplete = false;
+    private int selectionValue;
 
     /// <summary>
     /// The variables for keeping track of the user, the station and tick for cycling through the different colors.
@@ -46,10 +50,10 @@ public class AtmoMiniGame : MonoBehaviour, IResetUser, IResetStation
     /// </summary>
     private void Start()
     {
-        if(computer != null)
-        {
-            computermaterial = computer.GetComponent<MeshRenderer>().material;
-        }
+        //if(computer != null)
+        //{
+        //    computermaterial = computer.GetComponent<MeshRenderer>().material;
+        //}
     }
 
     /// <summary>
@@ -70,7 +74,7 @@ public class AtmoMiniGame : MonoBehaviour, IResetUser, IResetStation
     /// </summary>
     public void ResetComputer()
     {
-        computermaterial.color = Color.white;
+        //computermaterial.color = Color.white;
     }
 
     /// <summary>
@@ -79,15 +83,19 @@ public class AtmoMiniGame : MonoBehaviour, IResetUser, IResetStation
     /// </summary>
     void NewColor()
     {
-        completionColor = availableColors[Random.Range(0, availableColors.Length)];
+        completionGas = availableGases[Random.Range(0, availableGases.Length)];
 
-        if(availableColors[colorIndex] == completionColor)
+        if(availableGases[colorIndex] == completionGas)
         {
-            completionColor = availableColors[(colorIndex + 3) % availableColors.Length];
+            completionGas = availableGases[(colorIndex + 3) % availableGases.Length];
 
         }
 
-        completionImage.color = completionColor;
+        //if (completionGas = availableGases[1])
+        //{
+        //    completionGas.text = 
+        //}
+        completionImage = completionGas;
     }
 
     /// <summary>
@@ -128,17 +136,17 @@ public class AtmoMiniGame : MonoBehaviour, IResetUser, IResetStation
         if (Time.time - lastTick > tickLength)
         {
             lastTick = Time.time;
-            UpdateComputerScreen();
+            CycleGases();
         }
     }
 
     /// <summary>
     /// updates the computer screen with at random color each tick.
     /// </summary>
-    void UpdateComputerScreen()
+    void CycleGases()
     {
-        colorIndex = (colorIndex + 1) % availableColors.Length;
-        computermaterial.color = availableColors[colorIndex];
+        colorIndex = (colorIndex + 1) % availableGases.Length;
+        //computermaterial.color = availableGases[colorIndex];
     }
 
     /// <summary>
@@ -152,7 +160,8 @@ public class AtmoMiniGame : MonoBehaviour, IResetUser, IResetStation
 
         if (Input.GetButtonDown("X-button" + stationUser))
         {
-            if(completionColor == computermaterial.color)
+            //(completionGas == computermaterial.color
+            if (true)
             {
                 //setbool för interacting här?
                 completionCounter ++;
@@ -191,7 +200,7 @@ public class AtmoMiniGame : MonoBehaviour, IResetUser, IResetStation
     /// <returns></returns>
     IEnumerator CompleteMiniGame()
     {
-        computermaterial.color = Color.white;
+        //computermaterial.color = Color.white;
         station.AddHealthToStation(completionValue);
         isComplete = true;
         stationUser = "";
