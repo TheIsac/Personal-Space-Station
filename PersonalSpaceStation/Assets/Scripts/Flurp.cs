@@ -19,7 +19,7 @@ public class Flurp : MonoBehaviour {
     public Sprite pumpRoomIcon;
 
     public SpriteRenderer targetRoomSprite;
-    public SpriteRenderer speachBubbleSprite;
+    public SpriteRenderer speechBubbleSprite;
 
     [Header("Settings")]
     public float timerToReachNextStation = 20f;
@@ -38,7 +38,7 @@ public class Flurp : MonoBehaviour {
     {
         lastTick = Time.time;
         targetRoomSprite.gameObject.SetActive(false);
-        speachBubbleSprite.gameObject.SetActive(false);
+        speechBubbleSprite.gameObject.SetActive(false);
 
         NewRandomRoom();
     }
@@ -95,7 +95,7 @@ public class Flurp : MonoBehaviour {
         }
 
         targetRoomSprite.gameObject.SetActive(true);
-        speachBubbleSprite.gameObject.SetActive(true);
+        speechBubbleSprite.gameObject.SetActive(true);
     }
 
     public void SetCurrentStation(Station station)
@@ -113,12 +113,12 @@ public class Flurp : MonoBehaviour {
 
             //canBeMoved = false;
             targetRoomSprite.gameObject.SetActive(false);
-            speachBubbleSprite.gameObject.SetActive(false);
+            speechBubbleSprite.gameObject.SetActive(false);
         }
         else if(currentStation == targetStation && flurpState == FlurpState.Recharging)
         {
             targetRoomSprite.gameObject.SetActive(false);
-            speachBubbleSprite.gameObject.SetActive(false);
+            speechBubbleSprite.gameObject.SetActive(false);
         }
         else
         {
