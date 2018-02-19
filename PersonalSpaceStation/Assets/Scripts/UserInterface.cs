@@ -26,67 +26,48 @@ public class UserInterface : MonoBehaviour {
 	
 	void Update () {
 
+        UpdatePowerUI();
+    }
+
+    void UpdatePowerUI()
+    {
         // Engine room power
         float power = engine.stationHealth;
         power = Mathf.Clamp(power, 0, maxPower);
 
-        for (int i = 0; i < enginePowerBars.Length; i++)
-        {
-            if(power / enginePowerBars.Length >= i)
-            {
-                enginePowerBars[i].sprite = fullPowerBar;
-            }
-            else
-            {
-                enginePowerBars[i].sprite = emptyPowerBar;
-            }
-        }
+        StationHealth(enginePowerBars, power);
 
         // Atmo
         power = atmo.stationHealth;
         power = Mathf.Clamp(power, 0, maxPower);
 
-        for (int i = 0; i < atmoPowerBars.Length; i++)
-        {
-            if (power / atmoPowerBars.Length >= i)
-            {
-                atmoPowerBars[i].sprite = fullPowerBar;
-            }
-            else
-            {
-                atmoPowerBars[i].sprite = emptyPowerBar;
-            }
-        }
-
-        // plant
-        power = plant.stationHealth;
-        power = Mathf.Clamp(power, 0, maxPower);
-
-        for (int i = 0; i < plantPowerBars.Length; i++)
-        {
-            if (power / plantPowerBars.Length >= i)
-            {
-                plantPowerBars[i].sprite = fullPowerBar;
-            }
-            else
-            {
-                plantPowerBars[i].sprite = emptyPowerBar;
-            }
-        }
+        StationHealth(atmoPowerBars, power);
 
         // pump
         power = pump.stationHealth;
         power = Mathf.Clamp(power, 0, maxPower);
 
-        for (int i = 0; i < pumpPowerBars.Length; i++)
+        StationHealth(pumpPowerBars, power);
+
+        // Plant
+        power = plant.stationHealth;
+        power = Mathf.Clamp(power, 0, maxPower);
+
+        StationHealth(plantPowerBars, power);
+        
+    }
+
+    void StationHealth(Image[] stationBars, float power)
+    {
+        for (int i = 0; i < stationBars.Length; i++)
         {
-            if (power / pumpPowerBars.Length >= i)
+            if (power / stationBars.Length >= i && power > 0)
             {
-                pumpPowerBars[i].sprite = fullPowerBar;
+                stationBars[i].sprite = fullPowerBar;
             }
             else
             {
-                pumpPowerBars[i].sprite = emptyPowerBar;
+                stationBars[i].sprite = emptyPowerBar;
             }
         }
     }
