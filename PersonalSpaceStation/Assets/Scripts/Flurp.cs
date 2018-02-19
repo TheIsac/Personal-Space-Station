@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum FlurpState { Dead, Recharging, Unhappy}
 
@@ -18,8 +19,8 @@ public class Flurp : MonoBehaviour {
     public Sprite plantRoomIcon;
     public Sprite pumpRoomIcon;
 
-    public SpriteRenderer targetRoomSprite;
-    public SpriteRenderer speechBubbleSprite;
+    public Image targetRoomSprite;
+    public Image speechBubbleSprite;
 
     [Header("Settings")]
     public float timerToReachNextStation = 20f;
