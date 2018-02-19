@@ -19,29 +19,36 @@ public class Document : MonoBehaviour {
 
     Material documentMaterial;
 
+    private void Start()
+    {
+        documentMaterial = GetComponent<Renderer>().material;
+        documentMaterial.color = Color.black;
+        spriteRenderer.sprite = plantRoomIcon;
+    }
+
     public void SetDestinationStation(Station destinationStation)
     {
         this.targetStation = destinationStation;
         Debug.Log("Deliver this to "+ targetStation);
 
-        documentMaterial = GetComponent<Renderer>().material;
+        //documentMaterial = GetComponent<Renderer>().material;
 
         switch (targetStation)
         {
             case Station.EngineRoom:
-                documentMaterial.color = Color.red;
+                documentMaterial.color = Color.black;
                 spriteRenderer.sprite = engineRoomIcon;
                 break;
             case Station.AtmoRoom:
-                documentMaterial.color = Color.yellow;
+                documentMaterial.color = Color.black;
                 spriteRenderer.sprite = atmoRoomIcon;
                 break;
             case Station.PlantRoom:
-                documentMaterial.color = Color.green;
+                documentMaterial.color = Color.black;
                 spriteRenderer.sprite = plantRoomIcon;
                 break;
             case Station.WaterPumps:
-                documentMaterial.color = Color.blue;
+                documentMaterial.color = Color.black;
                 spriteRenderer.sprite = pumpRoomIcon;
                 break;
             default:
