@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CarryItem : MonoBehaviour {
 
+    //the different variables and gameObjects required for Flurp.
     public bool isBeingCarried = false;
     public Collider physicsCollider;
     private Rigidbody myRigidBody;
@@ -11,18 +12,25 @@ public class CarryItem : MonoBehaviour {
     private Transform originalParent;
     FlurpMovement flurpMovement;
 
-
-    void Start () {
+    //sets the original parent.
+    void Start ()
+    {
         originalParent = transform.parent;
 
         myRigidBody = GetComponent<Rigidbody>();
         flurpMovement = GetComponent<FlurpMovement>();
     }
 	
-	void Update () {
+	void Update ()
+    {
 		
 	}
 
+    /// <summary>
+    /// the method for picking up flurp. If zhe is picked up zhe won't move and zhes rotation and position is changed to the carrying players
+    /// rotation and position. And the bool isBeingCarried is set as true. 
+    /// </summary>
+    /// <param name="carryPoint"></param>
     public void PickUp(Transform carryPoint)
     {
         if (flurpMovement != null)
@@ -51,6 +59,9 @@ public class CarryItem : MonoBehaviour {
         AudioManager.instance.Play("Pickup");
     }
 
+    /// <summary>
+    /// the method for dropping Flurp, the bool isBeingCarried is set as false and zhe can move again. And the drop sound is played. 
+    /// </summary>
     public void Drop()
     {
         transform.SetParent(originalParent);

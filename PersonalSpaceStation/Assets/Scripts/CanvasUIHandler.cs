@@ -5,12 +5,15 @@ using UnityEngine.UI;
 
 public class CanvasUIHandler : MonoBehaviour {
 
+    //adds the different gameobjects required for the UI.
     public Interactable engine, pump, atmo, plant;
-
     public Image aEngine, aPump, aAtmo, aPlant;
     public Image eEngine, ePump, eAtmo, ePlant;
     public Image docEngine, docPump, docAtmo, docPlant;
 	
+    /// <summary>
+    /// don't think this is used.
+    /// </summary>
 	void Update () {
         if (engine.locked)
         {

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DocGenerator : MonoBehaviour {
 
+    //Variables and GameObjects for setting up the required fields for the documents. 
     public Station currentStation;
     public Station targetStation;
 
@@ -17,7 +18,8 @@ public class DocGenerator : MonoBehaviour {
     public Interactable myStation;
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
 
     }
 
@@ -50,6 +52,7 @@ public class DocGenerator : MonoBehaviour {
         NewDocument.GetComponent<Document>().HandIn += UnLockStation;
     }
 
+    //If the document is taken to the right part of the ship, it is delivered. 
     public void OnTriggerEnter(Collider other)
     {
         //Debug.Log("niklas was here");
@@ -66,11 +69,13 @@ public class DocGenerator : MonoBehaviour {
         }
     }
 
+    //Lock the station if a document is spawned.
     public void LockStation()
     {
         myStation.locked = true;
     }
 
+    //unlocks the station if the document has been delivered.
     public void UnLockStation()
     {
         myStation.locked = false;

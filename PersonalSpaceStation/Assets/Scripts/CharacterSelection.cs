@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class CharacterSelection : MonoBehaviour {
 
-    //Default selection
+    //Default selection and variables for setting up the selection. 
     public int selection = 0;
 
     private float nextUpdate = 0f;
@@ -15,6 +15,7 @@ public class CharacterSelection : MonoBehaviour {
     public List<GameObject> models = new List<GameObject>();
     public CharacterSelectionHandler doneSelecting;
 
+    //starts up the character selection.
     private void Start()
     {
         foreach(GameObject go in models)
@@ -25,12 +26,16 @@ public class CharacterSelection : MonoBehaviour {
         models[selection].SetActive(true);
     }
 
-    
+    // SelectCharacter is run.
     void Update()
     {
         SelectCharacter();
     }
 
+    /// <summary>
+    /// updates the selection at certain intervalls and cycles through the different models either backwards or forwards depending on the
+    /// input from the player. 
+    /// </summary>
     public void SelectCharacter()
     {
         nextUpdate -= Time.deltaTime;
