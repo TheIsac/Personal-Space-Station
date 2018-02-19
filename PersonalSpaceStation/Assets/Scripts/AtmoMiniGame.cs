@@ -12,10 +12,10 @@ public class AtmoMiniGame : MonoBehaviour, IResetUser, IResetStation
     /// the game. 
     /// </summary>
     public Text completionText;
-    private Text completionImage;
+    public Text completionImage;
     //Color[] availableColors = { Color.red, Color.blue, Color.green, Color.yellow };
     //Color completionColor;
-    public Text[] availableGases;
+    Text[] availableGases;
     public Text completionGas;
 
     int colorIndex = 0;
@@ -35,6 +35,7 @@ public class AtmoMiniGame : MonoBehaviour, IResetUser, IResetStation
     private float completionCounter = 0;
     public int completionValue = 5;
     public bool isComplete = false;
+    private int selectionValue;
 
     /// <summary>
     /// The variables for keeping track of the user, the station and tick for cycling through the different colors.
@@ -90,7 +91,10 @@ public class AtmoMiniGame : MonoBehaviour, IResetUser, IResetStation
 
         }
 
-
+        //if (completionGas = availableGases[1])
+        //{
+        //    completionGas.text = 
+        //}
         completionImage = completionGas;
     }
 
