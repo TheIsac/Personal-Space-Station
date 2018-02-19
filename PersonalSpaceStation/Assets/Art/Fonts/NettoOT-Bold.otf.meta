@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: 36637a68720ad9d46bceb4a08613a40f
+timeCreated: 1519030379
+licenseType: Pro
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Netto OT
+  fontNames:
+  - Netto OT
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 06bf3a2dead0f134193e34389beb4775, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
