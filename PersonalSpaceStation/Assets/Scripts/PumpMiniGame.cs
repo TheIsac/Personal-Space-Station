@@ -7,6 +7,7 @@ public class PumpMiniGame : MonoBehaviour, IResetUser, IResetStation
 {
     // UI, the variables required for the UI.
     public Slider gauge;
+    public Image filled;
     public Text completionText;
 
     // Completion mechanics, the variables required to keep track of completion for the minigame.
@@ -69,6 +70,8 @@ public class PumpMiniGame : MonoBehaviour, IResetUser, IResetStation
     void UpdateGauge()
     {
         gauge.value = completionCounter;
+        //filled.rectTransform.sizeDelta = new Vector2(80, completionCounter + 104);
+        filled.rectTransform.sizeDelta = Vector2.Lerp(new Vector2(80, 104), new Vector2(80, 291), completionCounter/100);
         completionText.text = completionCounter.ToString("#");
     }
 

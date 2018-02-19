@@ -1,9 +1,10 @@
 fileFormatVersion: 2
-guid: 330cfb4975beba945a42bb48cff4df3f
-timeCreated: 1519028124
+guid: 7a8525520e17944468c98c112125f7a0
+timeCreated: 1519052048
 licenseType: Pro
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: controllerbutton_left_0
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -78,7 +79,21 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: controllerbutton_left_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 3840
+        height: 3841
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
     outline: []
     physicsShape: []
   spritePackingTag: 
