@@ -14,7 +14,7 @@ public class CharacterSelectionMenu : MonoBehaviour {
     public void PlayGame()
     {
         //Load next scene in the scene build order
-        SceneManager.LoadScene("IsacSpeltest");
+        SceneManager.LoadScene("IsacSpeltest 1");
        // GameObject spawnedPlayer = Instantiate(player, playerSpawnPosition, Quaternion.identity) as GameObject;
         //Character selectedCharacter = characters[characterChoice];
     }
