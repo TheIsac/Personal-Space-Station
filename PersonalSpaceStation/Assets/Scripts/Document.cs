@@ -36,23 +36,23 @@ public class Document : MonoBehaviour {
         switch (targetStation)
         {
             case Station.EngineRoom:
-                documentMaterial.color = Color.black;
+                //documentMaterial.color = Color.black;
                 spriteRenderer.sprite = engineRoomIcon;
                 break;
             case Station.AtmoRoom:
-                documentMaterial.color = Color.black;
+                //documentMaterial.color = Color.black;
                 spriteRenderer.sprite = atmoRoomIcon;
                 break;
             case Station.PlantRoom:
-                documentMaterial.color = Color.black;
+                //documentMaterial.color = Color.black;
                 spriteRenderer.sprite = plantRoomIcon;
                 break;
             case Station.WaterPumps:
-                documentMaterial.color = Color.black;
+                //documentMaterial.color = Color.black;
                 spriteRenderer.sprite = pumpRoomIcon;
                 break;
             default:
-                documentMaterial.color = Color.black;
+                //documentMaterial.color = Color.black;
                 break;
         }
         //spriteRenderer.gameObject.SetActive(true);
@@ -62,8 +62,8 @@ public class Document : MonoBehaviour {
     {
         if (HandIn != null)
         {
-        HandIn.Invoke();
-        Destroy(gameObject);
+            HandIn.Invoke();
+            Destroy(gameObject);
         }
     }
 }
