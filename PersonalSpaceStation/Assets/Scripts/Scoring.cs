@@ -43,13 +43,6 @@ public class Scoring : MonoBehaviour
         scoreTimer += Time.deltaTime * scoreMultiplier;
         totalScore = (int)scoreTimer;
 
-        // Save the high score data if the score is indeed higher than the previous one
-        if (totalScore > highscores[highscoreCount - 1])
-        {
-            //PlayerPrefs.SetInt("HighScore", totalScore);
-            //oldHighScore = totalScore;
-        }
-
         scoreText.text = "Score: " +totalScore.ToString("000000");
     }
 
@@ -69,7 +62,7 @@ public class Scoring : MonoBehaviour
 
         for (int i = 0; i < highscoreCount; i++)
         {
-             PlayerPrefs.SetInt("Highscore" + i, highscores[i]);
+            PlayerPrefs.SetInt("Highscore" + i, highscores[i]);
         }
     }
 
