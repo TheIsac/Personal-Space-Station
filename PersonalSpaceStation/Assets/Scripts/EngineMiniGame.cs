@@ -32,7 +32,7 @@ public class EngineMiniGame : MonoBehaviour, IResetUser, IResetStation
 /// </summary>
     void Start ()
     {
-        startRotation = spak.rectTransform.rotation;
+        startRotation = spak.rectTransform.localRotation;
         currentMomentum = Random.Range(-baseMomentum, baseMomentum);
     }
 
@@ -46,8 +46,8 @@ public class EngineMiniGame : MonoBehaviour, IResetUser, IResetStation
         isComplete = false;
         completionCounter = 0f;
         currentMomentum = 0f;
-        spak.rectTransform.rotation = startRotation;
-        completionText.text = completionCounter.ToString("#.0");
+        spak.rectTransform.localRotation = startRotation;
+        completionText.text = completionCounter.ToString("0.0");
     }
 
 /// <summary>
@@ -90,12 +90,12 @@ public class EngineMiniGame : MonoBehaviour, IResetUser, IResetStation
         //if (Mathf.Abs(Input.GetAxis("Horizontal" + stationUser)) > .7f)
         horizontalAxis = Input.GetAxis("Horizontal" + stationUser);
 
-        if (horizontalAxis < -.1f && (spak.rectTransform.rotation.eulerAngles.z < 90f || spak.rectTransform.rotation.eulerAngles.z > 200f))
+        if (horizontalAxis < -.1f && (spak.rectTransform.localRotation.eulerAngles.z < 90f || spak.rectTransform.localRotation.eulerAngles.z > 200f))
         {
             currentMomentum = baseMomentum;
             spak.rectTransform.Rotate(0f, 0f, currentMomentum);
         }
-        if (horizontalAxis > .1f && (spak.rectTransform.rotation.eulerAngles.z < 120f || spak.rectTransform.rotation.eulerAngles.z > 270f))
+        if (horizontalAxis > .1f && (spak.rectTransform.localRotation.eulerAngles.z < 120f || spak.rectTransform.localRotation.eulerAngles.z > 270f))
         {
             currentMomentum = -baseMomentum;
             spak.rectTransform.Rotate(0f, 0f, currentMomentum);
@@ -115,10 +115,10 @@ public class EngineMiniGame : MonoBehaviour, IResetUser, IResetStation
         }
 
         // Update progress if the lever is within green area
-        if(spak.rectTransform.rotation.eulerAngles.z < minCompletionAngle || spak.rectTransform.rotation.eulerAngles.z > maxCompletionAngle)
+        if(spak.rectTransform.localRotation.eulerAngles.z < minCompletionAngle || spak.rectTransform.localRotation.eulerAngles.z > maxCompletionAngle)
         {
             completionCounter += Time.deltaTime;
-            completionText.text = completionCounter.ToString("#.0");
+            completionText.text = completionCounter.ToString("0.0");
         }
     }
 
@@ -156,7 +156,7 @@ public class EngineMiniGame : MonoBehaviour, IResetUser, IResetStation
         }
 
         // Only move the lever if it is between 90 and -90 degrees
-        if(spak.rectTransform.rotation.eulerAngles.z < 90f || spak.rectTransform.rotation.eulerAngles.z > 270f)
+        if(spak.rectTransform.localRotation.eulerAngles.z < 90f || spak.rectTransform.localRotation.eulerAngles.z > 270f)
             spak.rectTransform.Rotate(0f, 0f, currentMomentum);
     }
 }

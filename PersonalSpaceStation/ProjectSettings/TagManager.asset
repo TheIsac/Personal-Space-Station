@@ -7,6 +7,7 @@ TagManager:
   - Flurp
   - PickUp
   - DocumentHandIn
+  - CameraTarget
   layers:
   - Default
   - TransparentFX
