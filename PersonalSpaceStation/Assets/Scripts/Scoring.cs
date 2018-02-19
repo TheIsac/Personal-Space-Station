@@ -50,7 +50,7 @@ public class Scoring : MonoBehaviour
             //oldHighScore = totalScore;
         }
 
-        scoreText.text = totalScore.ToString();
+        scoreText.text = "Score: " +totalScore.ToString("000000");
     }
 
     public void SortHighscores()

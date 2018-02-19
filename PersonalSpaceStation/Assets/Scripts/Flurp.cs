@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum FlurpState { Dead, Recharging, Unhappy}
 
@@ -18,7 +19,8 @@ public class Flurp : MonoBehaviour {
     public Sprite plantRoomIcon;
     public Sprite pumpRoomIcon;
 
-    public SpriteRenderer spriteRenderer;
+    public Image targetRoomSprite;
+    public Image speechBubbleSprite;
 
     [Header("Settings")]
     public float timerToReachNextStation = 20f;
@@ -36,7 +38,8 @@ public class Flurp : MonoBehaviour {
     void Start()
     {
         lastTick = Time.time;
-        spriteRenderer.gameObject.SetActive(false);
+        targetRoomSprite.gameObject.SetActive(false);
+        speechBubbleSprite.gameObject.SetActive(false);
 
         NewRandomRoom();
     }
@@ -69,22 +72,22 @@ public class Flurp : MonoBehaviour {
     void DisplayNewObjective()
     {
 
-        if (spriteRenderer == null)
+        if (targetRoomSprite == null)
             return;
 
         switch (targetStation)
         {
             case Station.EngineRoom:
-                spriteRenderer.sprite = engineRoomIcon;
+                targetRoomSprite.sprite = engineRoomIcon;
                 break;
             case Station.AtmoRoom:
-                spriteRenderer.sprite = atmoRoomIcon;
+                targetRoomSprite.sprite = atmoRoomIcon;
                 break;
             case Station.PlantRoom:
-                spriteRenderer.sprite = plantRoomIcon;
+                targetRoomSprite.sprite = plantRoomIcon;
                 break;
             case Station.WaterPumps:
-                spriteRenderer.sprite = pumpRoomIcon;
+                targetRoomSprite.sprite = pumpRoomIcon;
                 break;
             case Station.None:
                 break;
@@ -92,7 +95,8 @@ public class Flurp : MonoBehaviour {
                 break;
         }
 
-        spriteRenderer.gameObject.SetActive(true);
+        targetRoomSprite.gameObject.SetActive(true);
+        speechBubbleSprite.gameObject.SetActive(true);
     }
 
     public void SetCurrentStation(Station station)
@@ -109,11 +113,13 @@ public class Flurp : MonoBehaviour {
             targetHappinessValue = Mathf.RoundToInt(Random.Range(baseTimeToReachHappiness * .75f, baseTimeToReachHappiness * 1.25f));
 
             //canBeMoved = false;
-            spriteRenderer.gameObject.SetActive(false);
+            targetRoomSprite.gameObject.SetActive(false);
+            speechBubbleSprite.gameObject.SetActive(false);
         }
         else if(currentStation == targetStation && flurpState == FlurpState.Recharging)
         {
-            spriteRenderer.gameObject.SetActive(false);
+            targetRoomSprite.gameObject.SetActive(false);
+            speechBubbleSprite.gameObject.SetActive(false);
         }
         else
         {
