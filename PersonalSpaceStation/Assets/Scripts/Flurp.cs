@@ -69,7 +69,18 @@ public class Flurp : MonoBehaviour {
         health.text = currentHappinessValue.ToString();
         DisplayNewObjective();
 
+
+        StartCoroutine(FlashNewObjective());
         //canBeMoved = true;
+    }
+
+    IEnumerator FlashNewObjective()
+    {
+        flurpUI.SetBool("Flashing", true);
+
+        yield return new WaitForSeconds(.5f);
+
+        flurpUI.SetBool("Flashing", false);
     }
 
     void DisplayNewObjective()
