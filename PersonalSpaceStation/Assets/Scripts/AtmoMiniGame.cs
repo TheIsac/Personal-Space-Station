@@ -87,11 +87,11 @@ public class AtmoMiniGame : MonoBehaviour, IResetUser, IResetStation
         //completionGas = availableGases[Random.Range(0, availableGases.Length)];
         gasNumber = Random.Range(0, 3);
 
-        //if(activeGas[colorIndex] = gasNumber)
-        //{
-        //  gasNumber = activeGas[(colorIndex + 3) % activeGas.Length];
+        if(colorIndex == gasNumber)
+        {
+          gasNumber = (colorIndex + 3) % activeGas.Length;
 
-        //}
+        }
 
         //if (completionGas = availableGases[1])
         //{
