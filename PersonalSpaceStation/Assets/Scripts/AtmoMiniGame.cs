@@ -12,9 +12,9 @@ public class AtmoMiniGame : MonoBehaviour, IResetUser, IResetStation
     /// the game. 
     /// </summary>
     public Text completionText;
-    public Text completionImage;
+    public Image completionImage;
     //Color[] availableColors = { Color.red, Color.blue, Color.green, Color.yellow };
-    //Color completionColor;
+    public Color[] completionColor;
     public Text completionGas;
     public Text completionGasUnder;
     public GameObject[] activeGas;
@@ -78,6 +78,7 @@ public class AtmoMiniGame : MonoBehaviour, IResetUser, IResetStation
     {
         completionGas.text = "";
         completionGasUnder.text = "";
+        completionImage.color = Color.white;
     }
 
     /// <summary>
@@ -103,21 +104,25 @@ public class AtmoMiniGame : MonoBehaviour, IResetUser, IResetStation
         {
             completionGas.text = "CO";
             completionGasUnder.text = "  2";
+            completionImage.color = completionColor[0];
         }
        if (gasNumber == 1)
         {
             completionGas.text = "Ar";
             completionGasUnder.text = "";
+            completionImage.color = completionColor[1];
         }
        if (gasNumber == 2)
         {
             completionGas.text = "He";
             completionGasUnder.text = "";
+            completionImage.color = completionColor[2];
         }
        if (gasNumber == 3)
         {
             completionGas.text = "N";
             completionGasUnder.text = "2";
+            completionImage.color = completionColor[3];
         }
     }
 
