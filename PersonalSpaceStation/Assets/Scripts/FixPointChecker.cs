@@ -17,6 +17,7 @@ public class FixPointChecker : MonoBehaviour {
     public bool repaired;
 
     private Light light;
+    public GameObject repairSquare1, repairSquare2;
 
     public float counter;
 
