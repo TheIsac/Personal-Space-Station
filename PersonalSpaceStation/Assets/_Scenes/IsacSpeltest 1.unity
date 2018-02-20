@@ -26061,7 +26061,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1724352565
 Transform:
   m_ObjectHideFlags: 0
@@ -28161,6 +28161,18 @@ Prefab:
       propertyPath: m_LocalPosition.z
       value: 206.1014
       objectReference: {fileID: 0}
+    - target: {fileID: 2300764, guid: 0e7be283ab5963945a3eb849a57dc7b7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 14bcba3cbf0a5504c94d1a2c4a57398d, type: 2}
+    - target: {fileID: 2300730, guid: 0e7be283ab5963945a3eb849a57dc7b7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 14bcba3cbf0a5504c94d1a2c4a57398d, type: 2}
+    - target: {fileID: 2300404, guid: 0e7be283ab5963945a3eb849a57dc7b7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c9ac69933676a474ea75791b48e07e4f, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0e7be283ab5963945a3eb849a57dc7b7, type: 3}
   m_IsPrefabParent: 0
