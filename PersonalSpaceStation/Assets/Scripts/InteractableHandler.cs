@@ -34,6 +34,15 @@ public class InteractableHandler : MonoBehaviour {
 
     public void SetStation(Interactable station)
     {
+        if (station ==null)
+        {
+            playerRigidbody.isKinematic = false;
+            movement.inMiniGame = false;
+
+            anim.SetBool("isInteracting", false);
+            currentStation.EndMiniGame();
+        }
+
         if(movement.inMiniGame == false)
             currentStation = station;
     }
@@ -68,7 +77,6 @@ public class InteractableHandler : MonoBehaviour {
 
             anim.SetBool("isInteracting", false);
             currentStation.EndMiniGame();
-            currentStation = null;
 
             AudioManager.instance.Play("Drop");
         }

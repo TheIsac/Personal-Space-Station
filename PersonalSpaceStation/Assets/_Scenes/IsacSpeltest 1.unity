@@ -3203,11 +3203,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114144779937081514, guid: d1f01a01607b42f48abe67a1a1156c86,
-        type: 2}
-      propertyPath: sounds.Array.size
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 4970287920356698, guid: d1f01a01607b42f48abe67a1a1156c86, type: 2}
       propertyPath: m_LocalPosition.x
       value: -0.11753273
@@ -3240,53 +3235,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: 114144779937081514, guid: d1f01a01607b42f48abe67a1a1156c86,
-        type: 2}
-      propertyPath: sounds.Array.data[5].name
-      value: Type
-      objectReference: {fileID: 0}
-    - target: {fileID: 114144779937081514, guid: d1f01a01607b42f48abe67a1a1156c86,
-        type: 2}
-      propertyPath: sounds.Array.data[5].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 1a8c8a6a7d6319545919665c9598de3c, type: 3}
-    - target: {fileID: 114144779937081514, guid: d1f01a01607b42f48abe67a1a1156c86,
-        type: 2}
-      propertyPath: sounds.Array.data[5].volume
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114144779937081514, guid: d1f01a01607b42f48abe67a1a1156c86,
-        type: 2}
-      propertyPath: sounds.Array.data[5].pitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114144779937081514, guid: d1f01a01607b42f48abe67a1a1156c86,
-        type: 2}
-      propertyPath: sounds.Array.data[5].pitchVariance
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114144779937081514, guid: d1f01a01607b42f48abe67a1a1156c86,
-        type: 2}
-      propertyPath: sounds.Array.data[5].minDistance
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114144779937081514, guid: d1f01a01607b42f48abe67a1a1156c86,
-        type: 2}
-      propertyPath: sounds.Array.data[5].maxDistance
-      value: 500
-      objectReference: {fileID: 0}
-    - target: {fileID: 114144779937081514, guid: d1f01a01607b42f48abe67a1a1156c86,
-        type: 2}
-      propertyPath: sounds.Array.data[5].mixerGroup
-      value: 
-      objectReference: {fileID: 243587151942466014, guid: 1ee4cf61fea4cd24ebc91e806c3f1b8d,
-        type: 2}
-    - target: {fileID: 114144779937081514, guid: d1f01a01607b42f48abe67a1a1156c86,
-        type: 2}
-      propertyPath: sounds.Array.data[4].mixerGroup
-      value: 
-      objectReference: {fileID: 243587151942466014, guid: 1ee4cf61fea4cd24ebc91e806c3f1b8d,
-        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d1f01a01607b42f48abe67a1a1156c86, type: 2}
   m_IsPrefabParent: 0
