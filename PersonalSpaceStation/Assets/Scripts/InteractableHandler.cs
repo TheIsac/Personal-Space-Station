@@ -34,7 +34,8 @@ public class InteractableHandler : MonoBehaviour {
 
     public void SetStation(Interactable station)
     {
-        currentStation = station;
+        if(movement.inMiniGame == false)
+            currentStation = station;
     }
 
     private void HandleInteractionInput()
@@ -63,6 +64,7 @@ public class InteractableHandler : MonoBehaviour {
 
             anim.SetBool("isInteracting", false);
             currentStation.EndMiniGame();
+            currentStation = null;
 
             AudioManager.instance.Play("Drop");
         }
