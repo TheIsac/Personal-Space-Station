@@ -110,7 +110,6 @@ public class EngineMiniGame : MonoBehaviour, IResetUser, IResetStation
         // Check if the mini game is complete
         if(completionCounter >= completionTime)
         {
-            completionText.text = "Done";
             StartCoroutine(CompleteMiniGame());
         }
 
