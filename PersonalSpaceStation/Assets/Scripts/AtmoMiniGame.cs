@@ -165,11 +165,11 @@ public class AtmoMiniGame : MonoBehaviour, IResetUser, IResetStation
         colorIndex = (colorIndex + 1) % activeGas.Length;
         activeGas[(colorIndex) % activeGas.Length].gameObject.SetActive(true);
 
-        if (colorIndex != 1)
+        if (colorIndex != 0)
         {
             activeGas[(colorIndex - 1) % activeGas.Length].gameObject.SetActive(false);
         }
-        if (colorIndex == 1)
+        if (colorIndex == 0)
         {
             activeGas[3].gameObject.SetActive(false);
         }
