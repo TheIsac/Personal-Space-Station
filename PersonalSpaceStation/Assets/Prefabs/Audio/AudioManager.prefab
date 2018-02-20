@@ -34,7 +34,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1498762250162142}
   m_LocalRotation: {x: -0, y: -0.97975147, z: -0, w: -0.20021749}
-  m_LocalPosition: {x: -0.11753273, y: 0, z: 0.2657032}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -116,6 +116,20 @@ MonoBehaviour:
     volumeVariance: 0
     pitch: 1
     pitchVariance: 1
+    spatialBlend: 0
+    minDistance: 1
+    maxDistance: 500
+    loop: 0
+    mixerGroup: {fileID: 243587151942466014, guid: 1ee4cf61fea4cd24ebc91e806c3f1b8d,
+      type: 2}
+    source: {fileID: 0}
+  - target: {fileID: 0}
+    name: MenuMusic
+    clip: {fileID: 8300000, guid: 4137058060db49b469129b32b93d2e9c, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
     spatialBlend: 0
     minDistance: 1
     maxDistance: 500
