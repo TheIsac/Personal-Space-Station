@@ -7,96 +7,30 @@ public class PlantMiniGame : MonoBehaviour, IResetUser, IResetStation
 {
 
     // UI, all the variables required for the UI elements. 
-    //public Text completionText;
     public Sprite untickedBox;
     public Sprite tickedBox;
     public Sprite errorBox;
-    public Image[] colorBoxes;
+    //public Image[] colorBoxes;
+
+    // New stuff
+    int[] puzzle;
+    public Sprite[] availablePlants;
+    public Image[] plantBoxes;
+    public Image[] resultBoxes;
 
     // variables for the puzzleboxes. 
     int boxIndex = 0;
-    public MeshRenderer[] puzzleBoxes;
+    //public MeshRenderer[] puzzleBoxes;
  
     // Completion mechanics, variables.
     public int completionCount = 3;
     private float completionCounter = 0;
     public int completionValue = 5;
     public bool isComplete = false;
-    List<ColorPuzzle> puzzles = new List<ColorPuzzle>();
-
-    ColorPuzzle currentPuzzle;
 
     //variables for the stations.
     public Interactable station;
     private string stationUser = "";
-
-
-    /// <summary>
-    /// resets the station before use, and creates the five puzzles.
-    /// </summary>
-    /// <param name="player"></param>
-    public void ResetStation(string player)
-    {
-        if(puzzles.Count < 1)
-            CreatePuzzles(5);
-
-        stationUser = player;
-        isComplete = false;
-        completionCounter = 0;
-        ResetPuzzleBoxes();
-        ResetBoxes();
-        LoadNewPuzzle();
-    }
-
-    /// <summary>
-    /// resets the user and the puzzleboxes.
-    /// </summary>
-    public void ResetUser()
-    {
-        stationUser = "";
-        ResetBoxes();
-        ResetPuzzleBoxes();
-    }
-
-    /// <summary>
-    /// Loads a new puzzle and gives the boxes a random set of colors.
-    /// </summary>
-    void LoadNewPuzzle()
-    {
-        currentPuzzle = puzzles[Random.Range(0, puzzles.Count)];
-
-        for (int i = 0; i < currentPuzzle.colorSequence.Length; i++)
-        {
-            if(puzzleBoxes.Length > i)
-            {
-                puzzleBoxes[i].material.color = currentPuzzle.colorSequence[i];
-            }
-        }
-    }
-
-    /// <summary>
-    /// resets the puzzleboxes to white.
-    /// </summary>
-    void ResetPuzzleBoxes()
-    {
-        for (int i = 0; i < puzzleBoxes.Length; i++)
-        {
-            puzzleBoxes[i].material.color = Color.white;
-        }
-    }
-
-    /// <summary>
-    /// resets the boxes in the minigame screen.
-    /// </summary>
-    void ResetBoxes()
-    {
-        for (int i = 0; i < colorBoxes.Length; i++)
-        {
-            colorBoxes[i].sprite = untickedBox;
-        }
-
-        boxIndex = 0;
-    }
 
     /// <summary>
     /// if the game is paused the minigame is disabled.
@@ -118,19 +52,61 @@ public class PlantMiniGame : MonoBehaviour, IResetUser, IResetStation
     }
 
     /// <summary>
+    /// resets the station before use, and creates the five puzzles.
+    /// </summary>
+    /// <param name="player"></param>
+    public void ResetStation(string player)
+    {
+        stationUser = player;
+        isComplete = false;
+        completionCounter = 0;
+        boxIndex = 0;
+
+        CreatePuzzle();
+        ResetUI();
+        LoadPuzzleUI();
+    }
+
+    /// <summary>
+    /// resets the user and the puzzleboxes.
+    /// </summary>
+    public void ResetUser()
+    {
+        stationUser = "";
+    }
+
+    private void CreatePuzzle()
+    {
+        puzzle = new int[plantBoxes.Length];
+
+        for (int i = 0; i < plantBoxes.Length; i++)
+        {
+            puzzle[i] = Random.Range(0, availablePlants.Length);
+        }
+    }
+
+    private void LoadPuzzleUI()
+    {
+        for (int i = 0; i < plantBoxes.Length; i++)
+        {
+            plantBoxes[i].sprite = availablePlants[puzzle[i]];
+        }
+    }
+
+    /// <summary>
     /// handles the player input and adds to the completion counter if the player presses the correct colors. 
     /// </summary>
     void HandlePlayerInput()
     {
 
-        if (stationUser == "" || boxIndex >= colorBoxes.Length)
+        if (stationUser == "" || boxIndex >= plantBoxes.Length)
             return;
 
         if (Input.GetButtonDown("Y-button" + stationUser))
         {
-            if (currentPuzzle.colorSequence[boxIndex] == Color.yellow)
+            if (puzzle[boxIndex] == 0)
             {
-                colorBoxes[boxIndex].sprite = tickedBox;
+                resultBoxes[boxIndex].sprite = tickedBox;
                 boxIndex++;
                 completionCounter++;
             }
@@ -141,9 +117,9 @@ public class PlantMiniGame : MonoBehaviour, IResetUser, IResetStation
         }
         if (Input.GetButtonDown("X-button" + stationUser))
         {
-            if(currentPuzzle.colorSequence[boxIndex] == Color.blue)
+            if(puzzle[boxIndex] == 1)
             {
-                colorBoxes[boxIndex].sprite = tickedBox;
+                resultBoxes[boxIndex].sprite = tickedBox;
                 boxIndex++;
                 completionCounter++;
             }
@@ -154,9 +130,9 @@ public class PlantMiniGame : MonoBehaviour, IResetUser, IResetStation
         }
         if (Input.GetButtonDown("A-button" + stationUser))
         {
-            if (currentPuzzle.colorSequence[boxIndex] == Color.green)
+            if (puzzle[boxIndex] == 2)
             {
-                colorBoxes[boxIndex].sprite = tickedBox;
+                resultBoxes[boxIndex].sprite = tickedBox;
                 boxIndex++;
                 completionCounter++;
             }
@@ -168,13 +144,21 @@ public class PlantMiniGame : MonoBehaviour, IResetUser, IResetStation
 
     }
 
+    void ResetUI()
+    {
+        for (int i = 0; i < resultBoxes.Length; i++)
+        {
+            resultBoxes[i].sprite = untickedBox;
+        }
+    }
+
     /// <summary>
     /// restarts the level.
     /// </summary>
     /// <returns></returns>
     IEnumerator RestartLevel()
     {
-        colorBoxes[boxIndex].sprite = errorBox;
+        resultBoxes[boxIndex].sprite = errorBox;
         yield return new WaitForSeconds(.3f);
         ResetStation(stationUser);
     }
@@ -199,49 +183,9 @@ public class PlantMiniGame : MonoBehaviour, IResetUser, IResetStation
         station.AddHealthToStation(completionValue);
         isComplete = true;
         stationUser = "";
-        ResetPuzzleBoxes();
+        //ResetPuzzleBoxes();
 
         yield return new WaitForSeconds(.5f);
         station.MiniGameComplete();
-    }
-
-    /// <summary>
-    /// creates the puzzles for the game.
-    /// </summary>
-    /// <param name="numberOfPuzzles"></param>
-    private void CreatePuzzles(int numberOfPuzzles)
-    {
-        puzzles.Clear();
-
-        for (int i = 0; i < numberOfPuzzles; i++)
-        {
-            puzzles.Add(new ColorPuzzle());
-        }
-    }
-
-
-    /// <summary>
-    /// determines the available colors and gives each box a random color. 
-    /// </summary>
-    public class ColorPuzzle
-    {
-        int puzzleLength = 5;
-        public Color[] colorSequence;
-        Color[] availableColors = { Color.blue, Color.green, Color.yellow };
-
-        public ColorPuzzle()
-        {
-            colorSequence = new Color[puzzleLength];
-
-            for (int i = 0; i < colorSequence.Length; i++)
-            {
-                colorSequence[i] = GetRandomColor();
-            }
-        }
-
-        Color GetRandomColor()
-        {
-            return availableColors[Random.Range(0, availableColors.Length)];
-        }
     }
 }
