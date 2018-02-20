@@ -15,9 +15,10 @@ public class AtmoMiniGame : MonoBehaviour, IResetUser, IResetStation
     public Text completionImage;
     //Color[] availableColors = { Color.red, Color.blue, Color.green, Color.yellow };
     //Color completionColor;
-    Text[] availableGases;
     public Text completionGas;
+    public GameObject[] activeGas;
 
+    public int gasNumber = 0;
     int colorIndex = 0;
 
     // Computer
@@ -74,7 +75,7 @@ public class AtmoMiniGame : MonoBehaviour, IResetUser, IResetStation
     /// </summary>
     public void ResetComputer()
     {
-        //computermaterial.color = Color.white;
+        completionGas.text = "";
     }
 
     /// <summary>
@@ -83,19 +84,35 @@ public class AtmoMiniGame : MonoBehaviour, IResetUser, IResetStation
     /// </summary>
     void NewColor()
     {
-        completionGas = availableGases[Random.Range(0, availableGases.Length)];
+        //completionGas = availableGases[Random.Range(0, availableGases.Length)];
+        gasNumber = Random.Range(0, 3);
 
-        if(availableGases[colorIndex] == completionGas)
-        {
-            completionGas = availableGases[(colorIndex + 3) % availableGases.Length];
+        //if(activeGas[colorIndex] = gasNumber)
+        //{
+        //  gasNumber = activeGas[(colorIndex + 3) % activeGas.Length];
 
-        }
+        //}
 
         //if (completionGas = availableGases[1])
         //{
         //    completionGas.text = 
         //}
-        completionImage = completionGas;
+       if (gasNumber == 0)
+        {
+            completionGas.text = "CO2";
+        }
+       if (gasNumber == 1)
+        {
+            completionGas.text = "Ar";
+        }
+       if (gasNumber == 2)
+        {
+            completionGas.text = "He";
+        }
+       if (gasNumber == 3)
+        {
+            completionGas.text = "N2";
+        }
     }
 
     /// <summary>
@@ -145,8 +162,18 @@ public class AtmoMiniGame : MonoBehaviour, IResetUser, IResetStation
     /// </summary>
     void CycleGases()
     {
-        colorIndex = (colorIndex + 1) % availableGases.Length;
-        //computermaterial.color = availableGases[colorIndex];
+        colorIndex = (colorIndex + 1) % activeGas.Length;
+        activeGas[(colorIndex) % activeGas.Length].gameObject.SetActive(true);
+
+        if (colorIndex != 1)
+        {
+            activeGas[(colorIndex - 1) % activeGas.Length].gameObject.SetActive(false);
+        }
+        if (colorIndex == 1)
+        {
+            activeGas[3].gameObject.SetActive(false);
+        }
+        
     }
 
     /// <summary>
