@@ -22,6 +22,8 @@ public class Flurp : MonoBehaviour {
     public Image targetRoomSprite;
     public Image speechBubbleSprite;
 
+    public Animator flurpUI;
+
     [Header("Settings")]
     public float timerToReachNextStation = 20f;
     public float baseTimeToReachHappiness = 20f;
@@ -33,6 +35,7 @@ public class Flurp : MonoBehaviour {
 
     float currentHappinessValue;
     float targetHappinessValue;
+    float timeToReachTarget;
 
 
     void Start()
@@ -60,8 +63,8 @@ public class Flurp : MonoBehaviour {
 
         flurpState = FlurpState.Unhappy;
 
-        currentHappinessValue = timerToReachNextStation;
-        targetHappinessValue = timerToReachNextStation;
+        timeToReachTarget = timerToReachNextStation;
+        //targetHappinessValue = timerToReachNextStation;
 
         health.text = currentHappinessValue.ToString();
         DisplayNewObjective();
@@ -112,6 +115,8 @@ public class Flurp : MonoBehaviour {
             currentHappinessValue = 0f;
             targetHappinessValue = Mathf.RoundToInt(Random.Range(baseTimeToReachHappiness * .75f, baseTimeToReachHappiness * 1.25f));
 
+            flurpUI.SetBool("Flashing", false);
+
             //canBeMoved = false;
             targetRoomSprite.gameObject.SetActive(false);
             speechBubbleSprite.gameObject.SetActive(false);
@@ -147,6 +152,21 @@ public class Flurp : MonoBehaviour {
     // Update Flurps current happiness and take appropriate action
     void WellBeeingControl()
     {
+        if(flurpState == FlurpState.Unhappy)
+        {
+            timeToReachTarget -= tickLength;
+
+            if(timeToReachTarget <= 0)
+            {
+                EndGame();
+            }
+
+            if(timeToReachTarget <= 10)
+            {
+                flurpUI.SetBool("Flashing", true);
+            }
+        }
+
         if(currentStation == targetStation)
         {
             currentHappinessValue++;
@@ -163,7 +183,7 @@ public class Flurp : MonoBehaviour {
             NewRandomRoom();
         }
 
-        if(currentHappinessValue <= 0)
+        if(currentHappinessValue <= 0 && flurpState == FlurpState.Recharging)
         {
             EndGame();
         }

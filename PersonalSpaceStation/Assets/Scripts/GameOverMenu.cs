@@ -30,7 +30,7 @@ public class GameOverMenu : MonoBehaviour
                 numberOfAliveRooms++;
             }
         }
-        //if you have 1 room left alive then you lose and the game is over;
+        // End game if one station breaks
         if ((numberOfAliveRooms < stationRooms.Length))
         {
             EndGame();
@@ -42,9 +42,6 @@ public class GameOverMenu : MonoBehaviour
         if (gameHasEnded == false)
         {
 
-            //Debug.Log("GAME OVER");
-            //Invoke("Restart", restartDelay);
-            //Restart();
             Time.timeScale = 0f;
             GameManager.instance.gameIsPaused = true;
 
@@ -61,12 +58,11 @@ public class GameOverMenu : MonoBehaviour
     public void OnNameEntered()
     {
 
-        Debug.Log("Nik is the best!!");
         GameOverPanel.SetActive(false);
 
         FindObjectOfType<Scoring>().SortHighscores(enterName.text);
         gameHasEnded = true;
-        // Add code to open the main menu
+
         GoBackToMainMenu();
         Time.timeScale = 1f;
     }
