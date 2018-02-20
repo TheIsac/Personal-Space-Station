@@ -34,7 +34,17 @@ public class InteractableHandler : MonoBehaviour {
 
     public void SetStation(Interactable station)
     {
-        currentStation = station;
+        if (station ==null)
+        {
+            playerRigidbody.isKinematic = false;
+            movement.inMiniGame = false;
+
+            anim.SetBool("isInteracting", false);
+            currentStation.EndMiniGame();
+        }
+
+        if(movement.inMiniGame == false)
+            currentStation = station;
     }
 
     private void HandleInteractionInput()
@@ -54,6 +64,10 @@ public class InteractableHandler : MonoBehaviour {
             return;
         }
 
+        // Cant use mini game if the station is locked
+        if (currentStation.locked)
+            return;
+
         // Input
         // Exit the minigame when B is clicked
         if (Input.GetButtonDown("B-button" + movement.player) && currentStation.inUse == true && currentStation.stationUser == movement)
@@ -67,9 +81,6 @@ public class InteractableHandler : MonoBehaviour {
             AudioManager.instance.Play("Drop");
         }
 
-        // Cant use mini game if the station is locked
-        if (currentStation.locked)
-            return;
 
         // Start mini game when A is clicked
         if (Input.GetButtonDown("A-button" + movement.player) && currentStation.inUse == false)

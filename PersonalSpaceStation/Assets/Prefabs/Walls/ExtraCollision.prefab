@@ -43,22 +43,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1115010211130884
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4380941072630748}
-  - component: {fileID: 65642113722563242}
-  m_Layer: 0
-  m_Name: PumpEdge
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1167637995847122
 GameObject:
   m_ObjectHideFlags: 0
@@ -133,6 +117,22 @@ GameObject:
   - component: {fileID: 65332487200912166}
   m_Layer: 0
   m_Name: Corner (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1669053016561700
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4002793365023156}
+  - component: {fileID: 65012018200068550}
+  m_Layer: 0
+  m_Name: PumpEdge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -250,6 +250,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &4002793365023156
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1669053016561700}
+  m_LocalRotation: {x: -0, y: 0.17364816, z: -0, w: 0.9848078}
+  m_LocalPosition: {x: -0.231, y: 0.5, z: -3.889}
+  m_LocalScale: {x: 0.9999999, y: 1, z: 0.9999999}
+  m_Children: []
+  m_Father: {fileID: 4219581469315764}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 20, z: 0}
 --- !u!4 &4209719798298670
 Transform:
   m_ObjectHideFlags: 1
@@ -286,7 +299,7 @@ Transform:
   - {fileID: 4322738801152550}
   - {fileID: 4843683344619042}
   - {fileID: 4350390119488514}
-  - {fileID: 4380941072630748}
+  - {fileID: 4002793365023156}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -355,19 +368,6 @@ Transform:
   m_Father: {fileID: 4219581469315764}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 97.23701, z: 0}
---- !u!4 &4380941072630748
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1115010211130884}
-  m_LocalRotation: {x: -0, y: 0.17364816, z: -0, w: 0.9848078}
-  m_LocalPosition: {x: -0.231, y: 0.5, z: -3.889}
-  m_LocalScale: {x: 0.9999999, y: 1, z: 0.9999999}
-  m_Children: []
-  m_Father: {fileID: 4219581469315764}
-  m_RootOrder: 13
-  m_LocalEulerAnglesHint: {x: 0, y: 20, z: 0}
 --- !u!4 &4569367277172872
 Transform:
   m_ObjectHideFlags: 1
@@ -459,6 +459,18 @@ Transform:
   m_Father: {fileID: 4219581469315764}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 20, z: 0}
+--- !u!65 &65012018200068550
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1669053016561700}
+  m_Material: {fileID: 13400000, guid: 7a10b9b085cee5a4584fb144be9306ce, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.23263505, y: 1.5193665, z: 0.6474803}
+  m_Center: {x: -0.38368267, y: 0.25968325, z: 0.17626013}
 --- !u!65 &65044256367665758
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -591,18 +603,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.4986446, y: 1.4546696, z: 1}
   m_Center: {x: -0.14449291, y: 0.2273348, z: 8.288401e-10}
---- !u!65 &65642113722563242
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1115010211130884}
-  m_Material: {fileID: 13400000, guid: 7a10b9b085cee5a4584fb144be9306ce, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.23263505, y: 1.5193665, z: 0.6474803}
-  m_Center: {x: -0.38368267, y: 0.25968325, z: 0.17626013}
 --- !u!65 &65727491703444164
 BoxCollider:
   m_ObjectHideFlags: 1
