@@ -68,7 +68,6 @@ public class InteractableHandler : MonoBehaviour {
 
             anim.SetBool("isInteracting", false);
             currentStation.EndMiniGame();
-            currentStation = null;
 
             AudioManager.instance.Play("Drop");
         }
