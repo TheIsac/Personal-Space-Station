@@ -84,10 +84,10 @@ public class CharacterSelectionHandler : MonoBehaviour {
                 playerSelect = true;
             }
 
-            //if (Input.GetButtonDown("B-button_P1") && numberOfPlayers == 0)
-            //{
-            //    //leave the character selection screen.
-            //}
+            if (Input.GetButtonDown("B-button_P1") && numberOfPlayers == 0)
+            {
+                SceneManager.LoadScene("Main menu");
+            }
 
             if (playerSelect == true)
             {

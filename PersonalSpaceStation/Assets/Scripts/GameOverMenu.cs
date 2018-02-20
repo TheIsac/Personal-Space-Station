@@ -31,7 +31,7 @@ public class GameOverMenu : MonoBehaviour
             }
         }
         //if you have 1 room left alive then you lose and the game is over;
-        if (!(numberOfAliveRooms > 1))
+        if ((numberOfAliveRooms < stationRooms.Length))
         {
             EndGame();
         }
