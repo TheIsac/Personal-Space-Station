@@ -16,6 +16,7 @@ public class AtmoMiniGame : MonoBehaviour, IResetUser, IResetStation
     //Color[] availableColors = { Color.red, Color.blue, Color.green, Color.yellow };
     //Color completionColor;
     public Text completionGas;
+    public Text completionGasUnder;
     public GameObject[] activeGas;
 
     public int gasNumber = 0;
@@ -76,6 +77,7 @@ public class AtmoMiniGame : MonoBehaviour, IResetUser, IResetStation
     public void ResetComputer()
     {
         completionGas.text = "";
+        completionGasUnder.text = "";
     }
 
     /// <summary>
@@ -99,19 +101,23 @@ public class AtmoMiniGame : MonoBehaviour, IResetUser, IResetStation
         //}
        if (gasNumber == 0)
         {
-            completionGas.text = "CO2";
+            completionGas.text = "CO";
+            completionGasUnder.text = "  2";
         }
        if (gasNumber == 1)
         {
             completionGas.text = "Ar";
+            completionGasUnder.text = "";
         }
        if (gasNumber == 2)
         {
             completionGas.text = "He";
+            completionGasUnder.text = "";
         }
        if (gasNumber == 3)
         {
-            completionGas.text = "N2";
+            completionGas.text = "N";
+            completionGasUnder.text = "2";
         }
     }
 
