@@ -43,6 +43,7 @@ public class CharacterSelectionHandler : MonoBehaviour {
     //public Text[] playerText;
     public GameObject[] selectCharacter;
     public Button[] join;
+    public Button[] ready;
     
 
 	// Use this for initialization
@@ -97,11 +98,10 @@ public class CharacterSelectionHandler : MonoBehaviour {
                 if (Input.GetButtonDown("A-button_P1") && playerJoined1 == true)
                 {
                     //If player 1 presses A it is readied and the button for ready appears
-                    join[0].gameObject.SetActive(false);
-                    playerReady1.gameObject.SetActive(true);
                     player1Ready = true;
                     PlayerPrefs.SetInt("player1", playerchoice[0].selection);
                     Debug.Log(playerchoice[0].selection);
+                    ready[0].gameObject.SetActive(true);
 
                 }
             if (Input.GetButtonDown("A-button_P1") && playerJoined1 == false)
@@ -109,6 +109,8 @@ public class CharacterSelectionHandler : MonoBehaviour {
                     //If player 1 presses A, the player one is added to the joined players and the player can choose model.
                     PlayerJoin(0);
                     playerJoined1 = true;
+                    join[0].gameObject.SetActive(false);
+                    playerReady1.gameObject.SetActive(true);
                     player[0].gameObject.SetActive(true);
                 
                 }
@@ -120,22 +122,24 @@ public class CharacterSelectionHandler : MonoBehaviour {
                     player1Ready = false;
                     startGame.gameObject.SetActive(false);
                     join[0].gameObject.SetActive(true);
+                    ready[0].gameObject.SetActive(false);
             }               
 
             //Player Two, Handles input for A and B button.
                 if (Input.GetButtonDown("A-button_P2") && playerJoined2 == true)
                 {
                 //If player 2 presses A it is readied and the button for ready appears
-                    join[1].gameObject.SetActive(false);
                     playerReady2.gameObject.SetActive(true);
                     player2Ready = true;
                     PlayerPrefs.SetInt("player2", playerchoice[1].selection);
+                    ready[1].gameObject.SetActive(true);
                 }
                 if (Input.GetButtonDown("A-button_P2") && playerJoined2 == false)
                 {
                     //If player 2 presses A, the player one is added to the joined players and the player can choose model.
                     PlayerJoin(1);
                     playerJoined2 = true;
+                    join[1].gameObject.SetActive(false);
                     player[1].gameObject.SetActive(true);
                 }
                 if (Input.GetButtonDown("B-button_P2") && player2Ready == true)
@@ -145,22 +149,24 @@ public class CharacterSelectionHandler : MonoBehaviour {
                     player2Ready = false;
                     startGame.gameObject.SetActive(false);
                     join[1].gameObject.SetActive(true);
+                    ready[0].gameObject.SetActive(false);
             }
                 
             //Player Three, Handles input for A and B button.
                 if (Input.GetButtonDown("A-button_P3") && playerJoined3 == true)
                 {
                 //If player 3 presses A it is readied and the button for ready appears
-                    join[2].gameObject.SetActive(false);
                     playerReady3.gameObject.SetActive(true);
                     player3Ready = true;
                     PlayerPrefs.SetInt("player3", playerchoice[2].selection);
+                    ready[2].gameObject.SetActive(true);
                 }
                 if (Input.GetButtonDown("A-button_P3") && playerJoined3 == false)
                 {
                     //If player 3 presses A, the player three is added to the joined players and the player can choose model.
                     PlayerJoin(2);
                     playerJoined3 = true;
+                    join[2].gameObject.SetActive(false);
                     player[2].gameObject.SetActive(true);
                 }
                 if (Input.GetButtonDown("B-button_P3") && player3Ready == true)
@@ -170,21 +176,23 @@ public class CharacterSelectionHandler : MonoBehaviour {
                     player3Ready = false;
                     startGame.gameObject.SetActive(false);
                     join[2].gameObject.SetActive(true);
+                    ready[2].gameObject.SetActive(false);
             }
             //Player Four, Handles input for A and B button.
                 if (Input.GetButtonDown("A-button_P4") && playerJoined4 == true)
                 {
                 //If player 4 presses A it is readied and the button for ready appears
-                    join[3].gameObject.SetActive(false);
                     playerReady4.gameObject.SetActive(true);
                     player4Ready = true;
                     PlayerPrefs.SetInt("player4", playerchoice[3].selection);
+                    ready[3].gameObject.SetActive(true);
                 }
                 if (Input.GetButtonDown("A-button_P4") && playerJoined4 == false)
                 {
                     //If player 4 presses A, the player four is added to the joined players and the player can choose model.
                     PlayerJoin(3);
                     playerJoined4 = true;
+                    join[3].gameObject.SetActive(false);
                     player[3].gameObject.SetActive(true);
                 }
                 if (Input.GetButtonDown("B-button_P4") && player4Ready == true)
@@ -194,6 +202,7 @@ public class CharacterSelectionHandler : MonoBehaviour {
                     player4Ready = false;
                     startGame.gameObject.SetActive(false);
                     join[3].gameObject.SetActive(true);
+                    ready[3].gameObject.SetActive(false);
             }
         }
     }
