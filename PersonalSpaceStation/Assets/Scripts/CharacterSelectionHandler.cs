@@ -42,6 +42,7 @@ public class CharacterSelectionHandler : MonoBehaviour {
     //public Image[] playerColor;
     //public Text[] playerText;
     public GameObject[] selectCharacter;
+    public Button[] join;
     
 
 	// Use this for initialization
@@ -96,6 +97,7 @@ public class CharacterSelectionHandler : MonoBehaviour {
                 if (Input.GetButtonDown("A-button_P1") && playerJoined1 == true)
                 {
                     //If player 1 presses A it is readied and the button for ready appears
+                    join[0].gameObject.SetActive(false);
                     playerReady1.gameObject.SetActive(true);
                     player1Ready = true;
                     PlayerPrefs.SetInt("player1", playerchoice[0].selection);
@@ -108,6 +110,7 @@ public class CharacterSelectionHandler : MonoBehaviour {
                     PlayerJoin(0);
                     playerJoined1 = true;
                     player[0].gameObject.SetActive(true);
+                
                 }
                
                 if (Input.GetButtonDown("B-button_P1") && player1Ready == true)
@@ -116,12 +119,14 @@ public class CharacterSelectionHandler : MonoBehaviour {
                     playerReady1.gameObject.SetActive(false);
                     player1Ready = false;
                     startGame.gameObject.SetActive(false);
+                    join[0].gameObject.SetActive(true);
             }               
 
             //Player Two, Handles input for A and B button.
                 if (Input.GetButtonDown("A-button_P2") && playerJoined2 == true)
                 {
-                    //If player 2 presses A it is readied and the button for ready appears
+                //If player 2 presses A it is readied and the button for ready appears
+                    join[1].gameObject.SetActive(false);
                     playerReady2.gameObject.SetActive(true);
                     player2Ready = true;
                     PlayerPrefs.SetInt("player2", playerchoice[1].selection);
@@ -139,12 +144,14 @@ public class CharacterSelectionHandler : MonoBehaviour {
                     playerReady2.gameObject.SetActive(false);
                     player2Ready = false;
                     startGame.gameObject.SetActive(false);
+                    join[1].gameObject.SetActive(true);
             }
                 
             //Player Three, Handles input for A and B button.
                 if (Input.GetButtonDown("A-button_P3") && playerJoined3 == true)
                 {
-                    //If player 3 presses A it is readied and the button for ready appears
+                //If player 3 presses A it is readied and the button for ready appears
+                    join[2].gameObject.SetActive(false);
                     playerReady3.gameObject.SetActive(true);
                     player3Ready = true;
                     PlayerPrefs.SetInt("player3", playerchoice[2].selection);
@@ -162,11 +169,13 @@ public class CharacterSelectionHandler : MonoBehaviour {
                     playerReady3.gameObject.SetActive(false);
                     player3Ready = false;
                     startGame.gameObject.SetActive(false);
+                    join[2].gameObject.SetActive(true);
             }
             //Player Four, Handles input for A and B button.
                 if (Input.GetButtonDown("A-button_P4") && playerJoined4 == true)
                 {
-                    //If player 4 presses A it is readied and the button for ready appears
+                //If player 4 presses A it is readied and the button for ready appears
+                    join[3].gameObject.SetActive(false);
                     playerReady4.gameObject.SetActive(true);
                     player4Ready = true;
                     PlayerPrefs.SetInt("player4", playerchoice[3].selection);
@@ -184,6 +193,7 @@ public class CharacterSelectionHandler : MonoBehaviour {
                     playerReady4.gameObject.SetActive(false);
                     player4Ready = false;
                     startGame.gameObject.SetActive(false);
+                    join[3].gameObject.SetActive(true);
             }
         }
     }
