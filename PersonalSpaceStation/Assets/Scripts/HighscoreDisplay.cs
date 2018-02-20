@@ -11,6 +11,12 @@ public class HighscoreDisplay : MonoBehaviour {
     void Start()
     {
         DownLoadHighscores();
+
+        //for (int i = 0; i < highscoreCount; i++)
+        //{
+        //    PlayerPrefs.SetString("PlayerName" + i, "Empty");
+        //    PlayerPrefs.SetInt("Highscore" + i,  1);
+        //}
     }
 
     void DownLoadHighscores()
@@ -18,7 +24,7 @@ public class HighscoreDisplay : MonoBehaviour {
 
         for (int i = 0; i < highscoreCount; i++)
         {
-            scores[i].text = PlayerPrefs.GetInt("Highscore" + i).ToString("0");
+            scores[i].text = PlayerPrefs.GetString("PlayerName" + i) + ": " +PlayerPrefs.GetInt("Highscore" + i).ToString("0");
         }
     }
 }

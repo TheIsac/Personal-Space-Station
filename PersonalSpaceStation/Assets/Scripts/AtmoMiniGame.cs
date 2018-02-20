@@ -188,7 +188,7 @@ public class AtmoMiniGame : MonoBehaviour, IResetUser, IResetStation
         if (Input.GetButtonDown("X-button" + stationUser))
         {
             //(completionGas == computermaterial.color
-            if (true)
+            if (gasNumber == colorIndex)
             {
                 //setbool för interacting här?
                 completionCounter ++;
