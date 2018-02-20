@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameOverMenu : MonoBehaviour
 {
@@ -10,6 +11,11 @@ public class GameOverMenu : MonoBehaviour
     bool gameHasEnded = false;
 
     public float restartDelay = 1f;
+
+    public Text enterName;
+    public Text yourScore;
+
+    public GameObject GameOverPanel;
 
     // Update is called once per frame;
     void Update()
@@ -35,17 +41,39 @@ public class GameOverMenu : MonoBehaviour
     {
         if (gameHasEnded == false)
         {
-            FindObjectOfType<Scoring>().SortHighscores();
-            gameHasEnded = true;
+
             //Debug.Log("GAME OVER");
-            Invoke("Restart", restartDelay);
+            //Invoke("Restart", restartDelay);
             //Restart();
+            Time.timeScale = 0f;
+            GameManager.instance.gameIsPaused = true;
+
+            ShowGameOverScreen();
         }
     }
 
-    void Restart()
+    public void ShowGameOverScreen()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        GameOverPanel.SetActive(true);
+        yourScore.text = FindObjectOfType<Scoring>().totalScore.ToString("000000");
+    }
+
+    public void OnNameEntered()
+    {
+
+        Debug.Log("Nik is the best!!");
+        GameOverPanel.SetActive(false);
+
+        FindObjectOfType<Scoring>().SortHighscores(enterName.text);
+        gameHasEnded = true;
+        // Add code to open the main menu
+        GoBackToMainMenu();
+        Time.timeScale = 1f;
+    }
+
+    void GoBackToMainMenu()
+    {
+        SceneManager.LoadScene("Main Menu");
     }
 
 }

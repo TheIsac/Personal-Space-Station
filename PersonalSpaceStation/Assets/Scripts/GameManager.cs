@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        gameOverText.gameObject.SetActive(true);
+        //gameOverText.gameObject.SetActive(true);
 
         GetComponent<GameOverMenu>().EndGame();
     }

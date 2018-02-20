@@ -20,6 +20,8 @@ public class Scoring : MonoBehaviour
     private int[] highscores;
     private int highscoreCount = 5;
 
+    private string[] highscoreName;
+
     private void Start()
     {
         DownLoadHighscores();
@@ -36,6 +38,7 @@ public class Scoring : MonoBehaviour
 
     void Update()
     {
+
         if (Time.frameCount % scoreUpdateInterval == 0)
         {
             UpdateMultiplyer();
@@ -46,7 +49,7 @@ public class Scoring : MonoBehaviour
         scoreText.text = "Score: " +totalScore.ToString("000000");
     }
 
-    public void SortHighscores()
+    public void SortHighscores(string currentPlayer)
     {
         for (int i = highscoreCount - 1; i >= 0; i--)
         {
@@ -55,23 +58,28 @@ public class Scoring : MonoBehaviour
                 if(i < highscoreCount - 1)
                 {
                     highscores[i + 1] = highscores[i];
+                    highscoreName[i + 1] = highscoreName[i];
                 }
                 highscores[i] = totalScore;
+                highscoreName[i] = currentPlayer;
             }
         }
 
         for (int i = 0; i < highscoreCount; i++)
         {
             PlayerPrefs.SetInt("Highscore" + i, highscores[i]);
+            PlayerPrefs.SetString("PlayerName" + i, highscoreName[i]);
         }
     }
 
     void DownLoadHighscores()
     {
         highscores = new int[highscoreCount];
+        highscoreName = new string[highscoreCount];
         for (int i = 0; i < highscoreCount; i++)
         {
             highscores[i] = PlayerPrefs.GetInt("Highscore" + i);
+            highscoreName[i] = PlayerPrefs.GetString("PlayerName" + i);
         }
     }
 
