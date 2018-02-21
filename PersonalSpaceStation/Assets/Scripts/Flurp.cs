@@ -19,14 +19,10 @@ public class Flurp : MonoBehaviour {
     public Sprite plantRoomIcon;
     public Sprite pumpRoomIcon;
 
-    public Image targetRoomUIImage;
-    public Image speechBubbleUIImage;
-
-    public SpriteRenderer targetRoomSprite;
-    public SpriteRenderer speechBubbleSprite;
+    public Image targetRoomSprite;
+    public Image speechBubbleSprite;
 
     public Animator flurpUI;
-    public Animator flurpPopup;
 
     [Header("Settings")]
     public float timerToReachNextStation = 20f;
@@ -45,8 +41,8 @@ public class Flurp : MonoBehaviour {
     void Start()
     {
         lastTick = Time.time;
-        targetRoomUIImage.gameObject.SetActive(false);
-        speechBubbleUIImage.gameObject.SetActive(false);
+        targetRoomSprite.gameObject.SetActive(false);
+        speechBubbleSprite.gameObject.SetActive(false);
 
         NewRandomRoom();
     }
@@ -68,46 +64,43 @@ public class Flurp : MonoBehaviour {
         flurpState = FlurpState.Unhappy;
 
         timeToReachTarget = timerToReachNextStation;
-        health.text = currentHappinessValue.ToString();
+        //targetHappinessValue = timerToReachNextStation;
 
+        health.text = currentHappinessValue.ToString();
         DisplayNewObjective();
 
+
         StartCoroutine(FlashNewObjective());
+        //canBeMoved = true;
     }
 
     IEnumerator FlashNewObjective()
     {
         flurpUI.SetBool("Flashing", true);
-        flurpPopup.SetBool("Flashing", true);
 
         yield return new WaitForSeconds(.5f);
 
         flurpUI.SetBool("Flashing", false);
-        flurpPopup.SetBool("Flashing", false);
     }
 
     void DisplayNewObjective()
     {
 
-        if (targetRoomUIImage == null)
+        if (targetRoomSprite == null)
             return;
 
         switch (targetStation)
         {
             case Station.EngineRoom:
-                targetRoomUIImage.sprite = engineRoomIcon;
                 targetRoomSprite.sprite = engineRoomIcon;
                 break;
             case Station.AtmoRoom:
-                targetRoomUIImage.sprite = atmoRoomIcon;
                 targetRoomSprite.sprite = atmoRoomIcon;
                 break;
             case Station.PlantRoom:
-                targetRoomUIImage.sprite = plantRoomIcon;
                 targetRoomSprite.sprite = plantRoomIcon;
                 break;
             case Station.WaterPumps:
-                targetRoomUIImage.sprite = pumpRoomIcon;
                 targetRoomSprite.sprite = pumpRoomIcon;
                 break;
             case Station.None:
@@ -115,9 +108,6 @@ public class Flurp : MonoBehaviour {
             default:
                 break;
         }
-
-        targetRoomUIImage.gameObject.SetActive(true);
-        speechBubbleUIImage.gameObject.SetActive(true);
 
         targetRoomSprite.gameObject.SetActive(true);
         speechBubbleSprite.gameObject.SetActive(true);
@@ -137,20 +127,13 @@ public class Flurp : MonoBehaviour {
             targetHappinessValue = Mathf.RoundToInt(Random.Range(baseTimeToReachHappiness * .75f, baseTimeToReachHappiness * 1.25f));
 
             flurpUI.SetBool("Flashing", false);
-            flurpPopup.SetBool("Flashing", false);
 
             //canBeMoved = false;
-            targetRoomUIImage.gameObject.SetActive(false);
-            speechBubbleUIImage.gameObject.SetActive(false);
-
             targetRoomSprite.gameObject.SetActive(false);
             speechBubbleSprite.gameObject.SetActive(false);
         }
         else if(currentStation == targetStation && flurpState == FlurpState.Recharging)
         {
-            targetRoomUIImage.gameObject.SetActive(false);
-            speechBubbleUIImage.gameObject.SetActive(false);
-
             targetRoomSprite.gameObject.SetActive(false);
             speechBubbleSprite.gameObject.SetActive(false);
         }
@@ -192,7 +175,6 @@ public class Flurp : MonoBehaviour {
             if(timeToReachTarget <= 10)
             {
                 flurpUI.SetBool("Flashing", true);
-                flurpPopup.SetBool("Flashing", true);
             }
         }
 
