@@ -168,7 +168,7 @@ MonoBehaviour:
   - target: {fileID: 0}
     name: Pling
     clip: {fileID: 8300000, guid: 89e8473fce8353f45bab3439e505a662, type: 3}
-    volume: 0.8
+    volume: 0.5
     volumeVariance: 0
     pitch: 1.1
     pitchVariance: 0
