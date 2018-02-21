@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class GameOverMenu : MonoBehaviour
 {
     public Interactable[] stationRooms;
+    public Flurp flurp;
 
     bool gameHasEnded = false;
 
@@ -14,6 +15,8 @@ public class GameOverMenu : MonoBehaviour
 
     public Text enterName;
     public Text yourScore;
+    public Text failureText;
+    private Text failedStation;
 
     public GameObject GameOverPanel;
 
@@ -52,6 +55,19 @@ public class GameOverMenu : MonoBehaviour
     public void ShowGameOverScreen()
     {
         GameOverPanel.SetActive(true);
+        if (flurp.flurpState==FlurpState.Dead)
+        {
+            failureText.text = "Flurp died!";
+        }
+
+        for (int i = 0; i < stationRooms.Length; i++)
+        {
+            if (stationRooms[i].stationHealth == 0)
+            {
+                failedStation.text = stationRooms[i].stationName;
+                failureText.text = failedStation +"has failed!";
+            }
+        }
         yourScore.text = FindObjectOfType<Scoring>().totalScore.ToString("000000");
     }
 

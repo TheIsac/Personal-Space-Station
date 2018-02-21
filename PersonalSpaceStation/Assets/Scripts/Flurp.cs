@@ -34,7 +34,7 @@ public class Flurp : MonoBehaviour {
     public float tickLength = 1f;
     public TextMesh health;
 
-    private FlurpState flurpState = FlurpState.Unhappy;
+    public FlurpState flurpState = FlurpState.Unhappy;
     private float lastTick;
 
     float currentHappinessValue;
