@@ -205,6 +205,7 @@ public class AtmoMiniGame : MonoBehaviour, IResetUser, IResetStation
                 completionCounter ++;
                 completionText.text = completionCounter.ToString("0");
                 NewColor();
+                AudioManager.instance.Play("Type");
             }
             else
             {
@@ -214,6 +215,7 @@ public class AtmoMiniGame : MonoBehaviour, IResetUser, IResetStation
                     completionCounter--;
                     completionText.text = completionCounter.ToString("0");
                     NewColor();
+                    AudioManager.instance.Play("Fail");
                 }
             }
         }
@@ -229,6 +231,7 @@ public class AtmoMiniGame : MonoBehaviour, IResetUser, IResetStation
         {
             completionText.text = "Done";
             StartCoroutine(CompleteMiniGame());
+            AudioManager.instance.Play("Pling");
         }
     }
 

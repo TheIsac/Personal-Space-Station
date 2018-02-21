@@ -111,6 +111,7 @@ public class PumpMiniGame : MonoBehaviour, IResetUser, IResetStation
         {
             completionText.text = "Done";
             StartCoroutine(CompleteMiniGame());
+            AudioManager.instance.Play("Pling");
         }
     }
 
