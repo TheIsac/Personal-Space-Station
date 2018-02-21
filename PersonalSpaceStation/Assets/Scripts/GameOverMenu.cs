@@ -9,7 +9,7 @@ public class GameOverMenu : MonoBehaviour
     public Interactable[] stationRooms;
     public Flurp flurp;
 
-    bool gameHasEnded = false;
+    public bool gameHasEnded = false;
 
     public float restartDelay = 1f;
 
