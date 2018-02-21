@@ -24,7 +24,13 @@ public class HighscoreDisplay : MonoBehaviour {
 
         for (int i = 0; i < highscoreCount; i++)
         {
-            scores[i].text = PlayerPrefs.GetString("PlayerName" + i) + ": " +PlayerPrefs.GetInt("Highscore" + i).ToString("0");
+            string name = PlayerPrefs.GetString("PlayerName" + i);
+
+            if(name == "")
+            {
+                name = "Unknown";
+            }
+            scores[i].text = name + ": " +PlayerPrefs.GetInt("Highscore" + i).ToString("0");
         }
     }
 }
