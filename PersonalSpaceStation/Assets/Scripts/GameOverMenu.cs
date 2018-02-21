@@ -33,6 +33,7 @@ public class GameOverMenu : MonoBehaviour
         // End game if one station breaks
         if ((numberOfAliveRooms < stationRooms.Length))
         {
+            Debug.Log("NO STATIONS ALIVE!!");
             EndGame();
         }
     }
