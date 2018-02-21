@@ -10630,6 +10630,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 1245037912}
   settingsMenuUI: {fileID: 1016366608}
+  gameOverMenu: {fileID: 286870092}
 --- !u!114 &540675217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21553,6 +21554,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 540675213}
   settingsMenuUI: {fileID: 1016366608}
+  gameOverMenu: {fileID: 0}
 --- !u!114 &1245037915
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25005,6 +25007,25 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 286870092}
+    - target: {fileID: 1374065022442344, guid: cc40fc9f010f33743907bf88e9b4b44b, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114996106915540390, guid: cc40fc9f010f33743907bf88e9b4b44b,
+        type: 2}
+      propertyPath: m_Text
+      value: SUBMIT
+      objectReference: {fileID: 0}
+    - target: {fileID: 114996106915540390, guid: cc40fc9f010f33743907bf88e9b4b44b,
+        type: 2}
+      propertyPath: m_FontData.m_FontSize
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 114996106915540390, guid: cc40fc9f010f33743907bf88e9b4b44b,
+        type: 2}
+      propertyPath: m_FontData.m_MinSize
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cc40fc9f010f33743907bf88e9b4b44b, type: 2}
   m_IsPrefabParent: 0
