@@ -55,6 +55,7 @@ public class Document : MonoBehaviour {
         if (HandIn != null)
         {
             HandIn.Invoke();
+            AudioManager.instance.Play("Pling");
             Destroy(gameObject);
         }
     }
