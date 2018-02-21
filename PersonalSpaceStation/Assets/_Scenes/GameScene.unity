@@ -25005,9 +25005,23 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 286870092}
+    - target: {fileID: 1374065022442344, guid: cc40fc9f010f33743907bf88e9b4b44b, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114782422426888222, guid: cc40fc9f010f33743907bf88e9b4b44b,
+        type: 2}
+      propertyPath: m_FirstSelected
+      value: 
+      objectReference: {fileID: 1578377407}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cc40fc9f010f33743907bf88e9b4b44b, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1578377407 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1149286779238044, guid: cc40fc9f010f33743907bf88e9b4b44b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1578377406}
 --- !u!114 &1580288741 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114107761422919928, guid: cc40fc9f010f33743907bf88e9b4b44b,
