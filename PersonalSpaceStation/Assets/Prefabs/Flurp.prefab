@@ -946,7 +946,7 @@ MonoBehaviour:
   speechBubbleSprite: {fileID: 212558051211688420}
   flurpUI: {fileID: 0}
   flurpPopup: {fileID: 95518527985493166}
-  timerToReachNextStation: 15
+  timerToReachNextStation: 60
   baseTimeToReachHappiness: 20
   tickLength: 1
   health: {fileID: 102169226581329724}
