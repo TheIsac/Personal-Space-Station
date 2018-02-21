@@ -950,6 +950,7 @@ MonoBehaviour:
   baseTimeToReachHappiness: 20
   tickLength: 1
   health: {fileID: 102169226581329724}
+  flurpState: 2
 --- !u!114 &114305829479263376
 MonoBehaviour:
   m_ObjectHideFlags: 1

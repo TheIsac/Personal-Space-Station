@@ -25,7 +25,7 @@ public class UIRotator : MonoBehaviour
 
             if (flurp != null)
             {
-                // Find flurps position i screen space, add the offset and then tranlsate the result back to world point
+                // Find flurps position in screen space, add the offset and then tranlsate the result back to world point
                 transform.position = cam.ScreenToWorldPoint(cam.WorldToScreenPoint(flurp.position) + flurpPopupOffset);
             }
         }
