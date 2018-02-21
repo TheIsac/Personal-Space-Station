@@ -22,7 +22,7 @@ public class UIRotator : MonoBehaviour
             transform.rotation = Camera.main.transform.rotation;
 
             if (flurp != null)
-                transform.position = flurp.position + Vector3.up * 2; //cam.ScreenToWorldPoint(cam.WorldToScreenPoint(flurp.position) + flurpPopupOffset);
+                transform.position = cam.ScreenToWorldPoint(cam.WorldToScreenPoint(flurp.position) + flurpPopupOffset);
         }
     }
 }
