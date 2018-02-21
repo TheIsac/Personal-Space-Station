@@ -114,6 +114,7 @@ public class PlantMiniGame : MonoBehaviour, IResetUser, IResetStation
             else
             {
                 StartCoroutine(RestartLevel());
+                AudioManager.instance.Play("Fail");
             }
         }
         if (Input.GetButtonDown("X-button" + stationUser))
@@ -128,6 +129,7 @@ public class PlantMiniGame : MonoBehaviour, IResetUser, IResetStation
             else
             {
                 StartCoroutine(RestartLevel());
+                AudioManager.instance.Play("Fail");
             }
         }
         if (Input.GetButtonDown("A-button" + stationUser))
@@ -142,6 +144,7 @@ public class PlantMiniGame : MonoBehaviour, IResetUser, IResetStation
             else
             {
                 StartCoroutine(RestartLevel());
+                AudioManager.instance.Play("Fail");
             }
         }
 
@@ -174,6 +177,7 @@ public class PlantMiniGame : MonoBehaviour, IResetUser, IResetStation
         if (completionCounter >= completionCount)
         {
             StartCoroutine(CompleteMiniGame());
+            AudioManager.instance.Play("Pling");
         }
     }
 

@@ -111,6 +111,7 @@ public class EngineMiniGame : MonoBehaviour, IResetUser, IResetStation
         if(completionCounter >= completionTime)
         {
             StartCoroutine(CompleteMiniGame());
+            AudioManager.instance.Play("Pling");
         }
 
         // Update progress if the lever is within green area
