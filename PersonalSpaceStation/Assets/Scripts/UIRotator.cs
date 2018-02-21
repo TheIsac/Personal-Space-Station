@@ -5,10 +5,14 @@ using UnityEngine;
 public class UIRotator : MonoBehaviour
 {
     public bool continousUpdate = false;
+    public Transform flurp;
+    Camera cam;
+    Vector3 flurpPopupOffset = Vector3.up * 40 + Vector3.right * 20;
 
     void Start()
     {
         transform.rotation = Camera.main.transform.rotation;
+        cam = Camera.main;
     }
 
     private void LateUpdate()
@@ -16,6 +20,9 @@ public class UIRotator : MonoBehaviour
         if(continousUpdate)
         {
             transform.rotation = Camera.main.transform.rotation;
+
+            if (flurp != null)
+                transform.position = cam.ScreenToWorldPoint(cam.WorldToScreenPoint(flurp.position) + flurpPopupOffset);
         }
     }
 }
