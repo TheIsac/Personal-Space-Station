@@ -22,6 +22,6 @@ public class CharacterSelectionMenu : MonoBehaviour {
     public void BacktoMenu()
     {
         //If the back button is pressed you go back to the Main Menu.
-        SceneManager.LoadScene("Main menu");
+        SceneManager.LoadScene("Main menu 1");
     }
 }
