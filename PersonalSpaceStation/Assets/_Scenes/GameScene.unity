@@ -12873,6 +12873,11 @@ Prefab:
       propertyPath: m_Size.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114995523190887890, guid: efd7e2ee89c951641a078a9fd4575419,
+        type: 2}
+      propertyPath: stationHealth
+      value: 50
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: efd7e2ee89c951641a078a9fd4575419, type: 2}
   m_IsPrefabParent: 0
@@ -30688,6 +30693,11 @@ Prefab:
     - target: {fileID: 1972460258270122, guid: 946c1147b02885c43b0dfa12a5c9f404, type: 2}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114752286352098354, guid: 946c1147b02885c43b0dfa12a5c9f404,
+        type: 2}
+      propertyPath: stationHealth
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 946c1147b02885c43b0dfa12a5c9f404, type: 2}

@@ -64,8 +64,8 @@ public class GameOverMenu : MonoBehaviour
         {
             if (stationRooms[i].stationHealth == 0)
             {
-                failedStation.text = stationRooms[i].stationName;
-                failureText.text = failedStation +"has failed!";
+                failureText.text = stationRooms[i].stationName;
+                failureText.text = failureText.text +" has failed!";
             }
         }
         yourScore.text = FindObjectOfType<Scoring>().totalScore.ToString("000000");
