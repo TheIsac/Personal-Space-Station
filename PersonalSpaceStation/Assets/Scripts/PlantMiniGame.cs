@@ -109,6 +109,7 @@ public class PlantMiniGame : MonoBehaviour, IResetUser, IResetStation
                 resultBoxes[boxIndex].sprite = tickedBox;
                 boxIndex++;
                 completionCounter++;
+                AudioManager.instance.Play("Type");
             }
             else
             {
@@ -122,6 +123,7 @@ public class PlantMiniGame : MonoBehaviour, IResetUser, IResetStation
                 resultBoxes[boxIndex].sprite = tickedBox;
                 boxIndex++;
                 completionCounter++;
+                AudioManager.instance.Play("Type");
             }
             else
             {
@@ -135,6 +137,7 @@ public class PlantMiniGame : MonoBehaviour, IResetUser, IResetStation
                 resultBoxes[boxIndex].sprite = tickedBox;
                 boxIndex++;
                 completionCounter++;
+                AudioManager.instance.Play("Type");
             }
             else
             {
