@@ -5,6 +5,7 @@ using UnityEngine;
 public class CircleController : MonoBehaviour {
 
     public Interactable myStation;
+    public GameObject myCircle;
 
     private void Update()
     {
@@ -15,11 +16,11 @@ public class CircleController : MonoBehaviour {
     {
         if (myStation.locked)
         {
-            gameObject.SetActive(false);
+            myCircle.SetActive(false);
         }
         if (!myStation.locked)
         {
-            gameObject.SetActive(true);
+            myCircle.SetActive(true);
         }
     }
 }
