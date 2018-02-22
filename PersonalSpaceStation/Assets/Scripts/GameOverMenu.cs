@@ -9,7 +9,7 @@ public class GameOverMenu : MonoBehaviour
     public Interactable[] stationRooms;
     public Flurp flurp;
 
-    public bool gameHasEnded = false;
+    bool gameHasEnded = false;
 
     public float restartDelay = 1f;
 
@@ -64,8 +64,8 @@ public class GameOverMenu : MonoBehaviour
         {
             if (stationRooms[i].stationHealth == 0)
             {
-                failureText.text = stationRooms[i].stationName;
-                failureText.text = failureText.text +" has failed!";
+                failedStation.text = stationRooms[i].stationName;
+                failureText.text = failedStation +"has failed!";
             }
         }
         yourScore.text = FindObjectOfType<Scoring>().totalScore.ToString("000000");

@@ -145,16 +145,16 @@ public class Flurp : MonoBehaviour {
             flurpUI.SetBool("Flashing", false);
             flurpPopup.SetBool("Flashing", false);
 
-            //targetRoomSpriteUI.gameObject.SetActive(false);
-            //speechBubbleSpriteUI.gameObject.SetActive(false);
+            targetRoomSpriteUI.gameObject.SetActive(false);
+            speechBubbleSpriteUI.gameObject.SetActive(false);
 
             targetRoomSprite.gameObject.SetActive(false);
             speechBubbleSprite.gameObject.SetActive(false);
         }
         else if(currentStation == targetStation && flurpState == FlurpState.Recharging)
         {
-            //targetRoomSpriteUI.gameObject.SetActive(false);
-            //speechBubbleSpriteUI.gameObject.SetActive(false);
+            targetRoomSpriteUI.gameObject.SetActive(false);
+            speechBubbleSpriteUI.gameObject.SetActive(false);
 
             targetRoomSprite.gameObject.SetActive(false);
             speechBubbleSprite.gameObject.SetActive(false);

@@ -7,26 +7,18 @@ public class PauseMenu : MonoBehaviour {
 
     public GameObject pauseMenuUI;
     public GameObject settingsMenuUI;
-    public GameOverMenu gameOverMenu;
 
 	// Update is called once per frame
 	void Update () {
-
-        if (!GameManager.instance.gameIsPaused)
+        if (Input.GetButtonDown("Menu-button_All"))
         {
-            if (Input.GetButtonDown("Menu-button_All"))
+            if (GameManager.instance.gameIsPaused)
             {
-                if (GameManager.instance.gameIsPaused)
-                {
-                    if (!gameOverMenu.gameHasEnded)
-                    {
-                    Resume();
-                    }
-                }
-                else
-                {
-                    Pause();
-                }
+                Resume();
+            }
+            else
+            {
+                Pause();
             }
         }
     }
