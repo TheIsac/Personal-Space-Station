@@ -6002,7 +6002,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4970287920356698, guid: d1f01a01607b42f48abe67a1a1156c86, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d1f01a01607b42f48abe67a1a1156c86, type: 2}
@@ -12232,7 +12232,7 @@ Transform:
   - {fileID: 1831438047}
   - {fileID: 600683751}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 155.715, z: 0}
 --- !u!1 &331635529
 GameObject:
@@ -21263,7 +21263,7 @@ Transform:
   - {fileID: 1483617872}
   - {fileID: 1800075147}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &692157064
 GameObject:
@@ -32655,7 +32655,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4091339891919178, guid: 7bfdcd905e376e2448a32d6e3e79e4e1, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 114168447189578710, guid: 7bfdcd905e376e2448a32d6e3e79e4e1,
         type: 2}
@@ -36440,7 +36440,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4891971967079174, guid: f67cbf04939e9e6409c39b770ea10aea, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114889359888163160, guid: f67cbf04939e9e6409c39b770ea10aea,
         type: 2}
@@ -39539,7 +39539,7 @@ RectTransform:
   - {fileID: 367012335}
   - {fileID: 1842155601}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -57784,7 +57784,7 @@ Transform:
   - {fileID: 61680020}
   - {fileID: 1611596881}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2014580468 stripped
 GameObject:
@@ -60278,7 +60278,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4122475320677820, guid: 5e1bab59b8b926444a2959820628a2c1, type: 2}
       propertyPath: m_RootOrder
-      value: 14
+      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5e1bab59b8b926444a2959820628a2c1, type: 2}
