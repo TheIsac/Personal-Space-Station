@@ -8,11 +8,12 @@ public class PauseMenu : MonoBehaviour {
     public GameObject pauseMenuUI;
     public GameObject settingsMenuUI;
     public GameOverMenu gameOverMenu;
+    public MissionStatement missionStatementUI;
 
 	// Update is called once per frame
 	void Update () {
 
-        if (!GameManager.instance.gameIsPaused)
+        if (!GameManager.instance.gameIsPaused && !missionStatementUI.gameObject.activeSelf)
         {
             if (Input.GetButtonDown("Menu-button_All"))
             {
