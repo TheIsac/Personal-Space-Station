@@ -23,24 +23,27 @@ public class AudioManager : MonoBehaviour {
             instance = this;
             DontDestroyOnLoad(gameObject);
         }
+    }
 
+    private void Start()
+    {
         foreach (Sound s in sounds)
         {
             //If there is a target to put the sound effect on, use that target. Else use the audiomanager as target.
-            if(s.target.gameObject != null)
-            {
-                s.source = s.target.gameObject.AddComponent<AudioSource>();
-            }
-            else
-            {
-                s.source = gameObject.AddComponent<AudioSource>();
-            }
+            //if (s.target.gameObject != null)
+            //{
+            //    s.source = s.target.gameObject.AddComponent<AudioSource>();
+            //}
+            //else
+            //{
+            s.source = gameObject.AddComponent<AudioSource>();
+            //}
             s.source.clip = s.clip;
             s.source.loop = s.loop;
 
             //How far the sound will reach.
-            s.source.minDistance = s.minDistance;
-            s.source.maxDistance = s.maxDistance;
+            //s.source.minDistance = s.minDistance;
+            //s.source.maxDistance = s.maxDistance;
 
             var newMixerGroup = s.mixerGroup;
 
@@ -66,7 +69,7 @@ public class AudioManager : MonoBehaviour {
 
         s.source.volume = s.volume * (1f + UnityEngine.Random.Range(-s.volumeVariance / 2f, s.volumeVariance / 2f));
         s.source.pitch = s.pitch * (1f + UnityEngine.Random.Range(-s.pitchVariance / 2f, s.pitchVariance / 2f));
-        s.source.spatialBlend = s.spatialBlend;
+        //s.source.spatialBlend = s.spatialBlend;
 
         s.source.Play();
     }

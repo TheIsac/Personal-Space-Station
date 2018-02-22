@@ -4,7 +4,7 @@ using UnityEngine;
 [System.Serializable]
 public class Sound {
 
-    public GameObject target;
+    //public GameObject target;
 
     public string name;
 
@@ -18,11 +18,11 @@ public class Sound {
     public float pitch = 1f;
     [Range(0f, 1f)]
     public float pitchVariance = .1f;
-    [Range(0f, 1f)]
-    public float spatialBlend = 0f;
+    //[Range(0f, 1f)]
+    //public float spatialBlend = 0f;
 
-    public float minDistance = 1f;
-    public float maxDistance = 500f;
+    //public float minDistance = 1f;
+    //public float maxDistance = 500f;
 
     public bool loop = false;
 
