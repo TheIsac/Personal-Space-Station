@@ -17382,7 +17382,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 1245037912}
   settingsMenuUI: {fileID: 360389593}
-  gameOverMenu: {fileID: 0}
+  gameOverMenu: {fileID: 286870092}
+  missionStatementUI: {fileID: 286870091}
 --- !u!114 &540675217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39559,7 +39560,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 540675213}
   settingsMenuUI: {fileID: 360389593}
-  gameOverMenu: {fileID: 0}
+  gameOverMenu: {fileID: 286870092}
+  missionStatementUI: {fileID: 286870091}
 --- !u!114 &1245037915
 MonoBehaviour:
   m_ObjectHideFlags: 0

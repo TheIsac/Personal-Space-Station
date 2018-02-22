@@ -11,10 +11,12 @@ public class MissionStatement : MonoBehaviour {
     {
         missionStatementUI.SetActive(true);
         Time.timeScale = 0f;
+        GameManager.instance.gameIsPaused = true;
     }
     public void PressStartButton()
     {
         missionStatementUI.SetActive(false);
         Time.timeScale = 1f;
+        GameManager.instance.gameIsPaused = false;
     }
 }
