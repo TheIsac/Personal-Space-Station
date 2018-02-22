@@ -24,7 +24,7 @@ public class DocGenerator : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-
+        TurnOffDeskLamps();
     }
 
 
@@ -53,11 +53,13 @@ public class DocGenerator : MonoBehaviour {
         }
         while (currentStation == targetStation);
         //initiate a new document with the new target
-        GameObject NewDocument = Instantiate(documents, docSpawnPoint);
-        NewDocument.GetComponent<Document>().SetDestinationStation(targetStation);
+        Document NewDocument = Instantiate(documents, docSpawnPoint).GetComponent<Document>();
+        NewDocument.SetDestinationStation(targetStation);
+
+        NewDocument.spawnWorkbench = this;
 
         //listen to HandIn
-        NewDocument.GetComponent<Document>().HandIn += UnLockStation;
+        NewDocument.HandIn += UnLockStation;
 
         //// Activate hand in icon
         GameManager.instance.ToggleHandInUI(targetStation, true);
@@ -79,7 +81,7 @@ public class DocGenerator : MonoBehaviour {
             GameManager.instance.ToggleHandInUI(carriedDoc.targetStation, false);
             carriedDoc.DeliverDocument();
 
-            TurnOffDeskLamps();
+            carriedDoc.spawnWorkbench.TurnOffDeskLamps();
         }
     }
 

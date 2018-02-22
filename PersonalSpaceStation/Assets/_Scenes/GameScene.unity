@@ -457,6 +457,21 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114960103201209878, guid: 26898019599b5874095c7ab5ea965d42,
+        type: 2}
+      propertyPath: deskLamp1
+      value: 
+      objectReference: {fileID: 170144395}
+    - target: {fileID: 114960103201209878, guid: 26898019599b5874095c7ab5ea965d42,
+        type: 2}
+      propertyPath: deskLamp2
+      value: 
+      objectReference: {fileID: 180998859}
+    - target: {fileID: 114960103201209878, guid: 26898019599b5874095c7ab5ea965d42,
+        type: 2}
+      propertyPath: deskLamp3
+      value: 
+      objectReference: {fileID: 2027332240}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 26898019599b5874095c7ab5ea965d42, type: 2}
   m_IsPrefabParent: 0
@@ -13552,11 +13567,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4175772626964588, guid: 26898019599b5874095c7ab5ea965d42, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.807
+      value: -0.822
       objectReference: {fileID: 0}
     - target: {fileID: 4175772626964588, guid: 26898019599b5874095c7ab5ea965d42, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0.047
+      value: -0.14
       objectReference: {fileID: 0}
     - target: {fileID: 114522103193689570, guid: 26898019599b5874095c7ab5ea965d42,
         type: 2}
@@ -13572,6 +13587,21 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114960103201209878, guid: 26898019599b5874095c7ab5ea965d42,
+        type: 2}
+      propertyPath: deskLamp1
+      value: 
+      objectReference: {fileID: 2120326853}
+    - target: {fileID: 114960103201209878, guid: 26898019599b5874095c7ab5ea965d42,
+        type: 2}
+      propertyPath: deskLamp2
+      value: 
+      objectReference: {fileID: 1949479666}
+    - target: {fileID: 114960103201209878, guid: 26898019599b5874095c7ab5ea965d42,
+        type: 2}
+      propertyPath: deskLamp3
+      value: 
+      objectReference: {fileID: 494810082}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 26898019599b5874095c7ab5ea965d42, type: 2}
   m_IsPrefabParent: 0
@@ -23013,6 +23043,21 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114960103201209878, guid: 26898019599b5874095c7ab5ea965d42,
+        type: 2}
+      propertyPath: deskLamp1
+      value: 
+      objectReference: {fileID: 1062320233}
+    - target: {fileID: 114960103201209878, guid: 26898019599b5874095c7ab5ea965d42,
+        type: 2}
+      propertyPath: deskLamp2
+      value: 
+      objectReference: {fileID: 1974738595}
+    - target: {fileID: 114960103201209878, guid: 26898019599b5874095c7ab5ea965d42,
+        type: 2}
+      propertyPath: deskLamp3
+      value: 
+      objectReference: {fileID: 988478803}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 26898019599b5874095c7ab5ea965d42, type: 2}
   m_IsPrefabParent: 0
@@ -23115,10 +23160,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abd9a474d3755ee48b50c8ee58e9761a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: {x: 0.6, y: 31.13, z: -14.25}
+  offset: {x: 0.6, y: 31.13, z: -15}
   smoothTime: 0.8
   minZoom: 45
-  maxZoom: 15
+  maxZoom: 20
   zoomLimiter: 50
 --- !u!114 &777060359
 MonoBehaviour:
@@ -24379,6 +24424,21 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114960103201209878, guid: 26898019599b5874095c7ab5ea965d42,
+        type: 2}
+      propertyPath: deskLamp1
+      value: 
+      objectReference: {fileID: 1776129037}
+    - target: {fileID: 114960103201209878, guid: 26898019599b5874095c7ab5ea965d42,
+        type: 2}
+      propertyPath: deskLamp2
+      value: 
+      objectReference: {fileID: 293856459}
+    - target: {fileID: 114960103201209878, guid: 26898019599b5874095c7ab5ea965d42,
+        type: 2}
+      propertyPath: deskLamp3
+      value: 
+      objectReference: {fileID: 1285900836}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 26898019599b5874095c7ab5ea965d42, type: 2}
   m_IsPrefabParent: 0
@@ -48531,7 +48591,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4086607845547968, guid: 23cf5b0fde64ac34ca3581076c8acbc2, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 7.5
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4086607845547968, guid: 23cf5b0fde64ac34ca3581076c8acbc2, type: 2}
       propertyPath: m_LocalPosition.y
@@ -48539,7 +48599,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4086607845547968, guid: 23cf5b0fde64ac34ca3581076c8acbc2, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 6.5
+      value: 9.75
       objectReference: {fileID: 0}
     - target: {fileID: 4086607845547968, guid: 23cf5b0fde64ac34ca3581076c8acbc2, type: 2}
       propertyPath: m_LocalRotation.x

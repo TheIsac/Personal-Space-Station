@@ -15,6 +15,8 @@ public class Document : MonoBehaviour {
 
     public SpriteRenderer spriteRenderer;
 
+    public DocGenerator spawnWorkbench;
+
     public Action HandIn;
 
     Material documentMaterial;
