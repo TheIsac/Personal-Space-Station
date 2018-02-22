@@ -9,7 +9,7 @@ public class PackageHandler : MonoBehaviour
     public float tickLength = 2f;
     public int addHealth = 1;
     public int removeHealth = 1;
-    private int overChargeValue = 60;
+    //private int overChargeValue = 60;
 
     public Interactable[] stations;
     public FixPointChecker[] fixPoint;
@@ -51,7 +51,7 @@ public class PackageHandler : MonoBehaviour
                 }
                 stations[(i + 1) % stations.Length].AddHealthToStation(addHealth);
             }
-            if (stations[i].isWorking && stations[i].stationHealth > overChargeValue)
+            if (stations[i].isWorking && stations[i].stationHealth > GameManager.instance.overloadThreshhold)
             {
                 Debug.Log("OVERCHARGE in "+ stations[i]);
                 stations[((i - 1 + stations.Length) % stations.Length)].RemoveHealthFromStation(removeHealth);

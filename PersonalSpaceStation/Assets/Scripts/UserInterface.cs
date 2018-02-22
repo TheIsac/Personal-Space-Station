@@ -9,6 +9,11 @@ public class UserInterface : MonoBehaviour {
 
     public Sprite emptyPowerBar;
     public Sprite fullPowerBar;
+    public Sprite overloadedBar;
+
+    public Text overloadText;
+    public Text disabledText;
+    public Text warningText;
 
     public Image[] enginePowerBars;
     public Image[] atmoPowerBars;
@@ -63,7 +68,15 @@ public class UserInterface : MonoBehaviour {
         {
             if (power / stationBars.Length >= i && power > 0)
             {
-                stationBars[i].sprite = fullPowerBar;
+                if(i >= GameManager.instance.overloadThreshhold / 10)
+                {
+                    stationBars[i].sprite = overloadedBar;
+                }
+                else
+                {
+                    stationBars[i].sprite = fullPowerBar;
+                }
+
             }
             else
             {

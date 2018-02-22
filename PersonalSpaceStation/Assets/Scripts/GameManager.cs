@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public float stationDifficultyAdjustment = .1f;
     public float stationTickLength = 3f;
     private float lastTick;
+    public int overloadThreshhold = 70;
 
     Dictionary<Station, GameObject> handInUIDictionary = new Dictionary<Station, GameObject>();
 
