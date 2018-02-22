@@ -44,21 +44,27 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 2
         time: 0
-        value: {x: 420.3, y: 88.6, z: -504.4}
+        value: {x: 420.3, y: 91.3, z: -474.8}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
       - serializedVersion: 2
         time: 0.5
-        value: {x: 420.3, y: 80.21283, z: -512.9}
-        inSlope: {x: 0, y: -14.53333, z: 0}
-        outSlope: {x: 0, y: -14.53333, z: 0}
+        value: {x: 420.3, y: 97.7, z: -468.4}
+        inSlope: {x: 0, y: 0, z: 17.06665}
+        outSlope: {x: 0, y: 0, z: 17.06665}
         tangentMode: 0
       - serializedVersion: 2
         time: 1.5
-        value: {x: 420.3, y: 66.8, z: -398.4}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
+        value: {x: 420.3, y: 70.2, z: -398.4}
+        inSlope: {x: 0, y: -18.96772, z: 0}
+        outSlope: {x: 0, y: -18.96772, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1.5333333
+        value: {x: 424.93762, y: 65.3, z: -398.4}
+        inSlope: {x: 37.101074, y: 0, z: 0}
+        outSlope: {x: 37.101074, y: 0, z: 0}
         tangentMode: 0
       - serializedVersion: 2
         time: 2
@@ -71,7 +77,51 @@ AnimationClip:
       m_RotationOrder: 4
     path: crystal_conveyerbelt 2
   m_ScaleCurves: []
-  m_FloatCurves: []
+  m_FloatCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+      - serializedVersion: 2
+        time: 0.5
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Enabled
+    path: crystal_conveyerbelt 1
+    classID: 108
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+      - serializedVersion: 2
+        time: 1.5
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Enabled
+    path: crystal_conveyerbelt 2
+    classID: 108
+    script: {fileID: 0}
   m_PPtrCurves: []
   m_SampleRate: 60
   m_WrapMode: 0
@@ -92,6 +142,20 @@ AnimationClip:
       attribute: 1
       script: {fileID: 0}
       typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 4124789815
+      attribute: 3305885265
+      script: {fileID: 0}
+      typeID: 108
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 1825709453
+      attribute: 3305885265
+      script: {fileID: 0}
+      typeID: 108
       customType: 0
       isPPtrCurve: 0
     pptrCurveMapping: []
@@ -222,6 +286,12 @@ AnimationClip:
         outSlope: 0
         tangentMode: 136
       - serializedVersion: 2
+        time: 1.5333333
+        value: 424.93762
+        inSlope: 37.101074
+        outSlope: 37.101074
+        tangentMode: 136
+      - serializedVersion: 2
         time: 2
         value: 784.3
         inSlope: 0
@@ -239,19 +309,25 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 2
         time: 0
-        value: 88.6
+        value: 91.3
         inSlope: 0
         outSlope: 0
         tangentMode: 136
       - serializedVersion: 2
         time: 0.5
-        value: 80.21283
-        inSlope: -14.53333
-        outSlope: -14.53333
+        value: 97.7
+        inSlope: 0
+        outSlope: 0
         tangentMode: 136
       - serializedVersion: 2
         time: 1.5
-        value: 66.8
+        value: 70.2
+        inSlope: -18.96772
+        outSlope: -18.96772
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 1.5333333
+        value: 65.3
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -273,18 +349,24 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 2
         time: 0
-        value: -504.4
+        value: -474.8
         inSlope: 0
         outSlope: 0
         tangentMode: 136
       - serializedVersion: 2
         time: 0.5
-        value: -512.9
+        value: -468.4
+        inSlope: 17.06665
+        outSlope: 17.06665
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 1.5
+        value: -398.4
         inSlope: 0
         outSlope: 0
         tangentMode: 136
       - serializedVersion: 2
-        time: 1.5
+        time: 1.5333333
         value: -398.4
         inSlope: 0
         outSlope: 0
@@ -301,6 +383,50 @@ AnimationClip:
     attribute: m_LocalPosition.z
     path: crystal_conveyerbelt 2
     classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+      - serializedVersion: 2
+        time: 0.5
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Enabled
+    path: crystal_conveyerbelt 1
+    classID: 108
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+      - serializedVersion: 2
+        time: 1.5
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Enabled
+    path: crystal_conveyerbelt 2
+    classID: 108
     script: {fileID: 0}
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
