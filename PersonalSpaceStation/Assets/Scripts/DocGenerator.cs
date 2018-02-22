@@ -17,16 +17,24 @@ public class DocGenerator : MonoBehaviour {
 
     public Interactable myStation;
 
+    public GameObject deskLamp1;
+    public GameObject deskLamp2;
+    public GameObject deskLamp3;
+
     // Use this for initialization
     void Start ()
     {
 
     }
 
+
+
     //recieve signal from Interactable, that a station was fixed and count the success
     public void DocumentGenerator()
     {
         successCounter++;
+
+        TurnOnDeskLamp(successCounter);
 
         if(successCounter >= 3)
         {
@@ -70,6 +78,8 @@ public class DocGenerator : MonoBehaviour {
             Debug.Log("Document delivered!");
             GameManager.instance.ToggleHandInUI(carriedDoc.targetStation, false);
             carriedDoc.DeliverDocument();
+
+            TurnOffDeskLamps();
         }
     }
 
@@ -83,5 +93,28 @@ public class DocGenerator : MonoBehaviour {
     public void UnLockStation()
     {
         myStation.locked = false;
+    }
+
+    void TurnOffDeskLamps()
+    {
+        deskLamp1.SetActive(false);
+        deskLamp2.SetActive(false);
+        deskLamp3.SetActive(false);
+    }
+
+    void TurnOnDeskLamp(int count)
+    {
+        if (count == 1)
+        {
+            deskLamp1.SetActive(true);
+        }
+        if (count == 2)
+        {
+            deskLamp2.SetActive(true);
+        }
+        if (count == 3)
+        {
+            deskLamp3.SetActive(true);
+        }
     }
 }
