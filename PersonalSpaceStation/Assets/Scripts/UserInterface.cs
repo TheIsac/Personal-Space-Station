@@ -25,8 +25,12 @@ public class UserInterface : MonoBehaviour {
     public Interactable atmo;
     public Interactable pump;
 
-    void Start () {
+    bool overloadFound;
+    bool disabled;
+    bool warningFound;
 
+    void Start () {
+        UpdatePowerUI();
     }
 	
 	void Update () {
@@ -36,6 +40,9 @@ public class UserInterface : MonoBehaviour {
 
     void UpdatePowerUI()
     {
+        overloadFound = false;
+        disabled = false;
+
         // Engine room power
         float power = engine.stationHealth;
         power = Mathf.Clamp(power, 0, maxPower);
@@ -59,7 +66,29 @@ public class UserInterface : MonoBehaviour {
         power = Mathf.Clamp(power, 0, maxPower);
 
         StationHealth(plantPowerBars, power);
-        
+       
+  
+        warningFound = engine.stationHealth < 10 || plant.stationHealth < 10 || pump.stationHealth < 10 || atmo.stationHealth < 10;
+        disabled = engine.stationHealth < engine.minWorkingHealth || plant.stationHealth < plant.minWorkingHealth || pump.stationHealth < pump.minWorkingHealth || atmo.stationHealth < atmo.minWorkingHealth;
+
+        if(warningFound)
+        {
+            warningText.gameObject.SetActive(true);
+            disabledText.gameObject.SetActive(false);
+        }
+        else
+        {
+            warningText.gameObject.SetActive(false);
+
+            if(disabled)
+            {
+                disabledText.gameObject.SetActive(true);
+            }
+            else
+            {
+                disabledText.gameObject.SetActive(false);
+            }
+        }
     }
 
     void StationHealth(Image[] stationBars, float power)
@@ -71,6 +100,7 @@ public class UserInterface : MonoBehaviour {
                 if(i >= GameManager.instance.overloadThreshhold / 10)
                 {
                     stationBars[i].sprite = overloadedBar;
+                    overloadFound = true;
                 }
                 else
                 {
@@ -83,5 +113,16 @@ public class UserInterface : MonoBehaviour {
                 stationBars[i].sprite = emptyPowerBar;
             }
         }
+
+        if (overloadFound)
+        {
+            overloadText.gameObject.SetActive(true);
+        }
+        else
+        {
+            overloadText.gameObject.SetActive(false);
+        }
+
+
     }
 }

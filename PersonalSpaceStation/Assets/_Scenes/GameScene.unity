@@ -1475,7 +1475,7 @@ Prefab:
     - target: {fileID: 114227061852913142, guid: 71b49120e690cc340aeacb08caf9cddb,
         type: 2}
       propertyPath: stationHealth
-      value: 50
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1876181787303326, guid: 71b49120e690cc340aeacb08caf9cddb, type: 2}
       propertyPath: m_IsActive
@@ -23160,7 +23160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abd9a474d3755ee48b50c8ee58e9761a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: {x: 0.6, y: 31.13, z: -15}
+  offset: {x: 0.6, y: 31.13, z: -16.5}
   smoothTime: 0.8
   minZoom: 45
   maxZoom: 20
@@ -23324,9 +23324,9 @@ MonoBehaviour:
   emptyPowerBar: {fileID: 21300000, guid: 902b50b06d3f2454cb48f5db062eb587, type: 3}
   fullPowerBar: {fileID: 21300000, guid: 25548b425aead4248aa14dd86f1d42b5, type: 3}
   overloadedBar: {fileID: 21300000, guid: 63cfabfb9c9e3b348bd29f55deb0199a, type: 3}
-  overloadText: {fileID: 0}
-  disabledText: {fileID: 0}
-  warningText: {fileID: 0}
+  overloadText: {fileID: 1237914709}
+  disabledText: {fileID: 1435606239}
+  warningText: {fileID: 1330812845}
   enginePowerBars:
   - {fileID: 831287429}
   - {fileID: 1788661267}
@@ -32721,7 +32721,7 @@ Prefab:
     - target: {fileID: 114168447189578710, guid: 7bfdcd905e376e2448a32d6e3e79e4e1,
         type: 2}
       propertyPath: timerToReachNextStation
-      value: 60
+      value: 1000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7bfdcd905e376e2448a32d6e3e79e4e1, type: 2}
@@ -39380,6 +39380,12 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1237023240}
   m_Mesh: {fileID: 4300766, guid: c1bbd491f3603fd42be9fa97008eeac0, type: 3}
+--- !u!114 &1237914709 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114115912116650424, guid: d425eed25be535845859f60ec6ad62f8,
+    type: 2}
+  m_PrefabInternal: {fileID: 1334064059}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &1241440276
 GameObject:
   m_ObjectHideFlags: 0
@@ -42300,6 +42306,12 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1328776339}
   m_Mesh: {fileID: 4300524, guid: c1bbd491f3603fd42be9fa97008eeac0, type: 3}
+--- !u!114 &1330812845 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114186601883318510, guid: d425eed25be535845859f60ec6ad62f8,
+    type: 2}
+  m_PrefabInternal: {fileID: 1334064059}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &1331254936
 GameObject:
   m_ObjectHideFlags: 0
@@ -42652,6 +42664,26 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1808028906859664, guid: d425eed25be535845859f60ec6ad62f8, type: 2}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114115912116650424, guid: d425eed25be535845859f60ec6ad62f8,
+        type: 2}
+      propertyPath: m_FontData.m_BestFit
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224894403990772750, guid: d425eed25be535845859f60ec6ad62f8,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224212454686519800, guid: d425eed25be535845859f60ec6ad62f8,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 224342075237773986, guid: d425eed25be535845859f60ec6ad62f8,
+        type: 2}
+      propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -44650,6 +44682,12 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 37.84956, y: 160.00002, z: 191.56978}
   m_Center: {x: -18.924625, y: 70.00001, z: 4.2153172}
+--- !u!114 &1435606239 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114496450230007198, guid: d425eed25be535845859f60ec6ad62f8,
+    type: 2}
+  m_PrefabInternal: {fileID: 1334064059}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &1447977819
 GameObject:
   m_ObjectHideFlags: 0
