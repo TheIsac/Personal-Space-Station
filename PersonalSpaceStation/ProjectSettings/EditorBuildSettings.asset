@@ -26,3 +26,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/GameScene.unity
     guid: 6feba76d681710c45b3fbc3760ca46e1
+  - enabled: 1
+    path: Assets/_Scenes/GameScene Recording.unity
+    guid: 29383ad419c19ec44b724d95fbc33a11
