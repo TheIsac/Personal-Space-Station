@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -427,7 +427,7 @@ Prefab:
         type: 2}
       propertyPath: models.Array.data[1]
       value: 
-      objectReference: {fileID: 1702578027}
+      objectReference: {fileID: 95568959}
     - target: {fileID: 95622924293197890, guid: 438c28ac9dc45f14cbef881dc719d208,
         type: 2}
       propertyPath: m_Controller
@@ -473,9 +473,19 @@ Prefab:
       propertyPath: m_Avatar
       value: 
       objectReference: {fileID: 9000000, guid: ae04d6531ae411340813467868af772f, type: 3}
+    - target: {fileID: 114829523702454902, guid: 438c28ac9dc45f14cbef881dc719d208,
+        type: 2}
+      propertyPath: models.Array.data[2]
+      value: 
+      objectReference: {fileID: 1702578027}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 438c28ac9dc45f14cbef881dc719d208, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &95568959 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1609726605518902, guid: 438c28ac9dc45f14cbef881dc719d208,
+    type: 2}
+  m_PrefabInternal: {fileID: 95568958}
 --- !u!1 &103580173
 GameObject:
   m_ObjectHideFlags: 0
@@ -708,7 +718,7 @@ Prefab:
         type: 2}
       propertyPath: models.Array.data[1]
       value: 
-      objectReference: {fileID: 163084002}
+      objectReference: {fileID: 130108615}
     - target: {fileID: 95401836722632728, guid: 438c28ac9dc45f14cbef881dc719d208,
         type: 2}
       propertyPath: m_Controller
@@ -754,9 +764,19 @@ Prefab:
       propertyPath: m_Avatar
       value: 
       objectReference: {fileID: 9000000, guid: ae04d6531ae411340813467868af772f, type: 3}
+    - target: {fileID: 114829523702454902, guid: 438c28ac9dc45f14cbef881dc719d208,
+        type: 2}
+      propertyPath: models.Array.data[2]
+      value: 
+      objectReference: {fileID: 163084002}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 438c28ac9dc45f14cbef881dc719d208, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &130108615 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1609726605518902, guid: 438c28ac9dc45f14cbef881dc719d208,
+    type: 2}
+  m_PrefabInternal: {fileID: 130108614}
 --- !u!1001 &153335060
 Prefab:
   m_ObjectHideFlags: 0
@@ -1036,7 +1056,7 @@ Prefab:
         type: 2}
       propertyPath: models.Array.data[1]
       value: 
-      objectReference: {fileID: 16805895}
+      objectReference: {fileID: 172685876}
     - target: {fileID: 1169502173095122, guid: 438c28ac9dc45f14cbef881dc719d208, type: 2}
       propertyPath: m_IsActive
       value: 1
@@ -1118,10 +1138,20 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114829523702454902, guid: 438c28ac9dc45f14cbef881dc719d208,
+        type: 2}
+      propertyPath: models.Array.data[2]
+      value: 
+      objectReference: {fileID: 16805895}
     m_RemovedComponents:
     - {fileID: 95401836722632728, guid: 438c28ac9dc45f14cbef881dc719d208, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 438c28ac9dc45f14cbef881dc719d208, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &172685876 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1609726605518902, guid: 438c28ac9dc45f14cbef881dc719d208,
+    type: 2}
+  m_PrefabInternal: {fileID: 172685875}
 --- !u!1001 &183551701
 Prefab:
   m_ObjectHideFlags: 0
@@ -6981,7 +7011,7 @@ Prefab:
         type: 2}
       propertyPath: models.Array.data[1]
       value: 
-      objectReference: {fileID: 310046517}
+      objectReference: {fileID: 2145152970}
     - target: {fileID: 95401836722632728, guid: 438c28ac9dc45f14cbef881dc719d208,
         type: 2}
       propertyPath: m_Controller
@@ -7069,6 +7099,16 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 114829523702454902, guid: 438c28ac9dc45f14cbef881dc719d208,
+        type: 2}
+      propertyPath: models.Array.data[2]
+      value: 
+      objectReference: {fileID: 310046517}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 438c28ac9dc45f14cbef881dc719d208, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &2145152970 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1609726605518902, guid: 438c28ac9dc45f14cbef881dc719d208,
+    type: 2}
+  m_PrefabInternal: {fileID: 2145152969}
