@@ -18,7 +18,9 @@ public class FixPointChecker : MonoBehaviour
     public bool repaired;
 
     private Light light;
+
     public GameObject repairSquare1, repairSquare2;
+    public GameObject particleEffect1, particleEffect2;
 
     public float counter;
 
@@ -78,11 +80,21 @@ public class FixPointChecker : MonoBehaviour
         {
             repairSquare1.SetActive(false);
             repairSquare2.SetActive(false);
+
+            if (particleEffect1 != null)
+                particleEffect1.SetActive(false);
+            if (particleEffect2 != null)
+                particleEffect2.SetActive(false);
         }
         else
         {
             repairSquare1.SetActive(true);
             repairSquare2.SetActive(true);
+
+            if (particleEffect1 != null)
+                particleEffect1.SetActive(true);
+            if (particleEffect2 != null)
+                particleEffect2.SetActive(true);
         }
     }
 }

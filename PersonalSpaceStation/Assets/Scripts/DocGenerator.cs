@@ -17,8 +17,8 @@ public class DocGenerator : MonoBehaviour {
 
     public Interactable myStation;
 
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start ()
     {
 
     }
@@ -50,6 +50,9 @@ public class DocGenerator : MonoBehaviour {
 
         //listen to HandIn
         NewDocument.GetComponent<Document>().HandIn += UnLockStation;
+
+        //// Activate hand in icon
+        GameManager.instance.ToggleHandInUI(targetStation, true);
     }
 
     //If the document is taken to the right part of the ship, it is delivered. 
@@ -65,6 +68,7 @@ public class DocGenerator : MonoBehaviour {
         if (carriedDoc.targetStation == currentStation)
         {
             Debug.Log("Document delivered!");
+            GameManager.instance.ToggleHandInUI(carriedDoc.targetStation, false);
             carriedDoc.DeliverDocument();
         }
     }

@@ -16,6 +16,13 @@ public class GameManager : MonoBehaviour
     public float stationTickLength = 3f;
     private float lastTick;
 
+    Dictionary<Station, GameObject> handInUIDictionary = new Dictionary<Station, GameObject>();
+
+    public GameObject atmoHandIn;
+    public GameObject plantHandIn;
+    public GameObject engineHandIn;
+    public GameObject pumpHandIn;
+
     void Awake()
     {
         if (instance == null)
@@ -24,6 +31,19 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         //QualitySettings.vSyncCount = 4;
         //Application.targetFrameRate = 20;
+    }
+
+    private void Start()
+    {
+        handInUIDictionary.Add(Station.AtmoRoom, atmoHandIn);
+        handInUIDictionary.Add(Station.EngineRoom, engineHandIn);
+        handInUIDictionary.Add(Station.PlantRoom, plantHandIn);
+        handInUIDictionary.Add(Station.WaterPumps, pumpHandIn);
+    }
+
+    public void ToggleHandInUI(Station targetStation, bool active)
+    {
+        handInUIDictionary[targetStation].SetActive(active);
     }
 
     private void Update()

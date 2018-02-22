@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 902b50b06d3f2454cb48f5db062eb587
-timeCreated: 1519039348
+timeCreated: 1519302949
 licenseType: Pro
 TextureImporter:
   fileIDToRecycleName:
@@ -84,10 +84,10 @@ TextureImporter:
       name: statusbar_vit_0
       rect:
         serializedVersion: 2
-        x: 333
-        y: 342
-        width: 450
-        height: 121
+        x: 310
+        y: 321
+        width: 500
+        height: 165
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
