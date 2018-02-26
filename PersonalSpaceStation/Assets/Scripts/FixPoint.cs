@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class FixPoint : MonoBehaviour {
 
-    private bool playerInRange;
+    public GameObject icon;
 
+    private bool playerInRange;
     private bool stationed;
     private bool pressed;
 
-    private Movement stationUser = null;
     private int isPressed;
 
+    private Movement stationUser = null;
     private FixPointChecker fixPointChecker;
 
     private void Awake()
@@ -40,6 +41,8 @@ public class FixPoint : MonoBehaviour {
     private void Update()
     {
         WhichPoint();
+        if (stationUser != null)
+            print(stationUser.player);
 
         if (playerInRange)
         {
@@ -67,6 +70,10 @@ public class FixPoint : MonoBehaviour {
         playerInRange = true;
         stationUser = other.GetComponentInParent<Movement>();
         stationed = true;
+        if(icon != null && !fixPointChecker.repaired)
+        {
+            icon.SetActive(true);
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -75,6 +82,10 @@ public class FixPoint : MonoBehaviour {
         stationUser = null;
         stationed = false;
         pressed = false;
+        if (icon != null && !fixPointChecker.repaired)
+        {
+            icon.SetActive(false);
+        }
     }
 
     public void OnDrawGizmos()
