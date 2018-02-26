@@ -5,7 +5,8 @@ using UnityEngine;
 public class StartMusic : MonoBehaviour {
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
         AudioManager.instance.Play("GameMusic");
         AudioManager.instance.Stop("MenuMusic");
 	}
