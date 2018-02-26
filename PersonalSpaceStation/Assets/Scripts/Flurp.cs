@@ -30,7 +30,7 @@ public class Flurp : MonoBehaviour {
 
     [Header("Settings")]
     public float timerToReachNextStation = 20f;
-    public float baseTimeToReachHappiness = 20f;
+    public float baseTimeToReachHappiness = 25f;
     public float tickLength = 1f;
     public TextMesh health;
 
@@ -139,7 +139,7 @@ public class Flurp : MonoBehaviour {
         if(currentStation == targetStation && flurpState == FlurpState.Unhappy)
         {
             flurpState = FlurpState.Recharging;
-            currentHappinessValue = 0f;
+            currentHappinessValue = 5f;
             targetHappinessValue = Mathf.RoundToInt(Random.Range(baseTimeToReachHappiness * .75f, baseTimeToReachHappiness * 1.25f));
 
             flurpUI.SetBool("Flashing", false);

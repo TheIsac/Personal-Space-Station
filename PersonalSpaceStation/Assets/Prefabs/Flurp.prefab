@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4727188254934640}
   - component: {fileID: 212414364887486804}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -161,7 +161,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4476168340246282}
   - component: {fileID: 212323152995502886}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Target-bg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -222,7 +222,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4093081447835380}
   - component: {fileID: 212319175319092018}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Help
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -383,7 +383,7 @@ GameObject:
   - component: {fileID: 212558051211688420}
   - component: {fileID: 114715703898741720}
   - component: {fileID: 95518527985493166}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Popup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -469,7 +469,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1896773482683388}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.623, y: 0.00000011920929, z: -2.53}
+  m_LocalPosition: {x: 0, y: 0.00000011920929, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 4252198395778850}
@@ -977,7 +977,7 @@ MonoBehaviour:
   flurpUI: {fileID: 0}
   flurpPopup: {fileID: 95518527985493166}
   timerToReachNextStation: 60
-  baseTimeToReachHappiness: 20
+  baseTimeToReachHappiness: 25
   tickLength: 1
   health: {fileID: 102169226581329724}
   flurpState: 2

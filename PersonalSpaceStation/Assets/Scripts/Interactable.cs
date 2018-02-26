@@ -167,7 +167,7 @@ public class Interactable : MonoBehaviour {
     {
         if (other.tag == "Player")
         {
-            other.gameObject.GetComponentInParent<InteractableHandler>().SetStation(this);
+            other.gameObject.GetComponentInParent<InteractableHandler>().SetStation(this, true);
         }
     }
 
@@ -176,7 +176,7 @@ public class Interactable : MonoBehaviour {
     {
         if (other.tag == "Player")
         {
-            other.gameObject.GetComponentInParent<InteractableHandler>().SetStation(null);
+            other.gameObject.GetComponentInParent<InteractableHandler>().SetStation(this, false);
         }
     }
 }

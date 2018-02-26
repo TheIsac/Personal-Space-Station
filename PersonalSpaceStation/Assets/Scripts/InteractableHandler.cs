@@ -32,9 +32,9 @@ public class InteractableHandler : MonoBehaviour {
         }
     }
 
-    public void SetStation(Interactable station)
+    public void SetStation(Interactable station, bool entering)
     {
-        if (station ==null)
+        if (entering == false && station.inUse == false)
         {
             playerRigidbody.isKinematic = false;
             movement.inMiniGame = false;
