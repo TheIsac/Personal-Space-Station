@@ -5718,7 +5718,6 @@ GameObject:
   - component: {fileID: 234132256}
   - component: {fileID: 234132259}
   - component: {fileID: 234132258}
-  - component: {fileID: 234132257}
   m_Layer: 0
   m_Name: UICamera
   m_TagString: Untagged
@@ -5739,13 +5738,6 @@ Transform:
   m_Father: {fileID: 777060357}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!81 &234132257
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 234132255}
-  m_Enabled: 1
 --- !u!124 &234132258
 Behaviour:
   m_ObjectHideFlags: 0

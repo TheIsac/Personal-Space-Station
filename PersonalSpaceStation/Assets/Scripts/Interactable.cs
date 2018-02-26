@@ -47,10 +47,6 @@ public class Interactable : MonoBehaviour {
     //if the miniGame is complete the minigame exits and is completed. 
     public void MiniGameComplete()
     {
-        inUse = false;
-        miniGame.SetActive(false);
-
-
         if (stationUser!= null)
         {
             Animator anim = stationUser.GetComponentInChildren<Animator>();
@@ -68,7 +64,16 @@ public class Interactable : MonoBehaviour {
             {
                 documentGenerator.DocumentGenerator();
             }
-        }    
+        }
+
+        StartCoroutine(CompleteMiniGame());
+    }
+
+    IEnumerator CompleteMiniGame()
+    {
+        yield return new WaitForSeconds(.5f);
+        miniGame.SetActive(false);
+        inUse = false;
     }
 
     public void StartMiniGame(Movement playerMovement)

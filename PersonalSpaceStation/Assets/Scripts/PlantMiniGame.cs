@@ -176,23 +176,12 @@ public class PlantMiniGame : MonoBehaviour, IResetUser, IResetStation
     {
         if (completionCounter >= completionCount)
         {
-            StartCoroutine(CompleteMiniGame());
+            station.AddHealthToStation(completionValue);
+            isComplete = true;
+            stationUser = "";
+
+            station.MiniGameComplete();
             AudioManager.instance.Play("Pling");
         }
-    }
-
-    /// <summary>
-    /// completes the game and resets the puzzleboxes.
-    /// </summary>
-    /// <returns></returns>
-    IEnumerator CompleteMiniGame()
-    {
-        station.AddHealthToStation(completionValue);
-        isComplete = true;
-        stationUser = "";
-        //ResetPuzzleBoxes();
-
-        yield return new WaitForSeconds(.5f);
-        station.MiniGameComplete();
     }
 }

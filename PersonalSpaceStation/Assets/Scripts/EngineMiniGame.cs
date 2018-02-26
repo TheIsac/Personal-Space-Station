@@ -110,7 +110,11 @@ public class EngineMiniGame : MonoBehaviour, IResetUser, IResetStation
         // Check if the mini game is complete
         if(completionCounter >= completionTime)
         {
-            StartCoroutine(CompleteMiniGame());
+            station.AddHealthToStation(completionValue);
+            isComplete = true;
+            stationUser = "";
+
+            station.MiniGameComplete();
             AudioManager.instance.Play("Pling");
         }
 
@@ -120,20 +124,6 @@ public class EngineMiniGame : MonoBehaviour, IResetUser, IResetStation
             completionCounter += Time.deltaTime;
             completionText.text = completionCounter.ToString("0.0");
         }
-    }
-
-/// <summary>
-/// When the game is completed adds health to the station and resets. 
-/// </summary>
-/// <returns></returns>
-    IEnumerator CompleteMiniGame()
-    {
-        station.AddHealthToStation(completionValue);
-        isComplete = true;
-        stationUser = "";
-
-        yield return new WaitForSeconds(.5f);
-        station.MiniGameComplete();
     }
 
 /// <summary>

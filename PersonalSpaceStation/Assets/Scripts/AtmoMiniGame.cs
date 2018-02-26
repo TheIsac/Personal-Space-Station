@@ -230,23 +230,12 @@ public class AtmoMiniGame : MonoBehaviour, IResetUser, IResetStation
         if (completionCounter >= completionCount)
         {
             completionText.text = "Done";
-            StartCoroutine(CompleteMiniGame());
+            station.AddHealthToStation(completionValue);
+            isComplete = true;
+            stationUser = "";
+
+            station.MiniGameComplete();
             AudioManager.instance.Play("Pling");
         }
-    }
-
-    /// <summary>
-    /// resets the computer color to  white and adds health to the station. 
-    /// </summary>
-    /// <returns></returns>
-    IEnumerator CompleteMiniGame()
-    {
-        //computermaterial.color = Color.white;
-        station.AddHealthToStation(completionValue);
-        isComplete = true;
-        stationUser = "";
-
-        yield return new WaitForSeconds(.5f);
-        station.MiniGameComplete();
     }
 }
