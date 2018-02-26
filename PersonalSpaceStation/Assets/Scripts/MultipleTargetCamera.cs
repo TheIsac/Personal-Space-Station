@@ -22,7 +22,6 @@ public class MultipleTargetCamera : MonoBehaviour
         cam = GetComponent<Camera>();
 
         targetPlayers = GameObject.FindGameObjectsWithTag("CameraTarget");
-
     }
 
     void LateUpdate()
