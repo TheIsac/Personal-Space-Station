@@ -151,7 +151,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 684b38e7d15906a428ffffe25cc0342d, type: 2}
+  - {fileID: 2100000, guid: 7947b20f291a41f44b1be2881acd8413, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -185,7 +185,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 7947b20f291a41f44b1be2881acd8413, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -282,6 +282,11 @@ MonoBehaviour:
   pumpRoomIcon: {fileID: 21300000, guid: 9ac36e34d0672d04092b921c87793966, type: 3}
   spriteRenderer: {fileID: 212287972349668688}
   spawnWorkbench: {fileID: 0}
+  documnetMesh: {fileID: 23509890130458390}
+  docMatEngine: {fileID: 2100000, guid: e33e306c641c9d84aaa21ee0afac66f9, type: 2}
+  docMatPump: {fileID: 2100000, guid: 42dc8c0c268ccad488c8342565a48c27, type: 2}
+  docMatAtmo: {fileID: 2100000, guid: a2b9fc3d3791f4649adbc3016ad157c3, type: 2}
+  docMatPlant: {fileID: 2100000, guid: cc41132ce1076e340b33cf439ec91807, type: 2}
 --- !u!114 &114201185138642108
 MonoBehaviour:
   m_ObjectHideFlags: 1

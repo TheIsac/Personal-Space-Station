@@ -19,12 +19,18 @@ public class Document : MonoBehaviour {
 
     public Action HandIn;
 
-    Material documentMaterial;
+    public MeshRenderer documnetMesh;
+
+    Material docMat;
+    public Material docMatEngine;
+    public Material docMatPump;
+    public Material docMatAtmo;
+    public Material docMatPlant;
 
     private void Start()
     {
-        documentMaterial = GetComponent<Renderer>().material;
-        documentMaterial.color = Color.black;
+        //docMat = documnetMesh.material;
+        //docMat.color = Color.white;
     }
 
     public void SetDestinationStation(Station destinationStation)
@@ -35,15 +41,19 @@ public class Document : MonoBehaviour {
         {
             case Station.EngineRoom:
                 spriteRenderer.sprite = engineRoomIcon;
+                documnetMesh.material = docMatEngine;
                 break;
             case Station.AtmoRoom:
                 spriteRenderer.sprite = atmoRoomIcon;
+                documnetMesh.material = docMatAtmo;
                 break;
             case Station.PlantRoom:
                 spriteRenderer.sprite = plantRoomIcon;
+                documnetMesh.material = docMatPlant;
                 break;
             case Station.WaterPumps:
                 spriteRenderer.sprite = pumpRoomIcon;
+                documnetMesh.material = docMatPump;
                 break;
             default:
                 //documentMaterial.color = Color.black;
