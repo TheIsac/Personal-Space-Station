@@ -15,7 +15,7 @@ public class Scoring : MonoBehaviour
     public Interactable[] stations;
 
     private int runningStations;
-    private int oldHighScore;
+    //private int oldHighScore;
 
     private int[] highscores;
     private int highscoreCount = 5;
@@ -32,7 +32,7 @@ public class Scoring : MonoBehaviour
             stations[i].OnStationFixed += OnStationRunning;
         }
 
-        oldHighScore = PlayerPrefs.GetInt("HighScore", 0);
+        //oldHighScore = PlayerPrefs.GetInt("HighScore", 0);
 
     }
 

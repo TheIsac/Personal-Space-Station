@@ -17,7 +17,7 @@ public class FixPointChecker : MonoBehaviour
 
     public bool repaired;
 
-    private Light light;
+    private Light warningLight;
 
     public GameObject repairSquare1, repairSquare2;
     public GameObject particleEffect1, particleEffect2;
@@ -30,7 +30,7 @@ public class FixPointChecker : MonoBehaviour
     {
         target = UnityEngine.Random.Range(75, 150);
         repaired = true;
-        light = GetComponent<Light>();
+        warningLight = GetComponent<Light>();
 
         ToggleSquares(true);
     }
@@ -48,12 +48,12 @@ public class FixPointChecker : MonoBehaviour
 
         if (repaired)
         {
-            light.intensity = 0;
+            warningLight.intensity = 0;
             ToggleSquares(false);
         }
         else
         {
-            light.intensity = 4.7f;
+            warningLight.intensity = 4.7f;
             ToggleSquares(true);
         }
 
