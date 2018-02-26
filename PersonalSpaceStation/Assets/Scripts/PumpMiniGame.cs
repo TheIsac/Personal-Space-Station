@@ -110,22 +110,13 @@ public class PumpMiniGame : MonoBehaviour, IResetUser, IResetStation
         if (completionCounter >= completionCount)
         {
             completionText.text = "Done";
-            StartCoroutine(CompleteMiniGame());
+            station.AddHealthToStation(completionValue);
+            isComplete = true;
+            stationUser = "";
+
+            station.MiniGameComplete();
+
             AudioManager.instance.Play("Pling");
         }
-    }
-
-    /// <summary>
-    /// adds health to the station and resets the user. 
-    /// </summary>
-    /// <returns></returns>
-    IEnumerator CompleteMiniGame()
-    {
-        station.AddHealthToStation(completionValue);
-        isComplete = true;
-        stationUser = "";
-
-        yield return new WaitForSeconds(.5f);
-        station.MiniGameComplete();
     }
 }
