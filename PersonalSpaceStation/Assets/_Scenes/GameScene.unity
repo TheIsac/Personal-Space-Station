@@ -437,11 +437,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4175772626964588, guid: 26898019599b5874095c7ab5ea965d42, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.869
+      value: -0.844
       objectReference: {fileID: 0}
     - target: {fileID: 4175772626964588, guid: 26898019599b5874095c7ab5ea965d42, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0.014
+      value: -0.113
       objectReference: {fileID: 0}
     - target: {fileID: 114522103193689570, guid: 26898019599b5874095c7ab5ea965d42,
         type: 2}
@@ -472,6 +472,10 @@ Prefab:
       propertyPath: deskLamp3
       value: 
       objectReference: {fileID: 2027332240}
+    - target: {fileID: 4175772626964588, guid: 26898019599b5874095c7ab5ea965d42, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.663
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 26898019599b5874095c7ab5ea965d42, type: 2}
   m_IsPrefabParent: 0
