@@ -41,9 +41,6 @@ public class FixPoint : MonoBehaviour {
     {
         WhichPoint();
 
-        if (stationUser != null)
-            print(stationUser.player);
-
         if (playerInRange)
         {
             CheckPlayerInput();

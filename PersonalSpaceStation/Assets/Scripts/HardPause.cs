@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HardPause : MonoBehaviour {
 
-    private bool gameIsPaused = false;
+    //private bool gameIsPaused = false;
 
     // Update is called once per frame
     void Update () {

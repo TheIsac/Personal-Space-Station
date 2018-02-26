@@ -43,7 +43,7 @@ public class Spawner : MonoBehaviour
         currentPos = gameObject.transform.position;
         currentQuat = Quaternion.Euler(0, 0, 0);
         spawnedCharacter = Instantiate(character[PlayerPrefs.GetInt(playerString)], currentPos, currentQuat);
-        Debug.Log(PlayerPrefs.GetInt(playerString));
+
         CharacterSpawn();
 
     }

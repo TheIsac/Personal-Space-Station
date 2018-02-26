@@ -53,7 +53,6 @@ public class PackageHandler : MonoBehaviour
             }
             if (stations[i].isWorking && stations[i].stationHealth > GameManager.instance.overloadThreshhold)
             {
-                Debug.Log("OVERLOAD in "+ stations[i]);
                 stations[((i - 1 + stations.Length) % stations.Length)].RemoveHealthFromStation(removeHealth);
 
             }

@@ -90,7 +90,6 @@ public class DocGenerator : MonoBehaviour {
 
         if (carriedDoc.targetStation == currentStation)
         {
-            Debug.Log("Document delivered!");
             GameManager.instance.ToggleHandInUI(carriedDoc.targetStation, false);
             carriedDoc.DeliverDocument();
 

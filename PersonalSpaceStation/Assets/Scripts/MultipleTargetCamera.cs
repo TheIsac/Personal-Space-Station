@@ -22,7 +22,7 @@ public class MultipleTargetCamera : MonoBehaviour
         cam = GetComponent<Camera>();
 
         targetPlayers = GameObject.FindGameObjectsWithTag("CameraTarget");
-        Debug.Log("targetPlayers for camera: "+ targetPlayers.Length);
+
     }
 
     void LateUpdate()
