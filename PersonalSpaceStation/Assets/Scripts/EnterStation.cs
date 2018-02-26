@@ -7,13 +7,19 @@ public class EnterStation : MonoBehaviour {
     public Interactable station;
 
     // Tell the player which station it is in range of
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerExit(Collider other)
     {
-
-
         if (other.tag == "Player")
         {
-            other.gameObject.GetComponentInParent<InteractableHandler>().SetStation(station);
+            other.gameObject.GetComponentInParent<InteractableHandler>().SetStation(station, false);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            other.gameObject.GetComponentInParent<InteractableHandler>().SetStation(station, true);
         }
     }
 }
