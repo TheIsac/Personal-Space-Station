@@ -161,22 +161,4 @@ public class Interactable : MonoBehaviour {
 
         healthText.color = Color.black;
     }
-
-    // Tell the player which station it is in range of
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Player")
-        {
-            other.gameObject.GetComponentInParent<InteractableHandler>().SetStation(this, true);
-        }
-    }
-
-    //when the player leaves the collider of the miniGame there is no longer a player in range nor is there a station user. 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.tag == "Player")
-        {
-            other.gameObject.GetComponentInParent<InteractableHandler>().SetStation(this, false);
-        }
-    }
 }
