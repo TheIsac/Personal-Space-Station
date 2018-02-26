@@ -18,11 +18,18 @@ public class GameManager : MonoBehaviour
     public int overloadThreshhold = 70;
 
     Dictionary<Station, GameObject> handInUIDictionary = new Dictionary<Station, GameObject>();
+    Dictionary<Station, DocGenerator> stationToInteractable = new Dictionary<Station, DocGenerator>();
 
     public GameObject atmoHandIn;
     public GameObject plantHandIn;
     public GameObject engineHandIn;
     public GameObject pumpHandIn;
+
+    public DocGenerator atmoStation;
+    public DocGenerator engineRoom;
+    public DocGenerator pumpStation;
+    public DocGenerator plantStation;
+
 
     void Awake()
     {
@@ -40,11 +47,28 @@ public class GameManager : MonoBehaviour
         handInUIDictionary.Add(Station.EngineRoom, engineHandIn);
         handInUIDictionary.Add(Station.PlantRoom, plantHandIn);
         handInUIDictionary.Add(Station.WaterPumps, pumpHandIn);
+
+        stationToInteractable.Add(Station.AtmoRoom, atmoStation);
+        stationToInteractable.Add(Station.EngineRoom, engineRoom);
+        stationToInteractable.Add(Station.PlantRoom, pumpStation);
+        stationToInteractable.Add(Station.WaterPumps, plantStation);
     }
 
     public void ToggleHandInUI(Station targetStation, bool active)
     {
-        handInUIDictionary[targetStation].SetActive(active);
+        // Not the prettiest of solutions, this was just a fast last minute thing before handing in
+        // Previously this code would just turn off the handin icons whenever a document was handed in but there could be several 
+        // documents destined for the same handin location
+        if(active)
+        {
+            stationToInteractable[targetStation].documentsWaitingForHandin++;
+        }
+        else
+        {
+            stationToInteractable[targetStation].documentsWaitingForHandin--;
+        }
+
+        handInUIDictionary[targetStation].SetActive(stationToInteractable[targetStation].documentsWaitingForHandin > 0);
     }
 
     private void Update()

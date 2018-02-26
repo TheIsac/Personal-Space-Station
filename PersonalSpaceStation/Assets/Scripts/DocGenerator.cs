@@ -9,6 +9,7 @@ public class DocGenerator : MonoBehaviour {
     public Station targetStation;
 
     public int successCounter = 0;
+    public int documentsWaitingForHandin = 0;
 
     public GameObject documents;
     public Transform docSpawnPoint;
@@ -27,6 +28,18 @@ public class DocGenerator : MonoBehaviour {
         TurnOffDeskLamps();
     }
 
+    public void AddDocumentForhandin()
+    {
+        documentsWaitingForHandin++;
+    }
+
+    public void RemoveDocumentForhandin()
+    {
+        documentsWaitingForHandin--;
+
+        if (documentsWaitingForHandin < 0)
+            documentsWaitingForHandin = 0;
+    }
 
 
     //recieve signal from Interactable, that a station was fixed and count the success
