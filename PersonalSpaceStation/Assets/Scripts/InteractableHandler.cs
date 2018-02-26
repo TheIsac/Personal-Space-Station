@@ -10,6 +10,8 @@ public class InteractableHandler : MonoBehaviour {
     Movement movement;
     Rigidbody playerRigidbody;
 
+    public bool closeToStation = false;
+
     public Animator anim;
 
     void Awake () {
@@ -32,9 +34,28 @@ public class InteractableHandler : MonoBehaviour {
         }
     }
 
-    public void SetStation(Interactable station)
+    public void SetStation(Interactable station, bool entering)
     {
-        currentStation = station;
+        if (entering == false && station.stationUser == movement)
+        {
+            playerRigidbody.isKinematic = false;
+            movement.inMiniGame = false;
+
+            anim.SetBool("isInteracting", false);
+            currentStation.EndMiniGame();
+
+            currentStation = null;
+        }
+        else if(entering == false)
+        {
+            currentStation = null;
+        }
+        else
+        {
+            currentStation = station;
+        }
+
+
     }
 
     private void HandleInteractionInput()
