@@ -32396,6 +32396,11 @@ Prefab:
       propertyPath: documentGenerator
       value: 
       objectReference: {fileID: 589549146}
+    - target: {fileID: 114348115978120512, guid: a3ca50072b5aafc48b73312f9f43f8f9,
+        type: 2}
+      propertyPath: stationHealth
+      value: 51
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a3ca50072b5aafc48b73312f9f43f8f9, type: 2}
   m_IsPrefabParent: 0
