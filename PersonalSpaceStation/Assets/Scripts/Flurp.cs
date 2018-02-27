@@ -185,12 +185,14 @@ public class Flurp : MonoBehaviour {
     // Update Flurps current happiness and take appropriate action
     void WellBeeingControl()
     {
-        if(flurpState == FlurpState.Unhappy)
+        speechBubbleSpriteUI.fillAmount = 1;
+
+        if (flurpState == FlurpState.Unhappy)
         {
             timeToReachTarget -= tickLength;
 
             // fill amount
-            speechBubbleSpriteUI.fillAmount = Mathf.Lerp(.11f, 1f, timeToReachTarget / timerToReachNextStation);
+            speechBubbleSpriteUI.fillAmount = Mathf.Lerp(0f, 1f, timeToReachTarget / timerToReachNextStation);
 
             if (timeToReachTarget <= 0)
             {
@@ -214,7 +216,10 @@ public class Flurp : MonoBehaviour {
             DisplayNewObjective();
         }
 
-        if(currentHappinessValue >= targetHappinessValue)
+        if (flurpState == FlurpState.Recharging)
+            speechBubbleSpriteUI.fillAmount = Mathf.Lerp(0f, 1f, currentHappinessValue / targetHappinessValue);
+
+        if (currentHappinessValue >= targetHappinessValue)
         {
             //canBeMoved = true;
             NewRandomRoom();
