@@ -10300,7 +10300,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 159.5, y: -12.1}
+  m_AnchoredPosition: {x: 135.07812, y: -0.4}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &305018665
@@ -10322,7 +10322,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 8bf8c17731e649f4b917965e50dd6eef, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9a776feadf551c4448b7dc441a42c017, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -12683,7 +12683,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1370561957230526, guid: 86649fc9310497741ab7ab1d989ab7b3, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224188146598308562, guid: 86649fc9310497741ab7ab1d989ab7b3,
         type: 2}
@@ -12763,9 +12763,9 @@ Prefab:
     - target: {fileID: 114586900888504288, guid: 86649fc9310497741ab7ab1d989ab7b3,
         type: 2}
       propertyPath: m_Text
-      value: "Keep the ships work stations up and running. \nWithout them, you will
-        not make it.\n\nRemember to log your research at the other work stations.
-        You must do so to proceed."
+      value: "Keep the ship's workstations up and running. \nWithout them, you will
+        not make it.\n\nRemember to log your research at the other workstations. You
+        must do so to proceed."
       objectReference: {fileID: 0}
     - target: {fileID: 224259930155788928, guid: 86649fc9310497741ab7ab1d989ab7b3,
         type: 2}
@@ -12780,7 +12780,7 @@ Prefab:
     - target: {fileID: 224208153783789900, guid: 86649fc9310497741ab7ab1d989ab7b3,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -6.7
+      value: -3.3
       objectReference: {fileID: 0}
     - target: {fileID: 224259930155788928, guid: 86649fc9310497741ab7ab1d989ab7b3,
         type: 2}
@@ -12835,7 +12835,52 @@ Prefab:
     - target: {fileID: 224920334183141672, guid: 86649fc9310497741ab7ab1d989ab7b3,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -2.3
+      value: -3.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 114627800917498090, guid: 86649fc9310497741ab7ab1d989ab7b3,
+        type: 2}
+      propertyPath: m_FontData.m_FontSize
+      value: 72
+      objectReference: {fileID: 0}
+    - target: {fileID: 114627800917498090, guid: 86649fc9310497741ab7ab1d989ab7b3,
+        type: 2}
+      propertyPath: m_FontData.m_MaxSize
+      value: 72
+      objectReference: {fileID: 0}
+    - target: {fileID: 224920334183141672, guid: 86649fc9310497741ab7ab1d989ab7b3,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 224920334183141672, guid: 86649fc9310497741ab7ab1d989ab7b3,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 130.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 224920334183141672, guid: 86649fc9310497741ab7ab1d989ab7b3,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 224920334183141672, guid: 86649fc9310497741ab7ab1d989ab7b3,
+        type: 2}
+      propertyPath: m_LocalScale.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 224920334183141672, guid: 86649fc9310497741ab7ab1d989ab7b3,
+        type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114010446170488822, guid: 86649fc9310497741ab7ab1d989ab7b3,
+        type: 2}
+      propertyPath: m_FontData.m_Alignment
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114586900888504288, guid: 86649fc9310497741ab7ab1d989ab7b3,
+        type: 2}
+      propertyPath: m_FontData.m_Alignment
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 86649fc9310497741ab7ab1d989ab7b3, type: 2}
