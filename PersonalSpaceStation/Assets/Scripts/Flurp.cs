@@ -163,7 +163,7 @@ public class Flurp : MonoBehaviour {
             speechBubbleSprite.sprite = rechargingSpeechBubble;
             speechBubbleSpriteUI.sprite = rechargingSpeechBubbleUI;
 
-            speechBubbleSpriteUI.fillAmount = Mathf.Lerp(0f, 1f, currentHappinessValue / targetHappinessValue);
+            speechBubbleSpriteUI.fillAmount = Mathf.Lerp(0f, 1f, (currentHappinessValue - 5f) / (targetHappinessValue -5f));
         }
         else if(currentStation == targetStation && flurpState == FlurpState.Recharging)
         {
@@ -236,7 +236,8 @@ public class Flurp : MonoBehaviour {
 
         if (flurpState == FlurpState.Recharging)
         {
-            speechBubbleSpriteUI.fillAmount = Mathf.Lerp(0f, 1f, currentHappinessValue / targetHappinessValue);
+            //speechBubbleSpriteUI.fillAmount = Mathf.Lerp(0f, 1f, currentHappinessValue / targetHappinessValue);
+            speechBubbleSpriteUI.fillAmount = Mathf.Lerp(0f, 1f, (currentHappinessValue - 5f) / (targetHappinessValue - 5f));
         }
 
 
