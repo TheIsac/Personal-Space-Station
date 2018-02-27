@@ -34,7 +34,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1498762250162142}
   m_LocalRotation: {x: -0, y: -0.97975147, z: -0, w: -0.20021749}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.11753273, y: 0, z: 0.2657032}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -53,142 +53,102 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mixerGroup: {fileID: 24300002, guid: 1ee4cf61fea4cd24ebc91e806c3f1b8d, type: 2}
   sounds:
-  - target: {fileID: 0}
-    name: Alarm
+  - name: Alarm
     clip: {fileID: 8300000, guid: ddb38b378c09d5d4d9203bb5f8650d7e, type: 3}
     volume: 0.8
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
-    spatialBlend: 0
-    minDistance: 1
-    maxDistance: 500
     loop: 0
     mixerGroup: {fileID: 243587151942466014, guid: 1ee4cf61fea4cd24ebc91e806c3f1b8d,
       type: 2}
     source: {fileID: 0}
-  - target: {fileID: 0}
-    name: Pickup
+  - name: Pickup
     clip: {fileID: 8300000, guid: bc00a017abc4b6943afef8397b6563f3, type: 3}
     volume: 0.5
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
-    spatialBlend: 0
-    minDistance: 1
-    maxDistance: 500
     loop: 0
     mixerGroup: {fileID: 243587151942466014, guid: 1ee4cf61fea4cd24ebc91e806c3f1b8d,
       type: 2}
     source: {fileID: 0}
-  - target: {fileID: 0}
-    name: Drop
+  - name: Drop
     clip: {fileID: 8300000, guid: 82a1c54d121c3cd4da32ea04738e138c, type: 3}
     volume: 0.5
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
-    spatialBlend: 0
-    minDistance: 1
-    maxDistance: 500
     loop: 0
     mixerGroup: {fileID: 243587151942466014, guid: 1ee4cf61fea4cd24ebc91e806c3f1b8d,
       type: 2}
     source: {fileID: 0}
-  - target: {fileID: 0}
-    name: GameMusic
+  - name: GameMusic
     clip: {fileID: 8300000, guid: f132a7b82abf8d34fa82efb8b0432a3d, type: 3}
     volume: 0.35
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
-    spatialBlend: 0
-    minDistance: 1
-    maxDistance: 500
     loop: 1
     mixerGroup: {fileID: 243344602814171428, guid: 1ee4cf61fea4cd24ebc91e806c3f1b8d,
       type: 2}
     source: {fileID: 0}
-  - target: {fileID: 0}
-    name: FootStep
+  - name: FootStep
     clip: {fileID: 8300000, guid: cc3e1f46ab41d3645a5b611c940825b4, type: 3}
-    volume: 1
+    volume: 0.5
     volumeVariance: 0
     pitch: 1
     pitchVariance: 1
-    spatialBlend: 0
-    minDistance: 1
-    maxDistance: 500
     loop: 0
     mixerGroup: {fileID: 243587151942466014, guid: 1ee4cf61fea4cd24ebc91e806c3f1b8d,
       type: 2}
     source: {fileID: 0}
-  - target: {fileID: 0}
-    name: Type
+  - name: Type
     clip: {fileID: 8300000, guid: 1a8c8a6a7d6319545919665c9598de3c, type: 3}
     volume: 1
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
-    spatialBlend: 0
-    minDistance: 1
-    maxDistance: 500
     loop: 0
     mixerGroup: {fileID: 243587151942466014, guid: 1ee4cf61fea4cd24ebc91e806c3f1b8d,
       type: 2}
     source: {fileID: 0}
-  - target: {fileID: 0}
-    name: MenuMusic
+  - name: MenuMusic
     clip: {fileID: 8300000, guid: 4137058060db49b469129b32b93d2e9c, type: 3}
     volume: 1
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
-    spatialBlend: 0
-    minDistance: 1
-    maxDistance: 500
     loop: 0
     mixerGroup: {fileID: 243344602814171428, guid: 1ee4cf61fea4cd24ebc91e806c3f1b8d,
       type: 2}
     source: {fileID: 0}
-  - target: {fileID: 0}
-    name: Paper
+  - name: Paper
     clip: {fileID: 8300000, guid: b4fcd7b6f01bcad448dbbdfad7ccb568, type: 3}
     volume: 1
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
-    spatialBlend: 0
-    minDistance: 1
-    maxDistance: 500
     loop: 0
     mixerGroup: {fileID: 243587151942466014, guid: 1ee4cf61fea4cd24ebc91e806c3f1b8d,
       type: 2}
     source: {fileID: 0}
-  - target: {fileID: 0}
-    name: Pling
+  - name: Pling
     clip: {fileID: 8300000, guid: 89e8473fce8353f45bab3439e505a662, type: 3}
     volume: 0.5
     volumeVariance: 0
     pitch: 1.1
     pitchVariance: 0
-    spatialBlend: 0
-    minDistance: 1
-    maxDistance: 500
     loop: 0
     mixerGroup: {fileID: 243587151942466014, guid: 1ee4cf61fea4cd24ebc91e806c3f1b8d,
       type: 2}
     source: {fileID: 0}
-  - target: {fileID: 0}
-    name: Fail
+  - name: Fail
     clip: {fileID: 8300000, guid: 82a1c54d121c3cd4da32ea04738e138c, type: 3}
     volume: 0.7
     volumeVariance: 0
     pitch: 0.6
     pitchVariance: 0
-    spatialBlend: 0
-    minDistance: 1
-    maxDistance: 500
     loop: 0
     mixerGroup: {fileID: 243587151942466014, guid: 1ee4cf61fea4cd24ebc91e806c3f1b8d,
       type: 2}
