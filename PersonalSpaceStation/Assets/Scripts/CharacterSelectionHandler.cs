@@ -89,7 +89,7 @@ public class CharacterSelectionHandler : MonoBehaviour {
 
             if (Input.GetButtonDown("B-button_P1") && numberOfPlayers == 0)
             {
-                SceneManager.LoadScene("Main menu");
+                SceneManager.LoadScene("Main menu 1");
             }
 
             if (playerSelect == true)

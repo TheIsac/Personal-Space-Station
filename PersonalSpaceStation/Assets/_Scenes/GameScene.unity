@@ -37998,6 +37998,26 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114889359888163160, guid: f67cbf04939e9e6409c39b770ea10aea,
+        type: 2}
+      propertyPath: pumpStation
+      value: 
+      objectReference: {fileID: 366541931}
+    - target: {fileID: 114889359888163160, guid: f67cbf04939e9e6409c39b770ea10aea,
+        type: 2}
+      propertyPath: engineRoom
+      value: 
+      objectReference: {fileID: 431048978}
+    - target: {fileID: 114889359888163160, guid: f67cbf04939e9e6409c39b770ea10aea,
+        type: 2}
+      propertyPath: plantStation
+      value: 
+      objectReference: {fileID: 589549146}
+    - target: {fileID: 114889359888163160, guid: f67cbf04939e9e6409c39b770ea10aea,
+        type: 2}
+      propertyPath: atmoStation
+      value: 
+      objectReference: {fileID: 1969330193}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f67cbf04939e9e6409c39b770ea10aea, type: 2}
   m_IsPrefabParent: 0
