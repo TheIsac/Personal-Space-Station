@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
     public int overloadThreshhold = 70;
 
     Dictionary<Station, GameObject> handInUIDictionary = new Dictionary<Station, GameObject>();
-    Dictionary<Station, DocGenerator> stationToInteractable = new Dictionary<Station, DocGenerator>();
+    Dictionary<Station, DocGenerator> stationToDocGenerator = new Dictionary<Station, DocGenerator>();
 
     public GameObject atmoHandIn;
     public GameObject plantHandIn;
@@ -48,10 +48,10 @@ public class GameManager : MonoBehaviour
         handInUIDictionary.Add(Station.PlantRoom, plantHandIn);
         handInUIDictionary.Add(Station.WaterPumps, pumpHandIn);
 
-        stationToInteractable.Add(Station.AtmoRoom, atmoStation);
-        stationToInteractable.Add(Station.EngineRoom, engineRoom);
-        stationToInteractable.Add(Station.PlantRoom, pumpStation);
-        stationToInteractable.Add(Station.WaterPumps, plantStation);
+        stationToDocGenerator.Add(Station.AtmoRoom, atmoStation);
+        stationToDocGenerator.Add(Station.EngineRoom, engineRoom);
+        stationToDocGenerator.Add(Station.PlantRoom, pumpStation);
+        stationToDocGenerator.Add(Station.WaterPumps, plantStation);
     }
 
     public void ToggleHandInUI(Station targetStation, bool active)
@@ -61,14 +61,14 @@ public class GameManager : MonoBehaviour
         // documents destined for the same handin location
         if(active)
         {
-            stationToInteractable[targetStation].documentsWaitingForHandin++;
+            stationToDocGenerator[targetStation].documentsWaitingForHandin++;
         }
         else
         {
-            stationToInteractable[targetStation].documentsWaitingForHandin--;
+            stationToDocGenerator[targetStation].documentsWaitingForHandin--;
         }
 
-        handInUIDictionary[targetStation].SetActive(stationToInteractable[targetStation].documentsWaitingForHandin > 0);
+        handInUIDictionary[targetStation].SetActive(stationToDocGenerator[targetStation].documentsWaitingForHandin > 0);
     }
 
     private void Update()
