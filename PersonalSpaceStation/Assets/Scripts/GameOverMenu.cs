@@ -62,7 +62,7 @@ public class GameOverMenu : MonoBehaviour
 
         for (int i = 0; i < stationRooms.Length; i++)
         {
-            if (stationRooms[i].stationHealth == 0)
+            if (stationRooms[i].stationHealth <= 0)
             {
                 failureText.text = stationRooms[i].stationName;
                 failureText.text = failureText.text +" has failed!";
