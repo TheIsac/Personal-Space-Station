@@ -15465,7 +15465,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 400, y: -337.31543}
+  m_AnchoredPosition: {x: 400, y: -337.5}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &450503343
@@ -36947,6 +36947,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1094534005}
   - component: {fileID: 1094534006}
+  - component: {fileID: 1094534007}
   m_Layer: 5
   m_Name: Music
   m_TagString: Untagged
@@ -37036,6 +37037,19 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &1094534007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1094534004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f97278c16dcb04c4aa9cedc1d0befd85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioMixer: {fileID: 24100000, guid: 1ee4cf61fea4cd24ebc91e806c3f1b8d, type: 2}
+  sliderName: Music
 --- !u!1 &1096621182 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100228, guid: d293540f6b512474a842048cddf0d46e, type: 3}
@@ -37062,6 +37076,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1096768471}
   - component: {fileID: 1096768470}
+  - component: {fileID: 1096768472}
   m_Layer: 5
   m_Name: MasterVolume
   m_TagString: Untagged
@@ -37151,6 +37166,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1096768472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1096768469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f97278c16dcb04c4aa9cedc1d0befd85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioMixer: {fileID: 24100000, guid: 1ee4cf61fea4cd24ebc91e806c3f1b8d, type: 2}
+  sliderName: MasterVolume
 --- !u!1 &1100903688
 GameObject:
   m_ObjectHideFlags: 0
@@ -39843,7 +39871,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 400, y: -262.36816}
+  m_AnchoredPosition: {x: 400, y: -262.5}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1206421353
@@ -57207,7 +57235,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 400, y: -187.4209}
+  m_AnchoredPosition: {x: 400, y: -187.5}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1891251762
@@ -59254,6 +59282,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1963469233}
   - component: {fileID: 1963469234}
+  - component: {fileID: 1963469235}
   m_Layer: 5
   m_Name: SFX
   m_TagString: Untagged
@@ -59343,6 +59372,19 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &1963469235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1963469232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f97278c16dcb04c4aa9cedc1d0befd85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioMixer: {fileID: 24100000, guid: 1ee4cf61fea4cd24ebc91e806c3f1b8d, type: 2}
+  sliderName: SFX
 --- !u!1 &1965125844 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100278, guid: 4ab7531d174eb5844a4c8b0d3a9dfa38, type: 3}
@@ -63848,7 +63890,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 400, y: -112.47363}
+  m_AnchoredPosition: {x: 400, y: -112.5}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2116199250
