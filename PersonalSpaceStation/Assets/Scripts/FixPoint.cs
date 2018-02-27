@@ -82,7 +82,7 @@ public class FixPoint : MonoBehaviour {
         stationUser = null;
         stationed = false;
         pressed = false;
-        if (icon != null && !fixPointChecker.repaired)
+        if (icon != null)
         {
             icon.SetActive(false);
         }
