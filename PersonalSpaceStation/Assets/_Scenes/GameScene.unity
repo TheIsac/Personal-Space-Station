@@ -30312,6 +30312,30 @@ Prefab:
       propertyPath: flurpUI
       value: 
       objectReference: {fileID: 1519386659}
+    - target: {fileID: 114168447189578710, guid: 7bfdcd905e376e2448a32d6e3e79e4e1,
+        type: 2}
+      propertyPath: unhappySpeechBubble
+      value: 
+      objectReference: {fileID: 21300000, guid: ad7015d9429a5b34eb7a31bde552c0d6,
+        type: 3}
+    - target: {fileID: 114168447189578710, guid: 7bfdcd905e376e2448a32d6e3e79e4e1,
+        type: 2}
+      propertyPath: rechargingSpeechBubble
+      value: 
+      objectReference: {fileID: 21300000, guid: 16438d1f4f46d2441af3614e1be3a9bf,
+        type: 3}
+    - target: {fileID: 114168447189578710, guid: 7bfdcd905e376e2448a32d6e3e79e4e1,
+        type: 2}
+      propertyPath: unhappySpeechBubbleUI
+      value: 
+      objectReference: {fileID: 21300000, guid: 5e62697fd656e5940a4bc526131e187b,
+        type: 3}
+    - target: {fileID: 114168447189578710, guid: 7bfdcd905e376e2448a32d6e3e79e4e1,
+        type: 2}
+      propertyPath: rechargingSpeechBubbleUI
+      value: 
+      objectReference: {fileID: 21300000, guid: fc4c4fae2d97e7b47ba6dab9c38be0a1,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7bfdcd905e376e2448a32d6e3e79e4e1, type: 2}
   m_IsPrefabParent: 0
