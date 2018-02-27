@@ -90,6 +90,11 @@ public class PlantMiniGame : MonoBehaviour, IResetUser, IResetStation
         for (int i = 0; i < plantBoxes.Length; i++)
         {
             plantBoxes[i].sprite = availablePlants[puzzle[i]];
+
+            if(i != 0)
+            {
+                plantBoxes[i].color = new Color(1f, 1f, 1f, .05f);
+            }
         }
     }
 
@@ -110,6 +115,9 @@ public class PlantMiniGame : MonoBehaviour, IResetUser, IResetStation
                 boxIndex++;
                 completionCounter++;
                 AudioManager.instance.Play("Type");
+
+                if(boxIndex < plantBoxes.Length)
+                    plantBoxes[boxIndex].color = new Color(1f, 1f, 1f, 1f);
             }
             else
             {
@@ -125,6 +133,9 @@ public class PlantMiniGame : MonoBehaviour, IResetUser, IResetStation
                 boxIndex++;
                 completionCounter++;
                 AudioManager.instance.Play("Type");
+
+                if (boxIndex < plantBoxes.Length)
+                    plantBoxes[boxIndex].color = new Color(1f, 1f, 1f, 1f);
             }
             else
             {
@@ -140,6 +151,9 @@ public class PlantMiniGame : MonoBehaviour, IResetUser, IResetStation
                 boxIndex++;
                 completionCounter++;
                 AudioManager.instance.Play("Type");
+
+                if (boxIndex < plantBoxes.Length)
+                    plantBoxes[boxIndex].color = new Color(1f, 1f, 1f, 1f);
             }
             else
             {
