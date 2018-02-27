@@ -19,8 +19,8 @@ public class EngineMiniGame : MonoBehaviour, IResetUser, IResetStation
 
     // Lever mechanics, the variables controlling the lever.
     private float currentMomentum;
-    private float baseMomentum = .5f;
-    private float adjusterValue = .01f;
+    private float baseMomentum = 100f;
+    private float adjusterValue = 40;
 
     // Other, the variables for the station and the users, also for the startRotation of the spak.
     private string stationUser = "";
@@ -93,12 +93,12 @@ public class EngineMiniGame : MonoBehaviour, IResetUser, IResetStation
         if (horizontalAxis < -.1f && (spak.rectTransform.localRotation.eulerAngles.z < 90f || spak.rectTransform.localRotation.eulerAngles.z > 200f))
         {
             currentMomentum = baseMomentum;
-            spak.rectTransform.Rotate(0f, 0f, currentMomentum);
+            spak.rectTransform.Rotate(0f, 0f, currentMomentum * Time.deltaTime);
         }
         if (horizontalAxis > .1f && (spak.rectTransform.localRotation.eulerAngles.z < 120f || spak.rectTransform.localRotation.eulerAngles.z > 270f))
         {
             currentMomentum = -baseMomentum;
-            spak.rectTransform.Rotate(0f, 0f, currentMomentum);
+            spak.rectTransform.Rotate(0f, 0f, currentMomentum * Time.deltaTime);
         }
     }
 
@@ -132,21 +132,22 @@ public class EngineMiniGame : MonoBehaviour, IResetUser, IResetStation
     void MoveLever()
     {
         // if the lever is moving slowly, set a random movement
-        if(Mathf.Abs(currentMomentum) < 0.1f)
+        //if(Mathf.Abs(currentMomentum) < 0.1f)
+        //{
+        //    currentMomentum = Random.Range(-baseMomentum, baseMomentum);
+        //}
+        //else 
+        if(Mathf.Sign(currentMomentum) > 0)
         {
-            currentMomentum = Random.Range(-baseMomentum, baseMomentum);
-        }
-        else if(Mathf.Sign(currentMomentum) > 0)
-        {
-            currentMomentum += adjusterValue;
+            currentMomentum += adjusterValue * Time.deltaTime;
         }
         else
         {
-            currentMomentum -= adjusterValue;
+            currentMomentum -= adjusterValue * Time.deltaTime;
         }
 
         // Only move the lever if it is between 90 and -90 degrees
         if(spak.rectTransform.localRotation.eulerAngles.z < 90f || spak.rectTransform.localRotation.eulerAngles.z > 270f)
-            spak.rectTransform.Rotate(0f, 0f, currentMomentum);
+            spak.rectTransform.Rotate(0f, 0f, currentMomentum * Time.deltaTime);
     }
 }
