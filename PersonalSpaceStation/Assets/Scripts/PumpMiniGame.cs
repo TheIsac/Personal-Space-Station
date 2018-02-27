@@ -62,7 +62,7 @@ public class PumpMiniGame : MonoBehaviour, IResetUser, IResetStation
     void DropDown()
     {
         if(completionCounter > 1)
-            completionCounter -= 17f * Time.deltaTime;
+            completionCounter -= 10f * Time.deltaTime;
         UpdateGauge();
     }
 
