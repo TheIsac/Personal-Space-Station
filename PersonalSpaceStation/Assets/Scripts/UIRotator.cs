@@ -9,7 +9,9 @@ public class UIRotator : MonoBehaviour
     Camera cam;
 
     // offset in screen points
-    Vector3 flurpPopupOffset = Vector3.up * 40 + Vector3.right * 20;
+
+    
+    Vector3 flurpPopupOffset = Vector3.up * (Screen.width / 48) + Vector3.right * (Screen.height / 54);
 
     void Start()
     {
