@@ -22,6 +22,12 @@ public class Flurp : MonoBehaviour {
     public Image targetRoomSpriteUI;
     public Image speechBubbleSpriteUI;
 
+    public Sprite rechargingSpeechBubble;
+    public Sprite unhappySpeechBubble;
+
+    public Sprite rechargingSpeechBubbleUI;
+    public Sprite unhappySpeechBubbleUI;
+
     public SpriteRenderer targetRoomSprite;
     public SpriteRenderer speechBubbleSprite;
 
@@ -127,6 +133,9 @@ public class Flurp : MonoBehaviour {
 
         targetRoomSprite.gameObject.SetActive(true);
         speechBubbleSprite.gameObject.SetActive(true);
+
+        speechBubbleSprite.sprite = unhappySpeechBubble;
+        speechBubbleSpriteUI.sprite = unhappySpeechBubbleUI;
     }
 
     public void SetCurrentStation(Station station)
@@ -150,6 +159,9 @@ public class Flurp : MonoBehaviour {
 
             targetRoomSprite.gameObject.SetActive(false);
             speechBubbleSprite.gameObject.SetActive(false);
+
+            speechBubbleSprite.sprite = rechargingSpeechBubble;
+            speechBubbleSpriteUI.sprite = rechargingSpeechBubbleUI;
         }
         else if(currentStation == targetStation && flurpState == FlurpState.Recharging)
         {
@@ -158,6 +170,10 @@ public class Flurp : MonoBehaviour {
 
             targetRoomSprite.gameObject.SetActive(false);
             speechBubbleSprite.gameObject.SetActive(false);
+
+            speechBubbleSprite.sprite = rechargingSpeechBubble;
+            speechBubbleSpriteUI.sprite = rechargingSpeechBubbleUI;
+
         }
         else
         {
@@ -217,7 +233,10 @@ public class Flurp : MonoBehaviour {
         }
 
         if (flurpState == FlurpState.Recharging)
+        {
             speechBubbleSpriteUI.fillAmount = Mathf.Lerp(0f, 1f, currentHappinessValue / targetHappinessValue);
+        }
+
 
         if (currentHappinessValue >= targetHappinessValue)
         {
