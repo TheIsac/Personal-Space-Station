@@ -8,8 +8,12 @@ public class UIRotator : MonoBehaviour
     public Transform flurp;
     Camera cam;
 
-    // offset in screen points
-    Vector3 flurpPopupOffset = Vector3.up * 40 + Vector3.right * 20;
+    // offset divider, should work with most resolutions
+    // offset is 40 pixels in 1920 in x so XOFFSET = 1920/40, 20 pixels in 1080 in y so YOFFSET = 1080/20
+    const float XOFFSET = 48;
+    const float YOFFSET = 54;
+
+    Vector3 flurpPopupOffset = Vector3.up * (Screen.width / XOFFSET) + Vector3.right * (Screen.height / YOFFSET);
 
     void Start()
     {
