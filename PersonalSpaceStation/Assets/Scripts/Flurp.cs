@@ -189,7 +189,10 @@ public class Flurp : MonoBehaviour {
         {
             timeToReachTarget -= tickLength;
 
-            if(timeToReachTarget <= 0)
+            // fill amount
+            speechBubbleSpriteUI.fillAmount = Mathf.Lerp(.11f, 1f, timeToReachTarget / timerToReachNextStation);
+
+            if (timeToReachTarget <= 0)
             {
                 EndGame();
             }
